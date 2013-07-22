@@ -8,7 +8,6 @@ package negocio;
  *
  * @author Nanda
  */
-public class Pessoa {
-    private 
+public class Fachada {
     
 }
