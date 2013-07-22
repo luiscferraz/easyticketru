@@ -60,6 +60,15 @@ public class Aluno extends Pessoa {
         this.terminoCursoAluno = terminoCursoAluno;
     }
     
+    public Boolean isAtivo(Aluno aluno){
+        if (this.statusAluno == EnumStatusAluno.ATIVO){
+            return true;
+        }else{
+            return false;
+        }
+       
+    }
+    
     
     
 }
