@@ -9,5 +9,7 @@ package negocio;
  * @author Nanda
  */
 public enum EnumRefeicao {
+    ALMOÇO,
+    JANTAR
     
 }

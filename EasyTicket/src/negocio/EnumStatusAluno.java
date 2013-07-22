@@ -9,5 +9,6 @@ package negocio;
  * @author Nanda
  */
 public enum EnumStatusAluno {
-    
+    ATIVO,
+    INATIVO
 }
