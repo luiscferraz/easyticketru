@@ -8,6 +8,6 @@ package dados;
  *
  * @author Nanda
  */
-public class RepositorioRefeicao {
+public class RepositorioFuncionarios {
     
 }
