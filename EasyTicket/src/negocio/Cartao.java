@@ -89,5 +89,17 @@ public class Cartao {
         }
     }
     
+    public void inativarCartao(Cartao cartao){
+        this.status = EnumStatusCartao.INATIVO;        
+    }
+    
+    public void ativarCartao(Cartao cartao){
+        this.status = EnumStatusCartao.INATIVO;
+    }
+    
+    public void bloquearCartao(Cartao cartao){
+        this.status = EnumStatusCartao.BLOQUEADO;
+    }
+    
     
 }

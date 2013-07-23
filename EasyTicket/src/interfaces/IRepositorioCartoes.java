@@ -4,10 +4,20 @@
  */
 package interfaces;
 
+import negocio.Cartao;
+
 /**
  *
  * @author Nanda
  */
 public interface IRepositorioCartoes {
+    
+    public void inserir(Cartao cartao);
+    public boolean existe(Cartao cartao);
+    public void atualizar(Cartao cartao);
+    public Cartao procurarPorNumero(int numeroCartao);
+    public Cartao procurarPorCpf(int cpf);
+    
+    
     
 }
