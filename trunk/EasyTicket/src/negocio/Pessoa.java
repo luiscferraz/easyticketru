@@ -7,7 +7,7 @@ package negocio;
 import java.util.Date;
 /**
  *
- * @author Nanda
+ * @author Marcela
  */
 public class Pessoa {
     
