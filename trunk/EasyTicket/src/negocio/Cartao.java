@@ -77,5 +77,9 @@ public class Cartao {
         this.status = status;
     }
     
+    public float emitirSaldo(Cartao cartao){
+        return cartao.getSaldo();
+    }
+    
     
 }
