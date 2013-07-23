@@ -64,7 +64,9 @@ public class Recarga {
     }
     
     public void efetuarRecarga(Cartao cartao){
-        cartao.setSaldo(cartao.getSaldo()+this.valor);
+        if (cartao.isAtivo(cartao)){
+            cartao.setSaldo(cartao.getSaldo()+this.valor);
+        }
     }
     
     

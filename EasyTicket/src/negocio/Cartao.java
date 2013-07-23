@@ -81,5 +81,13 @@ public class Cartao {
         return cartao.getSaldo();
     }
     
+    public boolean isAtivo(Cartao cartao){
+        if(cartao.getStatus()== EnumStatusCartao.ATIVO){
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
     
 }
