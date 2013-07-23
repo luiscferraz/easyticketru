@@ -63,6 +63,10 @@ public class Pagamento {
         this.valor = valor;
     }
     
+    public void efetuarPagamento(Cartao cartao){
+        cartao.setSaldo(cartao.getSaldo()-this.getValor());
+    }
+    
     
     
     
