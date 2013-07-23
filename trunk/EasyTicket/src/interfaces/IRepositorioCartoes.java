@@ -8,6 +8,6 @@ package interfaces;
  *
  * @author Nanda
  */
-public interface IRepositorioCartao {
+public interface IRepositorioCartoes {
     
 }
