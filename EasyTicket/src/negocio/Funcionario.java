@@ -40,4 +40,13 @@ public class Funcionario extends Pessoa {
         this.statusFuncionario = statusFuncionario;
     }
     
+    public Boolean isAtivo(Funcionario funcionario){
+        if (this.statusFuncionario == EnumStatusFuncionario.ATIVO){
+            return true;
+        }else{
+            return false;
+        }
+       
+    }
+    
 }
