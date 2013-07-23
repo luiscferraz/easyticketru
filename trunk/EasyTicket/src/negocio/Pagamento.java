@@ -65,7 +65,9 @@ public class Pagamento {
     
     
     public void efetuarPagamento(Cartao cartao){
-        cartao.setSaldo(cartao.getSaldo()-this.getValor());
+        if((cartao.isAtivo(cartao)) && (cartao.getSaldo()>= this.valor)){
+            cartao.setSaldo(cartao.getSaldo()-this.getValor());
+        }
     }
     
     
