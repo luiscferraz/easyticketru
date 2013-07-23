@@ -63,6 +63,10 @@ public class Recarga {
         this.dataRecarga = dataRecarga;
     }
     
+    public void efetuarRecarga(Cartao cartao){
+        cartao.setSaldo(cartao.getSaldo()+this.valor);
+    }
+    
     
     
     
