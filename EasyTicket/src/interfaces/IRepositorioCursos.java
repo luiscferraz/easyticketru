@@ -11,9 +11,9 @@ import negocio.Curso;
  * @author Nanda
  */
 public interface IRepositorioCursos {
-    public void inserir(Curso cartao);
-    public boolean existe(Curso cartao);
-    public void atualizar(Curso cartao);
+    public void inserir(Curso curso);
+    public boolean existe(Curso curso);
+    public void atualizar(Curso curso);
     public Curso procurarPorId(int idCurso);
     
 }

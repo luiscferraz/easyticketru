@@ -8,7 +8,7 @@ import java.util.Date;
 
 /**
  *
- * @author Nanda
+ * @author Marcela
  */
 public class Funcionario extends Pessoa {
     
