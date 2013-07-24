@@ -4,6 +4,8 @@
  */
 package interfaces;
 
+import java.util.ArrayList;
+import java.util.Date;
 import negocio.Pagamento;
 
 /**
@@ -16,5 +18,7 @@ public interface IRepositorioPagamentos {
     public boolean existe(Pagamento pagamento);
     public void atualizar(Pagamento pagamento);
     public Pagamento procurarPorId(int idPagamento);
+    public ArrayList<Pagamento> buscarPorCartao(int idCartao);
+    public ArrayList<Pagamento> buscarPorData(Date data);
     
 }

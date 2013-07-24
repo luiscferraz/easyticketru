@@ -4,10 +4,17 @@
  */
 package interfaces;
 
+import negocio.Refeicao;
+
 /**
  *
- * @author Nanda
+ * @author Marcela
  */
 public interface IRepositorioRefeicoes {
+ 
+    public void inserir(Refeicao refeicao);
+    public boolean existe(Refeicao refeicao);
+    public void atualizar(Refeicao refeicao);
+    public Refeicao procurarPorId(int idRefeicao);
     
 }
