@@ -10,13 +10,11 @@ package negocio;
  */
 public class Cartao {
     private int idCartao;
-    private int numCartao;
     private float saldo;
     private EnumStatusCartao status;
     
-    public Cartao(int idCartao,int numCartao){
+    public Cartao(int idCartao){
         this.idCartao = idCartao;
-        this.numCartao = numCartao;
         this.status = EnumStatusCartao.ATIVO;
         this.saldo=0;       
     }
@@ -35,21 +33,7 @@ public class Cartao {
         this.idCartao = idCartao;
     }
 
-    /**
-     * @return the numCartao
-     */
-    public int getNumCartao() {
-        return numCartao;
-    }
-
-    /**
-     * @param numCartao the numCartao to set
-     */
-    public void setNumCartao(int numCartao) {
-        this.numCartao = numCartao;
-    }
-
-    /**
+   /**
      * @return the saldo
      */
     public float getSaldo() {

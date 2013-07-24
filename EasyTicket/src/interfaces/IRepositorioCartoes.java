@@ -16,8 +16,5 @@ public interface IRepositorioCartoes {
     public boolean existe(Cartao cartao);
     public void atualizar(Cartao cartao);
     public Cartao procurarPorNumero(int numeroCartao);
-    public Cartao procurarPorCpf(int cpf);
-    
-    
-    
-}
+    public Cartao procurarPorCpf(int cpf);  
+ }
