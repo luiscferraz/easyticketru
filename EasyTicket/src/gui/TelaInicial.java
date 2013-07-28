@@ -29,15 +29,16 @@ public class TelaInicial extends javax.swing.JFrame {
         TelaAbas = new javax.swing.JTabbedPane();
         TelaInicial = new javax.swing.JPanel();
         logoEasyTicket = new javax.swing.JLabel();
-        TelaAlunos = new javax.swing.JPanel();
+        titulo = new javax.swing.JLabel();
+        TelaAlunos1 = new javax.swing.JPanel();
         tabelaAlunos = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
-        botaoCadastrarAluno = new javax.swing.JButton();
-        botaoEditarAluno = new javax.swing.JButton();
-        botaoExcluirAluno = new javax.swing.JButton();
+        jTable6 = new javax.swing.JTable();
         tituloAlunos = new javax.swing.JLabel();
         botaoVisualizarAluno = new javax.swing.JButton();
-        jSeparator2 = new javax.swing.JSeparator();
+        botaoEditarAluno = new javax.swing.JButton();
+        botaoExcluirAluno = new javax.swing.JButton();
+        jSeparator6 = new javax.swing.JSeparator();
+        botaoCadastrarAluno = new javax.swing.JButton();
         TelaFuncionarios = new javax.swing.JPanel();
         tabelaFuncionarios = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -45,8 +46,35 @@ public class TelaInicial extends javax.swing.JFrame {
         botaoVisualizarFuncionario = new javax.swing.JButton();
         botaoEditarFuncionario = new javax.swing.JButton();
         botaoExcluirFuncionario = new javax.swing.JButton();
-        botaoCadastrarFuncionario = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
+        botaoCadastrarFuncionario = new javax.swing.JButton();
+        TelaCartoes = new javax.swing.JPanel();
+        tabelaCartoes = new javax.swing.JScrollPane();
+        jTable4 = new javax.swing.JTable();
+        tituloCartoes = new javax.swing.JLabel();
+        botaoVisualizarCartao = new javax.swing.JButton();
+        botaoEditarCartao = new javax.swing.JButton();
+        botaoExcluirCartao = new javax.swing.JButton();
+        jSeparator4 = new javax.swing.JSeparator();
+        botaoCadastrarCartao = new javax.swing.JButton();
+        TelaPagamentos = new javax.swing.JPanel();
+        tabelaPagamentos = new javax.swing.JScrollPane();
+        jTable5 = new javax.swing.JTable();
+        tituloPagamentos = new javax.swing.JLabel();
+        botaoVisualizarPagamento = new javax.swing.JButton();
+        botaoEditarPagamento = new javax.swing.JButton();
+        botaoExcluirPagamento = new javax.swing.JButton();
+        jSeparator5 = new javax.swing.JSeparator();
+        botaoCadastrarPagamento = new javax.swing.JButton();
+        TelaCursos = new javax.swing.JPanel();
+        tabelaCursos = new javax.swing.JScrollPane();
+        jTable3 = new javax.swing.JTable();
+        tituloCursos = new javax.swing.JLabel();
+        botaoVisualizarCurso = new javax.swing.JButton();
+        botaoEditarCurso = new javax.swing.JButton();
+        botaoExcluirCurso = new javax.swing.JButton();
+        jSeparator3 = new javax.swing.JSeparator();
+        botaoCadastrarCurso = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(153, 153, 180));
@@ -65,26 +93,37 @@ public class TelaInicial extends javax.swing.JFrame {
 
         logoEasyTicket.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/logo2.png"))); // NOI18N
 
+        titulo.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        titulo.setText("Easy Ticket RU");
+        titulo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
         javax.swing.GroupLayout TelaInicialLayout = new javax.swing.GroupLayout(TelaInicial);
         TelaInicial.setLayout(TelaInicialLayout);
         TelaInicialLayout.setHorizontalGroup(
             TelaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(TelaInicialLayout.createSequentialGroup()
-                .addGap(196, 196, 196)
-                .addComponent(logoEasyTicket)
-                .addContainerGap(229, Short.MAX_VALUE))
+                .addContainerGap(227, Short.MAX_VALUE)
+                .addGroup(TelaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TelaInicialLayout.createSequentialGroup()
+                        .addComponent(logoEasyTicket)
+                        .addGap(191, 191, 191))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TelaInicialLayout.createSequentialGroup()
+                        .addComponent(titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(181, 181, 181))))
         );
         TelaInicialLayout.setVerticalGroup(
             TelaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(TelaInicialLayout.createSequentialGroup()
-                .addGap(153, 153, 153)
+                .addGap(114, 114, 114)
                 .addComponent(logoEasyTicket)
-                .addContainerGap(222, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(176, Short.MAX_VALUE))
         );
 
         TelaAbas.addTab("Inicial", TelaInicial);
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        jTable6.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -102,17 +141,22 @@ public class TelaInicial extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "Nome", "CPF", "Curso", "Status"
+                "Nome", "CPF", "Cargo ", "Status"
             }
         ));
-        tabelaAlunos.setViewportView(jTable2);
+        tabelaAlunos.setViewportView(jTable6);
 
-        botaoCadastrarAluno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/add.png"))); // NOI18N
-        botaoCadastrarAluno.setText("Cadastrar novo");
-        botaoCadastrarAluno.setToolTipText("");
-        botaoCadastrarAluno.addActionListener(new java.awt.event.ActionListener() {
+        tituloAlunos.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        tituloAlunos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/alunos.png"))); // NOI18N
+        tituloAlunos.setText("           Alunos");
+
+        botaoVisualizarAluno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/view.png"))); // NOI18N
+        botaoVisualizarAluno.setText("Visualizar");
+        botaoVisualizarAluno.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botaoVisualizarAluno.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        botaoVisualizarAluno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoCadastrarAlunoActionPerformed(evt);
+                botaoVisualizarAlunoActionPerformed(evt);
             }
         });
 
@@ -126,64 +170,62 @@ public class TelaInicial extends javax.swing.JFrame {
         botaoExcluirAluno.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         botaoExcluirAluno.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        tituloAlunos.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        tituloAlunos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/alunos.png"))); // NOI18N
-        tituloAlunos.setText("            Alunos");
-
-        botaoVisualizarAluno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/view.png"))); // NOI18N
-        botaoVisualizarAluno.setText("Visualizar");
-        botaoVisualizarAluno.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        botaoVisualizarAluno.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        botaoVisualizarAluno.addActionListener(new java.awt.event.ActionListener() {
+        botaoCadastrarAluno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/add.png"))); // NOI18N
+        botaoCadastrarAluno.setText("Cadastrar");
+        botaoCadastrarAluno.setToolTipText("");
+        botaoCadastrarAluno.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botaoCadastrarAluno.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        botaoCadastrarAluno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoVisualizarAlunoActionPerformed(evt);
+                botaoCadastrarAlunoActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout TelaAlunosLayout = new javax.swing.GroupLayout(TelaAlunos);
-        TelaAlunos.setLayout(TelaAlunosLayout);
-        TelaAlunosLayout.setHorizontalGroup(
-            TelaAlunosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(TelaAlunosLayout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(tituloAlunos, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(TelaAlunosLayout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addGroup(TelaAlunosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(TelaAlunosLayout.createSequentialGroup()
-                        .addComponent(tabelaAlunos)
+        javax.swing.GroupLayout TelaAlunos1Layout = new javax.swing.GroupLayout(TelaAlunos1);
+        TelaAlunos1.setLayout(TelaAlunos1Layout);
+        TelaAlunos1Layout.setHorizontalGroup(
+            TelaAlunos1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TelaAlunos1Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addGroup(TelaAlunos1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(TelaAlunos1Layout.createSequentialGroup()
+                        .addComponent(tituloAlunos)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(TelaAlunos1Layout.createSequentialGroup()
+                        .addComponent(tabelaAlunos, javax.swing.GroupLayout.PREFERRED_SIZE, 496, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addGroup(TelaAlunosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(botaoVisualizarAluno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(TelaAlunos1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(botaoCadastrarAluno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(botaoExcluirAluno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(botaoEditarAluno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addComponent(botaoCadastrarAluno)
-                    .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 584, Short.MAX_VALUE))
-                .addGap(27, 27, 27))
+                            .addComponent(botaoEditarAluno, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(botaoVisualizarAluno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18))
+                    .addGroup(TelaAlunos1Layout.createSequentialGroup()
+                        .addComponent(jSeparator6)
+                        .addContainerGap())))
         );
-        TelaAlunosLayout.setVerticalGroup(
-            TelaAlunosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TelaAlunosLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(tituloAlunos)
+        TelaAlunos1Layout.setVerticalGroup(
+            TelaAlunos1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TelaAlunos1Layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(tituloAlunos, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(8, 8, 8)
-                .addGroup(TelaAlunosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(TelaAlunosLayout.createSequentialGroup()
+                .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(TelaAlunos1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(TelaAlunos1Layout.createSequentialGroup()
                         .addComponent(botaoVisualizarAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(botaoEditarAluno)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(botaoExcluirAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(tabelaAlunos, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(botaoCadastrarAluno)
-                .addContainerGap(39, Short.MAX_VALUE))
+                        .addComponent(botaoExcluirAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
+                        .addComponent(botaoCadastrarAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tabelaAlunos, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addGap(30, 30, 30))
         );
 
-        TelaAbas.addTab("Alunos", TelaAlunos);
+        TelaAbas.addTab("Alunos", TelaAlunos1);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -233,8 +275,10 @@ public class TelaInicial extends javax.swing.JFrame {
         botaoExcluirFuncionario.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
         botaoCadastrarFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/add.png"))); // NOI18N
-        botaoCadastrarFuncionario.setText("Cadastrar novo");
+        botaoCadastrarFuncionario.setText("Cadastrar");
         botaoCadastrarFuncionario.setToolTipText("");
+        botaoCadastrarFuncionario.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botaoCadastrarFuncionario.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         botaoCadastrarFuncionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoCadastrarFuncionarioActionPerformed(evt);
@@ -247,24 +291,22 @@ public class TelaInicial extends javax.swing.JFrame {
             TelaFuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(TelaFuncionariosLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addGroup(TelaFuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, TelaFuncionariosLayout.createSequentialGroup()
+                .addGroup(TelaFuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(TelaFuncionariosLayout.createSequentialGroup()
                         .addComponent(tituloFuncionarios)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(TelaFuncionariosLayout.createSequentialGroup()
-                        .addGroup(TelaFuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(TelaFuncionariosLayout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(botaoCadastrarFuncionario))
-                            .addGroup(TelaFuncionariosLayout.createSequentialGroup()
-                                .addComponent(tabelaFuncionarios, javax.swing.GroupLayout.DEFAULT_SIZE, 485, Short.MAX_VALUE)
-                                .addGap(18, 18, 18)
-                                .addGroup(TelaFuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(botaoEditarFuncionario, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(botaoExcluirFuncionario, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(botaoVisualizarFuncionario, javax.swing.GroupLayout.Alignment.TRAILING)))
-                            .addComponent(jSeparator1))
-                        .addGap(29, 29, 29))))
+                        .addComponent(tabelaFuncionarios, javax.swing.GroupLayout.PREFERRED_SIZE, 496, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(TelaFuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(botaoCadastrarFuncionario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(botaoExcluirFuncionario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(botaoEditarFuncionario, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(botaoVisualizarFuncionario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18))
+                    .addGroup(TelaFuncionariosLayout.createSequentialGroup()
+                        .addComponent(jSeparator1)
+                        .addContainerGap())))
         );
         TelaFuncionariosLayout.setVerticalGroup(
             TelaFuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -280,14 +322,326 @@ public class TelaInicial extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(botaoEditarFuncionario)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(botaoExcluirFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(tabelaFuncionarios, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(botaoCadastrarFuncionario)
-                .addContainerGap(40, Short.MAX_VALUE))
+                        .addComponent(botaoExcluirFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
+                        .addComponent(botaoCadastrarFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tabelaFuncionarios, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addGap(30, 30, 30))
         );
 
         TelaAbas.addTab("Funcionários", TelaFuncionarios);
+
+        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Nome", "CPF", "Cargo ", "Status"
+            }
+        ));
+        tabelaCartoes.setViewportView(jTable4);
+
+        tituloCartoes.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        tituloCartoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/cartoes.png"))); // NOI18N
+        tituloCartoes.setText("           Cartões");
+
+        botaoVisualizarCartao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/view.png"))); // NOI18N
+        botaoVisualizarCartao.setText("Visualizar");
+        botaoVisualizarCartao.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botaoVisualizarCartao.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        botaoVisualizarCartao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoVisualizarCartaoActionPerformed(evt);
+            }
+        });
+
+        botaoEditarCartao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/edit.png"))); // NOI18N
+        botaoEditarCartao.setText("Editar");
+        botaoEditarCartao.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botaoEditarCartao.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+
+        botaoExcluirCartao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/delete.png"))); // NOI18N
+        botaoExcluirCartao.setText("Excluir");
+        botaoExcluirCartao.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botaoExcluirCartao.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+
+        botaoCadastrarCartao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/add.png"))); // NOI18N
+        botaoCadastrarCartao.setText("Cadastrar");
+        botaoCadastrarCartao.setToolTipText("");
+        botaoCadastrarCartao.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botaoCadastrarCartao.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        botaoCadastrarCartao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoCadastrarCartaoActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout TelaCartoesLayout = new javax.swing.GroupLayout(TelaCartoes);
+        TelaCartoes.setLayout(TelaCartoesLayout);
+        TelaCartoesLayout.setHorizontalGroup(
+            TelaCartoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TelaCartoesLayout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addGroup(TelaCartoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(TelaCartoesLayout.createSequentialGroup()
+                        .addComponent(tituloCartoes)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(TelaCartoesLayout.createSequentialGroup()
+                        .addComponent(tabelaCartoes, javax.swing.GroupLayout.PREFERRED_SIZE, 496, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(TelaCartoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(botaoCadastrarCartao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(botaoExcluirCartao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(botaoEditarCartao, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(botaoVisualizarCartao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18))
+                    .addGroup(TelaCartoesLayout.createSequentialGroup()
+                        .addComponent(jSeparator4)
+                        .addContainerGap())))
+        );
+        TelaCartoesLayout.setVerticalGroup(
+            TelaCartoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TelaCartoesLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(tituloCartoes, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(TelaCartoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(TelaCartoesLayout.createSequentialGroup()
+                        .addComponent(botaoVisualizarCartao, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(botaoEditarCartao)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(botaoExcluirCartao, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
+                        .addComponent(botaoCadastrarCartao, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tabelaCartoes, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addGap(30, 30, 30))
+        );
+
+        TelaAbas.addTab("Cartões", TelaCartoes);
+
+        jTable5.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Nome", "CPF", "Cargo ", "Status"
+            }
+        ));
+        tabelaPagamentos.setViewportView(jTable5);
+
+        tituloPagamentos.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        tituloPagamentos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/pagamentos.png"))); // NOI18N
+        tituloPagamentos.setText("           Pagamentos");
+
+        botaoVisualizarPagamento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/view.png"))); // NOI18N
+        botaoVisualizarPagamento.setText("Visualizar");
+        botaoVisualizarPagamento.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botaoVisualizarPagamento.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        botaoVisualizarPagamento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoVisualizarPagamentoActionPerformed(evt);
+            }
+        });
+
+        botaoEditarPagamento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/edit.png"))); // NOI18N
+        botaoEditarPagamento.setText("Editar");
+        botaoEditarPagamento.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botaoEditarPagamento.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+
+        botaoExcluirPagamento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/delete.png"))); // NOI18N
+        botaoExcluirPagamento.setText("Excluir");
+        botaoExcluirPagamento.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botaoExcluirPagamento.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+
+        botaoCadastrarPagamento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/add.png"))); // NOI18N
+        botaoCadastrarPagamento.setText("Cadastrar");
+        botaoCadastrarPagamento.setToolTipText("");
+        botaoCadastrarPagamento.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botaoCadastrarPagamento.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        botaoCadastrarPagamento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoCadastrarPagamentoActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout TelaPagamentosLayout = new javax.swing.GroupLayout(TelaPagamentos);
+        TelaPagamentos.setLayout(TelaPagamentosLayout);
+        TelaPagamentosLayout.setHorizontalGroup(
+            TelaPagamentosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TelaPagamentosLayout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addGroup(TelaPagamentosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(TelaPagamentosLayout.createSequentialGroup()
+                        .addComponent(tituloPagamentos)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(TelaPagamentosLayout.createSequentialGroup()
+                        .addComponent(tabelaPagamentos, javax.swing.GroupLayout.PREFERRED_SIZE, 496, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(TelaPagamentosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(botaoCadastrarPagamento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(botaoExcluirPagamento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(botaoEditarPagamento, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(botaoVisualizarPagamento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18))
+                    .addGroup(TelaPagamentosLayout.createSequentialGroup()
+                        .addComponent(jSeparator5)
+                        .addContainerGap())))
+        );
+        TelaPagamentosLayout.setVerticalGroup(
+            TelaPagamentosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TelaPagamentosLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(tituloPagamentos, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(TelaPagamentosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(TelaPagamentosLayout.createSequentialGroup()
+                        .addComponent(botaoVisualizarPagamento, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(botaoEditarPagamento)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(botaoExcluirPagamento, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
+                        .addComponent(botaoCadastrarPagamento, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tabelaPagamentos, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addGap(30, 30, 30))
+        );
+
+        TelaAbas.addTab("Pagamentos", TelaPagamentos);
+
+        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Nome", "CPF", "Cargo ", "Status"
+            }
+        ));
+        tabelaCursos.setViewportView(jTable3);
+
+        tituloCursos.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        tituloCursos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/cursos.png"))); // NOI18N
+        tituloCursos.setText("           Cursos");
+
+        botaoVisualizarCurso.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/view.png"))); // NOI18N
+        botaoVisualizarCurso.setText("Visualizar");
+        botaoVisualizarCurso.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botaoVisualizarCurso.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        botaoVisualizarCurso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoVisualizarCursoActionPerformed(evt);
+            }
+        });
+
+        botaoEditarCurso.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/edit.png"))); // NOI18N
+        botaoEditarCurso.setText("Editar");
+        botaoEditarCurso.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botaoEditarCurso.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+
+        botaoExcluirCurso.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/delete.png"))); // NOI18N
+        botaoExcluirCurso.setText("Excluir");
+        botaoExcluirCurso.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botaoExcluirCurso.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+
+        botaoCadastrarCurso.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/add.png"))); // NOI18N
+        botaoCadastrarCurso.setText("Cadastrar");
+        botaoCadastrarCurso.setToolTipText("");
+        botaoCadastrarCurso.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botaoCadastrarCurso.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        botaoCadastrarCurso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoCadastrarCursoActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout TelaCursosLayout = new javax.swing.GroupLayout(TelaCursos);
+        TelaCursos.setLayout(TelaCursosLayout);
+        TelaCursosLayout.setHorizontalGroup(
+            TelaCursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TelaCursosLayout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addGroup(TelaCursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(TelaCursosLayout.createSequentialGroup()
+                        .addComponent(tituloCursos)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(TelaCursosLayout.createSequentialGroup()
+                        .addComponent(tabelaCursos, javax.swing.GroupLayout.PREFERRED_SIZE, 496, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(TelaCursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(botaoCadastrarCurso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(botaoExcluirCurso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(botaoEditarCurso, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(botaoVisualizarCurso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18))
+                    .addGroup(TelaCursosLayout.createSequentialGroup()
+                        .addComponent(jSeparator3)
+                        .addContainerGap())))
+        );
+        TelaCursosLayout.setVerticalGroup(
+            TelaCursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TelaCursosLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(tituloCursos, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(TelaCursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(TelaCursosLayout.createSequentialGroup()
+                        .addComponent(botaoVisualizarCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(botaoEditarCurso)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(botaoExcluirCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
+                        .addComponent(botaoCadastrarCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tabelaCursos, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addGap(30, 30, 30))
+        );
+
+        TelaAbas.addTab("Cursos", TelaCursos);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -311,14 +665,6 @@ public class TelaInicial extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void botaoCadastrarAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrarAlunoActionPerformed
-        new TelaAddAluno().setVisible(true);
-    }//GEN-LAST:event_botaoCadastrarAlunoActionPerformed
-
-    private void botaoVisualizarAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVisualizarAlunoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botaoVisualizarAlunoActionPerformed
-
     private void botaoVisualizarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVisualizarFuncionarioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_botaoVisualizarFuncionarioActionPerformed
@@ -326,6 +672,38 @@ public class TelaInicial extends javax.swing.JFrame {
     private void botaoCadastrarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrarFuncionarioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_botaoCadastrarFuncionarioActionPerformed
+
+    private void botaoVisualizarCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVisualizarCursoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botaoVisualizarCursoActionPerformed
+
+    private void botaoCadastrarCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrarCursoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botaoCadastrarCursoActionPerformed
+
+    private void botaoVisualizarCartaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVisualizarCartaoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botaoVisualizarCartaoActionPerformed
+
+    private void botaoCadastrarCartaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrarCartaoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botaoCadastrarCartaoActionPerformed
+
+    private void botaoVisualizarPagamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVisualizarPagamentoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botaoVisualizarPagamentoActionPerformed
+
+    private void botaoCadastrarPagamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrarPagamentoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botaoCadastrarPagamentoActionPerformed
+
+    private void botaoVisualizarAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVisualizarAlunoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botaoVisualizarAlunoActionPerformed
+
+    private void botaoCadastrarAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrarAlunoActionPerformed
+        new TelaAddAluno().setVisible(true);
+    }//GEN-LAST:event_botaoCadastrarAlunoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -363,25 +741,53 @@ public class TelaInicial extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTabbedPane TelaAbas;
-    private javax.swing.JPanel TelaAlunos;
+    private javax.swing.JPanel TelaAlunos1;
+    private javax.swing.JPanel TelaCartoes;
+    private javax.swing.JPanel TelaCursos;
     private javax.swing.JPanel TelaFuncionarios;
     private javax.swing.JPanel TelaInicial;
+    private javax.swing.JPanel TelaPagamentos;
     private javax.swing.JButton botaoCadastrarAluno;
+    private javax.swing.JButton botaoCadastrarCartao;
+    private javax.swing.JButton botaoCadastrarCurso;
     private javax.swing.JButton botaoCadastrarFuncionario;
+    private javax.swing.JButton botaoCadastrarPagamento;
     private javax.swing.JButton botaoEditarAluno;
+    private javax.swing.JButton botaoEditarCartao;
+    private javax.swing.JButton botaoEditarCurso;
     private javax.swing.JButton botaoEditarFuncionario;
+    private javax.swing.JButton botaoEditarPagamento;
     private javax.swing.JButton botaoExcluirAluno;
+    private javax.swing.JButton botaoExcluirCartao;
+    private javax.swing.JButton botaoExcluirCurso;
     private javax.swing.JButton botaoExcluirFuncionario;
+    private javax.swing.JButton botaoExcluirPagamento;
     private javax.swing.JButton botaoVisualizarAluno;
+    private javax.swing.JButton botaoVisualizarCartao;
+    private javax.swing.JButton botaoVisualizarCurso;
     private javax.swing.JButton botaoVisualizarFuncionario;
+    private javax.swing.JButton botaoVisualizarPagamento;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JSeparator jSeparator6;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
+    private javax.swing.JTable jTable3;
+    private javax.swing.JTable jTable4;
+    private javax.swing.JTable jTable5;
+    private javax.swing.JTable jTable6;
     private javax.swing.JLabel logoEasyTicket;
     private javax.swing.JScrollPane tabelaAlunos;
+    private javax.swing.JScrollPane tabelaCartoes;
+    private javax.swing.JScrollPane tabelaCursos;
     private javax.swing.JScrollPane tabelaFuncionarios;
+    private javax.swing.JScrollPane tabelaPagamentos;
+    private javax.swing.JLabel titulo;
     private javax.swing.JLabel tituloAlunos;
+    private javax.swing.JLabel tituloCartoes;
+    private javax.swing.JLabel tituloCursos;
     private javax.swing.JLabel tituloFuncionarios;
+    private javax.swing.JLabel tituloPagamentos;
     // End of variables declaration//GEN-END:variables
 }
