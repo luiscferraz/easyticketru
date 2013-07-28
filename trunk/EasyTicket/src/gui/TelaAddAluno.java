@@ -36,6 +36,8 @@ public class TelaAddAluno extends javax.swing.JFrame {
         tituloCurso = new javax.swing.JLabel();
         campoCpf = new javax.swing.JTextField();
         campoDataNasc = new javax.swing.JFormattedTextField();
+        campoCurso = new javax.swing.JComboBox();
+        botaoVoltar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -69,8 +71,19 @@ public class TelaAddAluno extends javax.swing.JFrame {
             }
         });
 
-        campoDataNasc.setToolTipText("");
+        campoDataNasc.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
+        campoDataNasc.setToolTipText("Date");
         campoDataNasc.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+
+        campoCurso.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione", "Sistemas de Informação", "Ciência da Computação", "Licenciatura em Informática" }));
+
+        botaoVoltar.setText("Voltar");
+        botaoVoltar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botaoVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoVoltarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout PainelCadastrarAlunoLayout = new javax.swing.GroupLayout(PainelCadastrarAluno);
         PainelCadastrarAluno.setLayout(PainelCadastrarAlunoLayout);
@@ -87,20 +100,23 @@ public class TelaAddAluno extends javax.swing.JFrame {
                         .addComponent(tituloDataNasc)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(campoDataNasc))
-                    .addComponent(tituloCurso)
                     .addGroup(PainelCadastrarAlunoLayout.createSequentialGroup()
                         .addComponent(tituloNome)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(PainelCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(PainelCadastrarAlunoLayout.createSequentialGroup()
                                 .addComponent(tituloCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 23, Short.MAX_VALUE))
-                            .addComponent(campoNome))))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(campoNome)))
+                    .addGroup(PainelCadastrarAlunoLayout.createSequentialGroup()
+                        .addComponent(tituloCurso)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(campoCurso, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PainelCadastrarAlunoLayout.createSequentialGroup()
+                        .addComponent(botaoVoltar, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
+                        .addGap(60, 60, 60)
+                        .addComponent(botaoCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PainelCadastrarAlunoLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(botaoCadastrar)
-                .addGap(77, 77, 77))
         );
         PainelCadastrarAlunoLayout.setVerticalGroup(
             PainelCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -120,10 +136,16 @@ public class TelaAddAluno extends javax.swing.JFrame {
                     .addComponent(tituloDataNasc)
                     .addComponent(campoDataNasc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(tituloCurso)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(botaoCadastrar)
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addGroup(PainelCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tituloCurso)
+                    .addComponent(campoCurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(PainelCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(botaoCadastrar, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
+                    .addGroup(PainelCadastrarAlunoLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(botaoVoltar)))
+                .addGap(19, 19, 19))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -153,6 +175,10 @@ public class TelaAddAluno extends javax.swing.JFrame {
     private void campoCpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoCpfActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_campoCpfActionPerformed
+
+    private void botaoVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltarActionPerformed
+        this.setVisible(false);
+    }//GEN-LAST:event_botaoVoltarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -191,7 +217,9 @@ public class TelaAddAluno extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PainelCadastrarAluno;
     private javax.swing.JButton botaoCadastrar;
+    private javax.swing.JButton botaoVoltar;
     private javax.swing.JTextField campoCpf;
+    private javax.swing.JComboBox campoCurso;
     private javax.swing.JFormattedTextField campoDataNasc;
     private javax.swing.JTextField campoNome;
     private javax.swing.JLabel tituloCadastrar;
