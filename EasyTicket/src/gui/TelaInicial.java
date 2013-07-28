@@ -30,15 +30,19 @@ public class TelaInicial extends javax.swing.JFrame {
         TelaInicial = new javax.swing.JPanel();
         logoEasyTicket = new javax.swing.JLabel();
         TelaAlunos = new javax.swing.JPanel();
-        PainelCadastrarAluno = new javax.swing.JPanel();
-        tituloCadastrar = new javax.swing.JLabel();
-        tituloNome = new javax.swing.JLabel();
-        tituloCpf = new javax.swing.JLabel();
-        tituloDataNascimento = new javax.swing.JLabel();
-        tituloCurso = new javax.swing.JLabel();
-        comboBoxCursos = new javax.swing.JComboBox();
-        botaoCadastrar = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
+        jLabel2 = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
         TelaFuncionarios = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(153, 153, 180));
@@ -57,119 +61,169 @@ public class TelaInicial extends javax.swing.JFrame {
             .addGroup(TelaInicialLayout.createSequentialGroup()
                 .addGap(176, 176, 176)
                 .addComponent(logoEasyTicket)
-                .addContainerGap(213, Short.MAX_VALUE))
+                .addContainerGap(106, Short.MAX_VALUE))
         );
         TelaInicialLayout.setVerticalGroup(
             TelaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(TelaInicialLayout.createSequentialGroup()
                 .addGap(49, 49, 49)
                 .addComponent(logoEasyTicket)
-                .addContainerGap(212, Short.MAX_VALUE))
+                .addContainerGap(144, Short.MAX_VALUE))
         );
 
         TelaAbas.addTab("Inicial", TelaInicial);
 
-        tituloCadastrar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        tituloCadastrar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        tituloCadastrar.setText("Cadastrar Novo Aluno");
-        tituloCadastrar.setToolTipText("");
-        tituloCadastrar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Nome", "CPF", "Curso", "Status"
+            }
+        ));
+        jScrollPane2.setViewportView(jTable2);
 
-        tituloNome.setText("Nome:");
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel2.setText("Alunos");
 
-        tituloCpf.setText("Cpf:");
+        jButton4.setText("Cadastrar");
 
-        tituloDataNascimento.setText("Data de Nascimento:");
+        jButton5.setText("Editar");
 
-        tituloCurso.setText("Curso:");
-
-        comboBoxCursos.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        comboBoxCursos.setToolTipText("");
-
-        botaoCadastrar.setText("Cadastrar");
-        botaoCadastrar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-
-        javax.swing.GroupLayout PainelCadastrarAlunoLayout = new javax.swing.GroupLayout(PainelCadastrarAluno);
-        PainelCadastrarAluno.setLayout(PainelCadastrarAlunoLayout);
-        PainelCadastrarAlunoLayout.setHorizontalGroup(
-            PainelCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PainelCadastrarAlunoLayout.createSequentialGroup()
-                .addGroup(PainelCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PainelCadastrarAlunoLayout.createSequentialGroup()
-                        .addGap(68, 68, 68)
-                        .addComponent(tituloCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(PainelCadastrarAlunoLayout.createSequentialGroup()
-                        .addGap(117, 117, 117)
-                        .addComponent(botaoCadastrar)))
-                .addContainerGap(137, Short.MAX_VALUE))
-            .addGroup(PainelCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(PainelCadastrarAlunoLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addGroup(PainelCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(PainelCadastrarAlunoLayout.createSequentialGroup()
-                            .addComponent(tituloCurso)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(comboBoxCursos, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PainelCadastrarAlunoLayout.createSequentialGroup()
-                            .addGroup(PainelCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(tituloNome)
-                                .addComponent(tituloCpf))
-                            .addContainerGap(327, Short.MAX_VALUE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PainelCadastrarAlunoLayout.createSequentialGroup()
-                            .addComponent(tituloDataNascimento)
-                            .addContainerGap(258, Short.MAX_VALUE)))))
-        );
-        PainelCadastrarAlunoLayout.setVerticalGroup(
-            PainelCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PainelCadastrarAlunoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(tituloCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 119, Short.MAX_VALUE)
-                .addComponent(botaoCadastrar)
-                .addGap(42, 42, 42))
-            .addGroup(PainelCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(PainelCadastrarAlunoLayout.createSequentialGroup()
-                    .addGap(58, 58, 58)
-                    .addComponent(tituloNome)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                    .addComponent(tituloCpf)
-                    .addGap(15, 15, 15)
-                    .addComponent(tituloDataNascimento)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(PainelCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(comboBoxCursos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(tituloCurso))
-                    .addContainerGap(84, Short.MAX_VALUE)))
-        );
+        jButton6.setText("Excluir");
 
         javax.swing.GroupLayout TelaAlunosLayout = new javax.swing.GroupLayout(TelaAlunos);
         TelaAlunos.setLayout(TelaAlunosLayout);
         TelaAlunosLayout.setHorizontalGroup(
             TelaAlunosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(TelaAlunosLayout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(PainelCadastrarAluno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(203, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(TelaAlunosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(TelaAlunosLayout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addContainerGap())
+                    .addGroup(TelaAlunosLayout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(TelaAlunosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(TelaAlunosLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGroup(TelaAlunosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jButton5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jButton6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(23, 23, 23))
+                            .addGroup(TelaAlunosLayout.createSequentialGroup()
+                                .addComponent(jButton4)
+                                .addContainerGap())))))
         );
         TelaAlunosLayout.setVerticalGroup(
             TelaAlunosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(TelaAlunosLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TelaAlunosLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(PainelCadastrarAluno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(126, Short.MAX_VALUE))
+                .addComponent(jLabel2)
+                .addGap(18, 18, 18)
+                .addGroup(TelaAlunosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(TelaAlunosLayout.createSequentialGroup()
+                        .addComponent(jButton4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton6)
+                        .addGap(0, 157, Short.MAX_VALUE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         TelaAbas.addTab("Alunos", TelaAlunos);
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Nome", "CPF", "Cargo ", "Status"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel1.setText("Funcionários");
+
+        jButton1.setText("Cadastrar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setText("Editar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jButton3.setText("Excluir");
 
         javax.swing.GroupLayout TelaFuncionariosLayout = new javax.swing.GroupLayout(TelaFuncionarios);
         TelaFuncionarios.setLayout(TelaFuncionariosLayout);
         TelaFuncionariosLayout.setHorizontalGroup(
             TelaFuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 589, Short.MAX_VALUE)
+            .addGroup(TelaFuncionariosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(TelaFuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addGroup(TelaFuncionariosLayout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(TelaFuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton1)
+                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
         TelaFuncionariosLayout.setVerticalGroup(
             TelaFuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 373, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TelaFuncionariosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addGroup(TelaFuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(TelaFuncionariosLayout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton3)
+                        .addGap(0, 157, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         TelaAbas.addTab("Funcionários", TelaFuncionarios);
@@ -180,21 +234,29 @@ public class TelaInicial extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(TelaAbas, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addComponent(TelaAbas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(TelaAbas, javax.swing.GroupLayout.PREFERRED_SIZE, 241, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(TelaAbas, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         TelaAbas.getAccessibleContext().setAccessibleName("");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -231,18 +293,22 @@ public class TelaInicial extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel PainelCadastrarAluno;
     private javax.swing.JTabbedPane TelaAbas;
     private javax.swing.JPanel TelaAlunos;
     private javax.swing.JPanel TelaFuncionarios;
     private javax.swing.JPanel TelaInicial;
-    private javax.swing.JButton botaoCadastrar;
-    private javax.swing.JComboBox comboBoxCursos;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
     private javax.swing.JLabel logoEasyTicket;
-    private javax.swing.JLabel tituloCadastrar;
-    private javax.swing.JLabel tituloCpf;
-    private javax.swing.JLabel tituloCurso;
-    private javax.swing.JLabel tituloDataNascimento;
-    private javax.swing.JLabel tituloNome;
     // End of variables declaration//GEN-END:variables
 }
