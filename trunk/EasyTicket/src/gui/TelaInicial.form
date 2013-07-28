@@ -19,7 +19,6 @@
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
-    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
   </SyntheticProperties>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
@@ -96,7 +95,7 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace pref="227" max="32767" attributes="0"/>
+                      <EmptySpace pref="234" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="logoEasyTicket" min="-2" max="-2" attributes="0"/>
@@ -117,7 +116,7 @@
                       <Component id="logoEasyTicket" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="titulo" min="-2" pref="67" max="-2" attributes="0"/>
-                      <EmptySpace pref="176" max="32767" attributes="0"/>
+                      <EmptySpace pref="151" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -196,7 +195,7 @@
                               <Component id="botaoEditarAluno" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="botaoExcluirAluno" min="-2" pref="68" max="-2" attributes="0"/>
-                              <EmptySpace pref="78" max="32767" attributes="0"/>
+                              <EmptySpace pref="53" max="32767" attributes="0"/>
                               <Component id="botaoCadastrarAluno" min="-2" pref="86" max="-2" attributes="0"/>
                           </Group>
                           <Component id="tabelaAlunos" alignment="0" pref="0" max="32767" attributes="0"/>
@@ -217,7 +216,7 @@
                 <Component class="javax.swing.JTable" name="jTable6">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="4" rowCount="14">
+                      <Table columnCount="4" rowCount="20">
                         <Column editable="true" title="Nome" type="java.lang.Object"/>
                         <Column editable="true" title="CPF" type="java.lang.Object"/>
                         <Column editable="true" title="Cargo " type="java.lang.Object"/>
@@ -370,7 +369,7 @@
                               <Component id="botaoEditarFuncionario" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="botaoExcluirFuncionario" min="-2" pref="68" max="-2" attributes="0"/>
-                              <EmptySpace pref="78" max="32767" attributes="0"/>
+                              <EmptySpace pref="53" max="32767" attributes="0"/>
                               <Component id="botaoCadastrarFuncionario" min="-2" pref="86" max="-2" attributes="0"/>
                           </Group>
                           <Component id="tabelaFuncionarios" pref="0" max="32767" attributes="0"/>
@@ -391,7 +390,7 @@
                 <Component class="javax.swing.JTable" name="jTable1">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="4" rowCount="14">
+                      <Table columnCount="4" rowCount="20">
                         <Column editable="true" title="Nome" type="java.lang.Object"/>
                         <Column editable="true" title="CPF" type="java.lang.Object"/>
                         <Column editable="true" title="Cargo " type="java.lang.Object"/>
@@ -544,7 +543,7 @@
                               <Component id="botaoEditarCartao" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="botaoExcluirCartao" min="-2" pref="68" max="-2" attributes="0"/>
-                              <EmptySpace pref="78" max="32767" attributes="0"/>
+                              <EmptySpace pref="53" max="32767" attributes="0"/>
                               <Component id="botaoCadastrarCartao" min="-2" pref="86" max="-2" attributes="0"/>
                           </Group>
                           <Component id="tabelaCartoes" alignment="0" pref="0" max="32767" attributes="0"/>
@@ -565,7 +564,7 @@
                 <Component class="javax.swing.JTable" name="jTable4">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="4" rowCount="14">
+                      <Table columnCount="4" rowCount="20">
                         <Column editable="true" title="Nome" type="java.lang.Object"/>
                         <Column editable="true" title="CPF" type="java.lang.Object"/>
                         <Column editable="true" title="Cargo " type="java.lang.Object"/>
@@ -718,7 +717,7 @@
                               <Component id="botaoEditarPagamento" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="botaoExcluirPagamento" min="-2" pref="68" max="-2" attributes="0"/>
-                              <EmptySpace pref="78" max="32767" attributes="0"/>
+                              <EmptySpace pref="53" max="32767" attributes="0"/>
                               <Component id="botaoCadastrarPagamento" min="-2" pref="86" max="-2" attributes="0"/>
                           </Group>
                           <Component id="tabelaPagamentos" alignment="0" pref="0" max="32767" attributes="0"/>
@@ -739,7 +738,7 @@
                 <Component class="javax.swing.JTable" name="jTable5">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="4" rowCount="14">
+                      <Table columnCount="4" rowCount="20">
                         <Column editable="true" title="Nome" type="java.lang.Object"/>
                         <Column editable="true" title="CPF" type="java.lang.Object"/>
                         <Column editable="true" title="Cargo " type="java.lang.Object"/>
@@ -892,7 +891,7 @@
                               <Component id="botaoEditarCurso" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="botaoExcluirCurso" min="-2" pref="68" max="-2" attributes="0"/>
-                              <EmptySpace pref="78" max="32767" attributes="0"/>
+                              <EmptySpace pref="53" max="32767" attributes="0"/>
                               <Component id="botaoCadastrarCurso" min="-2" pref="86" max="-2" attributes="0"/>
                           </Group>
                           <Component id="tabelaCursos" alignment="0" pref="0" max="32767" attributes="0"/>
@@ -913,7 +912,7 @@
                 <Component class="javax.swing.JTable" name="jTable3">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="4" rowCount="14">
+                      <Table columnCount="4" rowCount="20">
                         <Column editable="true" title="Nome" type="java.lang.Object"/>
                         <Column editable="true" title="CPF" type="java.lang.Object"/>
                         <Column editable="true" title="Cargo " type="java.lang.Object"/>
