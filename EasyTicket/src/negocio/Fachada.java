@@ -42,6 +42,25 @@ public class Fachada {
     
   }
   
+  
+  //definindo todos os métodos que estarão disponíveis para um cartão através da fachada.
+  public void cadastrarCartao(Cartao cartao){
+    cartoes.cadastrar(cartao);
+  }
+    
+  public void atualizarCartao(Cartao cartao){
+    cartoes.atualizar(cartao);  
+  }
+  
+  public Cartao buscaCartaoPorNumero(int numeroCartao){
+    cartoes.buscaPorNumero(numeroCartao);
+  }
+  
+  public Cartao buscaCartaoPorCpf(int cpf){
+    cartoes.buscaPorCpf(cpf);
+    
+  }
+  
 
     
 }
