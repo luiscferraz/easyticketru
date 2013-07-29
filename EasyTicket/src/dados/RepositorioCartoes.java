@@ -8,7 +8,7 @@ package dados;
  *
  * @author Nanda
  */
-public class RepositorioCartoes {
+public class RepositorioCartoes implements IRepositorioCartoes {
     //métodos apenas com assinatura, ainda falta definir a interação com o banco de dados.
     public void inserir(Cartao cartao){
     }
