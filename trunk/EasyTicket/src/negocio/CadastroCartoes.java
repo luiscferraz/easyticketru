@@ -27,6 +27,14 @@ public class CadastroCartoes {
   
   //fazer esses outros métodos após a definição da classe de repositório.
   
+  public Cartao buscaPorNumero(int numeroCartao){
+    return cartoes.procurarPorNumero(numeroCartao);
+  }
+  
+  public Cartao buscaPorCpf(int cpf){
+    return cartoes.procurarPorCpf(cpf);
+  }
+  
   
     
 }
