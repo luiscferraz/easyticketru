@@ -4,6 +4,9 @@
  */
 package dados;
 
+import interfaces.IRepositorioCartoes;
+import negocio.Cartao;
+
 /**
  *
  * @author Nanda
@@ -13,8 +16,9 @@ public class RepositorioCartoes implements IRepositorioCartoes {
     public void inserir(Cartao cartao){
     }
     
-    public boolean existe(Cartao cartao){
-      return boolean;
+    public boolean existe(int numeroCartao){
+      //retorno será um boolean, só foi colocado desta forma até implementar o método  
+      return true;
     }
     
     public void atualizar(Cartao cartao){

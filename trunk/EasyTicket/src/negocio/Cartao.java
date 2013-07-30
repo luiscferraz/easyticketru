@@ -12,11 +12,13 @@ public class Cartao {
     private int idCartao;
     private float saldo;
     private EnumStatusCartao status;
+    private int cpfAluno;
     
-    public Cartao(int idCartao){
+    public Cartao(int idCartao,int cpfAluno){
         this.idCartao = idCartao;
         this.status = EnumStatusCartao.ATIVO;
-        this.saldo=0;       
+        this.saldo=0;   
+        this.cpfAluno = cpfAluno;
     }
 
     /**
@@ -62,6 +64,20 @@ public class Cartao {
     }
     
     /**
+    * @return the cpfAluno
+    */
+    public int getCpfAluno() {
+        return cpfAluno;
+    }
+
+    /**
+     * @param cpfAluno the cpfAluno to set
+     */
+    public void setCpfAluno(int cpfAluno) {
+        this.cpfAluno = cpfAluno;
+    }
+    
+    /**
      * Método responsável pela emissão de saldo de um cartão
      * @param cartao
      * @return saldo
@@ -88,7 +104,7 @@ public class Cartao {
      * @param cartao 
      */
     public void inativarCartao(Cartao cartao){
-        this.status = EnumStatusCartao.INATIVO;        
+        cartao.status = EnumStatusCartao.INATIVO;        
     }
     
     /**
@@ -96,7 +112,7 @@ public class Cartao {
      * @param cartao 
      */
     public void ativarCartao(Cartao cartao){
-        this.status = EnumStatusCartao.INATIVO;
+        cartao.status = EnumStatusCartao.INATIVO;
     }
     
     /**
@@ -104,8 +120,10 @@ public class Cartao {
      * @param cartao 
      */
     public void bloquearCartao(Cartao cartao){
-        this.status = EnumStatusCartao.BLOQUEADO;
+        cartao.status = EnumStatusCartao.BLOQUEADO;
     }
+
+
     
     
 }

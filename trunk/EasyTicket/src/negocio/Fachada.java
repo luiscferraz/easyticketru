@@ -4,6 +4,10 @@
  */
 package negocio;
 
+import dados.RepositorioCartoes;
+import dados.RepositorioCursos;
+import dados.RepositorioRefeicoes;
+
 /**
  *
  * @author Nanda
@@ -53,11 +57,11 @@ public class Fachada {
   }
   
   public Cartao buscaCartaoPorNumero(int numeroCartao){
-    cartoes.buscaPorNumero(numeroCartao);
+    return cartoes.buscaPorNumero(numeroCartao);
   }
   
   public Cartao buscaCartaoPorCpf(int cpf){
-    cartoes.buscaPorCpf(cpf);
+    return cartoes.buscaPorCpf(cpf);
     
   }
   
