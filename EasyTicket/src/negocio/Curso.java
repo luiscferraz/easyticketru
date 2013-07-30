@@ -13,7 +13,11 @@ public class Curso {
     private int idCurso;
     private String nome;
     
-    public Curso(int idCurso, String nome){
+    public Curso(String nome){
+        this.nome = nome;        
+    }
+    
+    public Curso(int idCurso,String nome){
         this.idCurso = idCurso;
         this.nome = nome;        
     }

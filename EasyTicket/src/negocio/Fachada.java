@@ -15,8 +15,9 @@ import dados.RepositorioRefeicoes;
 public class Fachada {
 
   private static Fachada instancia;
-  private CadastroCartoes cartoes;
-  private CadastroRefeicoes refeicoes;
+  private CadastroCartoes cadastroCartoes;
+  //private CadastroRefeicoes cadastroRefeicoes;
+  private CadastroCursos cadastroCursos;
   
   
   //verifica se já existe um,a instancia da fachada em funcionamento
@@ -36,10 +37,7 @@ public class Fachada {
   private void initCadastros(){
     
     RepositorioCartoes repositorioCartoes = new RepositorioCartoes();
-    cadastroCartoes = new CadastroCartoes(repCartoes);
-  
-    RepositorioRefeicoes repositorioRefeicoes = new RepositorioRefeicoes();
-    cadastroRefeicoes = new CadastroRefeicoes(repositorioRefeicoes);
+    cadastroCartoes = new CadastroCartoes(repositorioCartoes);
   
     RepositorioCursos repositorioCursos = new RepositorioCursos();
     cadastroCursos = new CadastroCursos(repositorioCursos);
@@ -49,21 +47,37 @@ public class Fachada {
   
   //definindo todos os métodos que estarão disponíveis para um cartão através da fachada.
   public void cadastrarCartao(Cartao cartao){
-    cartoes.cadastrar(cartao);
+    cadastroCartoes.cadastrar(cartao);
   }
     
   public void atualizarCartao(Cartao cartao){
-    cartoes.atualizar(cartao);  
+    cadastroCartoes.atualizar(cartao);  
   }
   
   public Cartao buscaCartaoPorNumero(int numeroCartao){
-    return cartoes.buscaPorNumero(numeroCartao);
+    return cadastroCartoes.buscaPorNumero(numeroCartao);
   }
   
   public Cartao buscaCartaoPorCpf(int cpf){
-    return cartoes.buscaPorCpf(cpf);
+    return cadastroCartoes.buscaPorCpf(cpf);
     
   }
+  
+  
+  //curso
+  public void cadastrarCurso(Curso curso){
+    cadastroCursos.cadastrar(curso);
+  }
+    
+  public void atualizarCurso(Curso curso){
+    cadastroCursos.atualizar(curso);  
+  }
+  
+  public Curso buscaCursoPorId(int idCurso){
+    return cadastroCursos.buscaPorId(idCurso);
+  }
+  
+  
   
 
     
