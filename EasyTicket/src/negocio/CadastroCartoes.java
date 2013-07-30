@@ -4,22 +4,25 @@
  */
 package negocio;
 
+import dados.RepositorioCartoes;
+
 /**
  *
  * @author Nanda
  */
 public class CadastroCartoes {
+  
   private RepositorioCartoes cartoes;
   
-  public CadastroCartoes(RepositorioCartoes c){
-    this.cartoes = c;  
+  public CadastroCartoes(RepositorioCartoes repositorioCartoes){
+    this.cartoes = repositorioCartoes;  
   }
   
-  public void atualizar(Cartao c){
-    cartoes.atualizar(c);  
+  public void atualizar(Cartao cartao){
+    cartoes.atualizar(cartao);  
   }
   
-  public void cadastrar(Cartao c){
+  public void cadastrar(Cartao cartao){
     //definir as condições para ver se um aluno(verificar por CPF) já tem um cartão cadstrado.
   }
   
