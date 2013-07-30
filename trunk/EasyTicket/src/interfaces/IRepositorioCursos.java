@@ -12,7 +12,7 @@ import negocio.Curso;
  */
 public interface IRepositorioCursos {
     public void inserir(Curso curso);
-    public boolean existe(Curso curso);
+    public boolean existe(int idCurso);
     public void atualizar(Curso curso);
     public Curso procurarPorId(int idCurso);
     
