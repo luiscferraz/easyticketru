@@ -15,7 +15,7 @@ import negocio.Pagamento;
 public interface IRepositorioPagamentos {
     
     public void inserir(Pagamento pagamento);
-    public boolean existe(Pagamento pagamento);
+    public boolean existe(int idPagamento);
     public void atualizar(Pagamento pagamento);
     public Pagamento procurarPorId(int idPagamento);
     public ArrayList<Pagamento> buscarPorCartao(int idCartao);
