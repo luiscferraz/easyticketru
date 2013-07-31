@@ -14,7 +14,7 @@ import negocio.Aluno;
 public interface IRepositorioAlunos {
     
     public void inserir(Aluno aluno);
-    public boolean existe(Aluno aluno);
+    public boolean existe(int cpf);
     public void atualizar(Aluno aluno);
     public Aluno procurarPorCpf(int cpfAluno);
     public ArrayList<Aluno> buscarPorCurso(int idCurso);
