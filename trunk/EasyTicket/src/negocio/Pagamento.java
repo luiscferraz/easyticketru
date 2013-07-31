@@ -14,11 +14,13 @@ public class Pagamento {
     private int idPagamento;
     private Date dataPagamento;
     private float valor;
+    private int idCartao;
     
-    public Pagamento(int idPagamento, Date dataPagamento,float valor){
+    public Pagamento(int idPagamento, Date dataPagamento,float valor, int idCartao){
         this.idPagamento = idPagamento;
         this.dataPagamento = dataPagamento;
         this.valor = valor;
+        this.idCartao = idCartao;
     }
 
     /**
@@ -63,12 +65,30 @@ public class Pagamento {
         this.valor = valor;
     }
     
+
+    /**
+     * @return the idCartao
+     */
+    public int getIdCartao() {
+        return idCartao;
+    }
+
+    /**
+     * @param idCartao the idCartao to set
+     */
+    public void setIdCartao(int idCartao) {
+        this.idCartao = idCartao;
+    }
+    
+    
     
     public void efetuarPagamento(Cartao cartao){
         if((cartao.isAtivo(cartao)) && (cartao.getSaldo()>= this.valor)){
             cartao.setSaldo(cartao.getSaldo()-this.getValor());
         }
     }
+    
+    
     
     
     
