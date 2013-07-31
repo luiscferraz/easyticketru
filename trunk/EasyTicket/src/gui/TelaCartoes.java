@@ -73,7 +73,7 @@ public class TelaCartoes extends javax.swing.JFrame {
         tituloConsultar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         tituloConsultar.setText("Consultar Cartão");
 
-        tituloCpf.setText("Cpf:");
+        tituloCpf.setText("Número:");
 
         botaoPesquisar.setBackground(new java.awt.Color(255, 255, 255));
         botaoPesquisar.setForeground(new java.awt.Color(255, 255, 255));
@@ -93,19 +93,17 @@ public class TelaCartoes extends javax.swing.JFrame {
         painelConsultaLayout.setHorizontalGroup(
             painelConsultaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelConsultaLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(painelConsultaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(painelConsultaLayout.createSequentialGroup()
-                        .addComponent(tituloCpf)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(campoPesquisarCpfFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
-                        .addComponent(botaoPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelConsultaLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(tituloConsultar)
-                        .addGap(81, 81, 81))))
+                .addGap(18, 18, 18)
+                .addComponent(tituloCpf)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(campoPesquisarCpfFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(botaoPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelConsultaLayout.createSequentialGroup()
+                .addContainerGap(96, Short.MAX_VALUE)
+                .addComponent(tituloConsultar)
+                .addGap(81, 81, 81))
         );
         painelConsultaLayout.setVerticalGroup(
             painelConsultaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

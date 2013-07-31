@@ -6,6 +6,7 @@
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
   </SyntheticProperties>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
@@ -128,23 +129,19 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                          <Component id="tituloCpf" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="campoPesquisarCpfFunc" min="-2" pref="169" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="botaoPesquisar" min="-2" pref="46" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="tituloCpf" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="campoPesquisarCpfFunc" min="-2" pref="153" max="-2" attributes="0"/>
-                                  <EmptySpace pref="58" max="32767" attributes="0"/>
-                                  <Component id="botaoPesquisar" min="-2" pref="46" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                  <Component id="tituloConsultar" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace pref="96" max="32767" attributes="0"/>
+                          <Component id="tituloConsultar" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -182,7 +179,7 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="tituloCpf">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Cpf:"/>
+                    <Property name="text" type="java.lang.String" value="N&#xfa;mero:"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="campoPesquisarCpfFunc">

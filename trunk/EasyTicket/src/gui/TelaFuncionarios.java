@@ -149,6 +149,11 @@ public class TelaFuncionarios extends javax.swing.JPanel {
 
         botaoVoltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/back.png"))); // NOI18N
         botaoVoltar.setText("Voltar");
+        botaoVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoVoltarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout guiaConsultarAlunoLayout = new javax.swing.GroupLayout(guiaConsultarAluno);
         guiaConsultarAluno.setLayout(guiaConsultarAlunoLayout);
@@ -510,7 +515,7 @@ public class TelaFuncionarios extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(guiasAluno, javax.swing.GroupLayout.DEFAULT_SIZE, 626, Short.MAX_VALUE)
+                .addComponent(guiasAluno)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -538,6 +543,10 @@ public class TelaFuncionarios extends javax.swing.JPanel {
     private void campoCpfFuncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoCpfFuncActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_campoCpfFuncActionPerformed
+
+    private void botaoVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltarActionPerformed
+        this.setVisible(false);
+    }//GEN-LAST:event_botaoVoltarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botaoCadastrar1;

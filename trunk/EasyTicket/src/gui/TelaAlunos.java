@@ -30,14 +30,12 @@ public class TelaAlunos extends javax.swing.JFrame {
         guiaConsultarAluno = new javax.swing.JPanel();
         tituloAlunos = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        painelConsulta = new javax.swing.JPanel();
-        tituloConsultar = new javax.swing.JLabel();
-        tituloCpf = new javax.swing.JLabel();
-        campoPesquisarCpf = new javax.swing.JTextField();
-        botaoPesquisar = new javax.swing.JButton();
+        painelConsulta1 = new javax.swing.JPanel();
+        tituloConsultar1 = new javax.swing.JLabel();
+        tituloCpf4 = new javax.swing.JLabel();
+        campoPesquisarCpfFunc = new javax.swing.JTextField();
+        botaoPesquisar1 = new javax.swing.JButton();
         botaoVoltar = new javax.swing.JButton();
-        botaoCadastrar = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
         guiaEditarAluno = new javax.swing.JPanel();
         tituloCadastrar1 = new javax.swing.JLabel();
         campoNome1 = new javax.swing.JTextField();
@@ -78,110 +76,101 @@ public class TelaAlunos extends javax.swing.JFrame {
         tituloAlunos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/alunos.png"))); // NOI18N
         tituloAlunos.setText("           Alunos ");
 
-        painelConsulta.setBackground(new java.awt.Color(222, 235, 216));
-        painelConsulta.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(204, 204, 204)));
-        painelConsulta.setForeground(new java.awt.Color(204, 204, 204));
-        painelConsulta.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
+        painelConsulta1.setBackground(new java.awt.Color(222, 235, 216));
+        painelConsulta1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(204, 204, 204)));
+        painelConsulta1.setForeground(new java.awt.Color(204, 204, 204));
+        painelConsulta1.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
 
-        tituloConsultar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        tituloConsultar.setText("Consultar Aluno");
+        tituloConsultar1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        tituloConsultar1.setText("Consultar Cartão");
 
-        tituloCpf.setText("Cpf:");
+        tituloCpf4.setText("Cpf:");
 
-        botaoPesquisar.setBackground(new java.awt.Color(255, 255, 255));
-        botaoPesquisar.setForeground(new java.awt.Color(255, 255, 255));
-        botaoPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/search.png"))); // NOI18N
-        botaoPesquisar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        botaoPesquisar.setBorderPainted(false);
-        botaoPesquisar.setContentAreaFilled(false);
-        botaoPesquisar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        botaoPesquisar.addActionListener(new java.awt.event.ActionListener() {
+        botaoPesquisar1.setBackground(new java.awt.Color(255, 255, 255));
+        botaoPesquisar1.setForeground(new java.awt.Color(255, 255, 255));
+        botaoPesquisar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/search.png"))); // NOI18N
+        botaoPesquisar1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        botaoPesquisar1.setBorderPainted(false);
+        botaoPesquisar1.setContentAreaFilled(false);
+        botaoPesquisar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botaoPesquisar1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoPesquisarActionPerformed(evt);
+                botaoPesquisar1ActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout painelConsultaLayout = new javax.swing.GroupLayout(painelConsulta);
-        painelConsulta.setLayout(painelConsultaLayout);
-        painelConsultaLayout.setHorizontalGroup(
-            painelConsultaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(painelConsultaLayout.createSequentialGroup()
+        javax.swing.GroupLayout painelConsulta1Layout = new javax.swing.GroupLayout(painelConsulta1);
+        painelConsulta1.setLayout(painelConsulta1Layout);
+        painelConsulta1Layout.setHorizontalGroup(
+            painelConsulta1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painelConsulta1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(tituloCpf)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(painelConsultaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(tituloConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(campoPesquisarCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(botaoPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGroup(painelConsulta1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(painelConsulta1Layout.createSequentialGroup()
+                        .addComponent(tituloCpf4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(campoPesquisarCpfFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+                        .addComponent(botaoPesquisar1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelConsulta1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(tituloConsultar1)
+                        .addGap(81, 81, 81))))
         );
-        painelConsultaLayout.setVerticalGroup(
-            painelConsultaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(painelConsultaLayout.createSequentialGroup()
-                .addGroup(painelConsultaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(painelConsultaLayout.createSequentialGroup()
+        painelConsulta1Layout.setVerticalGroup(
+            painelConsulta1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painelConsulta1Layout.createSequentialGroup()
+                .addGroup(painelConsulta1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(painelConsulta1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(tituloConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tituloConsultar1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(25, 25, 25)
-                        .addGroup(painelConsultaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(tituloCpf)
-                            .addComponent(campoPesquisarCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(painelConsultaLayout.createSequentialGroup()
+                        .addGroup(painelConsulta1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(tituloCpf4)
+                            .addComponent(campoPesquisarCpfFunc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(painelConsulta1Layout.createSequentialGroup()
                         .addGap(56, 56, 56)
-                        .addComponent(botaoPesquisar)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(botaoPesquisar1)))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         botaoVoltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/back.png"))); // NOI18N
         botaoVoltar.setText("Voltar");
 
-        botaoCadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/add.png"))); // NOI18N
-        botaoCadastrar.setText("Cadastrar Novo Aluno");
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/miniLogo.png"))); // NOI18N
-
         javax.swing.GroupLayout guiaConsultarAlunoLayout = new javax.swing.GroupLayout(guiaConsultarAluno);
         guiaConsultarAluno.setLayout(guiaConsultarAlunoLayout);
         guiaConsultarAlunoLayout.setHorizontalGroup(
             guiaConsultarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, guiaConsultarAlunoLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(botaoVoltar)
+                .addGap(60, 60, 60))
             .addGroup(guiaConsultarAlunoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(guiaConsultarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(guiaConsultarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(guiaConsultarAlunoLayout.createSequentialGroup()
-                        .addComponent(painelConsulta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(115, 115, 115)
-                        .addGroup(guiaConsultarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(botaoVoltar, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(botaoCadastrar, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addGap(14, 14, 14))
-                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 572, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(21, Short.MAX_VALUE))
-            .addGroup(guiaConsultarAlunoLayout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(tituloAlunos, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(87, 87, 87))
+                        .addContainerGap()
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 572, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(guiaConsultarAlunoLayout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addComponent(tituloAlunos, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(guiaConsultarAlunoLayout.createSequentialGroup()
+                        .addGap(147, 147, 147)
+                        .addComponent(painelConsulta1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
         guiaConsultarAlunoLayout.setVerticalGroup(
             guiaConsultarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(guiaConsultarAlunoLayout.createSequentialGroup()
-                .addGroup(guiaConsultarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addGroup(guiaConsultarAlunoLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(tituloAlunos, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addContainerGap()
+                .addComponent(tituloAlunos, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(guiaConsultarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(guiaConsultarAlunoLayout.createSequentialGroup()
-                        .addComponent(botaoCadastrar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(botaoVoltar))
-                    .addComponent(painelConsulta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addComponent(painelConsulta1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(botaoVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         guiasAluno.addTab("Consultar Aluno", guiaConsultarAluno);
@@ -259,7 +248,7 @@ public class TelaAlunos extends javax.swing.JFrame {
                             .addGroup(guiaEditarAlunoLayout.createSequentialGroup()
                                 .addComponent(tituloCurso1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(campoCurso1, 0, 541, Short.MAX_VALUE)))))
+                                .addComponent(campoCurso1, 0, 566, Short.MAX_VALUE)))))
                 .addContainerGap())
         );
         guiaEditarAlunoLayout.setVerticalGroup(
@@ -352,7 +341,7 @@ public class TelaAlunos extends javax.swing.JFrame {
                         .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
                                 .addComponent(tituloCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 383, Short.MAX_VALUE))
+                                .addGap(0, 408, Short.MAX_VALUE))
                             .addComponent(campoNome)))
                     .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
                         .addComponent(tituloCurso)
@@ -426,7 +415,7 @@ public class TelaAlunos extends javax.swing.JFrame {
                         .addComponent(tituloDataNasc2)
                         .addComponent(tituloNome2)
                         .addComponent(tituloCurso2)))
-                .addContainerGap(426, Short.MAX_VALUE))
+                .addContainerGap(451, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, guiaVisualizarAlunoLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(botaoVoltar6)
@@ -445,7 +434,7 @@ public class TelaAlunos extends javax.swing.JFrame {
                 .addComponent(tituloDataNasc2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(tituloCurso2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
                 .addComponent(botaoVoltar6)
                 .addGap(20, 20, 20))
         );
@@ -462,7 +451,7 @@ public class TelaAlunos extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(guiasAluno)
+            .addComponent(guiasAluno, javax.swing.GroupLayout.DEFAULT_SIZE, 344, Short.MAX_VALUE)
         );
 
         guiasAluno.getAccessibleContext().setAccessibleName("Consultar Aluno");
@@ -470,10 +459,6 @@ public class TelaAlunos extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void botaoPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoPesquisarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botaoPesquisarActionPerformed
 
     private void campoNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoNomeActionPerformed
         // TODO add your handling code here:
@@ -490,6 +475,10 @@ public class TelaAlunos extends javax.swing.JFrame {
     private void campoCpf1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoCpf1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_campoCpf1ActionPerformed
+
+    private void botaoPesquisar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoPesquisar1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botaoPesquisar1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -526,9 +515,8 @@ public class TelaAlunos extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botaoCadastrar;
     private javax.swing.JButton botaoCadastrar1;
-    private javax.swing.JButton botaoPesquisar;
+    private javax.swing.JButton botaoPesquisar1;
     private javax.swing.JButton botaoSalvar;
     private javax.swing.JButton botaoVoltar;
     private javax.swing.JButton botaoVoltar1;
@@ -542,24 +530,23 @@ public class TelaAlunos extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField campoDataNasc1;
     private javax.swing.JTextField campoNome;
     private javax.swing.JTextField campoNome1;
-    private javax.swing.JTextField campoPesquisarCpf;
+    private javax.swing.JTextField campoPesquisarCpfFunc;
     private javax.swing.JPanel guiaCadastrarAluno;
     private javax.swing.JPanel guiaConsultarAluno;
     private javax.swing.JPanel guiaEditarAluno;
     private javax.swing.JPanel guiaVisualizarAluno;
     private javax.swing.JTabbedPane guiasAluno;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JPanel painelConsulta;
+    private javax.swing.JPanel painelConsulta1;
     private javax.swing.JLabel tituloAlunos;
     private javax.swing.JLabel tituloCadastrar;
     private javax.swing.JLabel tituloCadastrar1;
     private javax.swing.JLabel tituloCadastrar2;
-    private javax.swing.JLabel tituloConsultar;
-    private javax.swing.JLabel tituloCpf;
+    private javax.swing.JLabel tituloConsultar1;
     private javax.swing.JLabel tituloCpf1;
     private javax.swing.JLabel tituloCpf2;
     private javax.swing.JLabel tituloCpf3;
+    private javax.swing.JLabel tituloCpf4;
     private javax.swing.JLabel tituloCurso;
     private javax.swing.JLabel tituloCurso1;
     private javax.swing.JLabel tituloCurso2;
