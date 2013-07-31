@@ -31,6 +31,8 @@ public class TelaPrincipalAluno extends javax.swing.JFrame {
         botaoSaldo = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(204, 255, 204));
+        setForeground(java.awt.Color.green);
 
         logoEasyTicket.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/logo.png"))); // NOI18N
 
