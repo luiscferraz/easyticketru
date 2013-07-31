@@ -28,9 +28,9 @@
               <Component id="logoEasyTicket" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="72" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="botaoAlunos" alignment="1" min="-2" pref="222" max="-2" attributes="0"/>
-                  <Component id="botaoFuncionarios" alignment="1" min="-2" pref="222" max="-2" attributes="0"/>
-                  <Component id="botaoCartoes" alignment="1" min="-2" pref="222" max="-2" attributes="0"/>
+                  <Component id="btnAlunos" alignment="1" min="-2" pref="222" max="-2" attributes="0"/>
+                  <Component id="btnFuncionarios" alignment="1" min="-2" pref="222" max="-2" attributes="0"/>
+                  <Component id="btnCartoes" alignment="1" min="-2" pref="222" max="-2" attributes="0"/>
                   <Component id="botaoCursos" alignment="1" min="-2" pref="222" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
@@ -47,13 +47,13 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                      <Component id="botaoAlunos" min="-2" pref="52" max="-2" attributes="0"/>
+                      <Component id="btnAlunos" min="-2" pref="52" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="botaoFuncionarios" min="-2" pref="52" max="-2" attributes="0"/>
+                      <Component id="btnFuncionarios" min="-2" pref="52" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                       <Component id="botaoCursos" min="-2" pref="52" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="botaoCartoes" min="-2" pref="52" max="-2" attributes="0"/>
+                      <Component id="btnCartoes" min="-2" pref="52" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace pref="38" max="32767" attributes="0"/>
@@ -62,7 +62,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JButton" name="botaoAlunos">
+    <Component class="javax.swing.JButton" name="btnAlunos">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tw Cen MT" size="24" style="1"/>
@@ -81,10 +81,10 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoAlunosActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAlunosActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="botaoFuncionarios">
+    <Component class="javax.swing.JButton" name="btnFuncionarios">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tw Cen MT" size="24" style="1"/>
@@ -103,10 +103,10 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoFuncionariosActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnFuncionariosActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="botaoCartoes">
+    <Component class="javax.swing.JButton" name="btnCartoes">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tw Cen MT" size="24" style="1"/>
@@ -125,7 +125,7 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoCartoesActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCartoesActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="logoEasyTicket">
@@ -153,6 +153,9 @@
           <Color id="Cursor em Forma de M&#xe3;o"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoCursosActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
