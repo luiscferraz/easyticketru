@@ -14,7 +14,7 @@ import negocio.Recarga;
  */
 public interface IRepositorioRecargas {
     public void inserir(Recarga recarga);
-    public boolean existe(Recarga recarga);
+    public boolean existe(int idRecarga);
     public void atualizar(Recarga recarga);
     public Recarga buscarPorId(int idRecarga);
     public ArrayList<Recarga> buscarPorCartao(int idCartao);

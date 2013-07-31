@@ -13,7 +13,7 @@ import negocio.Refeicao;
 public interface IRepositorioRefeicoes {
  
     public void inserir(Refeicao refeicao);
-    public boolean existe(Refeicao refeicao);
+    public boolean existe(int idRefeicao);
     public void atualizar(Refeicao refeicao);
     public Refeicao procurarPorId(int idRefeicao);
     
