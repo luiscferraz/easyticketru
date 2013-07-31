@@ -39,7 +39,6 @@ public class TelaCursos extends javax.swing.JFrame {
         campoPesquisarCpfFunc1 = new javax.swing.JTextField();
         botaoPesquisar1 = new javax.swing.JButton();
         tituloAlunos1 = new javax.swing.JLabel();
-        botaoVoltar7 = new javax.swing.JButton();
         guiaEditarAluno = new javax.swing.JPanel();
         tituloAlunos2 = new javax.swing.JLabel();
         painelConsulta2 = new javax.swing.JPanel();
@@ -66,7 +65,7 @@ public class TelaCursos extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        guiasAluno.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        guiasAluno.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
         tituloVisualizarFunc.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         tituloVisualizarFunc.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -146,9 +145,6 @@ public class TelaCursos extends javax.swing.JFrame {
         tituloAlunos1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/cursos.png"))); // NOI18N
         tituloAlunos1.setText("  Manter Cursos");
 
-        botaoVoltar7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/delete.png"))); // NOI18N
-        botaoVoltar7.setText("Deletar Curso");
-
         javax.swing.GroupLayout guiaVisualizarAlunoLayout = new javax.swing.GroupLayout(guiaVisualizarAluno);
         guiaVisualizarAluno.setLayout(guiaVisualizarAlunoLayout);
         guiaVisualizarAlunoLayout.setHorizontalGroup(
@@ -156,10 +152,7 @@ public class TelaCursos extends javax.swing.JFrame {
             .addGroup(guiaVisualizarAlunoLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(guiaVisualizarAlunoLayout.createSequentialGroup()
-                        .addComponent(botaoVoltar7)
-                        .addGap(18, 18, 18)
-                        .addComponent(botaoVoltar6))
+                    .addComponent(botaoVoltar6)
                     .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, guiaVisualizarAlunoLayout.createSequentialGroup()
                             .addComponent(tituloAlunos1, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -186,10 +179,8 @@ public class TelaCursos extends javax.swing.JFrame {
                 .addComponent(tituloCpf3)
                 .addGap(18, 18, 18)
                 .addComponent(tituloNome2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 106, Short.MAX_VALUE)
-                .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botaoVoltar6)
-                    .addComponent(botaoVoltar7))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
+                .addComponent(botaoVoltar6)
                 .addGap(23, 23, 23))
         );
 
@@ -313,7 +304,7 @@ public class TelaCursos extends javax.swing.JFrame {
                 .addComponent(tituloCpf6)
                 .addGap(18, 18, 18)
                 .addComponent(tituloNome3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 101, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 103, Short.MAX_VALUE)
                 .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botaoVoltar9)
                     .addComponent(botaoVoltar8))
@@ -374,13 +365,6 @@ public class TelaCursos extends javax.swing.JFrame {
                 .addGap(21, 21, 21)
                 .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
-                        .addComponent(tituloCadastrar)
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGap(45, 45, 45))
-                    .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
-                        .addComponent(tituloAlunos3, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 394, Short.MAX_VALUE))
-                    .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
                         .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 547, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -392,7 +376,12 @@ public class TelaCursos extends javax.swing.JFrame {
                                     .addComponent(tituloNome)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(campoNome, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addContainerGap())))
+                        .addContainerGap())
+                    .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
+                        .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tituloCadastrar)
+                            .addComponent(tituloAlunos3, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 394, Short.MAX_VALUE))))
         );
         guiaCadastrarAlunoLayout.setVerticalGroup(
             guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -411,7 +400,7 @@ public class TelaCursos extends javax.swing.JFrame {
                 .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tituloCpf1)
                     .addComponent(campoCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 116, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 118, Short.MAX_VALUE)
                 .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botaoCadastrar1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(botaoVoltar5))
@@ -431,7 +420,7 @@ public class TelaCursos extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(guiasAluno)
+            .addComponent(guiasAluno, javax.swing.GroupLayout.DEFAULT_SIZE, 401, Short.MAX_VALUE)
         );
 
         pack();
@@ -506,7 +495,6 @@ public class TelaCursos extends javax.swing.JFrame {
     private javax.swing.JButton botaoPesquisar2;
     private javax.swing.JButton botaoVoltar5;
     private javax.swing.JButton botaoVoltar6;
-    private javax.swing.JButton botaoVoltar7;
     private javax.swing.JButton botaoVoltar8;
     private javax.swing.JButton botaoVoltar9;
     private javax.swing.JTextField campoCpf;

@@ -37,7 +37,6 @@ public class TelaCartoes extends javax.swing.JFrame {
         campoPesquisarCpfFunc1 = new javax.swing.JTextField();
         botaoPesquisar1 = new javax.swing.JButton();
         tituloAlunos1 = new javax.swing.JLabel();
-        botaoVoltar7 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -68,7 +67,7 @@ public class TelaCartoes extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        guiasAluno.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        guiasAluno.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
         tituloVisualizarFunc.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         tituloVisualizarFunc.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -78,6 +77,11 @@ public class TelaCartoes extends javax.swing.JFrame {
 
         botaoVoltar6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/back.png"))); // NOI18N
         botaoVoltar6.setText("Voltar");
+        botaoVoltar6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoVoltar6ActionPerformed(evt);
+            }
+        });
 
         painelConsulta1.setBackground(new java.awt.Color(222, 235, 216));
         painelConsulta1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(204, 204, 204)));
@@ -139,9 +143,6 @@ public class TelaCartoes extends javax.swing.JFrame {
         tituloAlunos1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/cartoes.png"))); // NOI18N
         tituloAlunos1.setText("  Manter Cartões");
 
-        botaoVoltar7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/delete.png"))); // NOI18N
-        botaoVoltar7.setText("Deletar Curso");
-
         jLabel6.setText("Número:");
 
         jLabel7.setText("Aluno:");
@@ -157,10 +158,7 @@ public class TelaCartoes extends javax.swing.JFrame {
             .addGroup(guiaVisualizarAlunoLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(guiaVisualizarAlunoLayout.createSequentialGroup()
-                        .addComponent(botaoVoltar7)
-                        .addGap(18, 18, 18)
-                        .addComponent(botaoVoltar6))
+                    .addComponent(botaoVoltar6)
                     .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, guiaVisualizarAlunoLayout.createSequentialGroup()
                             .addComponent(tituloAlunos1, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -199,10 +197,8 @@ public class TelaCartoes extends javax.swing.JFrame {
                         .addComponent(jLabel8)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel9)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 106, Short.MAX_VALUE)
-                .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botaoVoltar6)
-                    .addComponent(botaoVoltar7))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
+                .addComponent(botaoVoltar6)
                 .addGap(23, 23, 23))
         );
 
@@ -275,6 +271,11 @@ public class TelaCartoes extends javax.swing.JFrame {
 
         botaoVoltar9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/back.png"))); // NOI18N
         botaoVoltar9.setText("Voltar");
+        botaoVoltar9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoVoltar9ActionPerformed(evt);
+            }
+        });
 
         tituloAlunos2.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         tituloAlunos2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/cartoes.png"))); // NOI18N
@@ -336,7 +337,7 @@ public class TelaCartoes extends javax.swing.JFrame {
                         .addComponent(jLabel1)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
                         .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(botaoVoltar9)
                             .addComponent(botaoVoltar8))
@@ -362,6 +363,11 @@ public class TelaCartoes extends javax.swing.JFrame {
 
         botaoVoltar5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/back.png"))); // NOI18N
         botaoVoltar5.setText("Voltar");
+        botaoVoltar5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoVoltar5ActionPerformed(evt);
+            }
+        });
 
         tituloAlunos4.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         tituloAlunos4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/cartoes.png"))); // NOI18N
@@ -410,7 +416,7 @@ public class TelaCartoes extends javax.swing.JFrame {
                 .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 147, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 149, Short.MAX_VALUE)
                 .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botaoCadastrar1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(botaoVoltar5))
@@ -430,7 +436,7 @@ public class TelaCartoes extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(guiasAluno)
+            .addComponent(guiasAluno, javax.swing.GroupLayout.DEFAULT_SIZE, 401, Short.MAX_VALUE)
         );
 
         pack();
@@ -438,12 +444,24 @@ public class TelaCartoes extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoPesquisar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoPesquisar1ActionPerformed
-        // TODO add your handling code here:
+        this.setVisible(false);
     }//GEN-LAST:event_botaoPesquisar1ActionPerformed
 
     private void botaoPesquisar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoPesquisar2ActionPerformed
-        // TODO add your handling code here:
+        this.setVisible(false);
     }//GEN-LAST:event_botaoPesquisar2ActionPerformed
+
+    private void botaoVoltar6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltar6ActionPerformed
+        this.setVisible(false);
+    }//GEN-LAST:event_botaoVoltar6ActionPerformed
+
+    private void botaoVoltar9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltar9ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botaoVoltar9ActionPerformed
+
+    private void botaoVoltar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltar5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botaoVoltar5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -485,7 +503,6 @@ public class TelaCartoes extends javax.swing.JFrame {
     private javax.swing.JButton botaoPesquisar2;
     private javax.swing.JButton botaoVoltar5;
     private javax.swing.JButton botaoVoltar6;
-    private javax.swing.JButton botaoVoltar7;
     private javax.swing.JButton botaoVoltar8;
     private javax.swing.JButton botaoVoltar9;
     private javax.swing.JTextField campoPesquisarCpfFunc1;

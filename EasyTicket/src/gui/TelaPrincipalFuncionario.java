@@ -26,44 +26,44 @@ public class TelaPrincipalFuncionario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        botaoAlunos = new javax.swing.JButton();
-        botaoFuncionarios = new javax.swing.JButton();
-        botaoCartoes = new javax.swing.JButton();
+        btnAlunos = new javax.swing.JButton();
+        btnFuncionarios = new javax.swing.JButton();
+        btnCartoes = new javax.swing.JButton();
         logoEasyTicket = new javax.swing.JLabel();
         botaoCursos = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        botaoAlunos.setFont(new java.awt.Font("Tw Cen MT", 1, 24)); // NOI18N
-        botaoAlunos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/alunos.png"))); // NOI18N
-        botaoAlunos.setText("  Alunos");
-        botaoAlunos.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        botaoAlunos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        botaoAlunos.addActionListener(new java.awt.event.ActionListener() {
+        btnAlunos.setFont(new java.awt.Font("Tw Cen MT", 1, 24)); // NOI18N
+        btnAlunos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/alunos.png"))); // NOI18N
+        btnAlunos.setText("  Alunos");
+        btnAlunos.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnAlunos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAlunos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoAlunosActionPerformed(evt);
+                btnAlunosActionPerformed(evt);
             }
         });
 
-        botaoFuncionarios.setFont(new java.awt.Font("Tw Cen MT", 1, 24)); // NOI18N
-        botaoFuncionarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/funcionarios.png"))); // NOI18N
-        botaoFuncionarios.setText("  Funcionários");
-        botaoFuncionarios.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        botaoFuncionarios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        botaoFuncionarios.addActionListener(new java.awt.event.ActionListener() {
+        btnFuncionarios.setFont(new java.awt.Font("Tw Cen MT", 1, 24)); // NOI18N
+        btnFuncionarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/funcionarios.png"))); // NOI18N
+        btnFuncionarios.setText("  Funcionários");
+        btnFuncionarios.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnFuncionarios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnFuncionarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoFuncionariosActionPerformed(evt);
+                btnFuncionariosActionPerformed(evt);
             }
         });
 
-        botaoCartoes.setFont(new java.awt.Font("Tw Cen MT", 1, 24)); // NOI18N
-        botaoCartoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/cartoes.png"))); // NOI18N
-        botaoCartoes.setText("  Cartões");
-        botaoCartoes.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        botaoCartoes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        botaoCartoes.addActionListener(new java.awt.event.ActionListener() {
+        btnCartoes.setFont(new java.awt.Font("Tw Cen MT", 1, 24)); // NOI18N
+        btnCartoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/cartoes.png"))); // NOI18N
+        btnCartoes.setText("  Cartões");
+        btnCartoes.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnCartoes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCartoes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoCartoesActionPerformed(evt);
+                btnCartoesActionPerformed(evt);
             }
         });
 
@@ -74,6 +74,11 @@ public class TelaPrincipalFuncionario extends javax.swing.JFrame {
         botaoCursos.setText("  Cursos");
         botaoCursos.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         botaoCursos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botaoCursos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoCursosActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -84,9 +89,9 @@ public class TelaPrincipalFuncionario extends javax.swing.JFrame {
                 .addComponent(logoEasyTicket)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(botaoAlunos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botaoFuncionarios, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botaoCartoes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAlunos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnFuncionarios, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCartoes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(botaoCursos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(64, 64, 64))
         );
@@ -99,13 +104,13 @@ public class TelaPrincipalFuncionario extends javax.swing.JFrame {
                         .addComponent(logoEasyTicket, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(36, 36, 36)
-                        .addComponent(botaoAlunos, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnAlunos, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(botaoFuncionarios, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnFuncionarios, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(botaoCursos, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(botaoCartoes, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnCartoes, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(38, Short.MAX_VALUE))
         );
 
@@ -113,17 +118,21 @@ public class TelaPrincipalFuncionario extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void botaoAlunosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoAlunosActionPerformed
+    private void btnAlunosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlunosActionPerformed
         new TelaAlunos().setVisible(true);
-    }//GEN-LAST:event_botaoAlunosActionPerformed
+    }//GEN-LAST:event_btnAlunosActionPerformed
 
-    private void botaoFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoFuncionariosActionPerformed
+    private void btnFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFuncionariosActionPerformed
         new TelaFuncionarios().setVisible(true);
-    }//GEN-LAST:event_botaoFuncionariosActionPerformed
+    }//GEN-LAST:event_btnFuncionariosActionPerformed
 
-    private void botaoCartoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCartoesActionPerformed
+    private void btnCartoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCartoesActionPerformed
         new TelaCartoes().setVisible(true);
-    }//GEN-LAST:event_botaoCartoesActionPerformed
+    }//GEN-LAST:event_btnCartoesActionPerformed
+
+    private void botaoCursosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCursosActionPerformed
+        new TelaCursos().setVisible(true);
+    }//GEN-LAST:event_botaoCursosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -160,10 +169,10 @@ public class TelaPrincipalFuncionario extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botaoAlunos;
-    private javax.swing.JButton botaoCartoes;
     private javax.swing.JButton botaoCursos;
-    private javax.swing.JButton botaoFuncionarios;
+    private javax.swing.JButton btnAlunos;
+    private javax.swing.JButton btnCartoes;
+    private javax.swing.JButton btnFuncionarios;
     private javax.swing.JLabel logoEasyTicket;
     // End of variables declaration//GEN-END:variables
 }
