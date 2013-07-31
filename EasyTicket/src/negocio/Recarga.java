@@ -14,11 +14,13 @@ public class Recarga {
     private int idRecarga;
     private float valor;
     private Date dataRecarga;
+    private int idCartao;
     
-    public Recarga(int idRecarga,float valor, Date dataRecarga){
+    public Recarga(int idRecarga,float valor, Date dataRecarga, int idCartao){
         this.idRecarga = idRecarga;
         this.valor = valor;
         this.dataRecarga = dataRecarga;
+        this.idCartao = idCartao;
     }
 
     /**
@@ -67,6 +69,20 @@ public class Recarga {
         if (cartao.isAtivo(cartao)){
             cartao.setSaldo(cartao.getSaldo()+this.valor);
         }
+    }
+
+    /**
+     * @return the idCartao
+     */
+    public int getIdCartao() {
+        return idCartao;
+    }
+
+    /**
+     * @param idCartao the idCartao to set
+     */
+    public void setIdCartao(int idCartao) {
+        this.idCartao = idCartao;
     }
     
     
