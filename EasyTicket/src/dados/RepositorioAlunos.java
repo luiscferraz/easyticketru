@@ -5,18 +5,44 @@
 package dados;
 
 import interfaces.IRepositorioAlunos;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import negocio.Aluno;
+import negocio.EnumStatusAluno;
 
 /**
  *
  * @author Nanda
  */
-public class RepositorioAlunos implements IRepositorioAlunos {
-
-    @Override
-    public void inserir(Aluno aluno) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+public class RepositorioAlunos extends GenericDAO implements IRepositorioAlunos {
+    
+    public RepositorioAlunos(){
+    }
+    
+    
+    
+    public void inserir(Aluno aluno){
+        try {
+            aluno.setCpf(getNextId("ALUNOS"));
+        } catch (SQLException ex) {
+            Logger.getLogger(RepositorioAlunos.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        String query = "INSERT INTO ETICKET.ALUNOS(CPF, NOME, TELEFONE,DATANASC,EMAIL,INICIOCURSO ,TERMINOCURSO,STATUSALUNO,CURSO) VALUES (?,?,?,?,?,?,?,?,?)" ;
+        try {
+            executeCommand(query, aluno.getCpf(),
+                                  aluno.getNome(),
+                                  aluno.getTelefone(),
+                                  aluno.getDataNascimento(),
+                                  aluno.getEmail(),
+                                  aluno.getInicioCursoAluno(),
+                                  aluno.getTerminoCursoAluno(),                              
+                                  EnumStatusAluno.ATIVO,
+                                  aluno.getCurso());
+        } catch (SQLException ex) {
+            Logger.getLogger(RepositorioAlunos.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @Override
