@@ -18,26 +18,30 @@ import java.util.logging.Logger;
  * @author Nanda
  */
 public class GenericDAO {
-    public Connection getConnection() {
-        try {
-            Class.forName("org.apache.derby.jdbc.ClientDriver");
-            Connection cx = DriverManager.getConnection("jdbc:derby://localhost:1527/eticket", "eticket", "eticket");
-            return cx;
-        } catch (Exception ex) {
-            Logger.getLogger(GenericDAO.class.getName()).log(Level.SEVERE, null, ex);
-            return null;
-        }
+    public static Connection getConnection() throws Exception {
+        String driver = "org.postgresql.Driver";  
+        String user   = "postgres";  
+        String senha = "admin";  
+        String url      = "jdbc:postgresql://localhost:5432/bancoteste";  
+
+        Class.forName(driver);  
+        Connection con = null;  
+  
+        con = (Connection) DriverManager.getConnection(url, user, senha); 
+        System.out.println("Conexão realizada com sucesso."); 
+        return con;      
+        
     }
     
-    public Statement getStatement() throws SQLException {
+    public Statement getStatement() throws SQLException, Exception {
         return getConnection().createStatement();
     }
 
-    public PreparedStatement getStatement(String st) throws SQLException {
+    public PreparedStatement getStatement(String st) throws SQLException, Exception {
         return getConnection().prepareStatement(st);
     }
 
-    public ResultSet executeQuery(String query,Object... params) throws SQLException {
+    public ResultSet executeQuery(String query,Object... params) throws SQLException, Exception {
         PreparedStatement ps = getStatement(query);
         for (int i = 0; i < params.length; i++) {
             ps.setObject(i+1, params[i]);
@@ -45,7 +49,7 @@ public class GenericDAO {
         return ps.executeQuery();
     }
 
-    public int executeCommand(String query,Object... params) throws SQLException {
+    public int executeCommand(String query,Object... params) throws SQLException, Exception {
         int result;
         try (PreparedStatement ps = getStatement(query)) {
             for (int i = 0; i < params.length; i++) {
@@ -60,7 +64,7 @@ public class GenericDAO {
         return result;
     }
 
-    public Integer getNextId(String tableName) throws SQLException {
+    public Integer getNextId(String tableName) throws SQLException, Exception {
         ResultSet rs = executeQuery("select MAX(ID) from APP."+tableName);
         rs.next();
         Object result = rs.getObject(1);
