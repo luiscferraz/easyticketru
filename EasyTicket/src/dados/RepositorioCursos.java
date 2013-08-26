@@ -8,6 +8,7 @@ package dados;
 import interfaces.IRepositorioCursos;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -40,14 +41,21 @@ public class RepositorioCursos implements IRepositorioCursos {
             stmt.setString(1, curso.getNome());
             
             stmt.execute();
+            
+            conexao.close();
+            
         } catch (SQLException ex) {
             System.out.println("incluirCurso(): "+ex.toString());
-        }
+        } 
+    
     }
 
     @Override
     public boolean existe(int idCurso) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+             throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+   
+        
     }
 
     @Override
