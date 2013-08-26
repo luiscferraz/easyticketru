@@ -63,9 +63,23 @@ public class RepositorioCursos implements IRepositorioCursos {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
+    
     public Curso procurarPorId(int idCurso) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+        String query = "SELECT * FROM EASYTICKET.CURSOS WHERE IDCURSOS=?" ; 
+        try {
+                 
+                 PreparedStatement stmt = this.conexao..prepareStatement(query);
+                 stmt.setString(1, s);
+                 ResultSet res = stmt.executeQuery();
+                 if (res.next()) {
+                     System.out.print(res.getInt(1));
+                     System.out.print(res.getString(2));
+                     
+                 }
+             } catch (SQLException e) {
+                 e.printStackTrace();
+             }
+           
+        }
     
 }
