@@ -15,5 +15,6 @@ public interface IRepositorioCursos {
     public boolean existe(int idCurso);
     public void atualizar(Curso curso);
     public Curso procurarPorId(int idCurso);
+    public void deletar(int idCurso);
     
 }
