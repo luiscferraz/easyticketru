@@ -10,14 +10,23 @@ import java.util.Date;
  * @author Marcela
  */
 public class Pessoa {
-    
+    private int id;
     private String nome;
     private String email;
-    private int cpf;
-    private int telefone;
+    private String cpf;
+    private String telefone;
     private Date dataNascimento;
     
-    public Pessoa(String nome, String email, int cpf, int telefone, Date dataNascimento){
+    public Pessoa(String nome, String email, String cpf, String telefone, Date dataNascimento){
+        this.nome = nome;
+        this.email = email;
+        this.cpf = cpf;
+        this.telefone = telefone;
+        this.dataNascimento = dataNascimento;
+    }
+    
+    public Pessoa(int id, String nome, String email, String cpf, String telefone, Date dataNascimento ){
+        this.id = id;
         this.nome = nome;
         this.email = email;
         this.cpf = cpf;
@@ -25,11 +34,13 @@ public class Pessoa {
         this.dataNascimento = dataNascimento;
     }
 
-    public int getCpf() {
+    
+    
+    public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(int cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
@@ -57,12 +68,26 @@ public class Pessoa {
         this.nome = nome;
     }
 
-    public int getTelefone() {
+    public String getTelefone() {
         return telefone;
     }
 
-    public void setTelefone(int telefone) {
+    public void setTelefone(String telefone) {
         this.telefone = telefone;
+    }
+
+    /**
+     * @return the id
+     */
+    public int getId() {
+        return id;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(int id) {
+        this.id = id;
     }
     
     
