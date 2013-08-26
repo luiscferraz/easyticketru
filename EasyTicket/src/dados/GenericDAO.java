@@ -38,6 +38,23 @@ public class GenericDAO {
         
     }
     
+    public static void close(Statement statement, Connection dbConnection){
+        try {
+            if (statement != null) {
+              statement.close();
+            }
+
+            if (dbConnection != null) {
+              dbConnection.close();
+            }
+        } catch (SQLException e) {
+
+            System.out.println(e.getMessage());
+
+        }
+    
+    }
+    
     public Statement getStatement() throws SQLException, Exception {
         return getConnection().createStatement();
     }
