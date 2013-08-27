@@ -22,7 +22,8 @@ public class TesteCurso {
         
         RepositorioCursos repositorio = new RepositorioCursos();
         
-        repositorio.inserir(curso);
+        //repositorio.inserir(curso);
+        System.out.println(repositorio.procurarPorId(2));
         
     }
 }

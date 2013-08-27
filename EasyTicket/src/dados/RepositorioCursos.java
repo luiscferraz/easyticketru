@@ -1,3 +1,4 @@
+
 package dados;
 
 /*
@@ -64,22 +65,44 @@ public class RepositorioCursos implements IRepositorioCursos {
     }
 
     
+    
+    
     public Curso procurarPorId(int idCurso) {
-        String query = "SELECT * FROM EASYTICKET.CURSOS WHERE IDCURSOS=?" ; 
+        
+        String query = "SELECT * FROM EASYTICKET.CURSOS WHERE IDCURSOS= "+idCurso;
+        Curso retorno = null;
         try {
                  
-                 PreparedStatement stmt = this.conexao..prepareStatement(query);
-                 stmt.setString(1, s);
+                 PreparedStatement stmt = this.conexao.prepareStatement(query);
                  ResultSet res = stmt.executeQuery();
+                 
                  if (res.next()) {
-                     System.out.print(res.getInt(1));
-                     System.out.print(res.getString(2));
-                     
-                 }
-             } catch (SQLException e) {
+                     System.out.println(res.getInt(1));
+                     System.out.println(res.getString(2)); 
+                     //retorno.setIdCurso(idCurso);
+                     //retorno.setNome(res.getString(2));
+                 }                
+                                  
+         } catch (SQLException e) {
                  e.printStackTrace();
-             }
+         }
+        
+         return retorno;
+
+        
+        
+        
+        
+        
+         
+        
            
-        }
+    }
+
+    @Override
+    public void deletar(int idCurso) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
+
