@@ -82,7 +82,8 @@ public class RepositorioCursos implements IRepositorioCursos {
                      cargoResultado.setNome(res.getString(2));
                      System.out.println(res.getInt(1));
                      System.out.println(res.getString(2)); 
-                 }                
+                 }
+                 conexao.close();                
                                   
          } catch (SQLException e) {
                  e.printStackTrace();
@@ -102,7 +103,21 @@ public class RepositorioCursos implements IRepositorioCursos {
 
     @Override
     public void deletar(int idCurso) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        String query = "DELETE * FROM EASYTICKET.CURSOS WHERE IDCURSOS= "+idCurso;
+        
+        try {
+                 
+                 PreparedStatement stmt = this.conexao.prepareStatement(query);
+                 stmt.setInt(1, idCurso);
+                 stmt.execute();
+                 conexao.close();                               
+                                  
+         } catch (SQLException e) {
+                 e.printStackTrace();
+         }
+        
+         return cursoResultado;
     }
     
 }
