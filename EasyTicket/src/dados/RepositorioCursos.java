@@ -60,7 +60,7 @@ public class RepositorioCursos implements IRepositorioCursos {
 
     
     public void atualizar(Curso curso) {
-       String query = "UPDATE EASYTICKET.CURSOS SET NOME=? WHERE IDCURSOS=?";
+       String query = "UPDATE EASYTICKET.CURSOS SET NOME=? WHERE IDCURSOS=?"+curso.getIdCurso;
        
       try{
          PreparedStatement stmt = this.conexao.prepareStatement(query);
