@@ -1,4 +1,3 @@
-
 package dados;
 
 /*
@@ -68,26 +67,28 @@ public class RepositorioCursos implements IRepositorioCursos {
     
     
     public Curso procurarPorId(int idCurso) {
+        Curso cursoResultado = null;
         
         String query = "SELECT * FROM EASYTICKET.CURSOS WHERE IDCURSOS= "+idCurso;
-        Curso retorno = null;
+        
         try {
                  
                  PreparedStatement stmt = this.conexao.prepareStatement(query);
                  ResultSet res = stmt.executeQuery();
                  
                  if (res.next()) {
+                     cargoResultado = newResultado();
+                     cargoResultado.setIdCurso(res.getInt(1));
+                     cargoResultado.setNome(res.getString(2));
                      System.out.println(res.getInt(1));
                      System.out.println(res.getString(2)); 
-                     //retorno.setIdCurso(idCurso);
-                     //retorno.setNome(res.getString(2));
                  }                
                                   
          } catch (SQLException e) {
                  e.printStackTrace();
          }
         
-         return retorno;
+         return cursoResultado;
 
         
         
