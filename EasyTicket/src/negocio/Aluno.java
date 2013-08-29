@@ -36,11 +36,11 @@ public class Aluno extends Pessoa {
         this.curso = curso;
     }
 
-    public String getInicioCursoAluno() {
+    public Date getInicioCursoAluno() {
         return inicioCursoAluno;
     }
 
-    public void setInicioCursoAluno(String inicioCursoAluno) {
+    public void setInicioCursoAluno(Date inicioCursoAluno) {
         this.inicioCursoAluno = inicioCursoAluno;
     }
 
