@@ -14,11 +14,11 @@ public class Aluno extends Pessoa {
     
     private Curso curso;
     private EnumStatusAluno statusAluno;
-    private String inicioCursoAluno;
-    private String terminoCursoAluno;
+    private Date inicioCursoAluno;
+    private Date terminoCursoAluno;
     
     public Aluno(String nome, String email, int cpf, int telefone, Date dataNascimento, Curso curso, EnumStatusAluno statusAluno,
-                 String inicioCursoAluno, String terminoCursoAluno){
+                 Date inicioCursoAluno, Date terminoCursoAluno){
         
         super(nome, email, cpf, telefone, dataNascimento);
         this.curso = curso;
@@ -52,11 +52,11 @@ public class Aluno extends Pessoa {
         this.statusAluno = statusAluno;
     }
 
-    public String getTerminoCursoAluno() {
+    public Date getTerminoCursoAluno() {
         return terminoCursoAluno;
     }
 
-    public void setTerminoCursoAluno(String terminoCursoAluno) {
+    public void setTerminoCursoAluno(Date terminoCursoAluno) {
         this.terminoCursoAluno = terminoCursoAluno;
     }
     
