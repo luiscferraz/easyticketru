@@ -44,6 +44,7 @@ public class RepositorioCursos implements IRepositorioCursos {
             
             conexao.close();
             
+            System.out.println("Curso inserido com sucesso.");
         } catch (SQLException ex) {
             System.out.println("incluirCurso(): "+ex.toString());
         } 
