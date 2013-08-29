@@ -50,11 +50,13 @@ public class RepositorioCursos implements IRepositorioCursos {
     
     }
 
-    @Override
+    
     public boolean existe(int idCurso) {
-        
-             throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-   
+      if (this.procurarPorId(idCurso)!=null){
+          return true;
+      }else{
+          return false;
+      }
         
     }
 
