@@ -62,7 +62,7 @@ public class RepositorioCursos implements IRepositorioCursos {
 
     
     public void atualizar(Curso curso) {
-       String query = "UPDATE EASYTICKET.CURSOS SET NOME=? WHERE IDCURSOS=?"+curso.getIdCurso;
+       String query = "UPDATE EASYTICKET.CURSOS SET NOME=? WHERE IDCURSO=?"+curso.getIdCurso;
        
       try{
          PreparedStatement stmt = this.conexao.prepareStatement(query);
@@ -83,7 +83,7 @@ public class RepositorioCursos implements IRepositorioCursos {
     public Curso procurarPorId(int idCurso) {
         Curso cursoResultado = null;
         
-        String query = "SELECT * FROM EASYTICKET.CURSOS WHERE IDCURSOS= "+idCurso;
+        String query = "SELECT * FROM EASYTICKET.CURSOS WHERE IDCURSO= "+idCurso;
         
         try {
                  
@@ -111,7 +111,7 @@ public class RepositorioCursos implements IRepositorioCursos {
     
     public void deletar(int idCurso) {
         
-        String query = "DELETE * FROM EASYTICKET.CURSOS WHERE IDCURSOS= "+idCurso;
+        String query = "DELETE * FROM EASYTICKET.CURSOS WHERE IDCURSO= "+idCurso;
         
         try {
                  
