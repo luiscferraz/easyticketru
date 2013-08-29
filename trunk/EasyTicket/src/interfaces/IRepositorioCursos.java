@@ -16,6 +16,6 @@ public interface IRepositorioCursos {
     public void atualizar(Curso curso);
     public Curso procurarPorId(int idCurso);
     public void deletar(int idCurso);
-    public ArrayList listarCursos();
+    public ArrayList<Cursos> listarCursos();
     
 }
