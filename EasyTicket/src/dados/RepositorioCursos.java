@@ -127,5 +127,36 @@ public class RepositorioCursos implements IRepositorioCursos {
          return cursoResultado;
     }
     
+    
+      public ArrayList<Cursos> listarCursos(){
+          
+          
+          String query = "SELECT * FROM EASYTICKET.CURSOS";
+          
+          try {
+              ArrayList<Cursos> listaCursos = new ArrayList<Cursos>();
+                 
+              PreparedStatement stmt = this.conexao.prepareStatement(query);
+              ResultSet rs = stmt.executyQuery();
+                 
+              while(rs.next()){
+                  Curso curso = new Curso();
+                  curso.setIdCurso(rs.getInt(1));
+                  curso.setNome(rs.getString(2));
+                
+                  listaCursos.add(curso);
+            
+              }
+                 
+              conexao.close(); 
+              return listaCursos;              
+                                  
+              }catch (SQLException e) {
+             
+                  System.out.println("listarCursos(): "+ex.toString());
+          
+              }
+     }
+    
 }
 
