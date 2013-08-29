@@ -58,9 +58,21 @@ public class RepositorioCursos implements IRepositorioCursos {
         
     }
 
-    @Override
+    
     public void atualizar(Curso curso) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       String query = "UPDATE EASYTICKET.CURSOS SET NOME=? WHERE IDCURSOS=?";
+       
+      try{
+         PreparedStatement stmt = this.conexao.prepareStatement(query);
+         
+         stmt.setString(1,curso.getNome());
+         stmt.execute();
+         
+         conexao.close();
+      
+      } catch (SQLException e) {
+                 e.printStackTrace();
+      }
     }
 
     
@@ -91,17 +103,10 @@ public class RepositorioCursos implements IRepositorioCursos {
         
          return cursoResultado;
 
-        
-        
-        
-        
-        
-         
-        
-           
+    
     }
 
-    @Override
+    
     public void deletar(int idCurso) {
         
         String query = "DELETE * FROM EASYTICKET.CURSOS WHERE IDCURSOS= "+idCurso;
