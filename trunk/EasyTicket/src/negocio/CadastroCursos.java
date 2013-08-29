@@ -30,4 +30,8 @@ public class CadastroCursos {
         return cursos.procurarPorId(idCurso);
     }
     
+    public ArrayList<Cursos> listarCursos(){
+        return cursos.listarCursos();
+    }
+    
 }
