@@ -13,6 +13,9 @@ public class Curso {
     private int idCurso;
     private String nome;
     
+    public Curso(){
+    }
+    
     public Curso(String nome){
         this.nome = nome;        
     }

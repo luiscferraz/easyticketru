@@ -10,6 +10,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import negocio.Curso;
@@ -63,7 +64,7 @@ public class RepositorioCursos implements IRepositorioCursos {
 
     
     public void atualizar(Curso curso) {
-       String query = "UPDATE EASYTICKET.CURSOS SET NOME=? WHERE IDCURSO=?"+curso.getIdCurso;
+       String query = "UPDATE EASYTICKET.CURSOS SET NOME=? WHERE IDCURSO=?"+curso.getIdCurso();
        
       try{
          PreparedStatement stmt = this.conexao.prepareStatement(query);
@@ -73,7 +74,7 @@ public class RepositorioCursos implements IRepositorioCursos {
          
          conexao.close();
       
-      } catch (SQLException e) {
+      } catch (SQLException ex) {
                  System.out.println("atualizarCurso(): "+ex.toString());
       }
     }
@@ -92,15 +93,15 @@ public class RepositorioCursos implements IRepositorioCursos {
                  ResultSet res = stmt.executeQuery();
                  
                  if (res.next()) {
-                     cargoResultado = newResultado();
-                     cargoResultado.setIdCurso(res.getInt(1));
-                     cargoResultado.setNome(res.getString(2));
-                     System.out.println(res.getInt(1));
-                     System.out.println(res.getString(2)); 
+                     cursoResultado = new Curso();
+                     cursoResultado.setIdCurso(res.getInt(1));
+                     cursoResultado.setNome(res.getString(2));
+                     //System.out.println(res.getInt(1));
+                    // System.out.println(res.getString(2)); 
                  }
                  conexao.close();                
                                   
-         } catch (SQLException e) {
+         } catch (SQLException ex) {
                  System.out.println("procurarCursoPorId(): "+ex.toString());
          }
         
@@ -121,21 +122,21 @@ public class RepositorioCursos implements IRepositorioCursos {
                  stmt.execute();
                  conexao.close();                               
                                   
-         } catch (SQLException e) {
+         } catch (SQLException ex) {
                  System.out.println("deletarCurso(): "+ex.toString());
          }
         
-         return cursoResultado;
+         
     }
     
     
-      public ArrayList<Cursos> listarCursos(){
+      public ArrayList<Curso> listarCursos(){
           
           
           String query = "SELECT * FROM EASYTICKET.CURSOS";
           
           try {
-              ArrayList<Cursos> listaCursos = new ArrayList<Cursos>();
+              ArrayList<Curso> listaCursos = new ArrayList<Curso>();
                  
               PreparedStatement stmt = this.conexao.prepareStatement(query);
               ResultSet rs = stmt.executyQuery();
@@ -146,17 +147,18 @@ public class RepositorioCursos implements IRepositorioCursos {
                   curso.setNome(rs.getString(2));
                 
                   listaCursos.add(curso);
-            
               }
-                 
+              return listaCursos; 
               conexao.close(); 
-              return listaCursos;              
+
+
                                   
-              }catch (SQLException e) {
+          }catch (SQLException ex) {
              
                   System.out.println("listarCursos(): "+ex.toString());
           
-              }
+          }
+          
      }
     
 }
