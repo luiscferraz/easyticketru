@@ -71,7 +71,7 @@ public class RepositorioCursos implements IRepositorioCursos {
          conexao.close();
       
       } catch (SQLException e) {
-                 e.printStackTrace();
+                 System.out.println("atualizarCurso(): "+ex.toString());
       }
     }
 
@@ -98,7 +98,7 @@ public class RepositorioCursos implements IRepositorioCursos {
                  conexao.close();                
                                   
          } catch (SQLException e) {
-                 e.printStackTrace();
+                 System.out.println("procurarCursoPorId(): "+ex.toString());
          }
         
          return cursoResultado;
@@ -119,7 +119,7 @@ public class RepositorioCursos implements IRepositorioCursos {
                  conexao.close();                               
                                   
          } catch (SQLException e) {
-                 e.printStackTrace();
+                 System.out.println("deletarCurso(): "+ex.toString());
          }
         
          return cursoResultado;
