@@ -7,6 +7,14 @@ package dados;
 import interfaces.IRepositorioCargos;
 import java.util.List;
 import negocio.Cargo;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 
@@ -16,9 +24,32 @@ import negocio.Cargo;
  */
 public class RepositorioCargos implements IRepositorioCargos {
 
-    @Override
+    private Connection conexao;
+    
+    public RepositorioCargos(){
+        try {
+            this.conexao = GenericDAO.getConnection();
+        } catch (Exception ex) {
+            Logger.getLogger(RepositorioCursos.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    
     public void inserir(Cargo cargo) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String query = "INSERT INTO EASYTICKET.CARGOS (NOMECARGO) VALUES (?)" ;
+        try {
+            PreparedStatement stmt = this.conexao.prepareStatement(query);
+            
+            stmt.setString(1, curso.getNome());
+            
+            stmt.execute();
+            
+            conexao.close();
+            
+            System.out.println("Cargo inserido com sucesso.");
+        } catch (SQLException ex) {
+            System.out.println("incluirCargo(): "+ex.toString());
+        } 
     }
 
     @Override
@@ -33,7 +64,29 @@ public class RepositorioCargos implements IRepositorioCargos {
 
     @Override
     public Cargo procurarPorId(int idCargo) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Cargo cargoResultado = null;
+        
+        String query = "SELECT * FROM EASYTICKET.CARGOS WHERE IDCURSO= "+idCargo;
+        
+        try {
+                 
+                 PreparedStatement stmt = this.conexao.prepareStatement(query);
+                 ResultSet res = stmt.executeQuery();
+                 
+                 if (res.next()) {
+                     cargoResultado = new Curso();
+                     cargoResultado.setIdCargo(res.getInt(1));
+                     cargoResultado.setNome(res.getString(2));
+                     //System.out.println(res.getInt(1));
+                    // System.out.println(res.getString(2)); 
+                 }
+                 conexao.close();                
+                                  
+         } catch (SQLException ex) {
+                 System.out.println("procurarCargoPorId(): "+ex.toString());
+         }
+        
+         return cursoResultado;
     }
 
     @Override
