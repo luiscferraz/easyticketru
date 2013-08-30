@@ -53,6 +53,16 @@ public class Curso {
         this.nome = nome;
     }
     
+    public String toString(Curso curso){
+        int id = curso.getIdCurso();
+        String nome = curso.getNome();
+        
+        String str = "Id:"+id+" Nome:"+nome;
+        
+        return str;
+        
+    }
+    
     
     
     

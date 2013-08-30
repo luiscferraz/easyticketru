@@ -5,6 +5,7 @@
 package interfaces;
 
 import java.util.ArrayList;
+import java.util.List;
 import negocio.Curso;
 
 /**
@@ -17,6 +18,6 @@ public interface IRepositorioCursos {
     public void atualizar(Curso curso);
     public Curso procurarPorId(int idCurso);
     public void deletar(int idCurso);
-    public ArrayList<Curso> listarCursos();
+    public List<Curso> listarCursos();
     
 }

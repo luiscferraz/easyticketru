@@ -5,6 +5,9 @@
 package teste;
 
 import dados.RepositorioCursos;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 import negocio.Curso;
 
 /**
@@ -16,6 +19,7 @@ public class TesteCurso {
     /**
      * @param args the command line arguments
      */
+    
     public static void main(String[] args) {
         // TODO code application logic here
         //Curso curso = new Curso("Engenharia de Petróleo");
@@ -34,7 +38,15 @@ public class TesteCurso {
         //curso2.setNome("Engenharia Civil");
         //repositorio.atualizar(curso2);
         
-        repositorio.deletar(2);
+        //repositorio.deletar(2);
+        
+        
+       for(Curso c: repositorio.listarCursos()){
+           System.out.println(c.toString(c));
+       }
+        
+        
+ 
         
 
         
