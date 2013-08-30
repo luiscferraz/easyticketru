@@ -19,7 +19,7 @@ public class Cargo {
     
     public Cargo(int idCargo,String nome){
         this.idCargo = idCargo;
-        this.nomeC = nome;        
+        this.nome = nome;        
     }
 
     
@@ -37,6 +37,16 @@ public class Cargo {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+    
+    public String toString(Cargo cargo){
+        int id = cargo.getIdCargo();
+        String nome = cargo.getNome();
+        
+        String str = "Id:"+id+" Nome:"+nome;
+        
+        return str;
+        
     }
 
 }
