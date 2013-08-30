@@ -89,9 +89,24 @@ public class RepositorioCargos implements IRepositorioCargos {
          return cursoResultado;
     }
 
-    @Override
+    
     public void deletar(int idCargo) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String query = "DELETE FROM EASYTICKET.CARGOS WHERE IDCARGO= "+idCargo;
+        
+        try {
+                 PreparedStatement stmt = this.conexao.prepareStatement(query);
+                
+                 if(this.existe(idCargo)){
+                     stmt.execute();
+                     System.err.println("Cargo deletado com sucesso.");
+                 }else{
+                     System.out.println("Cargo inexistente.");
+                 }
+                 conexao.close();
+                                  
+         } catch (SQLException ex) {
+                 System.out.println("deletarCargo(): "+ex.toString());
+         }
     }
 
     @Override
