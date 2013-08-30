@@ -23,11 +23,19 @@ public class TesteCurso {
         RepositorioCursos repositorio = new RepositorioCursos();
         
         //repositorio.inserir(curso);
-        Curso curso2 = new Curso();
-        curso2 = repositorio.procurarPorId(2);
-        System.out.println(curso2.getIdCurso());
-        System.out.println(curso2.getNome());
-       // System.out.println(repositorio.procurarPorId(1).getIdCurso() + " " + repositorio.procurarPorId(2).getNome());
+        
+        //buscando um curso passando o idCurso
+        //Curso curso2 = new Curso();
+        //curso2 = repositorio.procurarPorId(2);
+        //System.out.println(curso2.getIdCurso());
+        //System.out.println(curso2.getNome());
+       
+        //atualizando um curso
+        //curso2.setNome("Engenharia Civil");
+        //repositorio.atualizar(curso2);
+        
+        repositorio.deletar(2);
+        
 
         
     }
