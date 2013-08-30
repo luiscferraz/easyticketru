@@ -86,7 +86,7 @@ public class RepositorioCargos implements IRepositorioCargos {
                  System.out.println("procurarCargoPorId(): "+ex.toString());
          }
         
-         return cursoResultado;
+         return cargoResultado;
     }
 
     
