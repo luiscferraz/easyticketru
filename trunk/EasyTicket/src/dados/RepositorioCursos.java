@@ -125,9 +125,7 @@ public class RepositorioCursos implements IRepositorioCursos {
                  }else{
                      System.out.println("Curso inexistente.");
                  }
-                 
                  conexao.close();
-                 
                                   
          } catch (SQLException ex) {
                  System.out.println("deletarCurso(): "+ex.toString());

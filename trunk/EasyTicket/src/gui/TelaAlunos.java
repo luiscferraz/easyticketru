@@ -718,6 +718,9 @@ public class TelaAlunos extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        campoNome3.getAccessibleContext().setAccessibleName("txtCadNomeAluno");
+        campoNome3.getAccessibleContext().setAccessibleDescription("");
+
         guiasAluno.addTab("Cadastrar Novo Aluno", guiaCadastrarAluno);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -731,7 +734,7 @@ public class TelaAlunos extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(guiasAluno, javax.swing.GroupLayout.DEFAULT_SIZE, 401, Short.MAX_VALUE)
+            .addComponent(guiasAluno)
         );
 
         pack();
