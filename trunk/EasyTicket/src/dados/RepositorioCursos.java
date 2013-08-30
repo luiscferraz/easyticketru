@@ -118,8 +118,16 @@ public class RepositorioCursos implements IRepositorioCursos {
         
         try {
                  PreparedStatement stmt = this.conexao.prepareStatement(query);
-                 stmt.execute();
-                 conexao.close();                               
+                
+                 if(this.existe(idCurso)){
+                     stmt.execute();
+                     System.err.println("Curso deletado com sucesso.");
+                 }else{
+                     System.out.println("Curso inexistente.");
+                 }
+                 
+                 conexao.close();
+                 
                                   
          } catch (SQLException ex) {
                  System.out.println("deletarCurso(): "+ex.toString());
