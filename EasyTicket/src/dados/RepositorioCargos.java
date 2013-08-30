@@ -109,9 +109,32 @@ public class RepositorioCargos implements IRepositorioCargos {
          }
     }
 
-    @Override
+    
     public List<Cargo> listarCargos() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        List<Cargo> listaCargos = new ArrayList<Cargo>();
+          
+          String query = "SELECT * FROM EASYTICKET.CARGOS";
+          
+          try {
+                               
+              PreparedStatement stmt = this.conexao.prepareStatement(query);
+              ResultSet rs = stmt.executeQuery();
+                 
+              while(rs.next()){
+                  Cargo cargo = new Cargo();
+                  cargo.setIdCurso(rs.getInt(1));
+                  cargo.setNome(rs.getString(2));
+                
+                  listaCargos.add(cargo);
+              }
+              conexao.close(); 
+                       
+          }catch (SQLException ex) {
+             
+                  System.out.println("listarCargos(): "+ex.toString());
+          
+          }
+          return listaCargos;
     }
     
 }
