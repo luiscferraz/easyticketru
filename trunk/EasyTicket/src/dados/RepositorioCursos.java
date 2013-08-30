@@ -11,6 +11,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import negocio.Curso;
@@ -135,14 +136,14 @@ public class RepositorioCursos implements IRepositorioCursos {
     }
     
     
-      public ArrayList<Curso> listarCursos(){
+      public List<Curso> listarCursos(){
           
+          List<Curso> listaCursos = new ArrayList<Curso>();
           
           String query = "SELECT * FROM EASYTICKET.CURSOS";
           
           try {
-              ArrayList<Curso> listaCursos = new ArrayList<Curso>();
-                 
+                               
               PreparedStatement stmt = this.conexao.prepareStatement(query);
               ResultSet rs = stmt.executeQuery();
                  
@@ -154,14 +155,13 @@ public class RepositorioCursos implements IRepositorioCursos {
                   listaCursos.add(curso);
               }
               conexao.close(); 
-              
-              return listaCursos; 
-                         
+                       
           }catch (SQLException ex) {
              
                   System.out.println("listarCursos(): "+ex.toString());
           
           }
+          return listaCursos;
           
      }
     
