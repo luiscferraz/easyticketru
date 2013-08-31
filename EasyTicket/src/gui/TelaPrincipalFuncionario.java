@@ -139,7 +139,7 @@ public class TelaPrincipalFuncionario extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAlunosActionPerformed
 
     private void btnCargosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargosActionPerformed
-        new TelaFuncionarios().setVisible(true);
+        new TelaCargos().setVisible(true);
     }//GEN-LAST:event_btnCargosActionPerformed
 
     private void btnCartoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCartoesActionPerformed
@@ -151,7 +151,7 @@ public class TelaPrincipalFuncionario extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoCursosActionPerformed
 
     private void btnFuncionarios1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFuncionarios1ActionPerformed
-        // TODO add your handling code here:
+        new TelaFuncionarios().setVisible(true);
     }//GEN-LAST:event_btnFuncionarios1ActionPerformed
 
     /**
