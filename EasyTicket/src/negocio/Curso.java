@@ -12,6 +12,7 @@ public class Curso {
     
     private int idCurso;
     private String nome;
+    public Object equals;
     
     public Curso(){
     }

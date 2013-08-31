@@ -301,18 +301,13 @@
                           <Group type="102" attributes="0">
                               <Component id="botaoVoltar9" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="botaoVoltar8" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnSalvarAlteracao" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
                                   <Component id="tituloAlunos2" min="-2" pref="230" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
                                   <Component id="painelConsulta2" min="-2" pref="249" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="tituloNome3" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextFieldNomeGuiaEditarCurso" max="32767" attributes="0"/>
                               </Group>
                               <Component id="tituloVisualizarFunc1" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
@@ -321,6 +316,14 @@
                                   <Component id="jLabelCodigoGuiaEditarCurso" min="-2" pref="87" max="-2" attributes="0"/>
                               </Group>
                               <Component id="jSeparator5" alignment="0" min="-2" pref="603" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="tituloNome3" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabelSucessoGuiaEditar" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jTextFieldNomeGuiaEditarCurso" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
                           </Group>
                       </Group>
                       <EmptySpace pref="22" max="32767" attributes="0"/>
@@ -349,10 +352,12 @@
                           <Component id="tituloNome3" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jTextFieldNomeGuiaEditarCurso" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="97" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabelSucessoGuiaEditar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="91" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="botaoVoltar9" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="botaoVoltar8" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnSalvarAlteracao" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                   </Group>
@@ -499,13 +504,16 @@
                 <Property name="text" type="java.lang.String" value="Nome:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="botaoVoltar8">
+            <Component class="javax.swing.JButton" name="btnSalvarAlteracao">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/gui/resources/edit.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Salvar Altera&#xe7;&#xf5;es"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSalvarAlteracaoActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="botaoVoltar9">
               <Properties>
@@ -521,6 +529,8 @@
             <Component class="javax.swing.JLabel" name="jLabelCodigoGuiaEditarCurso">
             </Component>
             <Component class="javax.swing.JTextField" name="jTextFieldNomeGuiaEditarCurso">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelSucessoGuiaEditar">
             </Component>
           </SubComponents>
         </Container>
@@ -542,11 +552,6 @@
                               <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <Component id="tituloNome" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="campoNome" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="tituloCadastrar" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="tituloAlunos3" min="-2" pref="230" max="-2" attributes="0"/>
@@ -554,6 +559,17 @@
                                       <EmptySpace min="0" pref="368" max="32767" attributes="0"/>
                                   </Group>
                                   <Component id="jSeparator3" alignment="0" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="tituloNome" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Component id="jLabelSucessoGuiaCadastrar" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                          </Group>
+                                          <Component id="campoNome" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
@@ -581,7 +597,9 @@
                           <Component id="tituloNome" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="campoNome" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="149" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabelSucessoGuiaCadastrar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="143" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="btnCadastrarGuiaNovoCurso" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
                           <Component id="botaoVoltar5" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -648,6 +666,8 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="  Manter Cursos"/>
               </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelSucessoGuiaCadastrar">
             </Component>
           </SubComponents>
         </Container>

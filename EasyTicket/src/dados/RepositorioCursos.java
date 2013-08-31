@@ -51,7 +51,6 @@ public class RepositorioCursos extends GenericDAO implements IRepositorioCursos 
             } catch (SQLException ex) {
                 System.out.println("incluirCurso(): "+ex.toString());
             } 
-        
     }
 
     
@@ -61,20 +60,20 @@ public class RepositorioCursos extends GenericDAO implements IRepositorioCursos 
       }else{
           return false;
       }
-        
     }
     
    
     public void atualizar(Curso curso) {
-       String query = "UPDATE EASYTICKET.CURSOS SET NOME=? WHERE IDCURSO=?"+curso.getIdCurso();
+       String query = "UPDATE EASYTICKET.CURSOS SET NOMECURSO=? WHERE IDCURSO=?";
        
       try{
          PreparedStatement stmt = this.conexao.prepareStatement(query);
          
          stmt.setString(1,curso.getNome());
+         stmt.setInt(2, curso.getIdCurso());
          stmt.execute();
          
-         conexao.close();
+         //conexao.close();
          System.out.println("Curso atualizado com sucesso");
       
       } catch (SQLException ex) {
@@ -108,11 +107,9 @@ public class RepositorioCursos extends GenericDAO implements IRepositorioCursos 
          }
         
          return cursoResultado;
-
-    
     }
     
-     public int findIdByNome(String nomeCurso) {
+    public int findIdByNome(String nomeCurso) {
         int idCurso=-1;
         
         String query = "SELECT IDCURSO FROM EASYTICKET.CURSOS WHERE NOMECURSO=?";
@@ -134,8 +131,6 @@ public class RepositorioCursos extends GenericDAO implements IRepositorioCursos 
          }
         
          return idCurso;
-
-    
     }
     
     
@@ -157,35 +152,33 @@ public class RepositorioCursos extends GenericDAO implements IRepositorioCursos 
          } catch (SQLException ex) {
                  System.out.println("deletarCurso(): "+ex.toString());
          }
-        
-         
     }
     
     
-      public List<Curso> listarCursos(){
+    public List<Curso> listarCursos(){
           
           List<Curso> listaCursos = new ArrayList<Curso>();
-          
+
           String query = "SELECT * FROM EASYTICKET.CURSOS";
-          
+
           try {
-                               
+
               PreparedStatement stmt = this.conexao.prepareStatement(query);
               ResultSet rs = stmt.executeQuery();
-                 
+
               while(rs.next()){
                   Curso curso = new Curso();
                   curso.setIdCurso(rs.getInt(1));
                   curso.setNome(rs.getString(2));
-                
+
                   listaCursos.add(curso);
               }
               //conexao.close(); 
-                       
+
           }catch (SQLException ex) {
-             
+
                   System.out.println("listarCursos(): "+ex.toString());
-          
+
           }
           return listaCursos;
           
