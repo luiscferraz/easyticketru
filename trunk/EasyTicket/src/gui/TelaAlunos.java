@@ -559,11 +559,19 @@ public class TelaAlunos extends javax.swing.JFrame {
 
         tituloCurso7.setText("Previsão de Término:");
 
-        jFormattedTextFieldTermCursoCadastrar.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
+        try {
+            jFormattedTextFieldTermCursoCadastrar.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
         jFormattedTextFieldTermCursoCadastrar.setToolTipText("Date");
         jFormattedTextFieldTermCursoCadastrar.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
-        jFormattedTextFieldInicioCursoCadastrar.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
+        try {
+            jFormattedTextFieldInicioCursoCadastrar.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
         jFormattedTextFieldInicioCursoCadastrar.setToolTipText("Date");
         jFormattedTextFieldInicioCursoCadastrar.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
@@ -577,7 +585,11 @@ public class TelaAlunos extends javax.swing.JFrame {
             }
         });
 
-        jFormattedTextFieldDataNascCadastrar.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
+        try {
+            jFormattedTextFieldDataNascCadastrar.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
         jFormattedTextFieldDataNascCadastrar.setToolTipText("Date");
         jFormattedTextFieldDataNascCadastrar.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
@@ -589,7 +601,11 @@ public class TelaAlunos extends javax.swing.JFrame {
 
         tituloCurso9.setText("Curso:");
 
-        jTextFieldTelefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
+        try {
+            jTextFieldTelefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
         jTextFieldTelefone.setToolTipText("Date");
         jTextFieldTelefone.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
@@ -607,6 +623,12 @@ public class TelaAlunos extends javax.swing.JFrame {
                 jComboBoxStatusCadastrarActionPerformed(evt);
             }
         });
+
+        try {
+            jFormattedTextFieldCpfCadastrar.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
 
         javax.swing.GroupLayout guiaCadastrarAlunoLayout = new javax.swing.GroupLayout(guiaCadastrarAluno);
         guiaCadastrarAluno.setLayout(guiaCadastrarAlunoLayout);
