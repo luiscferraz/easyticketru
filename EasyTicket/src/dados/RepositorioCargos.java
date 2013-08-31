@@ -101,7 +101,7 @@ public class RepositorioCargos implements IRepositorioCargos {
                      //System.out.println(res.getInt(1));
                     // System.out.println(res.getString(2)); 
                  }
-                 conexao.close();                
+                 //conexao.close();                
                                   
          } catch (SQLException ex) {
                  System.out.println("procurarCargoPorId(): "+ex.toString());
@@ -174,7 +174,7 @@ public class RepositorioCargos implements IRepositorioCargos {
                 
                   listaCargos.add(cargo);
               }
-              conexao.close(); 
+              //conexao.close(); 
                        
           }catch (SQLException ex) {
              
