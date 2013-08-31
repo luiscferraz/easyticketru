@@ -339,46 +339,61 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="botaoVoltar9" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="btnSalvarAlteracao" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="tituloAlunos2" min="-2" pref="230" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="painelConsulta2" min="-2" pref="249" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="tituloVisualizarFunc1" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="tituloCpf6" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jLabelCodigoGuiaEditarCurso" min="-2" pref="87" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="jSeparator5" alignment="0" min="-2" pref="603" max="-2" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="tituloNome3" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabelSucessoGuiaEditar" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jTextFieldNomeGuiaEditarCurso" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="botaoVoltar9" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="btnSalvarAlteracao" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                                      <Component id="jLabelCodInvalidoEditar" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="tituloCpf6" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="jLabelCodigoGuiaEditarCurso" min="-2" pref="87" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Component id="jSeparator5" alignment="0" min="-2" pref="603" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="tituloNome3" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="jLabelSucessoGuiaEditar" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldNomeGuiaEditarCurso" max="32767" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                          <Component id="tituloVisualizarFunc1" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="jLabelCodigoInexistenteEditar" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabelInformeCodigoEditar" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
+                              <EmptySpace pref="22" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="tituloAlunos2" min="-2" pref="230" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="painelConsulta2" min="-2" pref="249" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="22" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="painelConsulta2" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="tituloAlunos2" alignment="0" min="-2" pref="59" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                              <Component id="tituloAlunos2" min="-2" pref="59" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                              <Component id="painelConsulta2" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="tituloVisualizarFunc1" min="-2" pref="24" max="-2" attributes="0"/>
@@ -395,8 +410,15 @@
                           <Component id="jTextFieldNomeGuiaEditarCurso" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabelSucessoGuiaEditar" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="91" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabelSucessoGuiaEditar" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelCodInvalidoEditar" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabelCodigoInexistenteEditar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabelInformeCodigoEditar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="18" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="botaoVoltar9" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btnSalvarAlteracao" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -451,7 +473,7 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jTextFieldPesquisarPorCodigoGuiaEditarCurso" min="-2" pref="137" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="btnPesquisarGuiaEditar" min="-2" pref="46" max="-2" attributes="0"/>
+                                  <Component id="btnPesquisarGuiaEditar" min="-2" pref="41" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
@@ -460,21 +482,23 @@
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="tituloConsultar2" min="-2" pref="27" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
+                                  <Component id="tituloConsultar2" min="-2" pref="27" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="tituloCpf5" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jTextFieldPesquisarPorCodigoGuiaEditarCurso" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
+                                  <EmptySpace min="0" pref="11" max="32767" attributes="0"/>
                               </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   <Component id="btnPesquisarGuiaEditar" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
+                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -573,6 +597,21 @@
             <Component class="javax.swing.JTextField" name="jTextFieldNomeGuiaEditarCurso">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabelSucessoGuiaEditar">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelCodInvalidoEditar">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="**C&#xf3;digo inv&#xe1;lido."/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelCodigoInexistenteEditar">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="**C&#xf3;digo inexistente."/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelInformeCodigoEditar">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="**Informe o c&#xf3;digo."/>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>
