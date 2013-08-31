@@ -22,15 +22,15 @@ public class TesteCargo {
     
     public static void main(String[] args) {
         // TODO code application logic here
-        Cargo cargo = new Cargo("Gerente");
+        //Cargo cargo = new Cargo("Atendente");
         
         RepositorioCargos repositorio = new RepositorioCargos();
         
-        repositorio.inserir(cargo);
+        //repositorio.inserir(cargo);
         
         //buscando um cargo passando o idCargo
         //Cargo cargo2 = new Cargo();
-        //cargo2 = repositorio.procurarPorId(2);
+        //cargo2 = repositorio.procurarPorId(1);
         //System.out.println(cargo2.getIdCargo());
         //System.out.println(cargo2.getNome());
        
@@ -38,7 +38,7 @@ public class TesteCargo {
         //cargo2.setNome("Atendente");
         //repositorio.atualizar(cargo2);
         
-        //repositorio.deletar(2);
+        repositorio.deletar(1);
         
         
        /**for(Cargo c: repositorio.listarCargos()){
