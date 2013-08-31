@@ -25,12 +25,19 @@ public class TelaCursos extends javax.swing.JFrame {
      */
     public TelaCursos() {
         initComponents();
+        
         btnSalvarAlteracao.setEnabled(false);
+        
         jLabelSucessoGuiaEditar.setVisible(false);
         jLabelSucessoGuiaCadastrar.setVisible(false);
+        
         jLabelCodigoInexistente.setVisible(false);
         jLabelInformeCodigoVisualizar.setVisible(false);
         jLabelCodInvalidoVisualizar.setVisible(false);
+        
+        jLabelCodInvalidoEditar.setVisible(false);
+        jLabelCodigoInexistenteEditar.setVisible(false);
+        jLabelInformeCodigoEditar.setVisible(false);
         
        
     }
@@ -78,6 +85,9 @@ public class TelaCursos extends javax.swing.JFrame {
         jLabelCodigoGuiaEditarCurso = new javax.swing.JLabel();
         jTextFieldNomeGuiaEditarCurso = new javax.swing.JTextField();
         jLabelSucessoGuiaEditar = new javax.swing.JLabel();
+        jLabelCodInvalidoEditar = new javax.swing.JLabel();
+        jLabelCodigoInexistenteEditar = new javax.swing.JLabel();
+        jLabelInformeCodigoEditar = new javax.swing.JLabel();
         guiaCadastrarAluno = new javax.swing.JPanel();
         tituloCadastrar = new javax.swing.JLabel();
         btnCadastrarGuiaNovoCurso = new javax.swing.JButton();
@@ -297,22 +307,24 @@ public class TelaCursos extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTextFieldPesquisarPorCodigoGuiaEditarCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnPesquisarGuiaEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnPesquisarGuiaEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         painelConsulta2Layout.setVerticalGroup(
             painelConsulta2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelConsulta2Layout.createSequentialGroup()
-                .addComponent(tituloConsultar2, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(painelConsulta2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(painelConsulta2Layout.createSequentialGroup()
+                        .addComponent(tituloConsultar2, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(13, 13, 13)
                         .addGroup(painelConsulta2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(tituloCpf5)
-                            .addComponent(jTextFieldPesquisarPorCodigoGuiaEditarCurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(painelConsulta2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnPesquisarGuiaEditar))))
+                            .addComponent(jTextFieldPesquisarPorCodigoGuiaEditarCurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 11, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelConsulta2Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnPesquisarGuiaEditar)))
+                .addContainerGap())
         );
 
         tituloVisualizarFunc1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -341,43 +353,59 @@ public class TelaCursos extends javax.swing.JFrame {
             }
         });
 
+        jLabelCodInvalidoEditar.setText("**Código inválido.");
+
+        jLabelCodigoInexistenteEditar.setText("**Código inexistente.");
+
+        jLabelInformeCodigoEditar.setText("**Informe o código.");
+
         javax.swing.GroupLayout guiaEditarAlunoLayout = new javax.swing.GroupLayout(guiaEditarAluno);
         guiaEditarAluno.setLayout(guiaEditarAlunoLayout);
         guiaEditarAlunoLayout.setHorizontalGroup(
             guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(guiaEditarAlunoLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(guiaEditarAlunoLayout.createSequentialGroup()
-                        .addComponent(botaoVoltar9)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnSalvarAlteracao))
-                    .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, guiaEditarAlunoLayout.createSequentialGroup()
-                            .addComponent(tituloAlunos2, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(painelConsulta2, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(tituloVisualizarFunc1)
-                        .addGroup(guiaEditarAlunoLayout.createSequentialGroup()
-                            .addComponent(tituloCpf6)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jLabelCodigoGuiaEditarCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 603, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(guiaEditarAlunoLayout.createSequentialGroup()
-                            .addComponent(tituloNome3)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(guiaEditarAlunoLayout.createSequentialGroup()
+                                .addComponent(botaoVoltar9)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnSalvarAlteracao))
                             .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabelSucessoGuiaEditar)
-                                .addComponent(jTextFieldNomeGuiaEditarCurso)))))
-                .addContainerGap(22, Short.MAX_VALUE))
+                                .addComponent(jLabelCodInvalidoEditar)
+                                .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(guiaEditarAlunoLayout.createSequentialGroup()
+                                        .addComponent(tituloCpf6)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabelCodigoGuiaEditarCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 603, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(guiaEditarAlunoLayout.createSequentialGroup()
+                                        .addComponent(tituloNome3)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabelSucessoGuiaEditar)
+                                            .addComponent(jTextFieldNomeGuiaEditarCurso)))
+                                    .addComponent(tituloVisualizarFunc1))
+                                .addComponent(jLabelCodigoInexistenteEditar)
+                                .addComponent(jLabelInformeCodigoEditar)))
+                        .addContainerGap(22, Short.MAX_VALUE))
+                    .addGroup(guiaEditarAlunoLayout.createSequentialGroup()
+                        .addComponent(tituloAlunos2, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(painelConsulta2, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(34, 34, 34))))
         );
         guiaEditarAlunoLayout.setVerticalGroup(
             guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(guiaEditarAlunoLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
                 .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(painelConsulta2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tituloAlunos2, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(guiaEditarAlunoLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(tituloAlunos2, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(guiaEditarAlunoLayout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addComponent(painelConsulta2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tituloVisualizarFunc1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -391,8 +419,14 @@ public class TelaCursos extends javax.swing.JFrame {
                     .addComponent(tituloNome3)
                     .addComponent(jTextFieldNomeGuiaEditarCurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabelSucessoGuiaEditar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
+                .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelSucessoGuiaEditar)
+                    .addComponent(jLabelCodInvalidoEditar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelCodigoInexistenteEditar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelInformeCodigoEditar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botaoVoltar9)
                     .addComponent(btnSalvarAlteracao))
@@ -520,6 +554,7 @@ public class TelaCursos extends javax.swing.JFrame {
             jTextFieldPesquisarPorCodigo.setText("");
             jLabelCodigoGuiaVisualizar.setText("");
             jLabelNomeGuiaVisualizar.setText("");
+            
             jLabelCodigoInexistente.setVisible(false);
             jLabelInformeCodigoVisualizar.setVisible(false);
             jLabelCodInvalidoVisualizar.setVisible(true);
@@ -532,6 +567,7 @@ public class TelaCursos extends javax.swing.JFrame {
                     jLabelNomeGuiaVisualizar.setText(retorno.getNome());
                     jLabelCodigoGuiaVisualizar.setText(Integer.toString(retorno.getIdCurso()));
                     jTextFieldPesquisarPorCodigo.setText("");
+                    
                     jLabelCodigoInexistente.setVisible(false);
                     jLabelInformeCodigoVisualizar.setVisible(false);
                     jLabelCodInvalidoVisualizar.setVisible(false);
@@ -543,14 +579,17 @@ public class TelaCursos extends javax.swing.JFrame {
                     jTextFieldPesquisarPorCodigo.setText("");
                     jLabelCodigoGuiaVisualizar.setText("");
                     jLabelNomeGuiaVisualizar.setText("");
+                    
                     jLabelCodInvalidoVisualizar.setVisible(false);
                     jLabelInformeCodigoVisualizar.setVisible(false);
+                    
                     return;
                 }
             } catch (Exception ex){
                 System.out.println("Erro ao pesquisar.");
                 //JOptionPane.showMessageDialog(this,"Informação inválida!","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
                 jTextFieldPesquisarPorCodigo.setText("");
+                
                 jLabelCodInvalidoVisualizar.setVisible(true);
                 jLabelCodigoInexistente.setVisible(false);
                 
@@ -573,23 +612,42 @@ public class TelaCursos extends javax.swing.JFrame {
             jTextFieldPesquisarPorCodigoGuiaEditarCurso.setText("");
             jLabelCodigoGuiaEditarCurso.setText("");
             jTextFieldNomeGuiaEditarCurso.setText("");
+            
+            jLabelCodigoInexistenteEditar.setVisible(false);
+            jLabelInformeCodigoEditar.setVisible(false);
+            jLabelCodInvalidoEditar.setVisible(true);
+            
             return;
         } else{
-            if (cadastro.verificaExistenciaId(Integer.parseInt(jTextFieldPesquisarPorCodigoGuiaEditarCurso.getText()))){
-            Curso retorno = new Curso();
-            retorno = cadastro.buscaPorId(Integer.parseInt(jTextFieldPesquisarPorCodigoGuiaEditarCurso.getText()));
-            jTextFieldNomeGuiaEditarCurso.setText(retorno.getNome());
-            jLabelCodigoGuiaEditarCurso.setText(Integer.toString(retorno.getIdCurso()));
-            jTextFieldPesquisarPorCodigoGuiaEditarCurso.setText("");
-            btnSalvarAlteracao.setEnabled(true);
-            
-            
-            } else {
-                JOptionPane.showMessageDialog(this,"Código Inexistente!","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
+             try{
+                    if (cadastro.verificaExistenciaId(Integer.parseInt(jTextFieldPesquisarPorCodigoGuiaEditarCurso.getText()))){
+                    Curso retorno = new Curso();
+                    retorno = cadastro.buscaPorId(Integer.parseInt(jTextFieldPesquisarPorCodigoGuiaEditarCurso.getText()));
+                    jTextFieldNomeGuiaEditarCurso.setText(retorno.getNome());
+                    jLabelCodigoGuiaEditarCurso.setText(Integer.toString(retorno.getIdCurso()));
+                    jTextFieldPesquisarPorCodigoGuiaEditarCurso.setText("");
+                    btnSalvarAlteracao.setEnabled(true);
+
+                    jLabelCodigoInexistenteEditar.setVisible(false);
+                    jLabelInformeCodigoEditar.setVisible(false);
+                    jLabelCodInvalidoEditar.setVisible(false);
+
+
+                    } else {
+                        //JOptionPane.showMessageDialog(this,"Código Inexistente!","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
+                        jTextFieldNomeGuiaEditarCurso.setText("");
+                        jLabelCodigoGuiaEditarCurso.setText("");
+                        jTextFieldPesquisarPorCodigoGuiaEditarCurso.setText("");
+
+                        jLabelCodInvalidoEditar.setVisible(false);
+                        jLabelCodigoInexistenteEditar.setVisible(true);
+                        return;
+                    }
+            } catch(Exception ex){
+                jLabelCodInvalidoEditar.setVisible(true);
+                jLabelCodigoInexistenteEditar.setVisible(false);
+                
                 jTextFieldNomeGuiaEditarCurso.setText("");
-                jLabelCodigoGuiaEditarCurso.setText("");
-                jTextFieldPesquisarPorCodigoGuiaEditarCurso.setText("");
-                return;
             }
         }
     }//GEN-LAST:event_btnPesquisarGuiaEditarActionPerformed
@@ -711,10 +769,13 @@ public class TelaCursos extends javax.swing.JFrame {
     private javax.swing.JPanel guiaEditarAluno;
     private javax.swing.JPanel guiaVisualizarAluno;
     private javax.swing.JTabbedPane guiasAluno;
+    private javax.swing.JLabel jLabelCodInvalidoEditar;
     private javax.swing.JLabel jLabelCodInvalidoVisualizar;
     private javax.swing.JLabel jLabelCodigoGuiaEditarCurso;
     private javax.swing.JLabel jLabelCodigoGuiaVisualizar;
     private javax.swing.JLabel jLabelCodigoInexistente;
+    private javax.swing.JLabel jLabelCodigoInexistenteEditar;
+    private javax.swing.JLabel jLabelInformeCodigoEditar;
     private javax.swing.JLabel jLabelInformeCodigoVisualizar;
     private javax.swing.JLabel jLabelNomeGuiaVisualizar;
     private javax.swing.JLabel jLabelSucessoGuiaCadastrar;
