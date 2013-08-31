@@ -30,7 +30,7 @@ public class RepositorioCargos implements IRepositorioCargos {
         try {
             this.conexao = GenericDAO.getConnection();
         } catch (Exception ex) {
-            Logger.getLogger(RepositorioCursos.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(RepositorioCargos.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -65,7 +65,7 @@ public class RepositorioCargos implements IRepositorioCargos {
 
   
     public void atualizar(Cargo cargo) {
-       String query = "UPDATE EASYTICKET.CARGOS SET NOME=? WHERE IDCARGO=?";
+       String query = "UPDATE EASYTICKET.CARGOS SET NOMECARGO=? WHERE IDCARGOS=?";
        
       try{
          PreparedStatement stmt = this.conexao.prepareStatement(query);
@@ -87,7 +87,7 @@ public class RepositorioCargos implements IRepositorioCargos {
     public Cargo procurarPorId(int idCargo) {
         Cargo cargoResultado = null;
         
-        String query = "SELECT * FROM EASYTICKET.CARGOS WHERE IDCURSO= "+idCargo;
+        String query = "SELECT * FROM EASYTICKET.CARGOS WHERE IDCARGOS= "+idCargo;
         
         try {
                  
@@ -114,7 +114,7 @@ public class RepositorioCargos implements IRepositorioCargos {
     public int findIdByNome(String nomeCargo) {
         int idCargo=-1;
         
-        String query = "SELECT IDCARGO FROM EASYTICKET.CARGOS WHERE NOMECARGO=?";
+        String query = "SELECT IDCARGOS FROM EASYTICKET.CARGOS WHERE NOMECARGO=?";
         
         try {                 
              PreparedStatement stmt = this.conexao.prepareStatement(query);
@@ -138,7 +138,7 @@ public class RepositorioCargos implements IRepositorioCargos {
     }
     
     public void deletar(int idCargo) {
-        String query = "DELETE FROM EASYTICKET.CARGOS WHERE IDCARGO= "+idCargo;
+        String query = "DELETE FROM EASYTICKET.CARGOS WHERE IDCARGOS= "+idCargo;
         
         try {
                  PreparedStatement stmt = this.conexao.prepareStatement(query);
