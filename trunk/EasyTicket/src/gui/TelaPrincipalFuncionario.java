@@ -9,12 +9,20 @@ package gui;
  * @author Allan
  */
 public class TelaPrincipalFuncionario extends javax.swing.JFrame {
-
+    //garantindo um singleton
+    private static TelaPrincipalFuncionario instancia;
     /**
      * Creates new form TelaPrincipal
      */
     public TelaPrincipalFuncionario() {
         initComponents();
+    }
+    
+    public static synchronized TelaPrincipalFuncionario getInstance(){
+        if (instancia==null){
+            instancia = new TelaPrincipalFuncionario();
+        }
+        return instancia;
     }
 
     /**
