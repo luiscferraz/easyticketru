@@ -9,8 +9,7 @@ package gui;
  * @author Allan
  */
 public class TelaPrincipalFuncionario extends javax.swing.JFrame {
-    //garantindo um singleton
-    private static TelaPrincipalFuncionario instancia;
+    
     /**
      * Creates new form TelaPrincipal
      */
@@ -18,13 +17,7 @@ public class TelaPrincipalFuncionario extends javax.swing.JFrame {
         initComponents();
     }
     
-    public static synchronized TelaPrincipalFuncionario getInstance(){
-        if (instancia==null){
-            instancia = new TelaPrincipalFuncionario();
-        }
-        return instancia;
-    }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

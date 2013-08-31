@@ -40,7 +40,7 @@ public class RepositorioCargos implements IRepositorioCargos {
         try {
             PreparedStatement stmt = this.conexao.prepareStatement(query);
             
-            stmt.setString(1, curso.getNome());
+            stmt.setString(1, cargo.getNome());
             
             stmt.execute();
             
@@ -74,7 +74,7 @@ public class RepositorioCargos implements IRepositorioCargos {
                  ResultSet res = stmt.executeQuery();
                  
                  if (res.next()) {
-                     cargoResultado = new Curso();
+                     cargoResultado = new Cargo();
                      cargoResultado.setIdCargo(res.getInt(1));
                      cargoResultado.setNome(res.getString(2));
                      //System.out.println(res.getInt(1));
@@ -122,7 +122,7 @@ public class RepositorioCargos implements IRepositorioCargos {
                  
               while(rs.next()){
                   Cargo cargo = new Cargo();
-                  cargo.setIdCurso(rs.getInt(1));
+                  cargo.setIdCargo(rs.getInt(1));
                   cargo.setNome(rs.getString(2));
                 
                   listaCargos.add(cargo);

@@ -13,6 +13,8 @@ public class Cargo {
     private int idCargo;
     private String nome;
     
+    public Cargo(){}
+    
     public Cargo(String nome){
         this.nome = nome;        
     }
