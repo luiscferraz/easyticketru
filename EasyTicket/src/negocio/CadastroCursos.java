@@ -48,4 +48,8 @@ public class CadastroCursos {
         return cursos.existe(idCurso);
     }
     
+    public void deletar(int idCurso){
+        cursos.deletar(idCurso);
+    }
+    
 }

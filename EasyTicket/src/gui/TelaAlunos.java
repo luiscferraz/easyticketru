@@ -4,6 +4,9 @@
  */
 package gui;
 
+import java.text.DateFormat;
+import util.Formatacao;
+
 /**
  *
  * @author Allan
@@ -66,7 +69,6 @@ public class TelaAlunos extends javax.swing.JFrame {
         campoDataNasc10 = new javax.swing.JFormattedTextField();
         tituloDataNasc4 = new javax.swing.JLabel();
         campoDataNasc11 = new javax.swing.JFormattedTextField();
-        campoDataNasc12 = new javax.swing.JFormattedTextField();
         tituloCurso10 = new javax.swing.JLabel();
         tituloCurso11 = new javax.swing.JLabel();
         campoDataNasc13 = new javax.swing.JFormattedTextField();
@@ -77,30 +79,31 @@ public class TelaAlunos extends javax.swing.JFrame {
         tituloDataNasc5 = new javax.swing.JLabel();
         campoDataNasc15 = new javax.swing.JFormattedTextField();
         tituloDataNasc6 = new javax.swing.JLabel();
+        jComboBox2 = new javax.swing.JComboBox();
         guiaCadastrarAluno = new javax.swing.JPanel();
         tituloCadastrar = new javax.swing.JLabel();
         botaoCadastrar1 = new javax.swing.JButton();
         botaoVoltar5 = new javax.swing.JButton();
         jSeparator3 = new javax.swing.JSeparator();
         tituloAlunos3 = new javax.swing.JLabel();
-        campoDataNasc6 = new javax.swing.JFormattedTextField();
         tituloCurso6 = new javax.swing.JLabel();
         tituloCurso7 = new javax.swing.JLabel();
         campoDataNasc7 = new javax.swing.JFormattedTextField();
         campoDataNasc8 = new javax.swing.JFormattedTextField();
         tituloCurso8 = new javax.swing.JLabel();
         campoCurso3 = new javax.swing.JComboBox();
-        campoNome3 = new javax.swing.JTextField();
-        campoCpf3 = new javax.swing.JTextField();
+        jTextFieldNome = new javax.swing.JTextField();
+        jTextFieldCpf = new javax.swing.JTextField();
         campoDataNasc9 = new javax.swing.JFormattedTextField();
         tituloDataNasc3 = new javax.swing.JLabel();
         tituloCpf6 = new javax.swing.JLabel();
         tituloNome3 = new javax.swing.JLabel();
         tituloCurso9 = new javax.swing.JLabel();
-        campoDataNasc16 = new javax.swing.JFormattedTextField();
+        jTextFieldTelefone = new javax.swing.JFormattedTextField();
         tituloDataNasc7 = new javax.swing.JLabel();
         tituloDataNasc8 = new javax.swing.JLabel();
-        campoDataNasc17 = new javax.swing.JFormattedTextField();
+        jTextFieldEmail = new javax.swing.JFormattedTextField();
+        jComboBox1 = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -389,10 +392,6 @@ public class TelaAlunos extends javax.swing.JFrame {
         campoDataNasc11.setToolTipText("Date");
         campoDataNasc11.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
-        campoDataNasc12.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
-        campoDataNasc12.setToolTipText("Date");
-        campoDataNasc12.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-
         tituloCurso10.setText("Status:");
 
         tituloCurso11.setText("Previsão de Término:");
@@ -401,7 +400,7 @@ public class TelaAlunos extends javax.swing.JFrame {
         campoDataNasc13.setToolTipText("Date");
         campoDataNasc13.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
-        tituloCurso12.setText("Inicio:");
+        tituloCurso12.setText("Início Curso:");
 
         campoCurso4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione", "Sistemas de Informação", "Ciência da Computação", "Licenciatura em Informática" }));
 
@@ -418,6 +417,8 @@ public class TelaAlunos extends javax.swing.JFrame {
         campoDataNasc15.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         tituloDataNasc6.setText("Email:");
+
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "ATIVO", "INATIVO" }));
 
         javax.swing.GroupLayout guiaEditarAlunoLayout = new javax.swing.GroupLayout(guiaEditarAluno);
         guiaEditarAluno.setLayout(guiaEditarAlunoLayout);
@@ -467,17 +468,17 @@ public class TelaAlunos extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(campoCurso4, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(guiaEditarAlunoLayout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGap(0, 88, Short.MAX_VALUE)
                                 .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(tituloCurso10, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(tituloCurso11, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(tituloCurso12, javax.swing.GroupLayout.Alignment.TRAILING))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(campoDataNasc12)
                                     .addComponent(campoDataNasc13)
-                                    .addComponent(campoDataNasc11, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(22, Short.MAX_VALUE))
+                                    .addComponent(campoDataNasc11, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE)
+                                    .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
         guiaEditarAlunoLayout.setVerticalGroup(
             guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -511,9 +512,9 @@ public class TelaAlunos extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tituloCurso10)
-                    .addComponent(campoDataNasc12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tituloDataNasc5)
-                    .addComponent(campoDataNasc14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(campoDataNasc14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
                 .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tituloDataNasc4)
@@ -549,10 +550,6 @@ public class TelaAlunos extends javax.swing.JFrame {
         tituloAlunos3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/alunos.png"))); // NOI18N
         tituloAlunos3.setText("  Manter Alunos");
 
-        campoDataNasc6.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
-        campoDataNasc6.setToolTipText("Date");
-        campoDataNasc6.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-
         tituloCurso6.setText("Status:");
 
         tituloCurso7.setText("Previsão de Término:");
@@ -565,19 +562,19 @@ public class TelaAlunos extends javax.swing.JFrame {
         campoDataNasc8.setToolTipText("Date");
         campoDataNasc8.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
-        tituloCurso8.setText("Inicio:");
+        tituloCurso8.setText("Início curso:");
 
         campoCurso3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione", "Sistemas de Informação", "Ciência da Computação", "Licenciatura em Informática" }));
 
-        campoNome3.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campoNome3ActionPerformed(evt);
+                jTextFieldNomeActionPerformed(evt);
             }
         });
 
-        campoCpf3.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldCpf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campoCpf3ActionPerformed(evt);
+                jTextFieldCpfActionPerformed(evt);
             }
         });
 
@@ -593,17 +590,24 @@ public class TelaAlunos extends javax.swing.JFrame {
 
         tituloCurso9.setText("Curso:");
 
-        campoDataNasc16.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
-        campoDataNasc16.setToolTipText("Date");
-        campoDataNasc16.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jTextFieldTelefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
+        jTextFieldTelefone.setToolTipText("Date");
+        jTextFieldTelefone.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         tituloDataNasc7.setText("Telefone:");
 
         tituloDataNasc8.setText("Email:");
 
-        campoDataNasc17.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
-        campoDataNasc17.setToolTipText("Date");
-        campoDataNasc17.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jTextFieldEmail.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
+        jTextFieldEmail.setToolTipText("Date");
+        jTextFieldEmail.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "ATIVO", "INATIVO" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout guiaCadastrarAlunoLayout = new javax.swing.GroupLayout(guiaCadastrarAluno);
         guiaCadastrarAluno.setLayout(guiaCadastrarAlunoLayout);
@@ -631,7 +635,7 @@ public class TelaAlunos extends javax.swing.JFrame {
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, guiaCadastrarAlunoLayout.createSequentialGroup()
                                         .addComponent(tituloNome3)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(campoNome3))
+                                        .addComponent(jTextFieldNome))
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, guiaCadastrarAlunoLayout.createSequentialGroup()
                                         .addComponent(tituloDataNasc3)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -639,7 +643,7 @@ public class TelaAlunos extends javax.swing.JFrame {
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, guiaCadastrarAlunoLayout.createSequentialGroup()
                                         .addComponent(tituloDataNasc7)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(campoDataNasc16))
+                                        .addComponent(jTextFieldTelefone))
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, guiaCadastrarAlunoLayout.createSequentialGroup()
                                         .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(tituloCpf6)
@@ -647,33 +651,27 @@ public class TelaAlunos extends javax.swing.JFrame {
                                         .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
                                                 .addGap(7, 7, 7)
-                                                .addComponent(campoCpf3))
+                                                .addComponent(jTextFieldCpf))
                                             .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(campoDataNasc17, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                                .addComponent(jTextFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                                 .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
-                                        .addGap(76, 76, 76)
-                                        .addComponent(tituloCurso8)
-                                        .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(campoDataNasc8))
-                                            .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
-                                                .addGap(88, 88, 88)
-                                                .addComponent(tituloCurso6)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(campoDataNasc6, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE))))
                                     .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
                                         .addGap(28, 28, 28)
                                         .addComponent(tituloCurso9)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(campoCurso3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addComponent(campoCurso3, 0, 248, Short.MAX_VALUE))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, guiaCadastrarAlunoLayout.createSequentialGroup()
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(tituloCurso7)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(campoDataNasc7, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                        .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(tituloCurso8)
+                                            .addComponent(tituloCurso7)
+                                            .addComponent(tituloCurso6))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(campoDataNasc7, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE)
+                                            .addComponent(campoDataNasc8)
+                                            .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
                         .addContainerGap())))
         );
         guiaCadastrarAlunoLayout.setVerticalGroup(
@@ -688,13 +686,13 @@ public class TelaAlunos extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tituloNome3)
-                    .addComponent(campoNome3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(campoCurso3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tituloCurso9))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tituloCpf6)
-                    .addComponent(campoCpf3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tituloCurso8)
                     .addComponent(campoDataNasc8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -706,7 +704,7 @@ public class TelaAlunos extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(tituloCurso6)
-                            .addComponent(campoDataNasc6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
                         .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(botaoCadastrar1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -714,11 +712,11 @@ public class TelaAlunos extends javax.swing.JFrame {
                     .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
                         .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(tituloDataNasc8)
-                            .addComponent(campoDataNasc17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jTextFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(tituloDataNasc7)
-                            .addComponent(campoDataNasc16, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jTextFieldTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(tituloDataNasc3)
@@ -727,8 +725,8 @@ public class TelaAlunos extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        campoNome3.getAccessibleContext().setAccessibleName("txtCadNomeAluno");
-        campoNome3.getAccessibleContext().setAccessibleDescription("");
+        jTextFieldNome.getAccessibleContext().setAccessibleName("txtCadNomeAluno");
+        jTextFieldNome.getAccessibleContext().setAccessibleDescription("");
 
         guiasAluno.addTab("Cadastrar Novo Aluno", guiaCadastrarAluno);
 
@@ -769,13 +767,13 @@ public class TelaAlunos extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_botaoVoltar6ActionPerformed
 
-    private void campoNome3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoNome3ActionPerformed
+    private void jTextFieldNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_campoNome3ActionPerformed
+    }//GEN-LAST:event_jTextFieldNomeActionPerformed
 
-    private void campoCpf3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoCpf3ActionPerformed
+    private void jTextFieldCpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCpfActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_campoCpf3ActionPerformed
+    }//GEN-LAST:event_jTextFieldCpfActionPerformed
 
     private void campoNome4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoNome4ActionPerformed
         // TODO add your handling code here:
@@ -784,6 +782,10 @@ public class TelaAlunos extends javax.swing.JFrame {
     private void campoCpf4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoCpf4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_campoCpf4ActionPerformed
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -827,23 +829,17 @@ public class TelaAlunos extends javax.swing.JFrame {
     private javax.swing.JButton botaoVoltar6;
     private javax.swing.JButton botaoVoltar8;
     private javax.swing.JButton botaoVoltar9;
-    private javax.swing.JTextField campoCpf3;
     private javax.swing.JTextField campoCpf4;
     private javax.swing.JComboBox campoCurso3;
     private javax.swing.JComboBox campoCurso4;
     private javax.swing.JFormattedTextField campoDataNasc10;
     private javax.swing.JFormattedTextField campoDataNasc11;
-    private javax.swing.JFormattedTextField campoDataNasc12;
     private javax.swing.JFormattedTextField campoDataNasc13;
     private javax.swing.JFormattedTextField campoDataNasc14;
     private javax.swing.JFormattedTextField campoDataNasc15;
-    private javax.swing.JFormattedTextField campoDataNasc16;
-    private javax.swing.JFormattedTextField campoDataNasc17;
-    private javax.swing.JFormattedTextField campoDataNasc6;
     private javax.swing.JFormattedTextField campoDataNasc7;
     private javax.swing.JFormattedTextField campoDataNasc8;
     private javax.swing.JFormattedTextField campoDataNasc9;
-    private javax.swing.JTextField campoNome3;
     private javax.swing.JTextField campoNome4;
     private javax.swing.JTextField campoPesquisarCpfFunc1;
     private javax.swing.JTextField campoPesquisarCpfFunc2;
@@ -852,9 +848,15 @@ public class TelaAlunos extends javax.swing.JFrame {
     private javax.swing.JPanel guiaEditarAluno;
     private javax.swing.JPanel guiaVisualizarAluno;
     private javax.swing.JTabbedPane guiasAluno;
+    private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JComboBox jComboBox2;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JTextField jTextFieldCpf;
+    private javax.swing.JFormattedTextField jTextFieldEmail;
+    private javax.swing.JTextField jTextFieldNome;
+    private javax.swing.JFormattedTextField jTextFieldTelefone;
     private javax.swing.JPanel painelConsulta1;
     private javax.swing.JPanel painelConsulta2;
     private javax.swing.JLabel tituloAlunos1;
