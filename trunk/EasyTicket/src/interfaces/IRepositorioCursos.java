@@ -18,7 +18,7 @@ public interface IRepositorioCursos {
     //public boolean nomeExistente(String nomeCurso);
     public void atualizar(Curso curso);
     public Curso procurarPorId(int idCurso);
-    //public int procurarPorNome(String nome);
+    public int findIdByNome(String nome);
     public void deletar(int idCurso);
     public List<Curso> listarCursos();
     

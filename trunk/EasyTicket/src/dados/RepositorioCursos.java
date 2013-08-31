@@ -101,13 +101,39 @@ public class RepositorioCursos extends GenericDAO implements IRepositorioCursos 
                      //System.out.println(res.getInt(1));
                     // System.out.println(res.getString(2)); 
                  }
-                 conexao.close();                
+                 //conexao.close();                
                                   
          } catch (SQLException ex) {
                  System.out.println("procurarCursoPorId(): "+ex.toString());
          }
         
          return cursoResultado;
+
+    
+    }
+    
+     public int findIdByNome(String nomeCurso) {
+        int idCurso=-1;
+        
+        String query = "SELECT IDCURSO FROM EASYTICKET.CURSOS WHERE NOMECURSO=?";
+        
+        try {                 
+             PreparedStatement stmt = this.conexao.prepareStatement(query);
+             stmt.setString(1, nomeCurso);
+             ResultSet res = stmt.executeQuery();
+
+             if (res.next()) {
+                 idCurso = res.getInt(1);
+                 //System.out.println(res.getInt(1));
+                // System.out.println(res.getString(2)); 
+             }
+             //conexao.close();                
+                                  
+         } catch (SQLException ex) {
+                 System.out.println("procurarCursoPorId(): "+ex.toString());
+         }
+        
+         return idCurso;
 
     
     }
@@ -154,7 +180,7 @@ public class RepositorioCursos extends GenericDAO implements IRepositorioCursos 
                 
                   listaCursos.add(curso);
               }
-              conexao.close(); 
+              //conexao.close(); 
                        
           }catch (SQLException ex) {
              

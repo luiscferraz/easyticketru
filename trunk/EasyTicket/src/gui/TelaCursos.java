@@ -5,6 +5,7 @@
 package gui;
 
 import dados.RepositorioCursos;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -47,9 +48,11 @@ public class TelaCursos extends javax.swing.JFrame {
         painelConsulta1 = new javax.swing.JPanel();
         tituloConsultar1 = new javax.swing.JLabel();
         tituloCpf4 = new javax.swing.JLabel();
-        campoPesquisarCpfFunc1 = new javax.swing.JTextField();
         botaoPesquisar1 = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
         tituloAlunos1 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         guiaEditarAluno = new javax.swing.JPanel();
         tituloAlunos2 = new javax.swing.JLabel();
         painelConsulta2 = new javax.swing.JPanel();
@@ -117,20 +120,25 @@ public class TelaCursos extends javax.swing.JFrame {
             }
         });
 
+        jTextField1.setText("jTextField1");
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout painelConsulta1Layout = new javax.swing.GroupLayout(painelConsulta1);
         painelConsulta1.setLayout(painelConsulta1Layout);
         painelConsulta1Layout.setHorizontalGroup(
             painelConsulta1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelConsulta1Layout.createSequentialGroup()
-                .addGroup(painelConsulta1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addContainerGap()
+                .addGroup(painelConsulta1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(tituloConsultar1)
                     .addGroup(painelConsulta1Layout.createSequentialGroup()
-                        .addGap(62, 62, 62)
-                        .addComponent(tituloConsultar1))
-                    .addGroup(painelConsulta1Layout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(tituloCpf4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(campoPesquisarCpfFunc1, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(botaoPesquisar1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -144,15 +152,22 @@ public class TelaCursos extends javax.swing.JFrame {
                         .addGap(13, 13, 13)
                         .addGroup(painelConsulta1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(tituloCpf4)
-                            .addComponent(campoPesquisarCpfFunc1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(painelConsulta1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(botaoPesquisar1))))
         );
 
+        botaoPesquisar1.getAccessibleContext().setAccessibleName("btnSearchByCod");
+        jTextField1.getAccessibleContext().setAccessibleName("txtCampoBuscaId");
+
         tituloAlunos1.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         tituloAlunos1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/cursos.png"))); // NOI18N
         tituloAlunos1.setText("  Manter Cursos");
+
+        jLabel1.setText("jLabel1");
+
+        jLabel2.setText("jLabel2");
 
         javax.swing.GroupLayout guiaVisualizarAlunoLayout = new javax.swing.GroupLayout(guiaVisualizarAluno);
         guiaVisualizarAluno.setLayout(guiaVisualizarAlunoLayout);
@@ -167,9 +182,15 @@ public class TelaCursos extends javax.swing.JFrame {
                             .addComponent(tituloAlunos1, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(painelConsulta1, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(tituloNome2)
+                        .addGroup(guiaVisualizarAlunoLayout.createSequentialGroup()
+                            .addComponent(tituloNome2)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jLabel2))
                         .addComponent(tituloVisualizarFunc)
-                        .addComponent(tituloCpf3)
+                        .addGroup(guiaVisualizarAlunoLayout.createSequentialGroup()
+                            .addComponent(tituloCpf3)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jLabel1))
                         .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 603, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(22, Short.MAX_VALUE))
         );
@@ -185,13 +206,20 @@ public class TelaCursos extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(tituloCpf3)
+                .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tituloCpf3)
+                    .addComponent(jLabel1))
                 .addGap(18, 18, 18)
-                .addComponent(tituloNome2)
+                .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tituloNome2)
+                    .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
                 .addComponent(botaoVoltar6)
                 .addGap(23, 23, 23))
         );
+
+        jLabel1.getAccessibleContext().setAccessibleName("lblCodigoCurso");
+        jLabel2.getAccessibleContext().setAccessibleName("lblNomeCurso");
 
         guiasAluno.addTab("Visualizar Curso", guiaVisualizarAluno);
 
@@ -430,6 +458,12 @@ public class TelaCursos extends javax.swing.JFrame {
 
     private void botaoPesquisar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoPesquisar1ActionPerformed
         // TODO add your handling code here:
+        if (campoNome.getText().equals("")) {
+                JOptionPane.showMessageDialog(this,"Informe o código do curso.","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        
     }//GEN-LAST:event_botaoPesquisar1ActionPerformed
 
     private void botaoPesquisar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoPesquisar2ActionPerformed
@@ -458,25 +492,35 @@ public class TelaCursos extends javax.swing.JFrame {
             int result = JOptionPane.showConfirmDialog(this, "Realmente deseja adicionar este curso?","CONFIRMAÇÃO",JOptionPane.OK_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE);
             if (result != 0) {
                 return;
-            }
+            }            
             
-            
+            if (cadastro.verificaExistenciaNome(campoNome.getText())){
+                //System.out.println("Curso já existente");
+                JOptionPane.showMessageDialog(this,"Curso existente","ATENÇÃO",JOptionPane.ERROR_MESSAGE);
+                campoNome.setText("");
+                
+            }else{
                 try{
                 Curso curso = new Curso();
                 curso.setNome(campoNome.getText());
                 cadastro.cadastrar(curso);
                 campoNome.setText("");
-                
-                } catch (Exception ex) {
-                    //System.out.println("incluirCurso(): "+ex.toString());
 
+                } catch (Exception ex) {
+                    System.out.println("incluirCurso(): "+ex.toString());
                     ex.printStackTrace();
                     JOptionPane.showMessageDialog(this,"Não foi possível cadastrar o curso.","ATENÇÃO",JOptionPane.ERROR_MESSAGE);
                     return;
                 }
+            }
+    
            
             
     }//GEN-LAST:event_botaoCadastrar1ActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -523,15 +567,17 @@ public class TelaCursos extends javax.swing.JFrame {
     private javax.swing.JButton botaoVoltar8;
     private javax.swing.JButton botaoVoltar9;
     private javax.swing.JTextField campoNome;
-    private javax.swing.JTextField campoPesquisarCpfFunc1;
     private javax.swing.JTextField campoPesquisarCpfFunc2;
     private javax.swing.JPanel guiaCadastrarAluno;
     private javax.swing.JPanel guiaEditarAluno;
     private javax.swing.JPanel guiaVisualizarAluno;
     private javax.swing.JTabbedPane guiasAluno;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JPanel painelConsulta1;
     private javax.swing.JPanel painelConsulta2;
     private javax.swing.JLabel tituloAlunos1;
