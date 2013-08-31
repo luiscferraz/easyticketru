@@ -32,7 +32,7 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="guiasAluno" alignment="0" pref="401" max="32767" attributes="0"/>
+          <Component id="guiasAluno" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -502,17 +502,10 @@
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jSeparator3" alignment="0" min="-2" pref="547" max="-2" attributes="0"/>
-                                  <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="tituloCpf1" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                                          <Component id="campoCpf" max="32767" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="tituloNome" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="campoNome" min="-2" pref="330" max="-2" attributes="0"/>
-                                      </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="tituloNome" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="campoNome" min="-2" pref="330" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
@@ -542,12 +535,7 @@
                           <Component id="tituloNome" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="campoNome" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="tituloCpf1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="campoCpf" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace pref="118" max="32767" attributes="0"/>
+                      <EmptySpace pref="149" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="botaoCadastrar1" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
                           <Component id="botaoVoltar5" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -577,6 +565,9 @@
                 <Property name="text" type="java.lang.String" value="Cadastrar"/>
                 <Property name="horizontalTextPosition" type="int" value="0"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoCadastrar1ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="botaoVoltar5">
               <Properties>
@@ -599,16 +590,6 @@
             <Component class="javax.swing.JTextField" name="campoNome">
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campoNomeActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JLabel" name="tituloCpf1">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="C&#xf3;digo do curso:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="campoCpf">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campoCpfActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="tituloAlunos3">
