@@ -15,14 +15,16 @@ public class Funcionario extends Pessoa {
     private String cargo;
     private EnumStatusFuncionario statusFuncionario;
     
-    public Funcionario(String nome, String email, int cpf, int telefone, Date dataNascimento, String cargo, 
-                        EnumStatusFuncionario statusFuncionario){
-        
-        super(nome, email, cpf, telefone, dataNascimento);
-        this.cargo = cargo;
-        this.statusFuncionario = statusFuncionario;
-       
-    }
+//    public Funcionario(String nome, String email, String cpf, int telefone, Date dataNascimento, String cargo, 
+//                        EnumStatusFuncionario statusFuncionario){
+//        
+//        super(nome, email, cpf, telefone, dataNascimento);
+//        this.cargo = cargo;
+//        this.statusFuncionario = statusFuncionario;
+//       
+//    }
+    
+    public Funcionario(){}
 
     public String getCargo() {
         return cargo;

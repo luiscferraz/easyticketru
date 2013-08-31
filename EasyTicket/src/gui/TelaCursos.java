@@ -489,7 +489,7 @@ public class TelaCursos extends javax.swing.JFrame {
 
     private void btnVoltarGuiaVisualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarGuiaVisualizarActionPerformed
         this.setVisible(false);
-        new TelaPrincipalFuncionario().setVisible(true);
+        
     }//GEN-LAST:event_btnVoltarGuiaVisualizarActionPerformed
 
     private void botaoVoltar9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltar9ActionPerformed

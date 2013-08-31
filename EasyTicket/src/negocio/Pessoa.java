@@ -17,22 +17,24 @@ public class Pessoa {
     private String telefone;
     private Date dataNascimento;
     
-    public Pessoa(String nome, String email, String cpf, String telefone, Date dataNascimento){
-        this.nome = nome;
-        this.email = email;
-        this.cpf = cpf;
-        this.telefone = telefone;
-        this.dataNascimento = dataNascimento;
-    }
+    public Pessoa(){}
     
-    public Pessoa(int id, String nome, String email, String cpf, String telefone, Date dataNascimento ){
-        this.id = id;
-        this.nome = nome;
-        this.email = email;
-        this.cpf = cpf;
-        this.telefone = telefone;
-        this.dataNascimento = dataNascimento;
-    }
+//    public Pessoa(String nome, String email, String cpf, String telefone, Date dataNascimento){
+//        this.nome = nome;
+//        this.email = email;
+//        this.cpf = cpf;
+//        this.telefone = telefone;
+//        this.dataNascimento = dataNascimento;
+//    }
+    
+//    public Pessoa(int id, String nome, String email, String cpf, String telefone, Date dataNascimento ){
+//        this.id = id;
+//        this.nome = nome;
+//        this.email = email;
+//        this.cpf = cpf;
+//        this.telefone = telefone;
+//        this.dataNascimento = dataNascimento;
+//    }
 
     
     

@@ -22,23 +22,9 @@ public class RepositorioAlunos extends GenericDAO implements IRepositorioAlunos 
     }
     
     
-    
+    @Override
     public void inserir(Aluno aluno){
         
-        String query = "INSERT INTO ETICKET (ALUNOS)(CPF, NOME, TELEFONE,DATANASC,EMAIL,INICIOCURSO ,TERMINOCURSO,STATUSALUNO,CURSO) VALUES (?,?,?,?,?,?,?,?,?)" ;
-        try {
-            executeCommand(query, aluno.getCpf(),
-                                  aluno.getNome(),
-                                  aluno.getTelefone(),
-                                  aluno.getDataNascimento(),
-                                  aluno.getEmail(),
-                                  aluno.getInicioCursoAluno(),
-                                  aluno.getTerminoCursoAluno(),                              
-                                  EnumStatusAluno.ATIVO,
-                                  aluno.getCurso());
-        } catch (SQLException ex) {
-            Logger.getLogger(RepositorioAlunos.class.getName()).log(Level.SEVERE, null, ex);
-        }
     }
 
     @Override
