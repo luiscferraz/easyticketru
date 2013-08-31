@@ -5,6 +5,7 @@
 package negocio;
 
 import dados.RepositorioCargos;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -32,5 +33,17 @@ public class CadastroCargos {
     
     public List<Cargo> listarCargos(){
         return cargos.listarCargos();
+    }
+    
+     public boolean verificaExistenciaNome(String nomeCargo){
+        if(cargos.findIdByNome(nomeCargo)!=-1){
+            return true;
+        }else{
+            return false;
+        }        
+    }
+    
+    public boolean verificaExistenciaId(int idCargo){
+        return cargos.existe(idCargo);
     }
 }
