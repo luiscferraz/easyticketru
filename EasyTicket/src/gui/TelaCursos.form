@@ -68,9 +68,17 @@
                                   <EmptySpace max="32767" attributes="0"/>
                                   <Component id="painelConsulta1" min="-2" pref="249" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="tituloNome2" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Component id="tituloNome2" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                              </Group>
                               <Component id="tituloVisualizarFunc" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="tituloCpf3" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="tituloCpf3" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                              </Group>
                               <Component id="jSeparator2" alignment="0" min="-2" pref="603" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -91,9 +99,15 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jSeparator2" min="-2" pref="10" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="tituloCpf3" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="tituloCpf3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="tituloNome2" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="tituloNome2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace pref="108" max="32767" attributes="0"/>
                       <Component id="botaoVoltar6" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
@@ -158,16 +172,13 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="tituloConsultar1" min="-2" max="-2" attributes="0"/>
                               <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
-                                  <Component id="tituloConsultar1" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
                                   <Component id="tituloCpf4" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="campoPesquisarCpfFunc1" min="-2" pref="137" max="-2" attributes="0"/>
+                                  <Component id="jTextField1" min="-2" pref="137" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="botaoPesquisar1" min="-2" pref="46" max="-2" attributes="0"/>
                               </Group>
@@ -185,7 +196,7 @@
                                   <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="tituloCpf4" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="campoPesquisarCpfFunc1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
@@ -211,8 +222,6 @@
                     <Property name="text" type="java.lang.String" value="C&#xf3;digo: "/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="campoPesquisarCpfFunc1">
-                </Component>
                 <Component class="javax.swing.JButton" name="botaoPesquisar1">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -235,8 +244,22 @@
                       <Color id="Cursor em Forma de M&#xe3;o"/>
                     </Property>
                   </Properties>
+                  <AccessibilityProperties>
+                    <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="btnSearchByCod"/>
+                  </AccessibilityProperties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoPesquisar1ActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JTextField" name="jTextField1">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="jTextField1"/>
+                  </Properties>
+                  <AccessibilityProperties>
+                    <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="txtCampoBuscaId"/>
+                  </AccessibilityProperties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField1ActionPerformed"/>
                   </Events>
                 </Component>
               </SubComponents>
@@ -251,6 +274,22 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="  Manter Cursos"/>
               </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="jLabel1"/>
+              </Properties>
+              <AccessibilityProperties>
+                <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="lblCodigoCurso"/>
+              </AccessibilityProperties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="jLabel2"/>
+              </Properties>
+              <AccessibilityProperties>
+                <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="lblNomeCurso"/>
+              </AccessibilityProperties>
             </Component>
           </SubComponents>
         </Container>

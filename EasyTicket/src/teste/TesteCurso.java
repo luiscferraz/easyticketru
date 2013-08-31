@@ -52,6 +52,7 @@ public class TesteCurso {
         
         //Curso curso = new Curso();
         //System.out.println(repositorio.procurarPorNome("Odontologia"));
+        //System.out.println(repositorio.findIdByNome("Odontologia"));
         
         
  

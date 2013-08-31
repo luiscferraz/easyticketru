@@ -36,6 +36,13 @@ public class CadastroCursos {
         return cursos.listarCursos();
     }
     
-    
+    public boolean verificaExistenciaNome(String nomeCurso){
+        if(cursos.findIdByNome(nomeCurso)!=-1){
+            return true;
+        }else{
+            return false;
+        }
+        
+    }
     
 }
