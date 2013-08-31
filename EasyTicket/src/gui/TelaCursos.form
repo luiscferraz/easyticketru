@@ -309,9 +309,17 @@
                                   <EmptySpace max="32767" attributes="0"/>
                                   <Component id="painelConsulta2" min="-2" pref="249" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="tituloNome3" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="tituloNome3" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jTextFieldNomeGuiaEditarCurso" max="32767" attributes="0"/>
+                              </Group>
                               <Component id="tituloVisualizarFunc1" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="tituloCpf6" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="tituloCpf6" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jLabelCodigoGuiaEditarCurso" min="-2" pref="87" max="-2" attributes="0"/>
+                              </Group>
                               <Component id="jSeparator5" alignment="0" min="-2" pref="603" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -332,10 +340,16 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jSeparator5" min="-2" pref="10" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="tituloCpf6" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="tituloCpf6" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelCodigoGuiaEditarCurso" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="tituloNome3" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="103" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="tituloNome3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextFieldNomeGuiaEditarCurso" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="97" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="botaoVoltar9" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="botaoVoltar8" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -388,7 +402,7 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="tituloCpf5" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="campoPesquisarCpfFunc2" min="-2" pref="137" max="-2" attributes="0"/>
+                                  <Component id="jTextFieldPesquisarPorCodigoGuiaEditarCurso" min="-2" pref="137" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="btnPesquisarGuiaEditar" min="-2" pref="46" max="-2" attributes="0"/>
                               </Group>
@@ -406,7 +420,7 @@
                                   <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="tituloCpf5" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="campoPesquisarCpfFunc2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jTextFieldPesquisarPorCodigoGuiaEditarCurso" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
@@ -432,7 +446,7 @@
                     <Property name="text" type="java.lang.String" value="C&#xf3;digo: "/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="campoPesquisarCpfFunc2">
+                <Component class="javax.swing.JTextField" name="jTextFieldPesquisarPorCodigoGuiaEditarCurso">
                 </Component>
                 <Component class="javax.swing.JButton" name="btnPesquisarGuiaEditar">
                   <Properties>
@@ -504,6 +518,10 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoVoltar9ActionPerformed"/>
               </Events>
             </Component>
+            <Component class="javax.swing.JLabel" name="jLabelCodigoGuiaEditarCurso">
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextFieldNomeGuiaEditarCurso">
+            </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="guiaCadastrarAluno">
@@ -518,35 +536,34 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="botaoVoltar5" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btnCadastrarGuiaNovoCurso" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jSeparator3" alignment="0" min="-2" pref="547" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
                                       <Component id="tituloNome" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="campoNome" min="-2" pref="330" max="-2" attributes="0"/>
+                                      <Component id="campoNome" max="32767" attributes="0"/>
                                   </Group>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="tituloCadastrar" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="tituloAlunos3" min="-2" pref="230" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="0" pref="368" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Component id="jSeparator3" alignment="0" max="32767" attributes="0"/>
                               </Group>
-                              <EmptySpace max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="tituloCadastrar" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="tituloAlunos3" min="-2" pref="230" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="0" pref="394" max="32767" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="botaoVoltar5" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="btnCadastrarGuiaNovoCurso" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
+                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
