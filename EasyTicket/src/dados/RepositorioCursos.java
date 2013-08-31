@@ -147,7 +147,7 @@ public class RepositorioCursos extends GenericDAO implements IRepositorioCursos 
                  }else{
                      System.out.println("Curso inexistente.");
                  }
-                 conexao.close();
+                 //conexao.close();
                                   
          } catch (SQLException ex) {
                  System.out.println("deletarCurso(): "+ex.toString());
