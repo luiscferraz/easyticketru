@@ -41,8 +41,11 @@ public class CadastroCursos {
             return true;
         }else{
             return false;
-        }
-        
+        }        
+    }
+    
+    public boolean verificaExistenciaId(int idCurso){
+        return cursos.existe(idCurso);
     }
     
 }

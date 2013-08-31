@@ -41,25 +41,25 @@ public class TelaCursos extends javax.swing.JFrame {
         guiasAluno = new javax.swing.JTabbedPane();
         guiaVisualizarAluno = new javax.swing.JPanel();
         tituloVisualizarFunc = new javax.swing.JLabel();
-        botaoVoltar6 = new javax.swing.JButton();
+        btnVoltarGuiaVisualizar = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JSeparator();
         tituloNome2 = new javax.swing.JLabel();
         tituloCpf3 = new javax.swing.JLabel();
         painelConsulta1 = new javax.swing.JPanel();
         tituloConsultar1 = new javax.swing.JLabel();
         tituloCpf4 = new javax.swing.JLabel();
-        botaoPesquisar1 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        btnPesquisarGuiaVisualizar = new javax.swing.JButton();
+        jTextFieldPesquisarPorCodigo = new javax.swing.JTextField();
         tituloAlunos1 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        jLabelCodigoGuiaVisualizar = new javax.swing.JLabel();
+        jLabelNomeGuiaVisualizar = new javax.swing.JLabel();
         guiaEditarAluno = new javax.swing.JPanel();
         tituloAlunos2 = new javax.swing.JLabel();
         painelConsulta2 = new javax.swing.JPanel();
         tituloConsultar2 = new javax.swing.JLabel();
         tituloCpf5 = new javax.swing.JLabel();
         campoPesquisarCpfFunc2 = new javax.swing.JTextField();
-        botaoPesquisar2 = new javax.swing.JButton();
+        btnPesquisarGuiaEditar = new javax.swing.JButton();
         jSeparator5 = new javax.swing.JSeparator();
         tituloVisualizarFunc1 = new javax.swing.JLabel();
         tituloCpf6 = new javax.swing.JLabel();
@@ -68,7 +68,7 @@ public class TelaCursos extends javax.swing.JFrame {
         botaoVoltar9 = new javax.swing.JButton();
         guiaCadastrarAluno = new javax.swing.JPanel();
         tituloCadastrar = new javax.swing.JLabel();
-        botaoCadastrar1 = new javax.swing.JButton();
+        btnCadastrarGuiaNovoCurso = new javax.swing.JButton();
         botaoVoltar5 = new javax.swing.JButton();
         jSeparator3 = new javax.swing.JSeparator();
         tituloNome = new javax.swing.JLabel();
@@ -85,11 +85,11 @@ public class TelaCursos extends javax.swing.JFrame {
         tituloVisualizarFunc.setToolTipText("");
         tituloVisualizarFunc.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        botaoVoltar6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/back.png"))); // NOI18N
-        botaoVoltar6.setText("Voltar");
-        botaoVoltar6.addActionListener(new java.awt.event.ActionListener() {
+        btnVoltarGuiaVisualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/back.png"))); // NOI18N
+        btnVoltarGuiaVisualizar.setText("Voltar");
+        btnVoltarGuiaVisualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoVoltar6ActionPerformed(evt);
+                btnVoltarGuiaVisualizarActionPerformed(evt);
             }
         });
 
@@ -107,23 +107,22 @@ public class TelaCursos extends javax.swing.JFrame {
 
         tituloCpf4.setText("Código: ");
 
-        botaoPesquisar1.setBackground(new java.awt.Color(255, 255, 255));
-        botaoPesquisar1.setForeground(new java.awt.Color(255, 255, 255));
-        botaoPesquisar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/search.png"))); // NOI18N
-        botaoPesquisar1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        botaoPesquisar1.setBorderPainted(false);
-        botaoPesquisar1.setContentAreaFilled(false);
-        botaoPesquisar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        botaoPesquisar1.addActionListener(new java.awt.event.ActionListener() {
+        btnPesquisarGuiaVisualizar.setBackground(new java.awt.Color(255, 255, 255));
+        btnPesquisarGuiaVisualizar.setForeground(new java.awt.Color(255, 255, 255));
+        btnPesquisarGuiaVisualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/search.png"))); // NOI18N
+        btnPesquisarGuiaVisualizar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnPesquisarGuiaVisualizar.setBorderPainted(false);
+        btnPesquisarGuiaVisualizar.setContentAreaFilled(false);
+        btnPesquisarGuiaVisualizar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnPesquisarGuiaVisualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoPesquisar1ActionPerformed(evt);
+                btnPesquisarGuiaVisualizarActionPerformed(evt);
             }
         });
 
-        jTextField1.setText("jTextField1");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldPesquisarPorCodigo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                jTextFieldPesquisarPorCodigoActionPerformed(evt);
             }
         });
 
@@ -132,42 +131,38 @@ public class TelaCursos extends javax.swing.JFrame {
         painelConsulta1Layout.setHorizontalGroup(
             painelConsulta1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelConsulta1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(painelConsulta1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(tituloConsultar1)
+                .addGroup(painelConsulta1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(painelConsulta1Layout.createSequentialGroup()
+                        .addContainerGap()
                         .addComponent(tituloCpf4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextFieldPesquisarPorCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(botaoPesquisar1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnPesquisarGuiaVisualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(painelConsulta1Layout.createSequentialGroup()
+                        .addGap(64, 64, 64)
+                        .addComponent(tituloConsultar1)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         painelConsulta1Layout.setVerticalGroup(
             painelConsulta1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelConsulta1Layout.createSequentialGroup()
                 .addComponent(tituloConsultar1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(painelConsulta1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(painelConsulta1Layout.createSequentialGroup()
-                        .addGap(13, 13, 13)
-                        .addGroup(painelConsulta1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(tituloCpf4)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(painelConsulta1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(botaoPesquisar1))))
+                .addGap(13, 13, 13)
+                .addGroup(painelConsulta1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tituloCpf4)
+                    .addComponent(jTextFieldPesquisarPorCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGroup(painelConsulta1Layout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addComponent(btnPesquisarGuiaVisualizar))
         );
 
-        botaoPesquisar1.getAccessibleContext().setAccessibleName("btnSearchByCod");
-        jTextField1.getAccessibleContext().setAccessibleName("txtCampoBuscaId");
+        btnPesquisarGuiaVisualizar.getAccessibleContext().setAccessibleName("btnSearchByCod");
+        jTextFieldPesquisarPorCodigo.getAccessibleContext().setAccessibleName("txtCampoBuscaId");
 
         tituloAlunos1.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         tituloAlunos1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/cursos.png"))); // NOI18N
         tituloAlunos1.setText("  Manter Cursos");
-
-        jLabel1.setText("jLabel1");
-
-        jLabel2.setText("jLabel2");
 
         javax.swing.GroupLayout guiaVisualizarAlunoLayout = new javax.swing.GroupLayout(guiaVisualizarAluno);
         guiaVisualizarAluno.setLayout(guiaVisualizarAlunoLayout);
@@ -176,7 +171,7 @@ public class TelaCursos extends javax.swing.JFrame {
             .addGroup(guiaVisualizarAlunoLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(botaoVoltar6)
+                    .addComponent(btnVoltarGuiaVisualizar)
                     .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, guiaVisualizarAlunoLayout.createSequentialGroup()
                             .addComponent(tituloAlunos1, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -185,12 +180,12 @@ public class TelaCursos extends javax.swing.JFrame {
                         .addGroup(guiaVisualizarAlunoLayout.createSequentialGroup()
                             .addComponent(tituloNome2)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jLabel2))
+                            .addComponent(jLabelNomeGuiaVisualizar))
                         .addComponent(tituloVisualizarFunc)
                         .addGroup(guiaVisualizarAlunoLayout.createSequentialGroup()
                             .addComponent(tituloCpf3)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jLabel1))
+                            .addComponent(jLabelCodigoGuiaVisualizar))
                         .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 603, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(22, Short.MAX_VALUE))
         );
@@ -208,18 +203,18 @@ public class TelaCursos extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tituloCpf3)
-                    .addComponent(jLabel1))
+                    .addComponent(jLabelCodigoGuiaVisualizar))
                 .addGap(18, 18, 18)
                 .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tituloNome2)
-                    .addComponent(jLabel2))
+                    .addComponent(jLabelNomeGuiaVisualizar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
-                .addComponent(botaoVoltar6)
+                .addComponent(btnVoltarGuiaVisualizar)
                 .addGap(23, 23, 23))
         );
 
-        jLabel1.getAccessibleContext().setAccessibleName("lblCodigoCurso");
-        jLabel2.getAccessibleContext().setAccessibleName("lblNomeCurso");
+        jLabelCodigoGuiaVisualizar.getAccessibleContext().setAccessibleName("lblCodigoCurso");
+        jLabelNomeGuiaVisualizar.getAccessibleContext().setAccessibleName("lblNomeCurso");
 
         guiasAluno.addTab("Visualizar Curso", guiaVisualizarAluno);
 
@@ -237,16 +232,16 @@ public class TelaCursos extends javax.swing.JFrame {
 
         tituloCpf5.setText("Código: ");
 
-        botaoPesquisar2.setBackground(new java.awt.Color(255, 255, 255));
-        botaoPesquisar2.setForeground(new java.awt.Color(255, 255, 255));
-        botaoPesquisar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/search.png"))); // NOI18N
-        botaoPesquisar2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        botaoPesquisar2.setBorderPainted(false);
-        botaoPesquisar2.setContentAreaFilled(false);
-        botaoPesquisar2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        botaoPesquisar2.addActionListener(new java.awt.event.ActionListener() {
+        btnPesquisarGuiaEditar.setBackground(new java.awt.Color(255, 255, 255));
+        btnPesquisarGuiaEditar.setForeground(new java.awt.Color(255, 255, 255));
+        btnPesquisarGuiaEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/search.png"))); // NOI18N
+        btnPesquisarGuiaEditar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnPesquisarGuiaEditar.setBorderPainted(false);
+        btnPesquisarGuiaEditar.setContentAreaFilled(false);
+        btnPesquisarGuiaEditar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnPesquisarGuiaEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoPesquisar2ActionPerformed(evt);
+                btnPesquisarGuiaEditarActionPerformed(evt);
             }
         });
 
@@ -265,7 +260,7 @@ public class TelaCursos extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(campoPesquisarCpfFunc2, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(botaoPesquisar2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnPesquisarGuiaEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         painelConsulta2Layout.setVerticalGroup(
@@ -280,7 +275,7 @@ public class TelaCursos extends javax.swing.JFrame {
                             .addComponent(campoPesquisarCpfFunc2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(painelConsulta2Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(botaoPesquisar2))))
+                        .addComponent(btnPesquisarGuiaEditar))))
         );
 
         tituloVisualizarFunc1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -356,12 +351,12 @@ public class TelaCursos extends javax.swing.JFrame {
         tituloCadastrar.setToolTipText("");
         tituloCadastrar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        botaoCadastrar1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        botaoCadastrar1.setText("Cadastrar");
-        botaoCadastrar1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        botaoCadastrar1.addActionListener(new java.awt.event.ActionListener() {
+        btnCadastrarGuiaNovoCurso.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnCadastrarGuiaNovoCurso.setText("Cadastrar");
+        btnCadastrarGuiaNovoCurso.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnCadastrarGuiaNovoCurso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoCadastrar1ActionPerformed(evt);
+                btnCadastrarGuiaNovoCursoActionPerformed(evt);
             }
         });
 
@@ -393,7 +388,7 @@ public class TelaCursos extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(botaoVoltar5)
                 .addGap(18, 18, 18)
-                .addComponent(botaoCadastrar1)
+                .addComponent(btnCadastrarGuiaNovoCurso)
                 .addGap(26, 26, 26))
             .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
                 .addGap(21, 21, 21)
@@ -427,7 +422,7 @@ public class TelaCursos extends javax.swing.JFrame {
                     .addComponent(campoNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 149, Short.MAX_VALUE)
                 .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botaoCadastrar1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCadastrarGuiaNovoCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(botaoVoltar5))
                 .addContainerGap())
         );
@@ -456,23 +451,46 @@ public class TelaCursos extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_campoNomeActionPerformed
 
-    private void botaoPesquisar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoPesquisar1ActionPerformed
+    private void btnPesquisarGuiaVisualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarGuiaVisualizarActionPerformed
         // TODO add your handling code here:
-        if (campoNome.getText().equals("")) {
-                JOptionPane.showMessageDialog(this,"Informe o código do curso.","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
+        if (jTextFieldPesquisarPorCodigo.getText().equals("")) {
+            JOptionPane.showMessageDialog(this,"Informe o código do curso.","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
+            jTextFieldPesquisarPorCodigo.setText("");
+            jLabelCodigoGuiaVisualizar.setText("");
+            jLabelNomeGuiaVisualizar.setText("");
             return;
+        } else{
+            if (cadastro.verificaExistenciaId(Integer.parseInt(jTextFieldPesquisarPorCodigo.getText()))){
+            Curso retorno = new Curso();
+            retorno = cadastro.buscaPorId(Integer.parseInt(jTextFieldPesquisarPorCodigo.getText()));
+            jLabelNomeGuiaVisualizar.setText(retorno.getNome());
+            jLabelCodigoGuiaVisualizar.setText(Integer.toString(retorno.getIdCurso()));
+            jTextFieldPesquisarPorCodigo.setText("");
+            
+            } else {
+                JOptionPane.showMessageDialog(this,"Código Inexistente!","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
+                jTextFieldPesquisarPorCodigo.setText("");
+                jLabelCodigoGuiaVisualizar.setText("");
+                jLabelNomeGuiaVisualizar.setText("");
+                return;
+            }
         }
         
         
-    }//GEN-LAST:event_botaoPesquisar1ActionPerformed
+        
+        
+        
+        
+    }//GEN-LAST:event_btnPesquisarGuiaVisualizarActionPerformed
 
-    private void botaoPesquisar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoPesquisar2ActionPerformed
+    private void btnPesquisarGuiaEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarGuiaEditarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_botaoPesquisar2ActionPerformed
+    }//GEN-LAST:event_btnPesquisarGuiaEditarActionPerformed
 
-    private void botaoVoltar6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltar6ActionPerformed
+    private void btnVoltarGuiaVisualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarGuiaVisualizarActionPerformed
         this.setVisible(false);
-    }//GEN-LAST:event_botaoVoltar6ActionPerformed
+        new TelaPrincipalFuncionario().setVisible(true);
+    }//GEN-LAST:event_btnVoltarGuiaVisualizarActionPerformed
 
     private void botaoVoltar9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltar9ActionPerformed
         this.setVisible(false);
@@ -482,7 +500,7 @@ public class TelaCursos extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_botaoVoltar5ActionPerformed
 
-    private void botaoCadastrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrar1ActionPerformed
+    private void btnCadastrarGuiaNovoCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarGuiaNovoCursoActionPerformed
             
             if (campoNome.getText().equals("")) {
                 JOptionPane.showMessageDialog(this,"Preencha todos os campos.","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
@@ -516,11 +534,11 @@ public class TelaCursos extends javax.swing.JFrame {
     
            
             
-    }//GEN-LAST:event_botaoCadastrar1ActionPerformed
+    }//GEN-LAST:event_btnCadastrarGuiaNovoCursoActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void jTextFieldPesquisarPorCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldPesquisarPorCodigoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_jTextFieldPesquisarPorCodigoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -559,25 +577,25 @@ public class TelaCursos extends javax.swing.JFrame {
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botaoCadastrar1;
-    private javax.swing.JButton botaoPesquisar1;
-    private javax.swing.JButton botaoPesquisar2;
     private javax.swing.JButton botaoVoltar5;
-    private javax.swing.JButton botaoVoltar6;
     private javax.swing.JButton botaoVoltar8;
     private javax.swing.JButton botaoVoltar9;
+    private javax.swing.JButton btnCadastrarGuiaNovoCurso;
+    private javax.swing.JButton btnPesquisarGuiaEditar;
+    private javax.swing.JButton btnPesquisarGuiaVisualizar;
+    private javax.swing.JButton btnVoltarGuiaVisualizar;
     private javax.swing.JTextField campoNome;
     private javax.swing.JTextField campoPesquisarCpfFunc2;
     private javax.swing.JPanel guiaCadastrarAluno;
     private javax.swing.JPanel guiaEditarAluno;
     private javax.swing.JPanel guiaVisualizarAluno;
     private javax.swing.JTabbedPane guiasAluno;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabelCodigoGuiaVisualizar;
+    private javax.swing.JLabel jLabelNomeGuiaVisualizar;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator5;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextFieldPesquisarPorCodigo;
     private javax.swing.JPanel painelConsulta1;
     private javax.swing.JPanel painelConsulta2;
     private javax.swing.JLabel tituloAlunos1;
