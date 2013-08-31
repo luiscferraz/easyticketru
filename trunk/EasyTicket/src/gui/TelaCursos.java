@@ -39,6 +39,12 @@ public class TelaCursos extends javax.swing.JFrame {
         jLabelCodigoInexistenteEditar.setVisible(false);
         jLabelInformeCodigoEditar.setVisible(false);
         
+        jLabelExcluidoSucesso.setVisible(false);
+        
+        btnExcluirCurso.setEnabled(false);
+        
+        
+        
        
     }
 
@@ -69,7 +75,8 @@ public class TelaCursos extends javax.swing.JFrame {
         jLabelCodigoInexistente = new javax.swing.JLabel();
         jLabelInformeCodigoVisualizar = new javax.swing.JLabel();
         jLabelCodInvalidoVisualizar = new javax.swing.JLabel();
-        excluirCursoBotao = new javax.swing.JButton();
+        btnExcluirCurso = new javax.swing.JButton();
+        jLabelExcluidoSucesso = new javax.swing.JLabel();
         guiaEditarAluno = new javax.swing.JPanel();
         tituloAlunos2 = new javax.swing.JLabel();
         painelConsulta2 = new javax.swing.JPanel();
@@ -197,8 +204,15 @@ public class TelaCursos extends javax.swing.JFrame {
 
         jLabelCodInvalidoVisualizar.setText("**Código inválido.");
 
-        excluirCursoBotao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/delete.png"))); // NOI18N
-        excluirCursoBotao.setText("Excluir curso");
+        btnExcluirCurso.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/delete.png"))); // NOI18N
+        btnExcluirCurso.setText("Excluir Curso");
+        btnExcluirCurso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExcluirCursoActionPerformed(evt);
+            }
+        });
+
+        jLabelExcluidoSucesso.setText("**Curso excluído com sucesso.");
 
         javax.swing.GroupLayout guiaVisualizarAlunoLayout = new javax.swing.GroupLayout(guiaVisualizarAluno);
         guiaVisualizarAluno.setLayout(guiaVisualizarAlunoLayout);
@@ -209,7 +223,7 @@ public class TelaCursos extends javax.swing.JFrame {
                 .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(guiaVisualizarAlunoLayout.createSequentialGroup()
-                            .addComponent(excluirCursoBotao)
+                            .addComponent(btnExcluirCurso)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(btnVoltarGuiaVisualizar))
                         .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -230,7 +244,8 @@ public class TelaCursos extends javax.swing.JFrame {
                                         .addGroup(guiaVisualizarAlunoLayout.createSequentialGroup()
                                             .addComponent(jLabelCodigoInexistente)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jLabelInformeCodigoVisualizar)))))))
+                                            .addComponent(jLabelInformeCodigoVisualizar)))))
+                            .addComponent(jLabelExcluidoSucesso)))
                     .addGroup(guiaVisualizarAlunoLayout.createSequentialGroup()
                         .addComponent(tituloCpf3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -262,10 +277,12 @@ public class TelaCursos extends javax.swing.JFrame {
                     .addComponent(jLabelNomeGuiaVisualizar))
                 .addGap(18, 18, 18)
                 .addComponent(jLabelCodInvalidoVisualizar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelExcluidoSucesso)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
                 .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnVoltarGuiaVisualizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(excluirCursoBotao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnExcluirCurso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(23, 23, 23))
         );
 
@@ -566,6 +583,8 @@ public class TelaCursos extends javax.swing.JFrame {
             jLabelCodigoInexistente.setVisible(false);
             jLabelInformeCodigoVisualizar.setVisible(false);
             jLabelCodInvalidoVisualizar.setVisible(true);
+            
+            jLabelExcluidoSucesso.setVisible(false);
             return;
         } else{
             try{
@@ -580,6 +599,8 @@ public class TelaCursos extends javax.swing.JFrame {
                     jLabelInformeCodigoVisualizar.setVisible(false);
                     jLabelCodInvalidoVisualizar.setVisible(false);
                     
+                    btnExcluirCurso.setEnabled(true);
+                    jLabelExcluidoSucesso.setVisible(false);
             
                 } else {
                     //JOptionPane.showMessageDialog(this,"Código Inexistente!","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
@@ -591,6 +612,8 @@ public class TelaCursos extends javax.swing.JFrame {
                     jLabelCodInvalidoVisualizar.setVisible(false);
                     jLabelInformeCodigoVisualizar.setVisible(false);
                     
+                    jLabelExcluidoSucesso.setVisible(false);
+                    
                     return;
                 }
             } catch (Exception ex){
@@ -600,6 +623,8 @@ public class TelaCursos extends javax.swing.JFrame {
                 
                 jLabelCodInvalidoVisualizar.setVisible(true);
                 jLabelCodigoInexistente.setVisible(false);
+                
+                jLabelExcluidoSucesso.setVisible(false);
                 
             }
         }
@@ -727,6 +752,16 @@ public class TelaCursos extends javax.swing.JFrame {
         jLabelSucessoGuiaEditar.setText("**Curso atualizado com sucesso.");
     }//GEN-LAST:event_btnSalvarAlteracaoActionPerformed
 
+    private void btnExcluirCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirCursoActionPerformed
+        // TODO add your handling code here:
+        int idCurso = Integer.parseInt(jLabelCodigoGuiaVisualizar.getText());
+        cadastro.deletar(idCurso);
+        
+        jLabelExcluidoSucesso.setVisible(true);
+        btnExcluirCurso.setEnabled(false);
+        
+    }//GEN-LAST:event_btnExcluirCursoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -768,12 +803,12 @@ public class TelaCursos extends javax.swing.JFrame {
     private javax.swing.JButton botaoVoltar5;
     private javax.swing.JButton botaoVoltar9;
     private javax.swing.JButton btnCadastrarGuiaNovoCurso;
+    private javax.swing.JButton btnExcluirCurso;
     private javax.swing.JButton btnPesquisarGuiaEditar;
     private javax.swing.JButton btnPesquisarGuiaVisualizar;
     private javax.swing.JButton btnSalvarAlteracao;
     private javax.swing.JButton btnVoltarGuiaVisualizar;
     private javax.swing.JTextField campoNome;
-    private javax.swing.JButton excluirCursoBotao;
     private javax.swing.JPanel guiaCadastrarAluno;
     private javax.swing.JPanel guiaEditarAluno;
     private javax.swing.JPanel guiaVisualizarAluno;
@@ -784,6 +819,7 @@ public class TelaCursos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelCodigoGuiaVisualizar;
     private javax.swing.JLabel jLabelCodigoInexistente;
     private javax.swing.JLabel jLabelCodigoInexistenteEditar;
+    private javax.swing.JLabel jLabelExcluidoSucesso;
     private javax.swing.JLabel jLabelInformeCodigoEditar;
     private javax.swing.JLabel jLabelInformeCodigoVisualizar;
     private javax.swing.JLabel jLabelNomeGuiaVisualizar;
