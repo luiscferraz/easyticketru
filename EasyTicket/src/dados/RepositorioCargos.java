@@ -37,30 +37,50 @@ public class RepositorioCargos implements IRepositorioCargos {
     
     public void inserir(Cargo cargo) {
         String query = "INSERT INTO EASYTICKET.CARGOS (NOMECARGO) VALUES (?)" ;
-        try {
-            PreparedStatement stmt = this.conexao.prepareStatement(query);
-            
-            stmt.setString(1, cargo.getNome());
-            
-            stmt.execute();
-            
-            conexao.close();
-            
-            System.out.println("Cargo inserido com sucesso.");
-        } catch (SQLException ex) {
-            System.out.println("incluirCargo(): "+ex.toString());
-        } 
+        
+       
+            try {
+                PreparedStatement stmt = this.conexao.prepareStatement(query);
+
+                stmt.setString(1, cargo.getNome());
+
+                stmt.execute();
+
+                //conexao.close();
+                System.out.println("Cargo inserido com sucesso.");
+            } catch (SQLException ex) {
+                System.out.println("incluirCargo(): "+ex.toString());
+            } 
+        
     }
 
-    @Override
     public boolean existe(int idCargo) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+      if (this.procurarPorId(idCargo)!=null){
+          return true;
+      }else{
+          return false;
+      }
+        
     }
 
-    @Override
+  
     public void atualizar(Cargo cargo) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       String query = "UPDATE EASYTICKET.CARGOS SET NOME=? WHERE IDCARGO=?"+cargo.getIdCargo();
+       
+      try{
+         PreparedStatement stmt = this.conexao.prepareStatement(query);
+         
+         stmt.setString(1,cargo.getNome());
+         stmt.execute();
+         
+         conexao.close();
+         System.out.println("Cargo atualizado com sucesso");
+      
+      } catch (SQLException ex) {
+                 System.out.println("atualizarCargo(): "+ex.toString());
+      }
     }
+
 
     @Override
     public Cargo procurarPorId(int idCargo) {
@@ -89,6 +109,32 @@ public class RepositorioCargos implements IRepositorioCargos {
          return cargoResultado;
     }
 
+    
+    public int findIdByNome(String nomeCargo) {
+        int idCargo=-1;
+        
+        String query = "SELECT IDCARGO FROM EASYTICKET.CARGOS WHERE NOMECARGO=?";
+        
+        try {                 
+             PreparedStatement stmt = this.conexao.prepareStatement(query);
+             stmt.setString(1, nomeCargo);
+             ResultSet res = stmt.executeQuery();
+
+             if (res.next()) {
+                 idCargo = res.getInt(1);
+                 //System.out.println(res.getInt(1));
+                // System.out.println(res.getString(2)); 
+             }
+             //conexao.close();                
+                                  
+         } catch (SQLException ex) {
+                 System.out.println("procurarCargoPorId(): "+ex.toString());
+         }
+        
+         return idCargo;
+
+    
+    }
     
     public void deletar(int idCargo) {
         String query = "DELETE FROM EASYTICKET.CARGOS WHERE IDCARGO= "+idCargo;

@@ -16,6 +16,7 @@ public interface IRepositorioCargos {
     public boolean existe(int idCargo);
     public void atualizar(Cargo cargo);
     public Cargo procurarPorId(int idCargo);
+    public int findIdByNome(String nome);
     public void deletar(int idCargo);
     public List<Cargo> listarCargos(); 
 }
