@@ -65,15 +65,16 @@ public class RepositorioCargos implements IRepositorioCargos {
 
   
     public void atualizar(Cargo cargo) {
-       String query = "UPDATE EASYTICKET.CARGOS SET NOME=? WHERE IDCARGO=?"+cargo.getIdCargo();
+       String query = "UPDATE EASYTICKET.CARGOS SET NOME=? WHERE IDCARGO=?";
        
       try{
          PreparedStatement stmt = this.conexao.prepareStatement(query);
          
          stmt.setString(1,cargo.getNome());
+         stmt.setInt(2, cargo.getIdCargo());
          stmt.execute();
          
-         conexao.close();
+         //conexao.close();
          System.out.println("Cargo atualizado com sucesso");
       
       } catch (SQLException ex) {
@@ -148,7 +149,7 @@ public class RepositorioCargos implements IRepositorioCargos {
                  }else{
                      System.out.println("Cargo inexistente.");
                  }
-                 conexao.close();
+                 //conexao.close();
                                   
          } catch (SQLException ex) {
                  System.out.println("deletarCargo(): "+ex.toString());
