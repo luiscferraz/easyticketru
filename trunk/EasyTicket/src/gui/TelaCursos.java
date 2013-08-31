@@ -69,6 +69,7 @@ public class TelaCursos extends javax.swing.JFrame {
         jLabelCodigoInexistente = new javax.swing.JLabel();
         jLabelInformeCodigoVisualizar = new javax.swing.JLabel();
         jLabelCodInvalidoVisualizar = new javax.swing.JLabel();
+        excluirCursoBotao = new javax.swing.JButton();
         guiaEditarAluno = new javax.swing.JPanel();
         tituloAlunos2 = new javax.swing.JLabel();
         painelConsulta2 = new javax.swing.JPanel();
@@ -196,6 +197,9 @@ public class TelaCursos extends javax.swing.JFrame {
 
         jLabelCodInvalidoVisualizar.setText("**Código inválido.");
 
+        excluirCursoBotao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/delete.png"))); // NOI18N
+        excluirCursoBotao.setText("Excluir curso");
+
         javax.swing.GroupLayout guiaVisualizarAlunoLayout = new javax.swing.GroupLayout(guiaVisualizarAluno);
         guiaVisualizarAluno.setLayout(guiaVisualizarAlunoLayout);
         guiaVisualizarAlunoLayout.setHorizontalGroup(
@@ -204,7 +208,10 @@ public class TelaCursos extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(btnVoltarGuiaVisualizar)
+                        .addGroup(guiaVisualizarAlunoLayout.createSequentialGroup()
+                            .addComponent(excluirCursoBotao)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(btnVoltarGuiaVisualizar))
                         .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabelCodInvalidoVisualizar)
                             .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -256,7 +263,9 @@ public class TelaCursos extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabelCodInvalidoVisualizar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
-                .addComponent(btnVoltarGuiaVisualizar)
+                .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnVoltarGuiaVisualizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(excluirCursoBotao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(23, 23, 23))
         );
 
@@ -539,7 +548,6 @@ public class TelaCursos extends javax.swing.JFrame {
         );
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void campoNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoNomeActionPerformed
@@ -765,6 +773,7 @@ public class TelaCursos extends javax.swing.JFrame {
     private javax.swing.JButton btnSalvarAlteracao;
     private javax.swing.JButton btnVoltarGuiaVisualizar;
     private javax.swing.JTextField campoNome;
+    private javax.swing.JButton excluirCursoBotao;
     private javax.swing.JPanel guiaCadastrarAluno;
     private javax.swing.JPanel guiaEditarAluno;
     private javax.swing.JPanel guiaVisualizarAluno;

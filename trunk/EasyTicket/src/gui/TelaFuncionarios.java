@@ -43,6 +43,7 @@ public class TelaFuncionarios extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         tituloCurso2 = new javax.swing.JLabel();
         tituloDataNasc2 = new javax.swing.JLabel();
+        excluirFuncBotao = new javax.swing.JButton();
         guiaEditarAluno = new javax.swing.JPanel();
         painelConsulta2 = new javax.swing.JPanel();
         tituloConsultar2 = new javax.swing.JLabel();
@@ -175,6 +176,9 @@ public class TelaFuncionarios extends javax.swing.JFrame {
 
         tituloDataNasc2.setText("Data de Nascimento:");
 
+        excluirFuncBotao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/delete.png"))); // NOI18N
+        excluirFuncBotao.setText("Excluir funcionário");
+
         javax.swing.GroupLayout guiaVisualizarAlunoLayout = new javax.swing.GroupLayout(guiaVisualizarAluno);
         guiaVisualizarAluno.setLayout(guiaVisualizarAlunoLayout);
         guiaVisualizarAlunoLayout.setHorizontalGroup(
@@ -182,7 +186,10 @@ public class TelaFuncionarios extends javax.swing.JFrame {
             .addGroup(guiaVisualizarAlunoLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnVoltarVisualizar)
+                    .addGroup(guiaVisualizarAlunoLayout.createSequentialGroup()
+                        .addComponent(excluirFuncBotao)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnVoltarVisualizar))
                     .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(guiaVisualizarAlunoLayout.createSequentialGroup()
@@ -232,7 +239,9 @@ public class TelaFuncionarios extends javax.swing.JFrame {
                     .addComponent(tituloDataNasc2)
                     .addComponent(tituloCurso2))
                 .addGap(58, 58, 58)
-                .addComponent(btnVoltarVisualizar)
+                .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnVoltarVisualizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(excluirFuncBotao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(23, 23, 23))
         );
 
@@ -587,7 +596,6 @@ public class TelaFuncionarios extends javax.swing.JFrame {
         );
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoPesquisar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoPesquisar1ActionPerformed
@@ -678,6 +686,7 @@ public class TelaFuncionarios extends javax.swing.JFrame {
     private javax.swing.JTextField campoNomeFunc3;
     private javax.swing.JTextField campoPesquisarCpfFunc1;
     private javax.swing.JTextField campoPesquisarCpfFunc2;
+    private javax.swing.JButton excluirFuncBotao;
     private javax.swing.JPanel guiaCadastrarAluno;
     private javax.swing.JPanel guiaEditarAluno;
     private javax.swing.JPanel guiaVisualizarAluno;

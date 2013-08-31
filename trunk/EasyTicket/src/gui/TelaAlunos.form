@@ -6,7 +6,6 @@
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
-    <SyntheticProperty name="generateCenter" type="boolean" value="true"/>
   </SyntheticProperties>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
@@ -61,7 +60,11 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="botaoVoltar6" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="excluirAlunoBotao" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="botaoVoltar6" min="-2" max="-2" attributes="0"/>
+                          </Group>
                           <Group type="103" alignment="1" groupAlignment="0" attributes="0">
                               <Component id="tituloCurso14" min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -144,7 +147,10 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="tituloCurso14" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                      <Component id="botaoVoltar6" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="botaoVoltar6" max="32767" attributes="0"/>
+                          <Component id="excluirAlunoBotao" max="32767" attributes="0"/>
+                      </Group>
                       <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -339,6 +345,14 @@
             <Component class="javax.swing.JLabel" name="tituloCurso14">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Cart&#xe3;o:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="excluirAlunoBotao">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/gui/resources/delete.png"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Excluir aluno"/>
               </Properties>
             </Component>
           </SubComponents>
