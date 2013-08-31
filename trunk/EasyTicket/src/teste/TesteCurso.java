@@ -5,6 +5,7 @@
 package teste;
 
 import dados.RepositorioCursos;
+import gui.TelaCursos;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -41,9 +42,16 @@ public class TesteCurso {
         //repositorio.deletar(2);
         
         
-       for(Curso c: repositorio.listarCursos()){
+       /**for(Curso c: repositorio.listarCursos()){
            System.out.println(c.toString(c));
        }
+       **/
+        
+        TelaCursos tela = new TelaCursos();
+        tela.setVisible(true);
+        
+        //Curso curso = new Curso();
+        //System.out.println(repositorio.procurarPorNome("Odontologia"));
         
         
  

@@ -19,11 +19,7 @@ import java.util.logging.Logger;
  */
 public class GenericDAO {
     public static Connection getConnection() throws Exception {
-        //String driver = "org.postgresql.Driver";  
-        //String user   = "postgres";  
-        //String senha = "admin";  
-        //String url      = "jdbc:postgresql://localhost:5432/bancoteste";  
-        
+                
         String driver = "com.mysql.jdbc.Driver";  
         String user   = "root";  
         String senha = "root";  
@@ -40,10 +36,10 @@ public class GenericDAO {
     
     public static void close(Statement statement, Connection dbConnection){
         try {
-            if (statement != null) {
+            /**if (statement != null) {
               statement.close();
             }
-
+            **/
             if (dbConnection != null) {
               dbConnection.close();
             }

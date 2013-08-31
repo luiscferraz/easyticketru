@@ -15,8 +15,10 @@ import negocio.Curso;
 public interface IRepositorioCursos {
     public void inserir(Curso curso);
     public boolean existe(int idCurso);
+    //public boolean nomeExistente(String nomeCurso);
     public void atualizar(Curso curso);
     public Curso procurarPorId(int idCurso);
+    //public int procurarPorNome(String nome);
     public void deletar(int idCurso);
     public List<Curso> listarCursos();
     

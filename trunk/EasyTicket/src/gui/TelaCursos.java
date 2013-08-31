@@ -4,17 +4,28 @@
  */
 package gui;
 
+import dados.RepositorioCursos;
+import java.sql.SQLException;
+import java.util.List;
+import javax.swing.JOptionPane;
+import negocio.CadastroCursos;
+import negocio.Curso;
+
 /**
  *
  * @author Allan
  */
 public class TelaCursos extends javax.swing.JFrame {
-
+    private RepositorioCursos repositorioCursos = new RepositorioCursos();
+    private CadastroCursos cadastro= new CadastroCursos(repositorioCursos);
+   
     /**
      * Creates new form TelaCursos
      */
     public TelaCursos() {
         initComponents();
+        
+       
     }
 
     /**
@@ -59,8 +70,6 @@ public class TelaCursos extends javax.swing.JFrame {
         jSeparator3 = new javax.swing.JSeparator();
         tituloNome = new javax.swing.JLabel();
         campoNome = new javax.swing.JTextField();
-        tituloCpf1 = new javax.swing.JLabel();
-        campoCpf = new javax.swing.JTextField();
         tituloAlunos3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -322,6 +331,11 @@ public class TelaCursos extends javax.swing.JFrame {
         botaoCadastrar1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         botaoCadastrar1.setText("Cadastrar");
         botaoCadastrar1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botaoCadastrar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoCadastrar1ActionPerformed(evt);
+            }
+        });
 
         botaoVoltar5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/back.png"))); // NOI18N
         botaoVoltar5.setText("Voltar");
@@ -336,14 +350,6 @@ public class TelaCursos extends javax.swing.JFrame {
         campoNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 campoNomeActionPerformed(evt);
-            }
-        });
-
-        tituloCpf1.setText("Código do curso:");
-
-        campoCpf.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campoCpfActionPerformed(evt);
             }
         });
 
@@ -367,15 +373,10 @@ public class TelaCursos extends javax.swing.JFrame {
                     .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
                         .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 547, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
-                                    .addComponent(tituloCpf1)
-                                    .addGap(14, 14, 14)
-                                    .addComponent(campoCpf))
-                                .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
-                                    .addComponent(tituloNome)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(campoNome, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
+                                .addComponent(tituloNome)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(campoNome, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addContainerGap())
                     .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
                         .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -396,11 +397,7 @@ public class TelaCursos extends javax.swing.JFrame {
                 .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tituloNome)
                     .addComponent(campoNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tituloCpf1)
-                    .addComponent(campoCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 118, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 149, Short.MAX_VALUE)
                 .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botaoCadastrar1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(botaoVoltar5))
@@ -420,7 +417,7 @@ public class TelaCursos extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(guiasAluno, javax.swing.GroupLayout.DEFAULT_SIZE, 401, Short.MAX_VALUE)
+            .addComponent(guiasAluno)
         );
 
         pack();
@@ -430,10 +427,6 @@ public class TelaCursos extends javax.swing.JFrame {
     private void campoNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoNomeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_campoNomeActionPerformed
-
-    private void campoCpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoCpfActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_campoCpfActionPerformed
 
     private void botaoPesquisar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoPesquisar1ActionPerformed
         // TODO add your handling code here:
@@ -454,6 +447,36 @@ public class TelaCursos extends javax.swing.JFrame {
     private void botaoVoltar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltar5ActionPerformed
         this.setVisible(false);
     }//GEN-LAST:event_botaoVoltar5ActionPerformed
+
+    private void botaoCadastrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrar1ActionPerformed
+            
+            if (campoNome.getText().equals("")) {
+                JOptionPane.showMessageDialog(this,"Preencha todos os campos.","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
+            return;
+            }
+            
+            int result = JOptionPane.showConfirmDialog(this, "Realmente deseja adicionar este curso?","CONFIRMAÇÃO",JOptionPane.OK_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE);
+            if (result != 0) {
+                return;
+            }
+            
+            
+                try{
+                Curso curso = new Curso();
+                curso.setNome(campoNome.getText());
+                cadastro.cadastrar(curso);
+                campoNome.setText("");
+                
+                } catch (Exception ex) {
+                    //System.out.println("incluirCurso(): "+ex.toString());
+
+                    ex.printStackTrace();
+                    JOptionPane.showMessageDialog(this,"Não foi possível cadastrar o curso.","ATENÇÃO",JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+           
+            
+    }//GEN-LAST:event_botaoCadastrar1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -489,6 +512,8 @@ public class TelaCursos extends javax.swing.JFrame {
             }
         });
     }
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botaoCadastrar1;
     private javax.swing.JButton botaoPesquisar1;
@@ -497,7 +522,6 @@ public class TelaCursos extends javax.swing.JFrame {
     private javax.swing.JButton botaoVoltar6;
     private javax.swing.JButton botaoVoltar8;
     private javax.swing.JButton botaoVoltar9;
-    private javax.swing.JTextField campoCpf;
     private javax.swing.JTextField campoNome;
     private javax.swing.JTextField campoPesquisarCpfFunc1;
     private javax.swing.JTextField campoPesquisarCpfFunc2;
@@ -516,7 +540,6 @@ public class TelaCursos extends javax.swing.JFrame {
     private javax.swing.JLabel tituloCadastrar;
     private javax.swing.JLabel tituloConsultar1;
     private javax.swing.JLabel tituloConsultar2;
-    private javax.swing.JLabel tituloCpf1;
     private javax.swing.JLabel tituloCpf3;
     private javax.swing.JLabel tituloCpf4;
     private javax.swing.JLabel tituloCpf5;

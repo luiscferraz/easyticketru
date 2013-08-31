@@ -22,7 +22,7 @@ import negocio.EnumStatusAluno;
  *
  * @author Nanda
  */
-public class RepositorioCursos implements IRepositorioCursos {
+public class RepositorioCursos extends GenericDAO implements IRepositorioCursos  {
     
     private Connection conexao;
     
@@ -37,20 +37,21 @@ public class RepositorioCursos implements IRepositorioCursos {
     
     public void inserir(Curso curso) {
         String query = "INSERT INTO EASYTICKET.CURSOS (NOMECURSO) VALUES (?)" ;
-        try {
-            PreparedStatement stmt = this.conexao.prepareStatement(query);
-            
-            stmt.setString(1, curso.getNome());
-            
-            stmt.execute();
-            
-            conexao.close();
-            
-            System.out.println("Curso inserido com sucesso.");
-        } catch (SQLException ex) {
-            System.out.println("incluirCurso(): "+ex.toString());
-        } 
-    
+        
+       
+            try {
+                PreparedStatement stmt = this.conexao.prepareStatement(query);
+
+                stmt.setString(1, curso.getNome());
+
+                stmt.execute();
+
+                //conexao.close();
+                System.out.println("Curso inserido com sucesso.");
+            } catch (SQLException ex) {
+                System.out.println("incluirCurso(): "+ex.toString());
+            } 
+        
     }
 
     
@@ -62,8 +63,8 @@ public class RepositorioCursos implements IRepositorioCursos {
       }
         
     }
-
     
+   
     public void atualizar(Curso curso) {
        String query = "UPDATE EASYTICKET.CURSOS SET NOME=? WHERE IDCURSO=?"+curso.getIdCurso();
        
@@ -81,8 +82,7 @@ public class RepositorioCursos implements IRepositorioCursos {
       }
     }
 
-    
-    
+ 
     
     public Curso procurarPorId(int idCurso) {
         Curso cursoResultado = null;
@@ -111,7 +111,7 @@ public class RepositorioCursos implements IRepositorioCursos {
 
     
     }
-
+    
     
     public void deletar(int idCurso) {
         
