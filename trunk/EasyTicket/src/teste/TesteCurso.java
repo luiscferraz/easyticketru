@@ -61,8 +61,8 @@ public class TesteCurso {
         //System.out.println(repositorio.procurarPorNome("Odontologia"));
         //System.out.println(repositorio.findIdByNome("Odontologia"));
         
-        //TelaCargos tela = new TelaCargos();
-        //tela.setVisible(true);
+        TelaCargos tela = new TelaCargos();
+        tela.setVisible(true);
         
         String d = "08/12/2013";
         Date.parse(d);       

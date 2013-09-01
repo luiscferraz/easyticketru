@@ -4,9 +4,11 @@
  */
 package negocio;
 
+import dados.RepositorioCargos;
 import dados.RepositorioCartoes;
 import dados.RepositorioCursos;
 import dados.RepositorioRefeicoes;
+import java.util.List;
 
 /**
  *
@@ -15,13 +17,15 @@ import dados.RepositorioRefeicoes;
 public class Fachada {
 
   private static Fachada instancia;
-  private CadastroCartoes cadastroCartoes;
-  //private CadastroRefeicoes cadastroRefeicoes;
   private CadastroCursos cadastroCursos;
+  private CadastroCargos cadastroCargos;
+
+  private CadastroCartoes cadastroCartoes;
+
   
   
   //verifica se já existe um,a instancia da fachada em funcionamento
-  private static Fachada obterInstancia(){
+  public static Fachada obterInstancia(){
     if(instancia == null){
       instancia = new Fachada();
     }
@@ -35,12 +39,16 @@ public class Fachada {
     
   //método que irá instanciar todas as classes de cadastro e de repositório para que será utilizado pela fachada  
   private void initCadastros(){
+    RepositorioCursos repositorioCursos = new RepositorioCursos();
+    cadastroCursos = new CadastroCursos(repositorioCursos);
+    
+    RepositorioCargos repositorioCargos = new RepositorioCargos();
+    cadastroCargos = new CadastroCargos(repositorioCargos);
     
     RepositorioCartoes repositorioCartoes = new RepositorioCartoes();
     cadastroCartoes = new CadastroCartoes(repositorioCartoes);
   
-    RepositorioCursos repositorioCursos = new RepositorioCursos();
-    cadastroCursos = new CadastroCursos(repositorioCursos);
+    
     
   }
   
@@ -65,17 +73,58 @@ public class Fachada {
   
   
   //curso
-  public void cadastrarCurso(Curso curso){
-    cadastroCursos.cadastrar(curso);
-  }
+    public void inserirCurso(Curso curso){
+        cadastroCursos.cadastrar(curso);
+    }
+    public boolean verificaExistenciaCursoPorId(int idCurso){
+        return cadastroCursos.verificaExistenciaId(idCurso);
+      
+    }
+    public boolean VerificaNomeExistenteCurso(String nomeCurso){
+        return cadastroCursos.verificaExistenciaNome(nomeCurso);
+    }
+    public void atualizarCurso(Curso curso){
+        cadastroCursos.atualizar(curso);
+    }
+    public Curso procurarPorIdCurso(int idCurso){
+        return cadastroCursos.buscaPorId(idCurso);
+    }    
+    public void deletarCurso(int idCurso){
+        cadastroCursos.deletar(idCurso);
+    }
+    public List<Curso> listarCursos(){
+        return cadastroCursos.listarCursos();
+    }
     
-  public void atualizarCurso(Curso curso){
-    cadastroCursos.atualizar(curso);  
-  }
-  
-  public Curso buscaCursoPorId(int idCurso){
-    return cadastroCursos.buscaPorId(idCurso);
-  }
+    
+   //Cargos
+    public void atualizarCargo(Cargo cargo){
+        cadastroCargos.atualizar(cargo);  
+    }
+    
+    public void cadastrarCargo(Cargo cargo){
+        cadastroCargos.cadastrar(cargo);
+    }
+    
+    public Cargo buscaCargoPorId(int idCargo){
+        return cadastroCargos.buscaPorId(idCargo);
+    }
+    
+    public List<Cargo> listarCargos(){
+        return cadastroCargos.listarCargos();
+    }
+    
+    public boolean verificarExistenciaNomeCargo(String nomeCargo){
+        return cadastroCargos.verificaExistenciaNome(nomeCargo);
+    }
+    
+    public boolean verificarExistenciaIdCargo(int idCargo){
+        return cadastroCargos.verificaExistenciaId(idCargo);
+    }
+    
+    public void deletarCargo(int idCargo){
+        cadastroCargos.deletar(idCargo);
+    }
   
   
   

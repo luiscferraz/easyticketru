@@ -11,14 +11,16 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import negocio.CadastroCursos;
 import negocio.Curso;
+import negocio.Fachada;
 
 /**
  *
  * @author Allan
  */
 public class TelaCursos extends javax.swing.JFrame {
-    private RepositorioCursos repositorioCursos = new RepositorioCursos();
-    private CadastroCursos cadastro= new CadastroCursos(repositorioCursos);
+    //private RepositorioCursos repositorioCursos = new RepositorioCursos();
+    //private CadastroCursos cadastro= new CadastroCursos(repositorioCursos);
+    private Fachada fachada = Fachada.obterInstancia();
    
     /**
      * Creates new form TelaCursos
@@ -591,9 +593,9 @@ public class TelaCursos extends javax.swing.JFrame {
             return;
         } else{
             try{
-                if (cadastro.verificaExistenciaId(Integer.parseInt(jTextFieldPesquisarPorCodigo.getText()))){
+                if (fachada.verificaExistenciaCursoPorId(Integer.parseInt(jTextFieldPesquisarPorCodigo.getText()))){
                     Curso retorno = new Curso();
-                    retorno = cadastro.buscaPorId(Integer.parseInt(jTextFieldPesquisarPorCodigo.getText()));
+                    retorno = fachada.procurarPorIdCurso(Integer.parseInt(jTextFieldPesquisarPorCodigo.getText()));
                     jLabelNomeGuiaVisualizar.setText(retorno.getNome());
                     jLabelCodigoGuiaVisualizar.setText(Integer.toString(retorno.getIdCurso()));
                     jTextFieldPesquisarPorCodigo.setText("");
@@ -656,9 +658,9 @@ public class TelaCursos extends javax.swing.JFrame {
             return;
         } else{
              try{
-                    if (cadastro.verificaExistenciaId(Integer.parseInt(jTextFieldPesquisarPorCodigoGuiaEditarCurso.getText()))){
+                    if (fachada.verificaExistenciaCursoPorId(Integer.parseInt(jTextFieldPesquisarPorCodigoGuiaEditarCurso.getText()))){
                     Curso retorno = new Curso();
-                    retorno = cadastro.buscaPorId(Integer.parseInt(jTextFieldPesquisarPorCodigoGuiaEditarCurso.getText()));
+                    retorno = fachada.procurarPorIdCurso(Integer.parseInt(jTextFieldPesquisarPorCodigoGuiaEditarCurso.getText()));
                     jTextFieldNomeGuiaEditarCurso.setText(retorno.getNome());
                     jLabelCodigoGuiaEditarCurso.setText(Integer.toString(retorno.getIdCurso()));
                     jTextFieldPesquisarPorCodigoGuiaEditarCurso.setText("");
@@ -713,7 +715,7 @@ public class TelaCursos extends javax.swing.JFrame {
                 return;
             }            
             
-            if (cadastro.verificaExistenciaNome(campoNome.getText())){
+            if (fachada.VerificaNomeExistenteCurso(campoNome.getText())){
                 //System.out.println("Curso já existente");
                 JOptionPane.showMessageDialog(this,"Curso existente","ATENÇÃO",JOptionPane.ERROR_MESSAGE);
                 jLabelSucessoGuiaCadastrar.setVisible(false);
@@ -723,7 +725,7 @@ public class TelaCursos extends javax.swing.JFrame {
                 try{
                 Curso curso = new Curso();
                 curso.setNome(campoNome.getText());
-                cadastro.cadastrar(curso);
+                fachada.inserirCurso(curso);
                 campoNome.setText("");
                 jLabelSucessoGuiaCadastrar.setVisible(true);
                 jLabelSucessoGuiaCadastrar.setText("**Cadastro efetuado com sucesso.");
@@ -747,7 +749,7 @@ public class TelaCursos extends javax.swing.JFrame {
     private void btnSalvarAlteracaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarAlteracaoActionPerformed
         // TODO add your handling code here:
         Curso curso = new Curso(Integer.parseInt(jLabelCodigoGuiaEditarCurso.getText()),jTextFieldNomeGuiaEditarCurso.getText());
-        cadastro.atualizar(curso);
+        fachada.atualizarCurso(curso);
         btnSalvarAlteracao.setEnabled(false);
         jLabelCodigoGuiaEditarCurso.setText("");
         jTextFieldNomeGuiaEditarCurso.setText("");
@@ -758,7 +760,7 @@ public class TelaCursos extends javax.swing.JFrame {
     private void btnExcluirCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirCursoActionPerformed
         // TODO add your handling code here:
         int idCurso = Integer.parseInt(jLabelCodigoGuiaVisualizar.getText());
-        cadastro.deletar(idCurso);
+        fachada.deletarCurso(idCurso);
         
         jLabelExcluidoSucesso.setVisible(true);
         btnExcluirCurso.setEnabled(false);
