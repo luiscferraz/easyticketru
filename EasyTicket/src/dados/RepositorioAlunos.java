@@ -19,7 +19,7 @@ import negocio.EnumStatusAluno;
  *
  * @author Nanda
  */
-public class RepositorioAlunos extends GenericDAO implements IRepositorioAlunos {
+public class RepositorioAlunos implements IRepositorioAlunos {
     
     private Connection conexao;
     

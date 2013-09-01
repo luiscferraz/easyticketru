@@ -11,14 +11,15 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import negocio.CadastroCargos;
 import negocio.Cargo;
+import negocio.Fachada;
 
 /**
  *
  * @author Marcela Domingues
  */
 public class TelaCargos extends javax.swing.JFrame {
-    private RepositorioCargos repositorioCargos = new RepositorioCargos();
-    private CadastroCargos cadastro = new CadastroCargos(repositorioCargos);
+    
+    private Fachada fachada = Fachada.obterInstancia();
 
     /**
      * Creates new form TelaCargos
@@ -569,9 +570,9 @@ public class TelaCargos extends javax.swing.JFrame {
             return;
         } else{
             try{
-                if (cadastro.verificaExistenciaId(Integer.parseInt(jTextFieldPesquisarPorCodigo.getText()))){
+                if (fachada.verificarExistenciaIdCargo(Integer.parseInt(jTextFieldPesquisarPorCodigo.getText()))){
                     Cargo retorno = new Cargo();
-                    retorno = cadastro.buscaPorId(Integer.parseInt(jTextFieldPesquisarPorCodigo.getText()));
+                    retorno = fachada.buscaCargoPorId(Integer.parseInt(jTextFieldPesquisarPorCodigo.getText()));
                     jLabelNomeGuiaVisualizar.setText(retorno.getNome());
                     jLabelCodigoGuiaVisualizar.setText(Integer.toString(retorno.getIdCargo()));
                     jTextFieldPesquisarPorCodigo.setText("");
@@ -635,9 +636,9 @@ public class TelaCargos extends javax.swing.JFrame {
             return;
         } else{
              try{
-                    if (cadastro.verificaExistenciaId(Integer.parseInt(jTextFieldPesquisarPorCodigoGuiaEditarCurso.getText()))){
+                    if (fachada.verificarExistenciaIdCargo(Integer.parseInt(jTextFieldPesquisarPorCodigoGuiaEditarCurso.getText()))){
                     Cargo retorno = new Cargo();
-                    retorno = cadastro.buscaPorId(Integer.parseInt(jTextFieldPesquisarPorCodigoGuiaEditarCurso.getText()));
+                    retorno = fachada.buscaCargoPorId(Integer.parseInt(jTextFieldPesquisarPorCodigoGuiaEditarCurso.getText()));
                     jTextFieldNomeGuiaEditarCargo.setText(retorno.getNome());
                     jLabelCodigoGuiaEditarCargo.setText(Integer.toString(retorno.getIdCargo()));
                     jTextFieldPesquisarPorCodigoGuiaEditarCurso.setText("");
@@ -678,7 +679,7 @@ public class TelaCargos extends javax.swing.JFrame {
     private void btnSalvarAlteracaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarAlteracaoActionPerformed
         // TODO add your handling code here:
         Cargo cargo = new Cargo(Integer.parseInt(jLabelCodigoGuiaEditarCargo.getText()),jTextFieldNomeGuiaEditarCargo.getText());
-        cadastro.atualizar(cargo);
+        fachada.atualizarCargo(cargo);
         btnSalvarAlteracao.setEnabled(false);
         jLabelCodigoGuiaEditarCargo.setText("");
         jTextFieldNomeGuiaEditarCargo.setText("");
@@ -689,7 +690,7 @@ public class TelaCargos extends javax.swing.JFrame {
     private void btnExcluirCargoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirCargoActionPerformed
         // TODO add your handling code here:
         int idCargo = Integer.parseInt(jLabelCodigoGuiaVisualizar.getText());
-        cadastro.deletar(idCargo);
+        fachada.deletarCargo(idCargo);
         
         jLabelExcluidoSucesso.setVisible(true);
         btnExcluirCargo.setEnabled(false);
@@ -709,7 +710,7 @@ public class TelaCargos extends javax.swing.JFrame {
                 return;
             }            
             
-            if (cadastro.verificaExistenciaNome(campoNome.getText())){
+            if (fachada.verificarExistenciaNomeCargo(campoNome.getText())){
                 
                 JOptionPane.showMessageDialog(this,"Cargo existente","ATENÇÃO",JOptionPane.ERROR_MESSAGE);
                 jLabelSucessoGuiaCadastrar.setVisible(false);
@@ -717,9 +718,9 @@ public class TelaCargos extends javax.swing.JFrame {
                 
             }else{
                 try{
-                Cargo curso = new Cargo();
-                curso.setNome(campoNome.getText());
-                cadastro.cadastrar(curso);
+                Cargo cargo = new Cargo();
+                cargo.setNome(campoNome.getText());
+                fachada.cadastrarCargo(cargo);
                 campoNome.setText("");
                 jLabelSucessoGuiaCadastrar.setVisible(true);
                 jLabelSucessoGuiaCadastrar.setText("**Cadastro efetuado com sucesso.");
