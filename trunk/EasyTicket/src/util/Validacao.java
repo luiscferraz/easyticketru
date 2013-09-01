@@ -48,4 +48,41 @@ public class Validacao {
             return false;
         }
     }
+    
+  public static boolean validaData(String Dt) {  
+      //variaveis que recebem o valor  
+      Integer Dia,Mes;  
+      Integer Ano;   
+      //retorno padrão  
+
+      //Se a data estiver completa  
+      if(Dt.trim().length()==10)  
+        {  
+         //quebra a string  
+         Dia = Integer.parseInt(Dt.substring(1,2));  
+         Mes = Integer.parseInt(Dt.substring(3,5));  
+         Ano = Integer.parseInt(Dt.substring(3,5));  
+         //verifica variaveis  
+        if(  
+            ( (Mes.equals(1) || Mes.equals(3) || Mes.equals(5) || Mes.equals(7) || Mes.equals(8) || Mes.equals(10) || Mes.equals(12)) && (Dia>=1 && Dia <=31))  
+            ||  
+            ( (Mes.equals(4) || Mes.equals(6) || Mes.equals(9) || Mes.equals(11)) && (Dia>=1 && Dia <=30))  
+            ||  
+            ( (Mes.equals(2)) && (AnoBissexto(Ano)) && (Dia>=1 && Dia <=29))  
+            ||  
+            ( (Mes.equals(2)) && !(AnoBissexto(Ano)) && (Dia>=1 && Dia <=28))  
+          )  
+            {  
+              return true;  
+            }   
+        else{  return false;}  
+        }        
+      else  
+      {  return false;}  
+
+    }  
+  
+    private static boolean AnoBissexto (int ano){     
+         return ano % 4 == 0 && ano % 100 != 0 || ano % 400 == 0;     
+    }
 }
