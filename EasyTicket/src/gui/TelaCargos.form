@@ -61,22 +61,41 @@
                       <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="excluirCargoBotao" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnExcluirCargo" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="botaoVoltar6" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="tituloCargos1" min="-2" pref="230" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="painelConsulta1" min="-2" pref="249" max="-2" attributes="0"/>
+                          <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="tituloCpf3" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jLabelCodigoGuiaVisualizar" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="tituloVisualizarCargo" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jSeparator2" alignment="0" min="-2" pref="603" max="-2" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="tituloNome2" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="123" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="jSeparator2" alignment="0" min="-2" pref="603" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="tituloNome2" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jLabelNomeGuiaVisualizar" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="tituloCargos1" alignment="0" min="-2" pref="230" max="-2" attributes="0"/>
+                                          <Component id="tituloVisualizarCargo" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Component id="jLabelCodigoInexistente" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="jLabelInformeCodigoVisualizar" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Component id="painelConsulta1" min="-2" pref="249" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
                               </Group>
+                              <Component id="jLabelCodInvalidoVisualizar" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabelExcluidoSucesso" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
@@ -92,15 +111,33 @@
                           <Component id="tituloCargos1" alignment="0" min="-2" pref="59" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="tituloVisualizarCargo" min="-2" pref="24" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="tituloVisualizarCargo" min="-2" pref="24" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabelCodigoInexistente" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabelInformeCodigoVisualizar" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jSeparator2" min="-2" pref="10" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="tituloNome2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="149" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="tituloCpf3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelCodigoGuiaVisualizar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="tituloNome2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelNomeGuiaVisualizar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                      <Component id="jLabelCodInvalidoVisualizar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabelExcluidoSucesso" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="60" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="botaoVoltar6" alignment="0" max="32767" attributes="0"/>
-                          <Component id="excluirCargoBotao" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnExcluirCargo" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                   </Group>
@@ -163,9 +200,9 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="tituloCpf4" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="campoPesquisarCargo1" min="-2" pref="137" max="-2" attributes="0"/>
+                                  <Component id="jTextFieldPesquisarPorCodigo" min="-2" pref="137" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="botaoPesquisar1" min="-2" pref="46" max="-2" attributes="0"/>
+                                  <Component id="btnPesquisarGuiaVisualizar" min="-2" pref="46" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
@@ -181,12 +218,12 @@
                                   <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="tituloCpf4" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="campoPesquisarCargo1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jTextFieldPesquisarPorCodigo" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="botaoPesquisar1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnPesquisarGuiaVisualizar" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -207,9 +244,9 @@
                     <Property name="text" type="java.lang.String" value="C&#xf3;digo: "/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="campoPesquisarCargo1">
+                <Component class="javax.swing.JTextField" name="jTextFieldPesquisarPorCodigo">
                 </Component>
-                <Component class="javax.swing.JButton" name="botaoPesquisar1">
+                <Component class="javax.swing.JButton" name="btnPesquisarGuiaVisualizar">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -232,7 +269,7 @@
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoPesquisar1ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPesquisarGuiaVisualizarActionPerformed"/>
                   </Events>
                 </Component>
               </SubComponents>
@@ -253,13 +290,42 @@
                 <Property name="text" type="java.lang.String" value="Nome:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="excluirCargoBotao">
+            <Component class="javax.swing.JButton" name="btnExcluirCargo">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/gui/resources/delete.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Excluir cargo"/>
               </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="tituloCpf3">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="C&#xf3;digo do cargo:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelCodInvalidoVisualizar">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="**C&#xf3;digo inv&#xe1;lido."/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelExcluidoSucesso">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="**Curso exclu&#xed;do com sucesso."/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelCodigoInexistente">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="**C&#xf3;digo Inexistente"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelInformeCodigoVisualizar">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="**Informe o c&#xf3;digo."/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelCodigoGuiaVisualizar">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelNomeGuiaVisualizar">
             </Component>
           </SubComponents>
         </Container>
