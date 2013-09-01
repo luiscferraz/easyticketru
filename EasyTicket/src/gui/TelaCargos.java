@@ -161,15 +161,14 @@ public class TelaCargos extends javax.swing.JFrame {
                             .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
                                 .addComponent(tituloNome3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(campoNome, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(131, 336, Short.MAX_VALUE)))
+                                .addComponent(campoNome)))
                         .addContainerGap())
                     .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
                         .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabelSucessoGuiaCadastrar)
                             .addComponent(tituloCargos3, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(tituloCadastrar))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addGap(0, 412, Short.MAX_VALUE))))
         );
         guiaCadastrarAlunoLayout.setVerticalGroup(
             guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -283,7 +282,7 @@ public class TelaCargos extends javax.swing.JFrame {
 
         jLabelCodInvalidoVisualizar.setText("**Código inválido.");
 
-        jLabelExcluidoSucesso.setText("**Curso excluído com sucesso.");
+        jLabelExcluidoSucesso.setText("**Cargo excluído com sucesso.");
 
         jLabelCodigoInexistente.setText("**Código Inexistente");
 
@@ -349,11 +348,11 @@ public class TelaCargos extends javax.swing.JFrame {
                 .addGroup(guiaVisualizarCargoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tituloNome2)
                     .addComponent(jLabelNomeGuiaVisualizar))
-                .addGap(31, 31, 31)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabelCodInvalidoVisualizar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabelExcluidoSucesso)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
                 .addGroup(guiaVisualizarCargoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(botaoVoltar6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnExcluirCargo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -466,36 +465,33 @@ public class TelaCargos extends javax.swing.JFrame {
             guiaEditarCargoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(guiaEditarCargoLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addGroup(guiaEditarCargoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(guiaEditarCargoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabelInformeCodigoEditar)
+                    .addComponent(jLabelCodigoInexistenteEditar)
+                    .addComponent(jLabelCodInvalidoEditar)
+                    .addGroup(guiaEditarCargoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(guiaEditarCargoLayout.createSequentialGroup()
+                            .addComponent(botaoVoltar10)
+                            .addGap(18, 18, 18)
+                            .addComponent(btnSalvarAlteracao))
+                        .addGroup(guiaEditarCargoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, guiaEditarCargoLayout.createSequentialGroup()
+                                .addComponent(tituloCargos2, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(painelConsulta2, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(tituloEditarCargo1)
+                            .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 603, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(guiaEditarCargoLayout.createSequentialGroup()
                         .addGroup(guiaEditarCargoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelInformeCodigoEditar)
-                            .addComponent(jLabelCodigoInexistenteEditar)
-                            .addComponent(jLabelCodInvalidoEditar)
-                            .addGroup(guiaEditarCargoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(guiaEditarCargoLayout.createSequentialGroup()
-                                    .addComponent(botaoVoltar10)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(btnSalvarAlteracao))
-                                .addGroup(guiaEditarCargoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, guiaEditarCargoLayout.createSequentialGroup()
-                                        .addComponent(tituloCargos2, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(painelConsulta2, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(tituloEditarCargo1)
-                                    .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 603, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(guiaEditarCargoLayout.createSequentialGroup()
-                                .addGroup(guiaEditarCargoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabelSucessoGuiaEditar)
-                                    .addComponent(tituloNome4))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextFieldNomeGuiaEditarCargo, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(40, Short.MAX_VALUE))
+                            .addComponent(jLabelSucessoGuiaEditar)
+                            .addComponent(tituloNome4))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextFieldNomeGuiaEditarCargo))
                     .addGroup(guiaEditarCargoLayout.createSequentialGroup()
                         .addComponent(tituloCpf6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabelCodigoGuiaEditarCargo)
-                        .addGap(491, 555, Short.MAX_VALUE))))
+                        .addComponent(jLabelCodigoGuiaEditarCargo)))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
         guiaEditarCargoLayout.setVerticalGroup(
             guiaEditarCargoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -696,18 +692,20 @@ public class TelaCargos extends javax.swing.JFrame {
 
     private void btnCadastrarCargoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarCargoActionPerformed
         // TODO add your handling code here:
-        if (campoNome.getText().equals("")) {
+            if (campoNome.getText().equals("")) {
                 JOptionPane.showMessageDialog(this,"Preencha todos os campos.","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
-            return;
+                return;
             }
             
             int result = JOptionPane.showConfirmDialog(this, "Realmente deseja adicionar este cargo?","CONFIRMAÇÃO",JOptionPane.OK_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE);
+            
+            
             if (result != 0) {
                 return;
             }            
             
             if (cadastro.verificaExistenciaNome(campoNome.getText())){
-                //System.out.println("Curso já existente");
+                
                 JOptionPane.showMessageDialog(this,"Cargo existente","ATENÇÃO",JOptionPane.ERROR_MESSAGE);
                 jLabelSucessoGuiaCadastrar.setVisible(false);
                 campoNome.setText("");
