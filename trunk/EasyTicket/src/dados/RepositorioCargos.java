@@ -36,8 +36,7 @@ public class RepositorioCargos implements IRepositorioCargos {
 
     
     public void inserir(Cargo cargo) {
-        String query = "INSERT INTO EASYTICKET.CARGOS (NOMECARGO) VALUES (?)" ;
-        
+        String query = "INSERT INTO EASYTICKET.CARGOS (NOMECARGO) VALUES (?)" ;  
        
             try {
                 PreparedStatement stmt = this.conexao.prepareStatement(query);
@@ -45,7 +44,6 @@ public class RepositorioCargos implements IRepositorioCargos {
                 stmt.setString(1, cargo.getNome());
 
                 stmt.execute();
-
                 //conexao.close();
                 System.out.println("Cargo inserido com sucesso.");
             } catch (SQLException ex) {
@@ -65,7 +63,7 @@ public class RepositorioCargos implements IRepositorioCargos {
 
   
     public void atualizar(Cargo cargo) {
-       String query = "UPDATE EASYTICKET.CARGOS SET NOMECARGO=? WHERE IDCARGOS=?";
+       String query = "UPDATE EASYTICKET.CARGOS SET NOMECARGO=? WHERE IDCARGO=?";
        
       try{
          PreparedStatement stmt = this.conexao.prepareStatement(query);
@@ -83,11 +81,11 @@ public class RepositorioCargos implements IRepositorioCargos {
     }
 
 
-    @Override
+    
     public Cargo procurarPorId(int idCargo) {
         Cargo cargoResultado = null;
         
-        String query = "SELECT * FROM EASYTICKET.CARGOS WHERE IDCARGOS= "+idCargo;
+        String query = "SELECT * FROM EASYTICKET.CARGOS WHERE IDCARGO= "+idCargo;
         
         try {
                  
@@ -114,7 +112,7 @@ public class RepositorioCargos implements IRepositorioCargos {
     public int findIdByNome(String nomeCargo) {
         int idCargo=-1;
         
-        String query = "SELECT IDCARGOS FROM EASYTICKET.CARGOS WHERE NOMECARGO=?";
+        String query = "SELECT IDCARGO FROM EASYTICKET.CARGOS WHERE NOMECARGO=?";
         
         try {                 
              PreparedStatement stmt = this.conexao.prepareStatement(query);
@@ -138,7 +136,7 @@ public class RepositorioCargos implements IRepositorioCargos {
     }
     
     public void deletar(int idCargo) {
-        String query = "DELETE FROM EASYTICKET.CARGOS WHERE IDCARGOS= "+idCargo;
+        String query = "DELETE FROM EASYTICKET.CARGOS WHERE IDCARGO= "+idCargo;
         
         try {
                  PreparedStatement stmt = this.conexao.prepareStatement(query);
@@ -160,7 +158,7 @@ public class RepositorioCargos implements IRepositorioCargos {
     public List<Cargo> listarCargos() {
         List<Cargo> listaCargos = new ArrayList<Cargo>();
           
-          String query = "SELECT * FROM EASYTICKET.CARGOS";
+          String query = "SELECT * FROM EASYTICKET.CARGO ORDER BY NOMECURSO";
           
           try {
                                

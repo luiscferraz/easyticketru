@@ -700,7 +700,7 @@ public class TelaCursos extends javax.swing.JFrame {
 
     private void btnCadastrarGuiaNovoCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarGuiaNovoCursoActionPerformed
             
-            if (campoNome.getText().equals("")) {
+        if (campoNome.getText().equals("")) {
                 JOptionPane.showMessageDialog(this,"Preencha todos os campos.","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
             return;
             }

@@ -6,6 +6,7 @@ package teste;
 
 import dados.RepositorioCursos;
 import gui.TelaAlunos;
+import gui.TelaCargos;
 import gui.TelaCursos;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -56,7 +57,7 @@ public class TesteCurso {
         //System.out.println(repositorio.procurarPorNome("Odontologia"));
         //System.out.println(repositorio.findIdByNome("Odontologia"));
         
-        TelaAlunos tela = new TelaAlunos();
+        TelaCargos tela = new TelaCargos();
         tela.setVisible(true);
         
         
