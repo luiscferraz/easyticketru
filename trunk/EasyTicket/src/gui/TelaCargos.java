@@ -55,15 +55,6 @@ public class TelaCargos extends javax.swing.JFrame {
     private void initComponents() {
 
         guiasCargos = new javax.swing.JTabbedPane();
-        guiaCadastrarAluno = new javax.swing.JPanel();
-        tituloCadastrar = new javax.swing.JLabel();
-        btnCadastrarCargo = new javax.swing.JButton();
-        botaoVoltar = new javax.swing.JButton();
-        jSeparator3 = new javax.swing.JSeparator();
-        tituloCargos3 = new javax.swing.JLabel();
-        campoNome = new javax.swing.JTextField();
-        tituloNome3 = new javax.swing.JLabel();
-        jLabelSucessoGuiaCadastrar = new javax.swing.JLabel();
         guiaVisualizarCargo = new javax.swing.JPanel();
         tituloVisualizarCargo = new javax.swing.JLabel();
         botaoVoltar6 = new javax.swing.JButton();
@@ -102,97 +93,21 @@ public class TelaCargos extends javax.swing.JFrame {
         jLabelInformeCodigoEditar = new javax.swing.JLabel();
         jLabelCodigoGuiaEditarCargo = new javax.swing.JLabel();
         jLabelSucessoGuiaEditar = new javax.swing.JLabel();
+        guiaCadastrarAluno = new javax.swing.JPanel();
+        tituloCadastrar = new javax.swing.JLabel();
+        btnCadastrarCargo = new javax.swing.JButton();
+        botaoVoltar = new javax.swing.JButton();
+        jSeparator3 = new javax.swing.JSeparator();
+        tituloCargos3 = new javax.swing.JLabel();
+        campoNome = new javax.swing.JTextField();
+        tituloNome3 = new javax.swing.JLabel();
+        jLabelSucessoGuiaCadastrar = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("EasyTicket - MANTER CARGOS");
+        setResizable(false);
 
         guiasCargos.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-
-        tituloCadastrar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        tituloCadastrar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        tituloCadastrar.setText("Cadastrar Novo Cargo");
-        tituloCadastrar.setToolTipText("");
-        tituloCadastrar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-
-        btnCadastrarCargo.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        btnCadastrarCargo.setText("Cadastrar");
-        btnCadastrarCargo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnCadastrarCargo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCadastrarCargoActionPerformed(evt);
-            }
-        });
-
-        botaoVoltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/back.png"))); // NOI18N
-        botaoVoltar.setText("Voltar");
-        botaoVoltar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoVoltarActionPerformed(evt);
-            }
-        });
-
-        tituloCargos3.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        tituloCargos3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/cargos.png"))); // NOI18N
-        tituloCargos3.setText(" Manter Cargos");
-
-        campoNome.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campoNomeActionPerformed(evt);
-            }
-        });
-
-        tituloNome3.setText("Nome:");
-
-        javax.swing.GroupLayout guiaCadastrarAlunoLayout = new javax.swing.GroupLayout(guiaCadastrarAluno);
-        guiaCadastrarAluno.setLayout(guiaCadastrarAlunoLayout);
-        guiaCadastrarAlunoLayout.setHorizontalGroup(
-            guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(botaoVoltar)
-                .addGap(18, 18, 18)
-                .addComponent(btnCadastrarCargo)
-                .addGap(26, 26, 26))
-            .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
-                        .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jSeparator3)
-                            .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
-                                .addComponent(tituloNome3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(campoNome)))
-                        .addContainerGap())
-                    .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
-                        .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelSucessoGuiaCadastrar)
-                            .addComponent(tituloCargos3, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tituloCadastrar))
-                        .addGap(0, 412, Short.MAX_VALUE))))
-        );
-        guiaCadastrarAlunoLayout.setVerticalGroup(
-            guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(tituloCargos3, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(tituloCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tituloNome3)
-                    .addComponent(campoNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabelSucessoGuiaCadastrar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 153, Short.MAX_VALUE)
-                .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnCadastrarCargo, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botaoVoltar))
-                .addContainerGap())
-        );
-
-        guiasCargos.addTab("Cadastrar Novo Cargo", guiaCadastrarAluno);
 
         tituloVisualizarCargo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         tituloVisualizarCargo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -323,7 +238,7 @@ public class TelaCargos extends javax.swing.JFrame {
                                     .addComponent(painelConsulta1, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addComponent(jLabelCodInvalidoVisualizar)
                         .addComponent(jLabelExcluidoSucesso)))
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
         guiaVisualizarCargoLayout.setVerticalGroup(
             guiaVisualizarCargoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -352,7 +267,7 @@ public class TelaCargos extends javax.swing.JFrame {
                 .addComponent(jLabelCodInvalidoVisualizar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabelExcluidoSucesso)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
                 .addGroup(guiaVisualizarCargoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(botaoVoltar6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnExcluirCargo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -465,33 +380,34 @@ public class TelaCargos extends javax.swing.JFrame {
             guiaEditarCargoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(guiaEditarCargoLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addGroup(guiaEditarCargoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabelInformeCodigoEditar)
-                    .addComponent(jLabelCodigoInexistenteEditar)
-                    .addComponent(jLabelCodInvalidoEditar)
-                    .addGroup(guiaEditarCargoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(guiaEditarCargoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(guiaEditarCargoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(guiaEditarCargoLayout.createSequentialGroup()
                             .addComponent(botaoVoltar10)
                             .addGap(18, 18, 18)
                             .addComponent(btnSalvarAlteracao))
-                        .addGroup(guiaEditarCargoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, guiaEditarCargoLayout.createSequentialGroup()
-                                .addComponent(tituloCargos2, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(painelConsulta2, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(tituloEditarCargo1)
-                            .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 603, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(guiaEditarCargoLayout.createSequentialGroup()
-                        .addGroup(guiaEditarCargoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelSucessoGuiaEditar)
-                            .addComponent(tituloNome4))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextFieldNomeGuiaEditarCargo))
+                        .addGroup(guiaEditarCargoLayout.createSequentialGroup()
+                            .addComponent(tituloCargos2, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(painelConsulta2, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(tituloEditarCargo1, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jSeparator5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 603, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, guiaEditarCargoLayout.createSequentialGroup()
+                            .addComponent(tituloNome4)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(jTextFieldNomeGuiaEditarCargo)))
                     .addGroup(guiaEditarCargoLayout.createSequentialGroup()
                         .addComponent(tituloCpf6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabelCodigoGuiaEditarCargo)))
-                .addContainerGap(40, Short.MAX_VALUE))
+                        .addComponent(jLabelCodigoGuiaEditarCargo))
+                    .addGroup(guiaEditarCargoLayout.createSequentialGroup()
+                        .addGroup(guiaEditarCargoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelInformeCodigoEditar)
+                            .addComponent(jLabelCodigoInexistenteEditar)
+                            .addComponent(jLabelCodInvalidoEditar))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabelSucessoGuiaEditar)))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
         guiaEditarCargoLayout.setVerticalGroup(
             guiaEditarCargoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -508,19 +424,20 @@ public class TelaCargos extends javax.swing.JFrame {
                 .addGroup(guiaEditarCargoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tituloCpf6)
                     .addComponent(jLabelCodigoGuiaEditarCargo))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(guiaEditarCargoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldNomeGuiaEditarCargo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tituloNome4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabelSucessoGuiaEditar)
-                .addGap(28, 28, 28)
-                .addComponent(jLabelCodInvalidoEditar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabelCodigoInexistenteEditar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabelInformeCodigoEditar)
-                .addGap(13, 13, 13)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addGroup(guiaEditarCargoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelSucessoGuiaEditar)
+                    .addGroup(guiaEditarCargoLayout.createSequentialGroup()
+                        .addComponent(jLabelCodInvalidoEditar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabelCodigoInexistenteEditar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabelInformeCodigoEditar)))
+                .addGap(41, 41, 41)
                 .addGroup(guiaEditarCargoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botaoVoltar10)
                     .addComponent(btnSalvarAlteracao))
@@ -528,6 +445,93 @@ public class TelaCargos extends javax.swing.JFrame {
         );
 
         guiasCargos.addTab("Editar Cargo", guiaEditarCargo);
+
+        tituloCadastrar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        tituloCadastrar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        tituloCadastrar.setText("Cadastrar Novo Cargo");
+        tituloCadastrar.setToolTipText("");
+        tituloCadastrar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        btnCadastrarCargo.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnCadastrarCargo.setText("Cadastrar");
+        btnCadastrarCargo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnCadastrarCargo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCadastrarCargoActionPerformed(evt);
+            }
+        });
+
+        botaoVoltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/back.png"))); // NOI18N
+        botaoVoltar.setText("Voltar");
+        botaoVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoVoltarActionPerformed(evt);
+            }
+        });
+
+        tituloCargos3.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        tituloCargos3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/cargos.png"))); // NOI18N
+        tituloCargos3.setText(" Manter Cargos");
+
+        campoNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoNomeActionPerformed(evt);
+            }
+        });
+
+        tituloNome3.setText("Nome:");
+
+        javax.swing.GroupLayout guiaCadastrarAlunoLayout = new javax.swing.GroupLayout(guiaCadastrarAluno);
+        guiaCadastrarAluno.setLayout(guiaCadastrarAlunoLayout);
+        guiaCadastrarAlunoLayout.setHorizontalGroup(
+            guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(botaoVoltar)
+                .addGap(18, 18, 18)
+                .addComponent(btnCadastrarCargo)
+                .addGap(26, 26, 26))
+            .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
+                        .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jSeparator3)
+                            .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
+                                .addComponent(tituloNome3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(campoNome)))
+                        .addContainerGap())
+                    .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
+                        .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelSucessoGuiaCadastrar)
+                            .addComponent(tituloCargos3, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tituloCadastrar))
+                        .addGap(0, 418, Short.MAX_VALUE))))
+        );
+        guiaCadastrarAlunoLayout.setVerticalGroup(
+            guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(tituloCargos3, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(tituloCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabelSucessoGuiaCadastrar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tituloNome3)
+                    .addComponent(campoNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 155, Short.MAX_VALUE)
+                .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCadastrarCargo, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botaoVoltar))
+                .addContainerGap())
+        );
+
+        guiasCargos.addTab("Cadastrar Novo Cargo", guiaCadastrarAluno);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -541,6 +545,7 @@ public class TelaCargos extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoVoltar6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltar6ActionPerformed
