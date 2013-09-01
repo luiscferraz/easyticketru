@@ -100,9 +100,8 @@ public class TelaCargos extends javax.swing.JFrame {
         jLabelCodInvalidoEditar = new javax.swing.JLabel();
         jLabelCodigoInexistenteEditar = new javax.swing.JLabel();
         jLabelInformeCodigoEditar = new javax.swing.JLabel();
-        jLabelCodigoGuiaEditarCurso = new javax.swing.JLabel();
-        jLabelSucessoGuiaEditar = new javax.swing.JLabel();
         jLabelCodigoGuiaEditarCargo = new javax.swing.JLabel();
+        jLabelSucessoGuiaEditar = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -495,10 +494,8 @@ public class TelaCargos extends javax.swing.JFrame {
                     .addGroup(guiaEditarCargoLayout.createSequentialGroup()
                         .addComponent(tituloCpf6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabelCodigoGuiaEditarCurso)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabelCodigoGuiaEditarCargo)
-                        .addGap(491, 491, 491))))
+                        .addGap(491, 555, Short.MAX_VALUE))))
         );
         guiaEditarCargoLayout.setVerticalGroup(
             guiaEditarCargoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -512,12 +509,10 @@ public class TelaCargos extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(guiaEditarCargoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelCodigoGuiaEditarCargo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(guiaEditarCargoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(tituloCpf6)
-                        .addComponent(jLabelCodigoGuiaEditarCurso)))
-                .addGap(24, 24, 24)
+                .addGroup(guiaEditarCargoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tituloCpf6)
+                    .addComponent(jLabelCodigoGuiaEditarCargo))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
                 .addGroup(guiaEditarCargoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldNomeGuiaEditarCargo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tituloNome4))
@@ -629,7 +624,7 @@ public class TelaCargos extends javax.swing.JFrame {
         if (jTextFieldPesquisarPorCodigoGuiaEditarCurso.getText().equals("")) {
             JOptionPane.showMessageDialog(this,"Informe o código do curso.","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
             jTextFieldPesquisarPorCodigoGuiaEditarCurso.setText("");
-            jLabelCodigoGuiaEditarCurso.setText("");
+            jLabelCodigoGuiaEditarCargo.setText("");
             jTextFieldNomeGuiaEditarCargo.setText("");
             
             jLabelCodigoInexistenteEditar.setVisible(false);
@@ -643,7 +638,7 @@ public class TelaCargos extends javax.swing.JFrame {
                     Cargo retorno = new Cargo();
                     retorno = cadastro.buscaPorId(Integer.parseInt(jTextFieldPesquisarPorCodigoGuiaEditarCurso.getText()));
                     jTextFieldNomeGuiaEditarCargo.setText(retorno.getNome());
-                    jLabelCodigoGuiaEditarCurso.setText(Integer.toString(retorno.getIdCargo()));
+                    jLabelCodigoGuiaEditarCargo.setText(Integer.toString(retorno.getIdCargo()));
                     jTextFieldPesquisarPorCodigoGuiaEditarCurso.setText("");
                     btnSalvarAlteracao.setEnabled(true);
 
@@ -655,7 +650,7 @@ public class TelaCargos extends javax.swing.JFrame {
                     } else {
                         //JOptionPane.showMessageDialog(this,"Código Inexistente!","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
                         jTextFieldNomeGuiaEditarCargo.setText("");
-                        jLabelCodigoGuiaEditarCurso.setText("");
+                        jLabelCodigoGuiaEditarCargo.setText("");
                         jTextFieldPesquisarPorCodigoGuiaEditarCurso.setText("");
 
                         jLabelCodInvalidoEditar.setVisible(false);
@@ -684,7 +679,7 @@ public class TelaCargos extends javax.swing.JFrame {
         Cargo cargo = new Cargo(Integer.parseInt(jLabelCodigoGuiaEditarCargo.getText()),jTextFieldNomeGuiaEditarCargo.getText());
         cadastro.atualizar(cargo);
         btnSalvarAlteracao.setEnabled(false);
-        jLabelCodigoGuiaEditarCurso.setText("");
+        jLabelCodigoGuiaEditarCargo.setText("");
         jTextFieldNomeGuiaEditarCargo.setText("");
         jLabelSucessoGuiaEditar.setVisible(true);
         jLabelSucessoGuiaEditar.setText("**Curso atualizado com sucesso.");
@@ -794,7 +789,6 @@ public class TelaCargos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelCodInvalidoEditar;
     private javax.swing.JLabel jLabelCodInvalidoVisualizar;
     private javax.swing.JLabel jLabelCodigoGuiaEditarCargo;
-    private javax.swing.JLabel jLabelCodigoGuiaEditarCurso;
     private javax.swing.JLabel jLabelCodigoGuiaVisualizar;
     private javax.swing.JLabel jLabelCodigoInexistente;
     private javax.swing.JLabel jLabelCodigoInexistenteEditar;
