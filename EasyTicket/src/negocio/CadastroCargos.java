@@ -46,4 +46,9 @@ public class CadastroCargos {
     public boolean verificaExistenciaId(int idCargo){
         return cargos.existe(idCargo);
     }
+    
+    public void deletar(int idCargo){
+        cargos.deletar(idCargo);
+    }
+    
 }

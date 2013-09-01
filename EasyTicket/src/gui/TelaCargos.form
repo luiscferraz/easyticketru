@@ -22,11 +22,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="guiasCargos" max="32767" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-          </Group>
+          <Component id="guiasCargos" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -45,6 +41,140 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
       <SubComponents>
+        <Container class="javax.swing.JPanel" name="guiaCadastrarAluno">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Cadastrar Novo Cargo">
+                <Property name="tabTitle" type="java.lang.String" value="Cadastrar Novo Cargo"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="botaoVoltar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="btnCadastrarCargo" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jSeparator3" alignment="0" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="tituloNome3" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="campoNome" min="-2" pref="261" max="-2" attributes="0"/>
+                                      <EmptySpace min="131" pref="336" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabelSucessoGuiaCadastrar" min="-2" max="-2" attributes="0"/>
+                                  <Component id="tituloCargos3" alignment="0" min="-2" pref="230" max="-2" attributes="0"/>
+                                  <Component id="tituloCadastrar" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                      <Component id="tituloCargos3" min="-2" pref="59" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="tituloCadastrar" min="-2" pref="22" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jSeparator3" min="-2" pref="10" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="tituloNome3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="campoNome" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jLabelSucessoGuiaCadastrar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="153" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="btnCadastrarCargo" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
+                          <Component id="botaoVoltar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="tituloCadastrar">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="14" style="1"/>
+                </Property>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="text" type="java.lang.String" value="Cadastrar Novo Cargo"/>
+                <Property name="toolTipText" type="java.lang.String" value=""/>
+                <Property name="horizontalTextPosition" type="int" value="0"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnCadastrarCargo">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="11" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Cadastrar"/>
+                <Property name="horizontalTextPosition" type="int" value="0"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCadastrarCargoActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="botaoVoltar">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/gui/resources/back.png"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Voltar"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoVoltarActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JSeparator" name="jSeparator3">
+            </Component>
+            <Component class="javax.swing.JLabel" name="tituloCargos3">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="20" style="1"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/gui/resources/cargos.png"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value=" Manter Cargos"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="campoNome">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campoNomeActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="tituloNome3">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Nome:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelSucessoGuiaCadastrar">
+            </Component>
+          </SubComponents>
+        </Container>
         <Container class="javax.swing.JPanel" name="guiaVisualizarCargo">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
@@ -98,7 +228,7 @@
                               <Component id="jLabelExcluidoSucesso" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="40" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -134,7 +264,7 @@
                       <Component id="jLabelCodInvalidoVisualizar" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabelExcluidoSucesso" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="60" max="32767" attributes="0"/>
+                      <EmptySpace pref="66" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="botaoVoltar6" alignment="0" max="32767" attributes="0"/>
                           <Component id="btnExcluirCargo" alignment="0" max="32767" attributes="0"/>
@@ -297,6 +427,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Excluir cargo"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnExcluirCargoActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="tituloCpf3">
               <Properties>
@@ -344,29 +477,47 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="botaoVoltar10" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="btnSalvarAlteracoesCargo" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="tituloCargos2" min="-2" pref="230" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="painelConsulta2" min="-2" pref="249" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabelInformeCodigoEditar" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabelCodigoInexistenteEditar" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabelCodInvalidoEditar" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="botaoVoltar10" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="btnSalvarAlteracao" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Component id="tituloCargos2" min="-2" pref="230" max="-2" attributes="0"/>
+                                              <EmptySpace max="32767" attributes="0"/>
+                                              <Component id="painelConsulta2" min="-2" pref="249" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Component id="tituloEditarCargo1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jSeparator5" alignment="0" min="-2" pref="603" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
-                                  <Component id="tituloEditarCargo1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jSeparator5" alignment="0" min="-2" pref="603" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jLabelSucessoGuiaEditar" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="tituloNome4" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jTextFieldNomeGuiaEditarCargo" min="-2" pref="244" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
+                              <EmptySpace pref="40" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="tituloNome4" min="-2" max="-2" attributes="0"/>
+                              <Component id="tituloCpf6" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="campoEditarNomeCargo" min="-2" pref="228" max="-2" attributes="0"/>
+                              <Component id="jLabelCodigoGuiaEditarCurso" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="jLabelCodigoGuiaEditarCargo" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="491" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -382,15 +533,31 @@
                       <Component id="tituloEditarCargo1" min="-2" pref="24" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jSeparator5" min="-2" pref="10" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="tituloNome4" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="campoEditarNomeCargo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabelCodigoGuiaEditarCargo" alignment="1" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="tituloCpf6" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabelCodigoGuiaEditarCurso" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
-                      <EmptySpace pref="138" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jTextFieldNomeGuiaEditarCargo" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tituloNome4" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabelSucessoGuiaEditar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                      <Component id="jLabelCodInvalidoEditar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabelCodigoInexistenteEditar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabelInformeCodigoEditar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="botaoVoltar10" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnSalvarAlteracoesCargo" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnSalvarAlteracao" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                   </Group>
@@ -429,9 +596,9 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="tituloCpf5" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="campoPesquisarCargo2" min="-2" pref="137" max="-2" attributes="0"/>
+                                  <Component id="jTextFieldPesquisarPorCodigoGuiaEditarCurso" min="-2" pref="137" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="botaoPesquisar2" min="-2" pref="46" max="-2" attributes="0"/>
+                                  <Component id="btnPesquisarGuiaEditar" min="-2" pref="46" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
@@ -447,12 +614,12 @@
                                   <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="tituloCpf5" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="campoPesquisarCargo2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jTextFieldPesquisarPorCodigoGuiaEditarCurso" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="botaoPesquisar2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnPesquisarGuiaEditar" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -473,9 +640,9 @@
                     <Property name="text" type="java.lang.String" value="C&#xf3;digo: "/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="campoPesquisarCargo2">
+                <Component class="javax.swing.JTextField" name="jTextFieldPesquisarPorCodigoGuiaEditarCurso">
                 </Component>
-                <Component class="javax.swing.JButton" name="botaoPesquisar2">
+                <Component class="javax.swing.JButton" name="btnPesquisarGuiaEditar">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -498,7 +665,7 @@
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoPesquisar2ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPesquisarGuiaEditarActionPerformed"/>
                   </Events>
                 </Component>
               </SubComponents>
@@ -516,13 +683,16 @@
                 <Property name="horizontalTextPosition" type="int" value="0"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="btnSalvarAlteracoesCargo">
+            <Component class="javax.swing.JButton" name="btnSalvarAlteracao">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/gui/resources/edit.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Salvar Altera&#xe7;&#xf5;es"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSalvarAlteracaoActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="botaoVoltar10">
               <Properties>
@@ -546,9 +716,9 @@
                 <Property name="text" type="java.lang.String" value="  Manter Cargos"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="campoEditarNomeCargo">
+            <Component class="javax.swing.JTextField" name="jTextFieldNomeGuiaEditarCargo">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campoEditarNomeCargoActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldNomeGuiaEditarCargoActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="tituloNome4">
@@ -556,131 +726,31 @@
                 <Property name="text" type="java.lang.String" value="Nome:"/>
               </Properties>
             </Component>
-          </SubComponents>
-        </Container>
-        <Container class="javax.swing.JPanel" name="guiaCadastrarAluno">
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="Cadastrar Novo Cargo">
-                <Property name="tabTitle" type="java.lang.String" value="Cadastrar Novo Cargo"/>
-              </JTabbedPaneConstraints>
-            </Constraint>
-          </Constraints>
-
-          <Layout>
-            <DimensionLayout dim="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="botaoVoltar" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btnCadastrarCargo" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="tituloCargos3" alignment="0" min="-2" pref="230" max="-2" attributes="0"/>
-                                  <Component id="tituloCadastrar" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jSeparator3" alignment="0" max="32767" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="tituloNome3" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="campoNomeCargo" min="-2" pref="261" max="-2" attributes="0"/>
-                                      <EmptySpace min="131" pref="306" max="32767" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                  </Group>
-              </Group>
-            </DimensionLayout>
-            <DimensionLayout dim="1">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                      <Component id="tituloCargos3" min="-2" pref="59" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="tituloCadastrar" min="-2" pref="22" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jSeparator3" min="-2" pref="10" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="tituloNome3" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="campoNomeCargo" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace pref="158" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="btnCadastrarCargo" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
-                          <Component id="botaoVoltar" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-            </DimensionLayout>
-          </Layout>
-          <SubComponents>
-            <Component class="javax.swing.JLabel" name="tituloCadastrar">
+            <Component class="javax.swing.JLabel" name="tituloCpf6">
               <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="14" style="1"/>
-                </Property>
-                <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="Cadastrar Novo Cargo"/>
-                <Property name="toolTipText" type="java.lang.String" value=""/>
-                <Property name="horizontalTextPosition" type="int" value="0"/>
+                <Property name="text" type="java.lang.String" value="C&#xf3;digo do cargo:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="btnCadastrarCargo">
+            <Component class="javax.swing.JLabel" name="jLabelCodInvalidoEditar">
               <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="11" style="1"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Cadastrar"/>
-                <Property name="horizontalTextPosition" type="int" value="0"/>
+                <Property name="text" type="java.lang.String" value="**C&#xf3;digo inv&#xe1;lido."/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="botaoVoltar">
+            <Component class="javax.swing.JLabel" name="jLabelCodigoInexistenteEditar">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/gui/resources/back.png"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Voltar"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoVoltarActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JSeparator" name="jSeparator3">
-            </Component>
-            <Component class="javax.swing.JLabel" name="tituloCargos3">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="20" style="1"/>
-                </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/gui/resources/cargos.png"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value=" Manter Cargos"/>
+                <Property name="text" type="java.lang.String" value="**C&#xf3;digo inexistente."/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="campoNomeCargo">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campoNomeCargoActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JLabel" name="tituloNome3">
+            <Component class="javax.swing.JLabel" name="jLabelInformeCodigoEditar">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Nome:"/>
+                <Property name="text" type="java.lang.String" value="**Informe o c&#xf3;digo."/>
               </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelCodigoGuiaEditarCurso">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelSucessoGuiaEditar">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelCodigoGuiaEditarCargo">
             </Component>
           </SubComponents>
         </Container>
