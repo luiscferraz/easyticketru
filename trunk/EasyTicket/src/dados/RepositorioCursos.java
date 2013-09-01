@@ -159,7 +159,7 @@ public class RepositorioCursos extends GenericDAO implements IRepositorioCursos 
           
           List<Curso> listaCursos = new ArrayList<Curso>();
 
-          String query = "SELECT * FROM EASYTICKET.CURSOS";
+          String query = "SELECT * FROM EASYTICKET.CURSOS ORDER BY NOMECURSO";
 
           try {
 

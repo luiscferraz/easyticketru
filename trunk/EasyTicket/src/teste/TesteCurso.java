@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import negocio.Curso;
+import util.Validacao;
 
 /**
  *
@@ -48,14 +49,18 @@ public class TesteCurso {
        }
        **/
         
-        TelaCursos tela = new TelaCursos();
-        tela.setVisible(true);
+        //TelaCursos tela = new TelaCursos();
+        //tela.setVisible(true);
         
         //Curso curso = new Curso();
         //System.out.println(repositorio.procurarPorNome("Odontologia"));
         //System.out.println(repositorio.findIdByNome("Odontologia"));
         
+        TelaAlunos tela = new TelaAlunos();
+        tela.setVisible(true);
         
+        
+       
         
         
  
