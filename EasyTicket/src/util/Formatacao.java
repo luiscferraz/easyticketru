@@ -18,24 +18,36 @@ import javax.swing.text.MaskFormatter;
  */
 public class Formatacao {
     
-    public static Date transformarEmData(String data){ 
-        Date d  = new Date();
-        SimpleDateFormat df = new SimpleDateFormat("DD/MM/yyyy");
-        
+    public static Date transformarStringEmDate(String dataString){ 
+        DateFormat formatter = new java.text.SimpleDateFormat("dd/MM/yyyy");
+        formatter.setLenient(false);
+        java.util.Date data = null;
         try {
-            d = df.parse(data);
-        } catch (ParseException ex) {
-            ex.printStackTrace();
-
-        }
-        //System.out.println( df.format(d));
-        return d;        
-    }  
+            
+            data = (java.util.Date)formatter.parse(dataString);
+            
+        } catch (java.text.ParseException e) {
+            e.printStackTrace();
+        }  
+        return data;
+    }
+    
+    public static String transformarDateEmString(Date data){
+        java.text.DateFormat formatter = new java.text.SimpleDateFormat("dd/MM/yyyy");
+        formatter.setLenient(false);
+        String str = formatter.format(data);
+        
+        return str;       
+    }
+    
+    
     
     
     public static String formatarData(Date data){
         DateFormat df = DateFormat.getDateInstance(DateFormat.SHORT);
         return df.format(data);
     }
+    
+    
     
 }
