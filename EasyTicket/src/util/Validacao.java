@@ -10,7 +10,7 @@ package util;
  */
 public class Validacao {
 
-    public static boolean validaCPF(String strCpf){
+  public static boolean validaCPF(String strCpf){
         int iDigito1Aux = 0, iDigito2Aux = 0, iDigitoCPF;
         int iDigito1 = 0, iDigito2 = 0, iRestoDivisao = 0;
         String strDigitoVerificador, strDigitoResultado;
@@ -56,12 +56,11 @@ public class Validacao {
       //retorno padrão  
 
       //Se a data estiver completa  
-      if(Dt.trim().length()==10)  
-        {  
+      if(Dt.trim().length()==10) {  
          //quebra a string  
-         Dia = Integer.parseInt(Dt.substring(1,2));  
-         Mes = Integer.parseInt(Dt.substring(3,5));  
-         Ano = Integer.parseInt(Dt.substring(3,5));  
+        Dia = Integer.parseInt(Dt.substring(1,2));  
+        Mes = Integer.parseInt(Dt.substring(3,5));  
+        Ano = Integer.parseInt(Dt.substring(3,5));  
          //verifica variaveis  
         if(  
             ( (Mes.equals(1) || Mes.equals(3) || Mes.equals(5) || Mes.equals(7) || Mes.equals(8) || Mes.equals(10) || Mes.equals(12)) && (Dia>=1 && Dia <=31))  
@@ -71,18 +70,19 @@ public class Validacao {
             ( (Mes.equals(2)) && (AnoBissexto(Ano)) && (Dia>=1 && Dia <=29))  
             ||  
             ( (Mes.equals(2)) && !(AnoBissexto(Ano)) && (Dia>=1 && Dia <=28))  
-          )  
-            {  
-              return true;  
-            }   
-        else{  return false;}  
-        }        
-      else  
-      {  return false;}  
+          ){  
+            return true;  
+         }else{
+            return false;
+         }  
+      }else{  
+            return false;
+   }  
 
     }  
   
-    private static boolean AnoBissexto (int ano){     
-         return ano % 4 == 0 && ano % 100 != 0 || ano % 400 == 0;     
-    }
+  private static boolean AnoBissexto (int ano){     
+    return ano % 4 == 0 && ano % 100 != 0 || ano % 400 == 0;     
+  }
+
 }
