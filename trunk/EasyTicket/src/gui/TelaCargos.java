@@ -4,11 +4,21 @@
  */
 package gui;
 
+import dados.RepositorioCargos;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.List;
+import javax.swing.JOptionPane;
+import negocio.CadastroCargos;
+import negocio.Cargo;
+
 /**
  *
  * @author Marcela Domingues
  */
 public class TelaCargos extends javax.swing.JFrame {
+    private RepositorioCargos repositorioCargos = new RepositorioCargos();
+    private CadastroCargos cadastro = new CadastroCargos(repositorioCargos);
 
     /**
      * Creates new form TelaCargos
@@ -34,11 +44,18 @@ public class TelaCargos extends javax.swing.JFrame {
         painelConsulta1 = new javax.swing.JPanel();
         tituloBuscarCargo1 = new javax.swing.JLabel();
         tituloCpf4 = new javax.swing.JLabel();
-        campoPesquisarCargo1 = new javax.swing.JTextField();
-        botaoPesquisar1 = new javax.swing.JButton();
+        jTextFieldPesquisarPorCodigo = new javax.swing.JTextField();
+        btnPesquisarGuiaVisualizar = new javax.swing.JButton();
         tituloCargos1 = new javax.swing.JLabel();
         tituloNome2 = new javax.swing.JLabel();
-        excluirCargoBotao = new javax.swing.JButton();
+        btnExcluirCargo = new javax.swing.JButton();
+        tituloCpf3 = new javax.swing.JLabel();
+        jLabelCodInvalidoVisualizar = new javax.swing.JLabel();
+        jLabelExcluidoSucesso = new javax.swing.JLabel();
+        jLabelCodigoInexistente = new javax.swing.JLabel();
+        jLabelInformeCodigoVisualizar = new javax.swing.JLabel();
+        jLabelCodigoGuiaVisualizar = new javax.swing.JLabel();
+        jLabelNomeGuiaVisualizar = new javax.swing.JLabel();
         guiaEditarCargo = new javax.swing.JPanel();
         painelConsulta2 = new javax.swing.JPanel();
         tituloConsultar2 = new javax.swing.JLabel();
@@ -89,16 +106,16 @@ public class TelaCargos extends javax.swing.JFrame {
 
         tituloCpf4.setText("Código: ");
 
-        botaoPesquisar1.setBackground(new java.awt.Color(255, 255, 255));
-        botaoPesquisar1.setForeground(new java.awt.Color(255, 255, 255));
-        botaoPesquisar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/search.png"))); // NOI18N
-        botaoPesquisar1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        botaoPesquisar1.setBorderPainted(false);
-        botaoPesquisar1.setContentAreaFilled(false);
-        botaoPesquisar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        botaoPesquisar1.addActionListener(new java.awt.event.ActionListener() {
+        btnPesquisarGuiaVisualizar.setBackground(new java.awt.Color(255, 255, 255));
+        btnPesquisarGuiaVisualizar.setForeground(new java.awt.Color(255, 255, 255));
+        btnPesquisarGuiaVisualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/search.png"))); // NOI18N
+        btnPesquisarGuiaVisualizar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnPesquisarGuiaVisualizar.setBorderPainted(false);
+        btnPesquisarGuiaVisualizar.setContentAreaFilled(false);
+        btnPesquisarGuiaVisualizar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnPesquisarGuiaVisualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoPesquisar1ActionPerformed(evt);
+                btnPesquisarGuiaVisualizarActionPerformed(evt);
             }
         });
 
@@ -115,9 +132,9 @@ public class TelaCargos extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(tituloCpf4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(campoPesquisarCargo1, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextFieldPesquisarPorCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(botaoPesquisar1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnPesquisarGuiaVisualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         painelConsulta1Layout.setVerticalGroup(
@@ -129,10 +146,10 @@ public class TelaCargos extends javax.swing.JFrame {
                         .addGap(13, 13, 13)
                         .addGroup(painelConsulta1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(tituloCpf4)
-                            .addComponent(campoPesquisarCargo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jTextFieldPesquisarPorCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(painelConsulta1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(botaoPesquisar1))))
+                        .addComponent(btnPesquisarGuiaVisualizar))))
         );
 
         tituloCargos1.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
@@ -141,8 +158,18 @@ public class TelaCargos extends javax.swing.JFrame {
 
         tituloNome2.setText("Nome:");
 
-        excluirCargoBotao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/delete.png"))); // NOI18N
-        excluirCargoBotao.setText("Excluir cargo");
+        btnExcluirCargo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/delete.png"))); // NOI18N
+        btnExcluirCargo.setText("Excluir cargo");
+
+        tituloCpf3.setText("Código do cargo:");
+
+        jLabelCodInvalidoVisualizar.setText("**Código inválido.");
+
+        jLabelExcluidoSucesso.setText("**Curso excluído com sucesso.");
+
+        jLabelCodigoInexistente.setText("**Código Inexistente");
+
+        jLabelInformeCodigoVisualizar.setText("**Informe o código.");
 
         javax.swing.GroupLayout guiaVisualizarCargoLayout = new javax.swing.GroupLayout(guiaVisualizarCargo);
         guiaVisualizarCargo.setLayout(guiaVisualizarCargoLayout);
@@ -152,19 +179,33 @@ public class TelaCargos extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addGroup(guiaVisualizarCargoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(guiaVisualizarCargoLayout.createSequentialGroup()
-                        .addComponent(excluirCargoBotao)
+                        .addComponent(btnExcluirCargo)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(botaoVoltar6))
-                    .addGroup(guiaVisualizarCargoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, guiaVisualizarCargoLayout.createSequentialGroup()
-                            .addComponent(tituloCargos1, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(painelConsulta1, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(tituloVisualizarCargo)
-                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 603, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(guiaVisualizarCargoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(guiaVisualizarCargoLayout.createSequentialGroup()
-                            .addComponent(tituloNome2)
-                            .addGap(123, 123, 123))))
+                            .addComponent(tituloCpf3)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jLabelCodigoGuiaVisualizar))
+                        .addGroup(guiaVisualizarCargoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 603, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(guiaVisualizarCargoLayout.createSequentialGroup()
+                                .addComponent(tituloNome2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabelNomeGuiaVisualizar))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, guiaVisualizarCargoLayout.createSequentialGroup()
+                                .addGroup(guiaVisualizarCargoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(tituloCargos1, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(tituloVisualizarCargo))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(guiaVisualizarCargoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(guiaVisualizarCargoLayout.createSequentialGroup()
+                                        .addComponent(jLabelCodigoInexistente)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabelInformeCodigoVisualizar))
+                                    .addComponent(painelConsulta1, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(jLabelCodInvalidoVisualizar)
+                        .addComponent(jLabelExcluidoSucesso)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         guiaVisualizarCargoLayout.setVerticalGroup(
@@ -175,15 +216,29 @@ public class TelaCargos extends javax.swing.JFrame {
                     .addComponent(painelConsulta1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tituloCargos1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tituloVisualizarCargo, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(guiaVisualizarCargoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(tituloVisualizarCargo, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(guiaVisualizarCargoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabelCodigoInexistente)
+                        .addComponent(jLabelInformeCodigoVisualizar)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tituloNome2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 149, Short.MAX_VALUE)
+                .addGroup(guiaVisualizarCargoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tituloCpf3)
+                    .addComponent(jLabelCodigoGuiaVisualizar))
+                .addGap(10, 10, 10)
+                .addGroup(guiaVisualizarCargoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tituloNome2)
+                    .addComponent(jLabelNomeGuiaVisualizar))
+                .addGap(31, 31, 31)
+                .addComponent(jLabelCodInvalidoVisualizar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelExcluidoSucesso)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
                 .addGroup(guiaVisualizarCargoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(botaoVoltar6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(excluirCargoBotao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnExcluirCargo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(23, 23, 23))
         );
 
@@ -424,9 +479,64 @@ public class TelaCargos extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_botaoVoltar6ActionPerformed
 
-    private void botaoPesquisar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoPesquisar1ActionPerformed
+    private void btnPesquisarGuiaVisualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarGuiaVisualizarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_botaoPesquisar1ActionPerformed
+        if (jTextFieldPesquisarPorCodigo.getText().equals("")) {
+            //JOptionPane.showMessageDialog(this,"Informe o código do curso.","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
+            jLabelInformeCodigoVisualizar.setVisible(true);
+            jTextFieldPesquisarPorCodigo.setText("");
+            jLabelCodigoGuiaVisualizar.setText("");
+            jLabelNomeGuiaVisualizar.setText("");
+            
+            jLabelCodigoInexistente.setVisible(false);
+            jLabelInformeCodigoVisualizar.setVisible(false);
+            jLabelCodInvalidoVisualizar.setVisible(true);
+            
+            jLabelExcluidoSucesso.setVisible(false);
+            return;
+        } else{
+            try{
+                if (cadastro.verificaExistenciaId(Integer.parseInt(jTextFieldPesquisarPorCodigo.getText()))){
+                    Cargo retorno = new Cargo();
+                    retorno = cadastro.buscaPorId(Integer.parseInt(jTextFieldPesquisarPorCodigo.getText()));
+                    jLabelNomeGuiaVisualizar.setText(retorno.getNome());
+                    jLabelCodigoGuiaVisualizar.setText(Integer.toString(retorno.getIdCargo()));
+                    jTextFieldPesquisarPorCodigo.setText("");
+                    
+                    jLabelCodigoInexistente.setVisible(false);
+                    jLabelInformeCodigoVisualizar.setVisible(false);
+                    jLabelCodInvalidoVisualizar.setVisible(false);
+                    
+                    btnExcluirCargo.setEnabled(true);
+                    jLabelExcluidoSucesso.setVisible(false);
+            
+                } else {
+                    //JOptionPane.showMessageDialog(this,"Código Inexistente!","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
+                    jLabelCodigoInexistente.setVisible(true);
+                    jTextFieldPesquisarPorCodigo.setText("");
+                    jLabelCodigoGuiaVisualizar.setText("");
+                    jLabelNomeGuiaVisualizar.setText("");
+                    
+                    jLabelCodInvalidoVisualizar.setVisible(false);
+                    jLabelInformeCodigoVisualizar.setVisible(false);
+                    
+                    jLabelExcluidoSucesso.setVisible(false);
+                    
+                    return;
+                }
+            } catch (Exception ex){
+                System.out.println("Erro ao pesquisar.");
+                //JOptionPane.showMessageDialog(this,"Informação inválida!","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
+                jTextFieldPesquisarPorCodigo.setText("");
+                
+                jLabelCodInvalidoVisualizar.setVisible(true);
+                jLabelCodigoInexistente.setVisible(false);
+                
+                jLabelExcluidoSucesso.setVisible(false);
+                
+            }
+        }
+    }//GEN-LAST:event_btnPesquisarGuiaVisualizarActionPerformed
 
     private void campoEditarNomeCargoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoEditarNomeCargoActionPerformed
         // TODO add your handling code here:
@@ -490,25 +600,31 @@ public class TelaCargos extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botaoPesquisar1;
     private javax.swing.JButton botaoPesquisar2;
     private javax.swing.JButton botaoVoltar;
     private javax.swing.JButton botaoVoltar10;
     private javax.swing.JButton botaoVoltar6;
     private javax.swing.JButton btnCadastrarCargo;
+    private javax.swing.JButton btnExcluirCargo;
+    private javax.swing.JButton btnPesquisarGuiaVisualizar;
     private javax.swing.JButton btnSalvarAlteracoesCargo;
     private javax.swing.JTextField campoEditarNomeCargo;
     private javax.swing.JTextField campoNomeCargo;
-    private javax.swing.JTextField campoPesquisarCargo1;
     private javax.swing.JTextField campoPesquisarCargo2;
-    private javax.swing.JButton excluirCargoBotao;
     private javax.swing.JPanel guiaCadastrarAluno;
     private javax.swing.JPanel guiaEditarCargo;
     private javax.swing.JPanel guiaVisualizarCargo;
     private javax.swing.JTabbedPane guiasCargos;
+    private javax.swing.JLabel jLabelCodInvalidoVisualizar;
+    private javax.swing.JLabel jLabelCodigoGuiaVisualizar;
+    private javax.swing.JLabel jLabelCodigoInexistente;
+    private javax.swing.JLabel jLabelExcluidoSucesso;
+    private javax.swing.JLabel jLabelInformeCodigoVisualizar;
+    private javax.swing.JLabel jLabelNomeGuiaVisualizar;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JTextField jTextFieldPesquisarPorCodigo;
     private javax.swing.JPanel painelConsulta1;
     private javax.swing.JPanel painelConsulta2;
     private javax.swing.JLabel tituloBuscarCargo1;
@@ -517,6 +633,7 @@ public class TelaCargos extends javax.swing.JFrame {
     private javax.swing.JLabel tituloCargos2;
     private javax.swing.JLabel tituloCargos3;
     private javax.swing.JLabel tituloConsultar2;
+    private javax.swing.JLabel tituloCpf3;
     private javax.swing.JLabel tituloCpf4;
     private javax.swing.JLabel tituloCpf5;
     private javax.swing.JLabel tituloEditarCargo1;
