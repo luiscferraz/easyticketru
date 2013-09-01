@@ -8,10 +8,14 @@ import dados.RepositorioCursos;
 import gui.TelaAlunos;
 import gui.TelaCargos;
 import gui.TelaCursos;
+import java.text.DateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import negocio.Curso;
+import util.Formatacao;
 import util.Validacao;
 
 /**
@@ -57,8 +61,29 @@ public class TesteCurso {
         //System.out.println(repositorio.procurarPorNome("Odontologia"));
         //System.out.println(repositorio.findIdByNome("Odontologia"));
         
-        TelaCargos tela = new TelaCargos();
-        tela.setVisible(true);
+        //TelaCargos tela = new TelaCargos();
+        //tela.setVisible(true);
+        
+        String d = "08/12/2013";
+        Date.parse(d);       
+        Date dataNasc = new Date(d);
+        dataNasc.toString();
+        
+        System.out.println(d);
+        //System.out.println(dataNasc);
+        
+        //Date d1 = new Date(); 
+        //Calendar c = Calendar.getInstance(); 
+        //c.setTime(d1); 
+        
+        DateFormat df = DateFormat.getDateInstance(DateFormat.SHORT); 
+        //System.out.println( df.format(c.getTime()) );
+        
+        System.out.println(df.format(dataNasc));
+        System.out.println(Formatacao.formatarData(dataNasc));
+        
+        Date dataTransformada = Formatacao.transformarEmData(d);
+        System.out.println(dataTransformada);
         
         
        
