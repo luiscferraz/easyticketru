@@ -61,8 +61,8 @@ public class TesteCurso {
         //System.out.println(repositorio.procurarPorNome("Odontologia"));
         //System.out.println(repositorio.findIdByNome("Odontologia"));
         
-        TelaCargos tela = new TelaCargos();
-        tela.setVisible(true);
+        //TelaCargos tela = new TelaCargos();
+        //tela.setVisible(true);
         
         String d = "08/12/2013";
         Date.parse(d);       
@@ -79,11 +79,16 @@ public class TesteCurso {
         DateFormat df = DateFormat.getDateInstance(DateFormat.SHORT); 
         //System.out.println( df.format(c.getTime()) );
         
-        System.out.println(df.format(dataNasc));
-        System.out.println(Formatacao.formatarData(dataNasc));
+        //12System.out.println(df.format(dataNasc));
+        //System.out.println(Formatacao.formatarData(dataNasc));
         
-        Date dataTransformada = Formatacao.transformarEmData(d);
-        System.out.println(dataTransformada);
+        //Date dataTransformada = Formatacao.transformarEmData(d);
+        //System.out.println(dataTransformada);
+        
+        TelaAlunos ta = new TelaAlunos();
+        ta.setVisible(true);
+        
+        
         
         
        

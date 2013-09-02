@@ -6,13 +6,20 @@ package gui;
 
 import dados.RepositorioCursos;
 import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Vector;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JComboBox;
 import javax.swing.JFormattedTextField;
+import javax.swing.JOptionPane;
 import negocio.CadastroCursos;
 import negocio.Curso;
+import negocio.Fachada;
 import util.Formatacao;
 
 /**
@@ -24,8 +31,10 @@ public class TelaAlunos extends javax.swing.JFrame {
     /**
      * Creates new form TelaAluno
      */
-    private RepositorioCursos repositorioCursos = new RepositorioCursos();
-    private CadastroCursos cadastroCursos= new CadastroCursos(repositorioCursos);
+    //private RepositorioCursos repositorioCursos = new RepositorioCursos();
+    //private CadastroCursos cadastroCursos= new CadastroCursos(repositorioCursos);
+    
+    private Fachada fachada = Fachada.obterInstancia();
     
     public TelaAlunos() {
         initComponents();
@@ -43,7 +52,7 @@ public class TelaAlunos extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     
     private void preencherComboBoxCursoCadastrar(){
-        List<Curso> allCursos = cadastroCursos.listarCursos();
+        List<Curso> allCursos = fachada.listarCursos();
         for (Curso curso : allCursos) {
             jComboBoxCursoCadastrar.addItem(curso.getNome());
             
@@ -51,7 +60,7 @@ public class TelaAlunos extends javax.swing.JFrame {
     }
     
     private void preencherComboBoxCursoEditar(){
-        List<Curso> allCursos = cadastroCursos.listarCursos();
+        List<Curso> allCursos = fachada.listarCursos();
         for (Curso curso : allCursos) {
             jComboBoxCursoEditar.addItem(curso.getNome());
         }
@@ -568,6 +577,11 @@ public class TelaAlunos extends javax.swing.JFrame {
         btnCadastrar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnCadastrar.setText("Cadastrar");
         btnCadastrar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnCadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCadastrarActionPerformed(evt);
+            }
+        });
 
         botaoVoltar5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/back.png"))); // NOI18N
         botaoVoltar5.setText("Voltar");
@@ -816,6 +830,26 @@ public class TelaAlunos extends javax.swing.JFrame {
     private void botaoVoltar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltar5ActionPerformed
         this.setVisible(false);
     }//GEN-LAST:event_botaoVoltar5ActionPerformed
+
+    private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
+        // TODO add your handling code here:
+        System.out.println(jTextFieldNomeCadastrar.getText());
+        System.out.println(jFormattedTextFieldCpfCadastrar.getText());
+        
+        //System.out.println(jTextFieldEmail.getText()); = tá com problema, o texto some e salva vazio
+                
+        System.out.println(jTextFieldTelefone.getText());
+        System.out.println(jFormattedTextFieldDataNascCadastrar.getText());
+        String dataNasc = jFormattedTextFieldDataNascCadastrar.getText();
+        Date dataNascDate = Formatacao.transformarStringEmDate(dataNasc);
+        System.out.println(Formatacao.transformarDateEmDateSql(dataNascDate));
+        
+        String str = jComboBoxCursoCadastrar.getSelectedItem().toString();
+        System.out.println(str);
+        
+        
+        
+    }//GEN-LAST:event_btnCadastrarActionPerformed
 
     /**
      * @param args the command line arguments

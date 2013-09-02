@@ -72,7 +72,7 @@ public class Fachada {
   }
   
   
-  //curso
+    //curso
     public void inserirCurso(Curso curso){
         cadastroCursos.cadastrar(curso);
     }
@@ -97,7 +97,7 @@ public class Fachada {
     }
     
     
-   //Cargos
+    //Cargos
     public void atualizarCargo(Cargo cargo){
         cadastroCargos.atualizar(cargo);  
     }
