@@ -32,7 +32,7 @@ public class RepositorioAlunos implements IRepositorioAlunos {
     }
     
     
-    @Override
+    
     public void inserir(Aluno aluno){
         String query = "INSERT INTO EASYTICKET.ALUNOS"+
                 " (NOMEALUNO,CPFALUNO,EMAILALUNO,TELEFONEALUNO,DATANASCIMENTO,"+
@@ -57,14 +57,18 @@ public class RepositorioAlunos implements IRepositorioAlunos {
                 //conexao.close();
                 System.out.println("Curso inserido com sucesso.");
             } catch (SQLException ex) {
-                System.out.println("incluirCurso(): "+ex.toString());
+                System.out.println("incluirAluno(): "+ex.toString());
             } 
         
     }
 
-    @Override
-    public boolean existe(int cpf) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
+    public boolean existe(String cpfAluno) {
+        if (this.procurarPorCpf(cpfAluno)!=null){
+          return true;
+        }else{
+          return false;
+        }
     }
 
     @Override
@@ -109,6 +113,26 @@ public class RepositorioAlunos implements IRepositorioAlunos {
     @Override
     public ArrayList<Aluno> buscarPorCurso(int idCurso) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    public void deletar(String cpfAluno) {
+        
+        String query = "DELETE FROM EASYTICKET.ALUNOS WHERE CPFALUNO= "+cpfAluno;
+        
+        try {
+                 PreparedStatement stmt = this.conexao.prepareStatement(query);
+                
+                 if(this.existe(cpfAluno)){
+                     stmt.execute();
+                     System.err.println("Aluno deletado com sucesso.");
+                 }else{
+                     System.out.println("Aluno inexistente.");
+                 }
+                 //conexao.close();
+                                  
+         } catch (SQLException ex) {
+                 System.out.println("deletarAluno(): "+ex.toString());
+         }
     }
     
 }
