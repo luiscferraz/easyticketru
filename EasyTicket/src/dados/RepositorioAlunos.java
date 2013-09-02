@@ -35,9 +35,15 @@ public class RepositorioAlunos implements IRepositorioAlunos {
     
     public void inserir(Aluno aluno){
         String query = "INSERT INTO EASYTICKET.ALUNOS"+
-                " (NOMEALUNO,CPFALUNO,EMAILALUNO,TELEFONEALUNO,DATANASCIMENTO,"+
-                "STATUSALUNO,INICIOCURSOALUNO,TERMINOCURSOALUNO)"+
-                "VALUES (?) (?) (?) (?) (?) (?) (?) (?)" ;
+                                          " (NOMEALUNO,"+
+                                            "CPFALUNO,"+
+                                            "EMAILALUNO,"+
+                                            "TELEFONEALUNO,"+
+                                            "DATANASCIMENTO,"+
+                                            "STATUSALUNO,"+
+                                            "INICIOCURSOALUNO,"+
+                                            "TERMINOCURSOALUNO)"+
+                        "VALUES (?) (?) (?) (?) (?) (?) (?) (?)" ;
         
        
             try {
