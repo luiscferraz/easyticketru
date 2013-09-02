@@ -8,6 +8,7 @@ import interfaces.IRepositorioAlunos;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -54,7 +55,7 @@ public class RepositorioAlunos implements IRepositorioAlunos {
                 stmt.setString(3, aluno.getEmail());
                 stmt.setString(4, aluno.getTelefone());
                 stmt.setDate(5, (Date) aluno.getDataNascimento());
-                stmt.setString(6, aluno.getStatusAluno().toString());
+                stmt.setString(6, aluno.getStatusAluno());
                 stmt.setDate(7, (Date) aluno.getInicioCursoAluno());
                 stmt.setDate(8, (Date) aluno.getTerminoCursoAluno());
 
@@ -79,7 +80,7 @@ public class RepositorioAlunos implements IRepositorioAlunos {
 
     
     public void atualizar(Aluno aluno) {
-      String query = "UPDATE EASYTICKET.ALUNOS SET NOMEALUNO=?"
+      String query = "UPDATE EASYTICKET.ALUNOS SET NOMEALUNO=?,"+
                                                    "CPFALUNO=?,"+
                                                    "EMAILALUNO=?,"+
                                                    "TELEFONEALUNO=?,"+
@@ -87,7 +88,7 @@ public class RepositorioAlunos implements IRepositorioAlunos {
                                                    "STATUSALUNO=?,"+
                                                    "INICIOCURSOALUNO=?,"+
                                                    "TERMINOCURSOALUNO=?"+
-                                                   " WHERE CPFALUNO=?";
+                                                   " WHERE IDALUNO=?";
        
       try{
          PreparedStatement stmt = this.conexao.prepareStatement(query);
@@ -98,9 +99,10 @@ public class RepositorioAlunos implements IRepositorioAlunos {
          stmt.setString(3, aluno.getEmail());
          stmt.setString(4, aluno.getTelefone());
          stmt.setDate(5, (Date) aluno.getDataNascimento());
-         stmt.setString(6, aluno.getStatusAluno().toString());
+         stmt.setString(6, aluno.getStatusAluno());
          stmt.setDate(7, (Date) aluno.getInicioCursoAluno());
          stmt.setDate(8, (Date) aluno.getTerminoCursoAluno());
+         stmt.setInt(9,aluno.getId());
                      
          stmt.execute();
          
@@ -113,7 +115,7 @@ public class RepositorioAlunos implements IRepositorioAlunos {
     }
 
     
-    public Aluno procurarPorCpf(int cpfAluno) {
+    public Aluno procurarPorCpf (String cpfAluno) {
         Aluno alunoResultado = null;
         
         String query = "SELECT * FROM EASYTICKET.ALUNOS WHERE CPFALUNO= "+cpfAluno;
@@ -125,7 +127,7 @@ public class RepositorioAlunos implements IRepositorioAlunos {
                  
                  if (res.next()) {
                      alunoResultado = new Aluno();
-                     alunoResultado.setIdAluno(res.getInt(1));
+                     alunoResultado.setId(res.getInt(1));
                      alunoResultado.setNome(res.getString(2));
                      alunoResultado.setCpf(res.getString(3));
                      alunoResultado.setEmail(res.getString(4));
@@ -170,5 +172,9 @@ public class RepositorioAlunos implements IRepositorioAlunos {
                  System.out.println("deletarAluno(): "+ex.toString());
          }
     }
+
+    
+
+    
     
 }
