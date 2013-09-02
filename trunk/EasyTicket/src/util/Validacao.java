@@ -4,13 +4,25 @@
  */
 package util;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  *
  * @author Nanda
  */
 public class Validacao {
+    private static final String EMAIL_REGEX = "^[\\w-]+(\\.[\\w-]+)*@([\\w-]+\\.)+[a-zA-Z]{2,7}$" ;
 
-  public static boolean validaCPF(String strCpf){
+    public static boolean isEmailValido(String email){
+        Pattern p = Pattern.compile(EMAIL_REGEX);
+
+        Matcher matcher = p.matcher(email);
+
+        return matcher.matches();
+    }
+    
+    public static boolean validaCPF(String strCpf){
         int iDigito1Aux = 0, iDigito2Aux = 0, iDigitoCPF;
         int iDigito1 = 0, iDigito2 = 0, iRestoDivisao = 0;
         String strDigitoVerificador, strDigitoResultado;

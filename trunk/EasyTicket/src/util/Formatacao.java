@@ -40,6 +40,11 @@ public class Formatacao {
         return str;       
     }
     
+    public static java.sql.Date transformarDateEmDateSql(java.util.Date data){        
+        java.sql.Date sqlDate = new java.sql.Date(data.getTime());        
+        return sqlDate;
+    }
+    
     
     
     
