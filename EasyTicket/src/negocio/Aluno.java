@@ -13,7 +13,7 @@ import java.util.Date;
 public class Aluno extends Pessoa {
     
     private int idCurso;
-    private EnumStatusAluno statusAluno;
+    private String statusAluno;
     private Date inicioCursoAluno;
     private Date terminoCursoAluno;
     
@@ -46,11 +46,11 @@ public class Aluno extends Pessoa {
         this.inicioCursoAluno = inicioCursoAluno;
     }
 
-    public EnumStatusAluno getStatusAluno() {
+    public String getStatusAluno() {
         return statusAluno;
     }
 
-    public void setStatusAluno(EnumStatusAluno statusAluno) {
+    public void setStatusAluno(String statusAluno) {
         this.statusAluno = statusAluno;
     }
 
@@ -63,7 +63,7 @@ public class Aluno extends Pessoa {
     }
     
     public Boolean isAtivo(Aluno aluno){
-        if (this.statusAluno == EnumStatusAluno.ATIVO){
+        if (this.statusAluno.equals(EnumStatusAluno.ATIVO)){
             return true;
         }else{
             return false;
