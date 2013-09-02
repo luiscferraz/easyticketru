@@ -72,9 +72,38 @@ public class RepositorioAlunos implements IRepositorioAlunos {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
-    public Aluno procurarPorCpf(int cpf) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
+    public Aluno procurarPorCpf(int cpfAluno) {
+        Aluno alunoResultado = null;
+        
+        String query = "SELECT * FROM EASYTICKET.ALUNOS WHERE CPFALUNO= "+cpfAluno;
+        
+        try {
+                 
+                 PreparedStatement stmt = this.conexao.prepareStatement(query);
+                 ResultSet res = stmt.executeQuery();
+                 
+                 if (res.next()) {
+                     alunoResultado = new Curso();
+                     alunoResultado.setIdAluno(res.getInt(1));
+                     alunoResultado.setNome(res.getString(2));
+                     alunoResultado.setCpf(res.getString(3));
+                     alunoResultado.setEmail(res.getString(4));
+                     alunoResultado.setTelefone(res.getString(5));
+                     //alunoResultado.setDate(res.getDate(6));
+                     alunoResultado.setStatusAluno(res.getString(7));
+                     //alunoResultado.setInicioCursoAluno(res.getDate(8));
+                     //alunoResultado.setTerminoCursoAluno(res.getDate(9));
+                     alunoResultado.setIdCurso(res.getInt(10));
+                                     
+                 }
+                 //conexao.close();                
+                                  
+         } catch (SQLException ex) {
+                 System.out.println("procurarAlunoPorCpf: "+ex.toString());
+         }
+        
+         return alunoResultado;
     }
 
     @Override
