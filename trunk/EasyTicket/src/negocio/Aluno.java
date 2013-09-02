@@ -12,7 +12,7 @@ import java.util.Date;
  */
 public class Aluno extends Pessoa {
     
-    private Curso curso;
+    private int IdCurso;
     private EnumStatusAluno statusAluno;
     private Date inicioCursoAluno;
     private Date terminoCursoAluno;
@@ -30,11 +30,11 @@ public class Aluno extends Pessoa {
     
     public Aluno(){}
 
-    public Curso getCurso() {
+    public int getIdCurso() {
         return curso;
     }
 
-    public void setCurso(Curso curso) {
+    public void setIdCurso(int idCurso) {
         this.curso = curso;
     }
 
