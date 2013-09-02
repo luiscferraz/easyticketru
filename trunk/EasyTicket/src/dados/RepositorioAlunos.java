@@ -74,19 +74,28 @@ public class RepositorioAlunos implements IRepositorioAlunos {
     
     public void atualizar(Aluno aluno) {
       String query = "UPDATE EASYTICKET.ALUNOS SET NOMEALUNO=?"
-                                                   "CPFALUNO,"+
-                                                   "EMAILALUNO,"+
-                                                   "TELEFONEALUNO,"+
-                                                   "DATANASCIMENTO,"+
-                                                   "STATUSALUNO,"+
-                                                   "INICIOCURSOALUNO,"+
-                                                   "TERMINOCURSOALUNO"+
+                                                   "CPFALUNO=?,"+
+                                                   "EMAILALUNO=?,"+
+                                                   "TELEFONEALUNO=?,"+
+                                                   "DATANASCIMENTO=?,"+
+                                                   "STATUSALUNO=?,"+
+                                                   "INICIOCURSOALUNO=?,"+
+                                                   "TERMINOCURSOALUNO=?"+
                                                    " WHERE CPFALUNO=?";
        
       try{
          PreparedStatement stmt = this.conexao.prepareStatement(query);
          
-         stmt.setString(1,aluno.getNome());
+         
+         stmt.setString(1, aluno.getNome());
+         stmt.setString(2, aluno.getCpf());
+         stmt.setString(3, aluno.getEmail());
+         stmt.setString(4, aluno.getTelefone());
+         stmt.setDate(5, (Date) aluno.getDataNascimento());
+         stmt.setString(6, aluno.getStatusAluno().toString());
+         stmt.setDate(7, (Date) aluno.getInicioCursoAluno());
+         stmt.setDate(8, (Date) aluno.getTerminoCursoAluno());
+                     
          stmt.execute();
          
          //conexao.close();
@@ -109,7 +118,7 @@ public class RepositorioAlunos implements IRepositorioAlunos {
                  ResultSet res = stmt.executeQuery();
                  
                  if (res.next()) {
-                     alunoResultado = new Curso();
+                     alunoResultado = new Aluno();
                      alunoResultado.setIdAluno(res.getInt(1));
                      alunoResultado.setNome(res.getString(2));
                      alunoResultado.setCpf(res.getString(3));
