@@ -71,9 +71,30 @@ public class RepositorioAlunos implements IRepositorioAlunos {
         }
     }
 
-    @Override
+    
     public void atualizar(Aluno aluno) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+      String query = "UPDATE EASYTICKET.ALUNOS SET NOMEALUNO=?"
+                                                   "CPFALUNO,"+
+                                                   "EMAILALUNO,"+
+                                                   "TELEFONEALUNO,"+
+                                                   "DATANASCIMENTO,"+
+                                                   "STATUSALUNO,"+
+                                                   "INICIOCURSOALUNO,"+
+                                                   "TERMINOCURSOALUNO"+
+                                                   " WHERE CPFALUNO=?";
+       
+      try{
+         PreparedStatement stmt = this.conexao.prepareStatement(query);
+         
+         stmt.setString(1,aluno.getNome());
+         stmt.execute();
+         
+         //conexao.close();
+         System.out.println("Aluno atualizado com sucesso");
+      
+      } catch (SQLException ex) {
+                 System.out.println("atualizarAluno(): "+ex.toString());
+      }
     }
 
     
