@@ -5,6 +5,7 @@
 package negocio;
 
 import dados.RepositorioCartoes;
+import java.util.List;
 
 /**
  *
@@ -34,10 +35,17 @@ public class CadastroCartoes {
     return cartoes.procurarPorNumero(numeroCartao);
   }
   
+  public List<Cartao> listarCartoes(){
+        return cartoes.listarCartoes();
+    }
+  
   public Cartao buscaPorCpf(int cpf){
     return cartoes.procurarPorCpf(cpf);
   }
   
+  public boolean verificaExistenciaIdAluno(int idAluno){
+        return alunos.existeCartaoAluno(idAluno);
+  }
   
     
 }

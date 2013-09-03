@@ -4,17 +4,59 @@
  */
 package gui;
 
+import static java.awt.image.ImageObserver.WIDTH;
+import java.util.Date;
+import java.util.List;
+import javax.swing.JOptionPane;
+import negocio.Aluno;
+import negocio.Cartao;
+import negocio.Curso;
+import negocio.Fachada;
+import util.Formatacao;
+import util.Validacao;
+
 /**
  *
  * @author Allan
  */
 public class TelaCartoes extends javax.swing.JFrame {
+    
+    
+    private Fachada fachada = Fachada.obterInstancia();
 
     /**
      * Creates new form TelaCartao
      */
     public TelaCartoes() {
         initComponents();
+        this.preencherComboBoxAlunoCadastrar();
+        this.preencherComboBoxAlunoEditar();
+        btnExcluirCartao.setEnabled(false);
+        btnSalvarAlteracoes.setEnabled(false);
+       
+        btnMudarStatus.setEnabled(false);
+        jComboBoxStatusEditar.setEnabled(false);
+    }
+    
+    @SuppressWarnings("unchecked")
+    
+    private void preencherComboBoxAlunoCadastrar(){
+        List<Aluno> allAlunos = fachada.listarAlunos();
+        for (Alunos aluno : allAlunos) {
+            //jComboBoxAlunoCadastrar.addItem(aluno.toString(aluno));
+            jComboBoxAlunoCadastrar.addItem(aluno.getNome());
+            
+        } 
+    }
+    
+    private void preencherComboBoxCursoEditar(){
+        List<Aluno> allAlunos = fachada.listarAlunos();
+        for (Aluno aluno : allAlunos) {
+            jComboBoxAlunoEditar.addItem(aluno.getNome());
+        }
+    }
+    
+    private void pegarDadosCamposCadastrar(){
     }
 
     /**
@@ -41,7 +83,11 @@ public class TelaCartoes extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        excluirCartaoBotao = new javax.swing.JButton();
+        btnExcluirCartao = new javax.swing.JButton();
+        ViewNumeroCartao = new javax.swing.JLabel();
+        ViewNomeAluno = new javax.swing.JLabel();
+        ViewStatusCartao = new javax.swing.JLabel();
+        ViewSaldoCartao = new javax.swing.JLabel();
         guiaEditarAluno = new javax.swing.JPanel();
         painelConsulta2 = new javax.swing.JPanel();
         tituloConsultar2 = new javax.swing.JLabel();
@@ -50,21 +96,27 @@ public class TelaCartoes extends javax.swing.JFrame {
         botaoPesquisar2 = new javax.swing.JButton();
         jSeparator5 = new javax.swing.JSeparator();
         tituloVisualizarFunc1 = new javax.swing.JLabel();
-        botaoVoltar8 = new javax.swing.JButton();
+        btnSalvarAlteracoes = new javax.swing.JButton();
         botaoVoltar9 = new javax.swing.JButton();
         tituloAlunos2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jComboBoxStatusEditar = new javax.swing.JComboBox();
+        txtNumeroEditar = new javax.swing.JTextField();
+        txtSaldoEditar = new javax.swing.JTextField();
+        jComboBoxAlunoEditar = new javax.swing.JComboBox();
         guiaCadastrarAluno = new javax.swing.JPanel();
         tituloCadastrar = new javax.swing.JLabel();
         botaoCadastrar1 = new javax.swing.JButton();
         botaoVoltar5 = new javax.swing.JButton();
         jSeparator3 = new javax.swing.JSeparator();
         tituloAlunos4 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox();
         jLabel5 = new javax.swing.JLabel();
+        jComboBoxStatusCadastrar = new javax.swing.JComboBox();
+        tituloStatus = new javax.swing.JLabel();
+        jComboBoxAlunoCadastrar = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -92,7 +144,7 @@ public class TelaCartoes extends javax.swing.JFrame {
         tituloConsultar1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         tituloConsultar1.setText("Consultar Cartão");
 
-        tituloCpf4.setText("Código: ");
+        tituloCpf4.setText("Número:");
 
         botaoPesquisar1.setBackground(new java.awt.Color(255, 255, 255));
         botaoPesquisar1.setForeground(new java.awt.Color(255, 255, 255));
@@ -152,8 +204,21 @@ public class TelaCartoes extends javax.swing.JFrame {
 
         jLabel9.setText("Saldo:");
 
-        excluirCartaoBotao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/delete.png"))); // NOI18N
-        excluirCartaoBotao.setText("Excluir cartão");
+        btnExcluirCartao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/delete.png"))); // NOI18N
+        btnExcluirCartao.setText("Excluir cartão");
+        btnExcluirCartao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExcluirCartaoActionPerformed(evt);
+            }
+        });
+
+        ViewNumeroCartao.setText("-Numero cartao-");
+
+        ViewNomeAluno.setText("-Numero cartao-");
+
+        ViewStatusCartao.setText("-Numero cartao-");
+
+        ViewSaldoCartao.setText("-Numero cartao-");
 
         javax.swing.GroupLayout guiaVisualizarAlunoLayout = new javax.swing.GroupLayout(guiaVisualizarAluno);
         guiaVisualizarAluno.setLayout(guiaVisualizarAlunoLayout);
@@ -163,7 +228,7 @@ public class TelaCartoes extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(guiaVisualizarAlunoLayout.createSequentialGroup()
-                        .addComponent(excluirCartaoBotao)
+                        .addComponent(btnExcluirCartao)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(botaoVoltar6))
                     .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -175,12 +240,24 @@ public class TelaCartoes extends javax.swing.JFrame {
                         .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 603, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(guiaVisualizarAlunoLayout.createSequentialGroup()
                             .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel6)
-                                .addComponent(jLabel7))
-                            .addGap(258, 258, 258)
+                                .addGroup(guiaVisualizarAlunoLayout.createSequentialGroup()
+                                    .addComponent(jLabel7)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(ViewNomeAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(guiaVisualizarAlunoLayout.createSequentialGroup()
+                                    .addComponent(jLabel6)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(ViewNumeroCartao, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGap(134, 134, 134)
                             .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel8)
-                                .addComponent(jLabel9)))))
+                                .addGroup(guiaVisualizarAlunoLayout.createSequentialGroup()
+                                    .addComponent(jLabel8)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(ViewStatusCartao, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(guiaVisualizarAlunoLayout.createSequentialGroup()
+                                    .addComponent(jLabel9)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(ViewSaldoCartao, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addContainerGap(22, Short.MAX_VALUE))
         );
         guiaVisualizarAlunoLayout.setVerticalGroup(
@@ -197,17 +274,25 @@ public class TelaCartoes extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(guiaVisualizarAlunoLayout.createSequentialGroup()
-                        .addComponent(jLabel6)
+                        .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel6)
+                            .addComponent(ViewNumeroCartao))
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel7))
+                        .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel7)
+                            .addComponent(ViewNomeAluno)))
                     .addGroup(guiaVisualizarAlunoLayout.createSequentialGroup()
-                        .addComponent(jLabel8)
+                        .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel8)
+                            .addComponent(ViewStatusCartao))
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel9)))
+                        .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel9)
+                            .addComponent(ViewSaldoCartao))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
                 .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(botaoVoltar6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(excluirCartaoBotao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnExcluirCartao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(23, 23, 23))
         );
 
@@ -221,7 +306,7 @@ public class TelaCartoes extends javax.swing.JFrame {
         tituloConsultar2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         tituloConsultar2.setText("Consultar Cartão");
 
-        tituloCpf5.setText("Código: ");
+        tituloCpf5.setText("Número:");
 
         botaoPesquisar2.setBackground(new java.awt.Color(255, 255, 255));
         botaoPesquisar2.setForeground(new java.awt.Color(255, 255, 255));
@@ -275,8 +360,13 @@ public class TelaCartoes extends javax.swing.JFrame {
         tituloVisualizarFunc1.setToolTipText("");
         tituloVisualizarFunc1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        botaoVoltar8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/edit.png"))); // NOI18N
-        botaoVoltar8.setText("Salvar Alterações");
+        btnSalvarAlteracoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/edit.png"))); // NOI18N
+        btnSalvarAlteracoes.setText("Salvar Alterações");
+        btnSalvarAlteracoes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalvarAlteracoesActionPerformed(evt);
+            }
+        });
 
         botaoVoltar9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/back.png"))); // NOI18N
         botaoVoltar9.setText("Voltar");
@@ -298,6 +388,20 @@ public class TelaCartoes extends javax.swing.JFrame {
 
         jLabel4.setText("Saldo:");
 
+        jComboBoxStatusEditar.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "ATIVO", "INATIVO" }));
+
+        txtNumeroEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNumeroEditarActionPerformed(evt);
+            }
+        });
+
+        txtSaldoEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtSaldoEditarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout guiaEditarAlunoLayout = new javax.swing.GroupLayout(guiaEditarAluno);
         guiaEditarAluno.setLayout(guiaEditarAlunoLayout);
         guiaEditarAlunoLayout.setHorizontalGroup(
@@ -310,7 +414,7 @@ public class TelaCartoes extends javax.swing.JFrame {
                             .addGroup(guiaEditarAlunoLayout.createSequentialGroup()
                                 .addComponent(botaoVoltar9)
                                 .addGap(18, 18, 18)
-                                .addComponent(botaoVoltar8))
+                                .addComponent(btnSalvarAlteracoes))
                             .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, guiaEditarAlunoLayout.createSequentialGroup()
                                     .addComponent(tituloAlunos2, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -320,14 +424,26 @@ public class TelaCartoes extends javax.swing.JFrame {
                                 .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 603, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addContainerGap(22, Short.MAX_VALUE))
                     .addGroup(guiaEditarAlunoLayout.createSequentialGroup()
+                        .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(guiaEditarAlunoLayout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtNumeroEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(guiaEditarAlunoLayout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(18, 18, 18)
+                                .addComponent(jComboBoxAlunoEditar, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 92, Short.MAX_VALUE)
                         .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4))
-                        .addGap(263, 263, 263))))
+                            .addGroup(guiaEditarAlunoLayout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jComboBoxStatusEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(guiaEditarAlunoLayout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtSaldoEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(74, 74, 74))))
         );
         guiaEditarAlunoLayout.setVerticalGroup(
             guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -343,19 +459,26 @@ public class TelaCartoes extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(guiaEditarAlunoLayout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
                         .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(botaoVoltar9)
-                            .addComponent(botaoVoltar8))
-                        .addGap(24, 24, 24))
-                    .addGroup(guiaEditarAlunoLayout.createSequentialGroup()
-                        .addComponent(jLabel3)
+                            .addComponent(jLabel1)
+                            .addComponent(txtNumeroEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel4)
-                        .addContainerGap())))
+                        .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(jComboBoxAlunoEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(guiaEditarAlunoLayout.createSequentialGroup()
+                        .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(jComboBoxStatusEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel4)
+                            .addComponent(txtSaldoEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 98, Short.MAX_VALUE)
+                .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botaoVoltar9)
+                    .addComponent(btnSalvarAlteracoes))
+                .addGap(24, 24, 24))
         );
 
         guiasAluno.addTab("Editar Cartão", guiaEditarAluno);
@@ -369,6 +492,11 @@ public class TelaCartoes extends javax.swing.JFrame {
         botaoCadastrar1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         botaoCadastrar1.setText("Cadastrar");
         botaoCadastrar1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botaoCadastrar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoCadastrar1ActionPerformed(evt);
+            }
+        });
 
         botaoVoltar5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/back.png"))); // NOI18N
         botaoVoltar5.setText("Voltar");
@@ -382,9 +510,16 @@ public class TelaCartoes extends javax.swing.JFrame {
         tituloAlunos4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/cartoes.png"))); // NOI18N
         tituloAlunos4.setText("  Manter Cartões");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
         jLabel5.setText("Aluno:");
+
+        jComboBoxStatusCadastrar.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "ATIVO", "INATIVO" }));
+        jComboBoxStatusCadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxStatusCadastrarActionPerformed(evt);
+            }
+        });
+
+        tituloStatus.setText("Status:");
 
         javax.swing.GroupLayout guiaCadastrarAlunoLayout = new javax.swing.GroupLayout(guiaCadastrarAluno);
         guiaCadastrarAluno.setLayout(guiaCadastrarAlunoLayout);
@@ -398,19 +533,22 @@ public class TelaCartoes extends javax.swing.JFrame {
                 .addGap(26, 26, 26))
             .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
                 .addGap(21, 21, 21)
-                .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
-                        .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 547, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(77, Short.MAX_VALUE))
+                .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
                         .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 547, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(tituloAlunos4, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tituloCadastrar))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                            .addComponent(tituloCadastrar)
+                            .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
+                                .addComponent(tituloStatus)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jComboBoxStatusCadastrar, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jComboBoxAlunoCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(298, 298, 298))))
         );
         guiaCadastrarAlunoLayout.setVerticalGroup(
             guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -424,8 +562,12 @@ public class TelaCartoes extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 149, Short.MAX_VALUE)
+                    .addComponent(jComboBoxAlunoCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tituloStatus)
+                    .addComponent(jComboBoxStatusCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 118, Short.MAX_VALUE)
                 .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botaoCadastrar1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(botaoVoltar5))
@@ -464,12 +606,88 @@ public class TelaCartoes extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoVoltar6ActionPerformed
 
     private void botaoVoltar9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltar9ActionPerformed
-        // TODO add your handling code here:
+        this.setVisible(false);
     }//GEN-LAST:event_botaoVoltar9ActionPerformed
 
     private void botaoVoltar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltar5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_botaoVoltar5ActionPerformed
+
+    private void jComboBoxStatusCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxStatusCadastrarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxStatusCadastrarActionPerformed
+
+    private void txtSaldoEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSaldoEditarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSaldoEditarActionPerformed
+
+    private void btnExcluirCartaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirCartaoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnExcluirCartaoActionPerformed
+
+    private void botaoCadastrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrar1ActionPerformed
+        try{       
+            int aluno = jComboBoxAlunoCadastrar.getSelectedItem().toString();
+            int idAluno = fachada.findIdAlunoByNome(aluno);
+            System.out.println(idAluno);
+            String status = jComboBoxStatusCadastrar.getSelectedItem().toString();
+
+            
+
+            Cartao cartao = new Cartao();
+          /*  cartao.setIdCartao(); */
+            cartao.setSaldo(0);
+            cartao.setStatus(status);
+            cartao.setCpfAluno(idAluno);  
+            
+            
+            if(fachada.verificarExistenciaCartaoPorIdAluno(cartao.getCpfAluno()){
+                JOptionPane.showMessageDialog(this,"Aluno já possui cartão cadastrado no sitema.","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
+                return;
+            }else {
+                fachada.cadastrarAluno(aluno);
+                JOptionPane.showMessageDialog(this, "Cartão cadastrado com sucesso.", "CONFIRMAÇÃO", JOptionPane.INFORMATION_MESSAGE);
+                return;
+                    
+                }
+            
+        }catch (Exception ex){
+            JOptionPane.showMessageDialog(this,"Preencha todos os campos corretamente.","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+    }//GEN-LAST:event_botaoCadastrar1ActionPerformed
+
+    private void txtNumeroEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumeroEditarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNumeroEditarActionPerformed
+
+    private void btnSalvarAlteracoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarAlteracoesActionPerformed
+             
+        try{
+            String nome = txtNumeroEditar.getText();              
+            String saldo = txtSaldoEditar.getText();     
+
+            String aluno = jComboBoxAlunoEditar.getSelectedItem().toString();
+            int idAluno= fachada.findIdAlunoByNome(aluno);            
+            String status = jComboBoxStatusEditar.getSelectedItem().toString();
+
+            Cartao cartaoEditado = new Cartao();
+          /*  cartao.setIdCartao(); */
+            cartaoEditado.setSaldo(0);
+            cartaoEditado.setStatus(status);
+            cartaoEditado.setCpfAluno(idAluno); 
+            
+                        
+            fachada.atualizarCartao(cartaoEditado);
+            JOptionPane.showMessageDialog(this, "Cartão alterado com sucesso.", "CONFIRMAÇÃO", JOptionPane.INFORMATION_MESSAGE);
+ 
+            
+        }catch(Exception ex){
+            JOptionPane.showMessageDialog(this,"Não foi possível atualizar os dados do cartão.","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+    }//GEN-LAST:event_btnSalvarAlteracoesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -506,21 +724,28 @@ public class TelaCartoes extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel ViewNomeAluno;
+    private javax.swing.JLabel ViewNumeroCartao;
+    private javax.swing.JLabel ViewSaldoCartao;
+    private javax.swing.JLabel ViewStatusCartao;
     private javax.swing.JButton botaoCadastrar1;
     private javax.swing.JButton botaoPesquisar1;
     private javax.swing.JButton botaoPesquisar2;
     private javax.swing.JButton botaoVoltar5;
     private javax.swing.JButton botaoVoltar6;
-    private javax.swing.JButton botaoVoltar8;
     private javax.swing.JButton botaoVoltar9;
+    private javax.swing.JButton btnExcluirCartao;
+    private javax.swing.JButton btnSalvarAlteracoes;
     private javax.swing.JTextField campoPesquisarCpfFunc1;
     private javax.swing.JTextField campoPesquisarCpfFunc2;
-    private javax.swing.JButton excluirCartaoBotao;
     private javax.swing.JPanel guiaCadastrarAluno;
     private javax.swing.JPanel guiaEditarAluno;
     private javax.swing.JPanel guiaVisualizarAluno;
     private javax.swing.JTabbedPane guiasAluno;
-    private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JComboBox jComboBoxAlunoCadastrar;
+    private javax.swing.JComboBox jComboBoxAlunoEditar;
+    private javax.swing.JComboBox jComboBoxStatusCadastrar;
+    private javax.swing.JComboBox jComboBoxStatusEditar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -543,7 +768,10 @@ public class TelaCartoes extends javax.swing.JFrame {
     private javax.swing.JLabel tituloConsultar2;
     private javax.swing.JLabel tituloCpf4;
     private javax.swing.JLabel tituloCpf5;
+    private javax.swing.JLabel tituloStatus;
     private javax.swing.JLabel tituloVisualizarFunc;
     private javax.swing.JLabel tituloVisualizarFunc1;
+    private javax.swing.JTextField txtNumeroEditar;
+    private javax.swing.JTextField txtSaldoEditar;
     // End of variables declaration//GEN-END:variables
 }

@@ -6,6 +6,7 @@ package negocio;
 
 import dados.RepositorioAlunos;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -35,6 +36,10 @@ public class CadastroAlunos {
     }
     public ArrayList<Aluno> buscarPorCurso(int idCurso){
         return alunos.buscarPorCurso(idCurso);
+    }
+    
+    public List<Aluno> listarAlunos(){
+        return alunos.listarAlunos();
     }
     
 }
