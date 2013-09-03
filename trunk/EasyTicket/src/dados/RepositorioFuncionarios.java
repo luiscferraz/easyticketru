@@ -100,7 +100,7 @@ public class RepositorioFuncionarios implements IRepositorioFuncionarios{
          stmt.setString(4, funcionario.getTelefone());
          stmt.setDate(5, (Date) funcionario.getDataNascimento());
          stmt.setString(6, funcionario.getStatusFuncionario());
-         stmt.setInt(7,aluno.getId());
+         stmt.setInt(7,funcionario.getId());
                      
          stmt.execute();
          
