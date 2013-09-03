@@ -27,30 +27,7 @@ public class TesteAluno {
         RepositorioAlunos repositorio = new RepositorioAlunos();
         
         repositorio.inserir(aluno);
-        
-        //buscando um aluno passando o idAluno
-        //Aluno aluno2 = new Aluno();
-        //aluno2 = repositorio.procurarPorId(1);
-        //System.out.println(aluno2.getIdAluno());
-        //System.out.println(aluno2.getNome());
-       
-        //atualizando um aluno
-        //aluno2.setNome("Allan");
-        //repositorio.atualizar(aluno2);
-        
-        //repositorio.deletar(1);
-        
-        
-       /**for(Aluno a: repositorio.listarAlunos()){
-           System.out.println(c.toString(c));
-       }
-       **/
- 
-        
-        //System.out.println(repositorio.procurarPorNome("Marcela"));
-        //System.out.println(repositorio.findIdByNome("Marcela"));
-        
-        
+    
  
     }
     
