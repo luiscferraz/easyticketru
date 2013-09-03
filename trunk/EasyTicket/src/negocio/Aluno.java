@@ -38,6 +38,8 @@ public class Aluno extends Pessoa {
         this.terminoCursoAluno = terminoCursoAluno;
         
     }
+    
+    public Aluno(){}
 
     public int getIdCurso() {
         return this.idCurso;
