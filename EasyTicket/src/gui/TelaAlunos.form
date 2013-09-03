@@ -921,33 +921,55 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="tituloNome3" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="tituloCpf6" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="tituloDataNasc8" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="tituloDataNasc7" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="tituloCurso9" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="tituloNome3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="tituloCpf6" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jFormattedTextFieldCpfCadastrar" alignment="0" pref="320" max="32767" attributes="0"/>
+                                          <Component id="jTextFieldNomeCadastrar" alignment="0" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="tituloDataNasc8" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="tituloDataNasc7" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="tituloCurso9" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jTextFieldTelefone" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jComboBoxCursoCadastrar" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jTextFieldEmail" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
                               </Group>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jFormattedTextFieldCpfCadastrar" alignment="0" pref="321" max="32767" attributes="0"/>
-                                  <Component id="jTextFieldTelefone" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jComboBoxCursoCadastrar" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jTextFieldNomeCadastrar" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jTextFieldEmail" max="32767" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="tituloCurso8" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="tituloCurso7" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="tituloCurso6" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="tituloDataNasc3" alignment="1" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jFormattedTextFieldDataNascCadastrar" linkSize="3" alignment="1" min="-2" pref="111" max="-2" attributes="0"/>
-                                  <Component id="jFormattedTextFieldInicioCursoCadastrar" linkSize="3" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="jFormattedTextFieldTermCursoCadastrar" linkSize="3" alignment="1" pref="113" max="32767" attributes="0"/>
-                                  <Component id="jComboBoxStatusCadastrar" linkSize="3" alignment="1" max="32767" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="tituloCurso8" alignment="1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="tituloDataNasc3" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jFormattedTextFieldDataNascCadastrar" linkSize="3" alignment="1" min="-2" pref="111" max="-2" attributes="0"/>
+                                          <Component id="jFormattedTextFieldInicioCursoCadastrar" linkSize="3" alignment="1" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="tituloCurso7" alignment="1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="tituloCurso6" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jFormattedTextFieldTermCursoCadastrar" linkSize="3" alignment="1" pref="113" max="32767" attributes="0"/>
+                                          <Component id="jComboBoxStatusCadastrar" linkSize="3" alignment="1" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
@@ -987,8 +1009,8 @@
                           <Component id="jFormattedTextFieldCpfCadastrar" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="tituloCurso7" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jFormattedTextFieldTermCursoCadastrar" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -998,14 +1020,8 @@
                                   <Component id="tituloCurso6" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jComboBoxStatusCadastrar" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="68" max="32767" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="btnCadastrar" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
-                                  <Component id="botaoVoltar5" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
                           </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="tituloDataNasc8" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jTextFieldEmail" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -1020,8 +1036,12 @@
                                   <Component id="jComboBoxCursoCadastrar" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="tituloCurso9" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
+                      </Group>
+                      <EmptySpace pref="34" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="btnCadastrar" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
+                          <Component id="botaoVoltar5" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   </Group>

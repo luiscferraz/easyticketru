@@ -15,8 +15,8 @@ public class Funcionario extends Pessoa {
     private String cargo;
     private String statusFuncionario;
     
-    public Funcionario(String nome, String email, String cpf, String telefone, Date dataNascimento, String cargo, 
-                        String statusFuncionario){
+    public Funcionario(String nome, String email, String cpf, String telefone,
+            java.sql.Date dataNascimento, String cargo, String statusFuncionario){
         
         super(nome, email, cpf, telefone, dataNascimento);
         this.cargo = cargo;
