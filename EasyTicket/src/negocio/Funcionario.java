@@ -13,10 +13,10 @@ import java.util.Date;
 public class Funcionario extends Pessoa {
     
     private String cargo;
-    private EnumStatusFuncionario statusFuncionario;
+    private String statusFuncionario;
     
     public Funcionario(String nome, String email, String cpf, String telefone, Date dataNascimento, String cargo, 
-                        EnumStatusFuncionario statusFuncionario){
+                        String statusFuncionario){
         
         super(nome, email, cpf, telefone, dataNascimento);
         this.cargo = cargo;
@@ -34,16 +34,16 @@ public class Funcionario extends Pessoa {
         this.cargo = cargo;
     }
 
-    public EnumStatusFuncionario getStatusFuncionario() {
+    public String getStatusFuncionario() {
         return statusFuncionario;
     }
 
-    public void setStatusFuncionario(EnumStatusFuncionario statusFuncionario) {
+    public void setStatusFuncionario(String statusFuncionario) {
         this.statusFuncionario = statusFuncionario;
     }
     
     public Boolean isAtivo(Funcionario funcionario){
-        if (this.statusFuncionario == EnumStatusFuncionario.ATIVO){
+        if (this.statusFuncionario == "ATIVO"){
             return true;
         }else{
             return false;

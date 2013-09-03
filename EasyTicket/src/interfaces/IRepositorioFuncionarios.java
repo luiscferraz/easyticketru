@@ -14,9 +14,10 @@ import negocio.Funcionario;
 public interface IRepositorioFuncionarios {
     
     public void inserir(Funcionario funcionario);
-    public boolean existe(int cpf);
+    public boolean existe(String cpf);
     public void atualizar(Funcionario funcionario);
-    public Funcionario procurarPorCpf(int cpf);
-    public ArrayList<Funcionario> buscarPorCargo(String cargoFuncionario);
+    public Funcionario PorCpf(String cpfFuncionario);
+    public void deletar(String cpfFuncionario);
+    public ArrayList<Funcionario> buscarPorCargo(int idCargo);
     
 }
