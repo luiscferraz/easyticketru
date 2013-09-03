@@ -960,6 +960,7 @@ public class TelaAlunos extends javax.swing.JFrame {
                 campoCpfPesquisaVisualizar.setText("");
                                
             }
+        }
     }//GEN-LAST:event_botaoPesquisar1ActionPerformed
 
     private void btnPesquisarCpfEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarCpfEditarActionPerformed
