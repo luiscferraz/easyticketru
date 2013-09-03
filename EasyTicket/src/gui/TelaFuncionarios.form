@@ -462,7 +462,7 @@
                                   <EmptySpace max="32767" attributes="0"/>
                                   <Component id="tituloCurso1" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="campoCargoFunc2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="comboBoxCargoFuncEditar" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -501,7 +501,7 @@
                           <Component id="tituloDataNasc1" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="campoDataNascFunc2" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="tituloCurso1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="campoCargoFunc2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="comboBoxCargoFuncEditar" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -701,7 +701,7 @@
                 <Property name="text" type="java.lang.String" value="Cargo:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JComboBox" name="campoCargoFunc2">
+            <Component class="javax.swing.JComboBox" name="comboBoxCargoFuncEditar">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="4">
@@ -781,7 +781,7 @@
                                           <Group type="102" attributes="0">
                                               <Component id="tituloCurso3" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="comboBoxCargoFunc3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="comboBoxCargoFunCadastrar" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" attributes="0">
                                               <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
@@ -836,7 +836,7 @@
                           <Component id="tituloCpf6" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="campoCpfFunc3" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="tituloCurso3" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="comboBoxCargoFunc3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="comboBoxCargoFunCadastrar" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -953,7 +953,7 @@
                 <Property name="text" type="java.lang.String" value="Cargo:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JComboBox" name="comboBoxCargoFunc3">
+            <Component class="javax.swing.JComboBox" name="comboBoxCargoFunCadastrar">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="4">
