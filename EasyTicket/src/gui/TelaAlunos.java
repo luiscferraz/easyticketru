@@ -467,6 +467,11 @@ public class TelaAlunos extends javax.swing.JFrame {
 
         btnSalvarAlteracoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/edit.png"))); // NOI18N
         btnSalvarAlteracoes.setText("Salvar Alterações");
+        btnSalvarAlteracoes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalvarAlteracoesActionPerformed(evt);
+            }
+        });
 
         botaoVoltar9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/back.png"))); // NOI18N
         botaoVoltar9.setText("Voltar");
@@ -968,16 +973,16 @@ public class TelaAlunos extends javax.swing.JFrame {
                         txtInicioCursoEditar.setText(Formatacao.transformarDateEmString((Date)alunoRetorno.getInicioCursoAluno()));
                         txtTerminoCursoEditar.setText(Formatacao.transformarDateEmString((Date)alunoRetorno.getTerminoCursoAluno()));
                         
-                        campoCpfPesquisaVisualizar.setText("");
+                        txtPesquisarCpfEditar.setText("");
                         btnSalvarAlteracoes.setEnabled(true);
 
                     } else {
                         JOptionPane.showMessageDialog(this,"Aluno Inexistente!","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
-                        campoCpfPesquisaVisualizar.setText("");
+                        txtPesquisarCpfEditar.setText("");
                         return;
                     }
             } catch(Exception ex){
-                campoCpfPesquisaVisualizar.setText("");
+                txtPesquisarCpfEditar.setText("");
                 JOptionPane.showMessageDialog(this,"Não foi possível efetuar a atualização do aluno!","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
                 return;
             }
@@ -1087,6 +1092,10 @@ public class TelaAlunos extends javax.swing.JFrame {
     private void txtNomeEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeEditarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNomeEditarActionPerformed
+
+    private void btnSalvarAlteracoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarAlteracoesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSalvarAlteracoesActionPerformed
 
     /**
      * @param args the command line arguments
