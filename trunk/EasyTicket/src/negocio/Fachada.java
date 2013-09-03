@@ -136,6 +136,9 @@ public class Fachada {
     public void deletarCargo(int idCargo){
         cadastroCargos.deletar(idCargo);
     }
+    public int findIdCargoByNome(String nome){
+        return cadastroCargos.findIdByNome(nome);
+    }
     
     //Aluno
     public void cadastrarAluno(Aluno aluno){
