@@ -17,18 +17,27 @@ public class Aluno extends Pessoa {
     private Date inicioCursoAluno;
     private Date terminoCursoAluno;
     
-//    public Aluno(String nome, String email, int cpf, int telefone, Date dataNascimento, Curso curso, EnumStatusAluno statusAluno,
-//                 Date inicioCursoAluno, Date terminoCursoAluno){
-//        
-//        super(nome, email, cpf, telefone, dataNascimento);
-//        this.curso = curso;
-//        this.statusAluno = statusAluno;
-//        this.inicioCursoAluno = inicioCursoAluno;
-//        this.terminoCursoAluno = terminoCursoAluno;
-//        
-//    }
+    public Aluno(String nome, String email, String cpf, String telefone,
+            Date dataNascimento, int idCurso, String statusAluno,
+                 Date inicioCursoAluno, Date terminoCursoAluno){
+        
+        super(nome, email, cpf, telefone, dataNascimento);
+        this.statusAluno = statusAluno;
+        this.inicioCursoAluno = inicioCursoAluno;
+        this.terminoCursoAluno = terminoCursoAluno;
+        
+    }
     
-    public Aluno(){}
+    public Aluno(int id,String nome, String email, String cpf, String telefone,
+            Date dataNascimento, int idCurso, String statusAluno,
+                 Date inicioCursoAluno, Date terminoCursoAluno){
+        super(id,nome, email, cpf,telefone,dataNascimento);
+        this.idCurso = idCurso;
+        this.statusAluno = statusAluno;
+        this.inicioCursoAluno = inicioCursoAluno;
+        this.terminoCursoAluno = terminoCursoAluno;
+        
+    }
 
     public int getIdCurso() {
         return this.idCurso;
