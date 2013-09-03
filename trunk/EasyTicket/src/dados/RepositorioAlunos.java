@@ -36,15 +36,14 @@ public class RepositorioAlunos implements IRepositorioAlunos {
     
     public void inserir(Aluno aluno){
         String query = "INSERT INTO EASYTICKET.ALUNOS"+
-                                          " (NOMEALUNO,"+
-                                            "CPFALUNO,"+
+                                          " (NOMEALUNO,CPFALUNO,"+
                                             "EMAILALUNO,"+
                                             "TELEFONEALUNO,"+
-                                            "DATANASCIMENTO,"+
+                                            "DATANASCIMENTOALUNO,"+
                                             "STATUSALUNO,"+
                                             "INICIOCURSOALUNO,"+
-                                            "TERMINOCURSOALUNO)"+
-                        "VALUES (?) (?) (?) (?) (?) (?) (?) (?)" ;
+                                            "TERMINOCURSOALUNO,IDCURSOALUNO)"+
+                        "VALUES (?,?,?,?,?,?,?,?,?)" ;
         
        
             try {
@@ -52,17 +51,18 @@ public class RepositorioAlunos implements IRepositorioAlunos {
 
                 stmt.setString(1, aluno.getNome());
                 stmt.setString(2, aluno.getCpf());
-                stmt.setString(3, aluno.getEmail());
+                stmt.setString(3, aluno.getEmail());                
                 stmt.setString(4, aluno.getTelefone());
-                stmt.setDate(5, (Date) aluno.getDataNascimento());
+                stmt.setDate(5, aluno.getDataNascimento());
                 stmt.setString(6, aluno.getStatusAluno());
-                stmt.setDate(7, (Date) aluno.getInicioCursoAluno());
-                stmt.setDate(8, (Date) aluno.getTerminoCursoAluno());
+                stmt.setDate(7, aluno.getInicioCursoAluno());
+                stmt.setDate(8, aluno.getTerminoCursoAluno());
+                stmt.setInt(9,aluno.getIdCurso());
 
                 stmt.execute();
 
                 //conexao.close();
-                System.out.println("Curso inserido com sucesso.");
+                System.out.println("Aluno inserido com sucesso.");
             } catch (SQLException ex) {
                 System.out.println("incluirAluno(): "+ex.toString());
             } 
