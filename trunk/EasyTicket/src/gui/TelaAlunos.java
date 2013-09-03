@@ -22,6 +22,7 @@ import negocio.CadastroCursos;
 import negocio.Curso;
 import negocio.Fachada;
 import util.Formatacao;
+import util.Validacao;
 
 /**
  *
@@ -925,43 +926,49 @@ public class TelaAlunos extends javax.swing.JFrame {
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
         // TODO add your handling code here:
-        String nome = jTextFieldNomeCadastrar.getText();
-        String cpf = jFormattedTextFieldCpfCadastrar.getText();       
-        String email =jTextFieldEmail.getText();                 
-        String telefone = jTextFieldTelefone.getText();     
         
-        String curso = jComboBoxCursoCadastrar.getSelectedItem().toString();
-        int idCurso = fachada.findIdCursoByNome(curso);
-        System.out.println(idCurso);
-        String status = jComboBoxStatusCadastrar.getSelectedItem().toString();
         
-        String dataNasc = jFormattedTextFieldDataNascCadastrar.getText();
-        Date dataNascDate = Formatacao.transformarStringEmDate(dataNasc);
-        java.sql.Date sqlDateNasc = Formatacao.transformarDateEmDateSql(dataNascDate);        
+        try{
+            String nome = jTextFieldNomeCadastrar.getText();
+            String cpf = jFormattedTextFieldCpfCadastrar.getText();       
+            String email =jTextFieldEmail.getText();                 
+            String telefone = jTextFieldTelefone.getText();     
+
+            String curso = jComboBoxCursoCadastrar.getSelectedItem().toString();
+            int idCurso = fachada.findIdCursoByNome(curso);
+            System.out.println(idCurso);
+            String status = jComboBoxStatusCadastrar.getSelectedItem().toString();
+
+            String dataNasc = jFormattedTextFieldDataNascCadastrar.getText();
+            Date dataNascDate = Formatacao.transformarStringEmDate(dataNasc);
+            java.sql.Date sqlDateNasc = Formatacao.transformarDateEmDateSql(dataNascDate);        
+
+            String inicioCurso= jFormattedTextFieldInicioCursoCadastrar.getText();
+            Date inicioCursO = Formatacao.transformarStringEmDate(inicioCurso);
+            java.sql.Date sqlDateInicioCurso = Formatacao.transformarDateEmDateSql(inicioCursO);        
+
+            String terminoCurso= jFormattedTextFieldTermCursoCadastrar.getText();
+            Date terminoCursO = Formatacao.transformarStringEmDate(inicioCurso);
+            java.sql.Date sqlDateTermCurso = Formatacao.transformarDateEmDateSql(terminoCursO);   
+
+            Aluno aluno = new Aluno();
+            aluno.setNome(nome);
+            aluno.setCpf(cpf);
+            aluno.setEmail(email);
+            aluno.setTelefone(telefone);        
+            aluno.setIdCurso(idCurso);
+            aluno.setDataNascimento(sqlDateNasc);
+            aluno.setInicioCursoAluno(sqlDateInicioCurso);
+            aluno.setTerminoCursoAluno(sqlDateInicioCurso);
+            aluno.setStatusAluno(status);
+            fachada.cadastrarAluno(aluno);
+        }catch (Exception ex){
+            JOptionPane.showMessageDialog(this,"Preencha todos os campos corretamente.","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
+        }
         
-        String inicioCurso= jFormattedTextFieldInicioCursoCadastrar.getText();
-        Date inicioCursO = Formatacao.transformarStringEmDate(inicioCurso);
-        java.sql.Date sqlDateInicioCurso = Formatacao.transformarDateEmDateSql(inicioCursO);        
         
-        String terminoCurso= jFormattedTextFieldTermCursoCadastrar.getText();
-        Date terminoCursO = Formatacao.transformarStringEmDate(inicioCurso);
-        java.sql.Date sqlDateTermCurso = Formatacao.transformarDateEmDateSql(terminoCursO);   
         
-        Aluno aluno = new Aluno();
-        aluno.setNome(nome);
-        aluno.setCpf(cpf);
-        aluno.setEmail(email);
-        aluno.setTelefone(telefone);        
-        aluno.setIdCurso(idCurso);
-        aluno.setDataNascimento(sqlDateNasc);
-        aluno.setInicioCursoAluno(sqlDateInicioCurso);
-        aluno.setTerminoCursoAluno(sqlDateInicioCurso);
-        aluno.setStatusAluno(status);
         
-        System.out.println(aluno.getNome());
-        System.out.println(aluno.getIdCurso());
-        
-        fachada.cadastrarAluno(aluno);
         
         
         
