@@ -15,6 +15,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import negocio.Aluno;
 import negocio.EnumStatusAluno;
+import util.Formatacao;
 
 /**
  *
@@ -118,11 +119,12 @@ public class RepositorioAlunos implements IRepositorioAlunos {
     public Aluno procurarPorCpf (String cpfAluno) {
         Aluno alunoResultado = null;
         
-        String query = "SELECT * FROM EASYTICKET.ALUNOS WHERE CPFALUNO= "+cpfAluno;
+        String query = "SELECT * FROM EASYTICKET.ALUNOS WHERE CPFALUNO=?";
         
         try {
                  
                  PreparedStatement stmt = this.conexao.prepareStatement(query);
+                 stmt.setString(1, cpfAluno);
                  ResultSet res = stmt.executeQuery();
                  
                  if (res.next()) {
@@ -132,10 +134,10 @@ public class RepositorioAlunos implements IRepositorioAlunos {
                      alunoResultado.setCpf(res.getString(3));
                      alunoResultado.setEmail(res.getString(4));
                      alunoResultado.setTelefone(res.getString(5));
-                     //alunoResultado.setDate(res.getDate(6));
+                     alunoResultado.setDataNascimento(Formatacao.transformarDateEmDateSql(res.getDate(6)));
                      alunoResultado.setStatusAluno(res.getString(7));
-                     //alunoResultado.setInicioCursoAluno(res.getDate(8));
-                     //alunoResultado.setTerminoCursoAluno(res.getDate(9));
+                     alunoResultado.setInicioCursoAluno(Formatacao.transformarDateEmDateSql(res.getDate(8)));
+                     alunoResultado.setTerminoCursoAluno(Formatacao.transformarDateEmDateSql(res.getDate(9)));
                      alunoResultado.setIdCurso(res.getInt(10));
                                      
                  }
@@ -147,6 +149,8 @@ public class RepositorioAlunos implements IRepositorioAlunos {
         
          return alunoResultado;
     }
+    
+    
 
     @Override
     public ArrayList<Aluno> buscarPorCurso(int idCurso) {

@@ -925,8 +925,7 @@ public class TelaAlunos extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoVoltar5ActionPerformed
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
-        // TODO add your handling code here:
-        
+        // TODO add your handling code here:       
         
         try{
             String nome = jTextFieldNomeCadastrar.getText();
@@ -961,9 +960,25 @@ public class TelaAlunos extends javax.swing.JFrame {
             aluno.setInicioCursoAluno(sqlDateInicioCurso);
             aluno.setTerminoCursoAluno(sqlDateInicioCurso);
             aluno.setStatusAluno(status);
-            fachada.cadastrarAluno(aluno);
+            
+            
+            
+            if(Validacao.validaCPF(aluno.getCpf())){
+                fachada.cadastrarAluno(aluno);
+                if(fachada.verificarExistenciaAlunoPorCpf(aluno.getCpf())){
+                    JOptionPane.showMessageDialog(this,"Aluno já cadastrado no sitema.","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
+                }else {
+                    fachada.cadastrarAluno(aluno);
+                }
+            } else {
+                JOptionPane.showMessageDialog(this,"CPF inválido.","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            
+            
         }catch (Exception ex){
             JOptionPane.showMessageDialog(this,"Preencha todos os campos corretamente.","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
+            return;
         }
         
         
