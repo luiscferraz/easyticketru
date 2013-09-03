@@ -3,6 +3,7 @@
 <Form version="1.5" maxVersion="1.8" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="title" type="java.lang.String" value="EasyTicket - MANTER ALUNO"/>
     <Property name="resizable" type="boolean" value="false"/>
   </Properties>
   <SyntheticProperties>
@@ -71,13 +72,13 @@
                               <Group type="102" attributes="0">
                                   <Component id="tituloCurso14" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="viewCartao" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Group type="102" alignment="1" attributes="0">
                                       <Component id="tituloAlunos1" min="-2" pref="230" max="-2" attributes="0"/>
                                       <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="painelConsulta1" min="-2" pref="249" max="-2" attributes="0"/>
+                                      <Component id="painelConsulta1" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="tituloVisualizarFunc" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="jSeparator2" alignment="0" min="-2" pref="603" max="-2" attributes="0"/>
@@ -86,55 +87,64 @@
                                           <Group type="102" alignment="1" attributes="0">
                                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                               <Component id="tituloCpf3" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="viewCpf" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="269" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="298" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
                                               <Group type="103" groupAlignment="1" attributes="0">
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <Component id="tituloNome2" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="viewNome" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                                                   </Group>
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <Component id="tituloDataNasc10" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="viewTelefone" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                                                   </Group>
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <Component id="tituloDataNasc9" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                      <Component id="viewEmail" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                                                   </Group>
                                               </Group>
                                               <EmptySpace max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="tituloCurso5" alignment="1" min="-2" max="-2" attributes="0"/>
-                                          <Component id="tituloCurso4" alignment="1" min="-2" max="-2" attributes="0"/>
-                                          <Component id="tituloCurso3" alignment="1" min="-2" max="-2" attributes="0"/>
-                                          <Component id="tituloCurso2" alignment="1" min="-2" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="tituloCurso2" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="tituloCurso3" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="tituloCurso5" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="tituloCurso4" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                                          </Group>
                                       </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="viewCurso" min="-2" max="-2" attributes="0"/>
-                                          <Component id="viewInicio" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="viewTermino" min="-2" max="-2" attributes="0"/>
-                                          <Component id="viewStatus" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="128" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="tituloDataNasc2" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="viewNascimento" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="34" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -154,50 +164,50 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="tituloNome2" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="tituloCurso2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="viewNome" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="viewCurso" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="tituloCpf3" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="tituloCurso3" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="viewCpf" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="viewInicio" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="tituloCurso4" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="viewTermino" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="tituloCurso5" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="viewStatus" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="tituloDataNasc9" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="viewEmail" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="tituloDataNasc10" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="viewTelefone" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
                       <EmptySpace pref="9" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="tituloDataNasc2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="viewNascimento" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="tituloCurso14" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="viewCartao" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -260,17 +270,18 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
                                   <Component id="tituloConsultar1" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="64" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="tituloCpf4" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="campoPesquisarCpfFunc1" min="-2" pref="137" max="-2" attributes="0"/>
+                                  <Component id="campoCpfPesquisaVisualizar" max="32767" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="botaoPesquisar1" min="-2" pref="46" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -278,20 +289,14 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="tituloConsultar1" min="-2" pref="27" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="tituloCpf4" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="campoPesquisarCpfFunc1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="botaoPesquisar1" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                          <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="tituloCpf4" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="campoCpfPesquisaVisualizar" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
+                          <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                       </Group>
+                      <Component id="botaoPesquisar1" alignment="1" min="-2" max="-2" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
@@ -306,10 +311,8 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="tituloCpf4">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="C&#xf3;digo: "/>
+                    <Property name="text" type="java.lang.String" value="CPF:"/>
                   </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="campoPesquisarCpfFunc1">
                 </Component>
                 <Component class="javax.swing.JButton" name="botaoPesquisar1">
                   <Properties>
@@ -337,6 +340,13 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoPesquisar1ActionPerformed"/>
                   </Events>
                 </Component>
+                <Component class="javax.swing.JFormattedTextField" name="campoCpfPesquisaVisualizar">
+                  <Properties>
+                    <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
+                      <Format format="###.###.###-##" subtype="-1" type="5"/>
+                    </Property>
+                  </Properties>
+                </Component>
               </SubComponents>
             </Container>
             <Component class="javax.swing.JLabel" name="tituloAlunos1">
@@ -347,7 +357,7 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/gui/resources/alunos.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="  Manter Alunos"/>
+                <Property name="text" type="java.lang.String" value="  Aluno"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="tituloNome2">
@@ -408,54 +418,54 @@
                 <Property name="text" type="java.lang.String" value="Excluir aluno"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="viewNome">
+            <Component class="javax.swing.JLabel" name="jLabel1">
               <Properties>
-                <Property name="text" type="java.lang.String" value="--Campo Nome--"/>
+                <Property name="text" type="java.lang.String" value="jLabel1"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="viewCpf">
+            <Component class="javax.swing.JLabel" name="jLabel2">
               <Properties>
-                <Property name="text" type="java.lang.String" value="--Campo CPF--"/>
+                <Property name="text" type="java.lang.String" value="jLabel2"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="viewEmail">
+            <Component class="javax.swing.JLabel" name="jLabel3">
               <Properties>
-                <Property name="text" type="java.lang.String" value="--Campo Email--"/>
+                <Property name="text" type="java.lang.String" value="jLabel3"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="viewTelefone">
+            <Component class="javax.swing.JLabel" name="jLabel4">
               <Properties>
-                <Property name="text" type="java.lang.String" value="--Campo Telefone--"/>
+                <Property name="text" type="java.lang.String" value="jLabel4"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="viewNascimento">
+            <Component class="javax.swing.JLabel" name="jLabel5">
               <Properties>
-                <Property name="text" type="java.lang.String" value="--Campo Nascimento--"/>
+                <Property name="text" type="java.lang.String" value="jLabel5"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="viewCartao">
+            <Component class="javax.swing.JLabel" name="jLabel6">
               <Properties>
-                <Property name="text" type="java.lang.String" value="--Campo Cart&#xe3;o--"/>
+                <Property name="text" type="java.lang.String" value="jLabel6"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="viewCurso">
+            <Component class="javax.swing.JLabel" name="jLabel7">
               <Properties>
-                <Property name="text" type="java.lang.String" value="--Campo Curso--"/>
+                <Property name="text" type="java.lang.String" value="jLabel7"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="viewInicio">
+            <Component class="javax.swing.JLabel" name="jLabel8">
               <Properties>
-                <Property name="text" type="java.lang.String" value="--Campo Inicio--"/>
+                <Property name="text" type="java.lang.String" value="jLabel8"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="viewTermino">
+            <Component class="javax.swing.JLabel" name="jLabel9">
               <Properties>
-                <Property name="text" type="java.lang.String" value="--Campo Termino--"/>
+                <Property name="text" type="java.lang.String" value="jLabel9"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="viewStatus">
+            <Component class="javax.swing.JLabel" name="jLabel10">
               <Properties>
-                <Property name="text" type="java.lang.String" value="--Campo Status--"/>
+                <Property name="text" type="java.lang.String" value="jLabel10"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -509,7 +519,7 @@
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jFormattedTextFieldInicioCursoEditar" alignment="1" max="32767" attributes="0"/>
                                           <Component id="jFormattedTextFieldTermCursoEditar" alignment="1" max="32767" attributes="0"/>
-                                          <Component id="jComboBoxStatusEditar" alignment="1" pref="102" max="32767" attributes="0"/>
+                                          <Component id="jComboBoxStatusEditar" alignment="1" pref="115" max="32767" attributes="0"/>
                                           <Component id="jFormattedTextFieldDataNascEditar" alignment="1" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -632,17 +642,18 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
                                   <Component id="tituloConsultar2" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="tituloCpf5" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="campoPesquisarCpfFunc2" min="-2" pref="137" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="txtPesquisarCpfEditar" min="-2" pref="160" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                                   <Component id="botaoPesquisar2" min="-2" pref="46" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -650,20 +661,14 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="tituloConsultar2" min="-2" pref="27" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="tituloCpf5" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="campoPesquisarCpfFunc2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="botaoPesquisar2" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                          <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="tituloCpf5" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtPesquisarCpfEditar" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
+                          <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                       </Group>
+                      <Component id="botaoPesquisar2" alignment="1" min="-2" max="-2" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
@@ -678,10 +683,8 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="tituloCpf5">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="C&#xf3;digo: "/>
+                    <Property name="text" type="java.lang.String" value="CPF:"/>
                   </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="campoPesquisarCpfFunc2">
                 </Component>
                 <Component class="javax.swing.JButton" name="botaoPesquisar2">
                   <Properties>
@@ -708,6 +711,13 @@
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoPesquisar2ActionPerformed"/>
                   </Events>
+                </Component>
+                <Component class="javax.swing.JFormattedTextField" name="txtPesquisarCpfEditar">
+                  <Properties>
+                    <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
+                      <Format format="###.###.###-##" subtype="-1" type="5"/>
+                    </Property>
+                  </Properties>
                 </Component>
               </SubComponents>
             </Container>
@@ -751,7 +761,7 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/gui/resources/alunos.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="  Manter Alunos"/>
+                <Property name="text" type="java.lang.String" value=" Aluno"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="tituloNome4">
@@ -929,7 +939,7 @@
                                       </Group>
                                       <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jFormattedTextFieldCpfCadastrar" alignment="0" pref="320" max="32767" attributes="0"/>
+                                          <Component id="jFormattedTextFieldCpfCadastrar" alignment="0" pref="333" max="32767" attributes="0"/>
                                           <Component id="jTextFieldNomeCadastrar" alignment="0" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -1094,7 +1104,7 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/gui/resources/alunos.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="  Manter Alunos"/>
+                <Property name="text" type="java.lang.String" value="Aluno"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="tituloCurso6">
