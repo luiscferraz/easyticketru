@@ -4,10 +4,12 @@
  */
 package negocio;
 
+import dados.RepositorioAlunos;
 import dados.RepositorioCargos;
 import dados.RepositorioCartoes;
 import dados.RepositorioCursos;
 import dados.RepositorioRefeicoes;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -19,6 +21,7 @@ public class Fachada {
   private static Fachada instancia;
   private CadastroCursos cadastroCursos;
   private CadastroCargos cadastroCargos;
+  private CadastroAlunos cadastroAlunos;
 
   private CadastroCartoes cadastroCartoes;
 
@@ -31,6 +34,7 @@ public class Fachada {
     }
     return instancia;
   }
+    
   
   //contrutor da fachada que determina que a mesma é iniciada já com todas as funções de cadastro
   private Fachada(){
@@ -47,6 +51,11 @@ public class Fachada {
     
     RepositorioCartoes repositorioCartoes = new RepositorioCartoes();
     cadastroCartoes = new CadastroCartoes(repositorioCartoes);
+    
+    RepositorioAlunos repositorioAlunos = new RepositorioAlunos();
+    cadastroAlunos = new CadastroAlunos(repositorioAlunos);
+    
+    
   
     
     
@@ -94,41 +103,53 @@ public class Fachada {
     }
     public List<Curso> listarCursos(){
         return cadastroCursos.listarCursos();
-    }
-    
-    
+    }  
     public int findIdCursoByNome(String nome){
         return cadastroCursos.findIdByNome(nome);
     }
     
     
-    //Cargos
+    //Cargo
     public void atualizarCargo(Cargo cargo){
         cadastroCargos.atualizar(cargo);  
-    }
-    
+    }    
     public void cadastrarCargo(Cargo cargo){
         cadastroCargos.cadastrar(cargo);
-    }
-    
+    }    
     public Cargo buscaCargoPorId(int idCargo){
         return cadastroCargos.buscaPorId(idCargo);
-    }
-    
+    }    
     public List<Cargo> listarCargos(){
         return cadastroCargos.listarCargos();
-    }
-    
+    }    
     public boolean verificarExistenciaNomeCargo(String nomeCargo){
         return cadastroCargos.verificaExistenciaNome(nomeCargo);
-    }
-    
+    }    
     public boolean verificarExistenciaIdCargo(int idCargo){
         return cadastroCargos.verificaExistenciaId(idCargo);
-    }
-    
+    }    
     public void deletarCargo(int idCargo){
         cadastroCargos.deletar(idCargo);
+    }
+    
+    //Aluno
+    public void cadastrarAluno(Aluno aluno){
+        cadastroAlunos.inserir(aluno);
+    }
+    public boolean verificarExistenciaAlunoPorCpf(String cpf){
+        return cadastroAlunos.existe(cpf);
+    }
+    public void atualizarAluno(Aluno aluno){
+        cadastroAlunos.atualizar(aluno);
+    }
+    public Aluno findAlunoByCpf(String cpfAluno){
+        return cadastroAlunos.procurarPorCpf(cpfAluno);
+    }
+    public void deletarAluno(String cpfAluno){
+        cadastroAlunos.deletar(cpfAluno);
+    }
+    public ArrayList<Aluno> findAlunosByCurso(int idCurso){
+        return cadastroAlunos.buscarPorCurso(idCurso);
     }
   
   
