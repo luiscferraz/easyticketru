@@ -130,17 +130,17 @@ public class TelaFuncionarios extends javax.swing.JFrame {
         campoNomeFunc3 = new javax.swing.JTextField();
         tituloNome3 = new javax.swing.JLabel();
         tituloCpf6 = new javax.swing.JLabel();
-        campoCpfFunc3 = new javax.swing.JTextField();
         campoTelefoneFunc = new javax.swing.JTextField();
         campoEmailCadastrar = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         tituloCurso3 = new javax.swing.JLabel();
         comboBoxCargoFunCadastrar = new javax.swing.JComboBox();
-        campoDataNascFunc3 = new javax.swing.JFormattedTextField();
         tituloDataNasc3 = new javax.swing.JLabel();
         comboBoxStatusFunc = new javax.swing.JComboBox();
         jLabel2 = new javax.swing.JLabel();
+        campoCpfFunc3 = new javax.swing.JFormattedTextField();
+        campoDataNascFunc3 = new javax.swing.JFormattedTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -302,7 +302,7 @@ public class TelaFuncionarios extends javax.swing.JFrame {
                             .addComponent(jLabel1)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(jLabel2StatusVisualizar))))
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
         guiaVisualizarAlunoLayout.setVerticalGroup(
             guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -321,7 +321,7 @@ public class TelaFuncionarios extends javax.swing.JFrame {
                     .addComponent(jLabel7)
                     .addComponent(jLabel2NomeVisualizar)
                     .addComponent(jLabel2EmailVisualizar))
-                .addGap(0, 32, Short.MAX_VALUE)
+                .addGap(0, 9, Short.MAX_VALUE)
                 .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tituloCpf3)
                     .addComponent(jLabel6)
@@ -504,7 +504,7 @@ public class TelaFuncionarios extends javax.swing.JFrame {
                             .addComponent(tituloCurso1)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                             .addComponent(comboBoxCargoFuncEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
         guiaEditarAlunoLayout.setVerticalGroup(
             guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -523,7 +523,7 @@ public class TelaFuncionarios extends javax.swing.JFrame {
                     .addComponent(campoNomeFunc2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
-                .addGap(0, 23, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tituloCpf2)
                     .addComponent(campoCpfFunc2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -581,9 +581,9 @@ public class TelaFuncionarios extends javax.swing.JFrame {
 
         tituloCpf6.setText("Cpf:");
 
-        campoCpfFunc3.addActionListener(new java.awt.event.ActionListener() {
+        campoEmailCadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campoCpfFunc3ActionPerformed(evt);
+                campoEmailCadastrarActionPerformed(evt);
             }
         });
 
@@ -595,71 +595,73 @@ public class TelaFuncionarios extends javax.swing.JFrame {
 
         comboBoxCargoFunCadastrar.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione", "Sistemas de Informação", "Ciência da Computação", "Licenciatura em Informática" }));
 
-        campoDataNascFunc3.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
-        campoDataNascFunc3.setToolTipText("Date");
-        campoDataNascFunc3.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-
         tituloDataNasc3.setText("Data de Nascimento:");
 
         comboBoxStatusFunc.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jLabel2.setText("Status:");
 
+        try {
+            campoCpfFunc3.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
+        try {
+            campoDataNascFunc3.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
         javax.swing.GroupLayout guiaCadastrarAlunoLayout = new javax.swing.GroupLayout(guiaCadastrarAluno);
         guiaCadastrarAluno.setLayout(guiaCadastrarAlunoLayout);
         guiaCadastrarAlunoLayout.setHorizontalGroup(
             guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(botaoVoltar5)
-                .addGap(18, 18, 18)
-                .addComponent(btnCadastrarFuncionario)
-                .addGap(26, 26, 26))
-            .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
                 .addGap(21, 21, 21)
-                .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
-                        .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 547, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(77, Short.MAX_VALUE))
-                    .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
-                        .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(tituloAlunos3, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tituloCadastrar)
+                .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jSeparator3)
+                    .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(tituloAlunos3, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tituloCadastrar)
+                        .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
+                                .addComponent(botaoVoltar5)
+                                .addGap(56, 56, 56)
+                                .addComponent(btnCadastrarFuncionario))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, guiaCadastrarAlunoLayout.createSequentialGroup()
                                 .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
+                                        .addComponent(jLabel8)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(campoEmailCadastrar))
+                                    .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
+                                        .addComponent(tituloCpf6)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(campoCpfFunc3, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
                                         .addComponent(tituloNome3)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(campoNomeFunc3, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
-                                        .addComponent(tituloCpf6)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(campoCpfFunc3)))
-                                .addGap(71, 71, 71)
-                                .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(campoNomeFunc3, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
                                         .addComponent(tituloCurso3)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(comboBoxCargoFunCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(comboBoxCargoFunCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(45, 45, 45)
+                                .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
+                                        .addComponent(tituloDataNasc3)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(campoDataNascFunc3))
                                     .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
                                         .addComponent(jLabel9)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(campoTelefoneFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
-                                .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
-                                        .addComponent(jLabel8)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(campoEmailCadastrar))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, guiaCadastrarAlunoLayout.createSequentialGroup()
-                                        .addComponent(tituloDataNasc3)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(campoDataNascFunc3, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(71, 71, 71)
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(comboBoxStatusFunc, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                                        .addComponent(campoTelefoneFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
+                                        .addComponent(jLabel2)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(comboBoxStatusFunc, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
         guiaCadastrarAlunoLayout.setVerticalGroup(
             guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -676,30 +678,27 @@ public class TelaFuncionarios extends javax.swing.JFrame {
                     .addComponent(campoNomeFunc3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9)
                     .addComponent(campoTelefoneFunc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 26, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tituloCpf6)
                     .addComponent(campoCpfFunc3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tituloCurso3)
-                    .addComponent(comboBoxCargoFunCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
-                .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tituloDataNasc3)
-                    .addComponent(campoDataNascFunc3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(campoDataNascFunc3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tituloCurso3)
+                    .addComponent(comboBoxCargoFunCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2)
                     .addComponent(comboBoxStatusFunc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
-                        .addGap(67, 67, 67)
-                        .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnCadastrarFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(botaoVoltar5)))
-                    .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(campoEmailCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel8))))
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(campoEmailCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botaoVoltar5)
+                    .addComponent(btnCadastrarFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
         guiasAluno.addTab("Cadastrar Novo Funcionário", guiaCadastrarAluno);
@@ -710,8 +709,7 @@ public class TelaFuncionarios extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(guiasAluno)
-                .addContainerGap())
+                .addComponent(guiasAluno))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -740,10 +738,6 @@ public class TelaFuncionarios extends javax.swing.JFrame {
     private void campoNomeFunc3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoNomeFunc3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_campoNomeFunc3ActionPerformed
-
-    private void campoCpfFunc3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoCpfFunc3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_campoCpfFunc3ActionPerformed
 
     private void btnVoltarVisualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarVisualizarActionPerformed
         this.setVisible(false);
@@ -819,6 +813,10 @@ public class TelaFuncionarios extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnCadastrarFuncionarioActionPerformed
 
+    private void campoEmailCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoEmailCadastrarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoEmailCadastrarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -862,7 +860,7 @@ public class TelaFuncionarios extends javax.swing.JFrame {
     private javax.swing.JButton btnCadastrarFuncionario;
     private javax.swing.JButton btnVoltarVisualizar;
     private javax.swing.JTextField campoCpfFunc2;
-    private javax.swing.JTextField campoCpfFunc3;
+    private javax.swing.JFormattedTextField campoCpfFunc3;
     private javax.swing.JFormattedTextField campoDataNascFunc2;
     private javax.swing.JFormattedTextField campoDataNascFunc3;
     private javax.swing.JTextField campoEmailCadastrar;
