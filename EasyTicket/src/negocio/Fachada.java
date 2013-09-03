@@ -80,6 +80,13 @@ public class Fachada {
     return cadastroCartoes.buscaPorNumero(numeroCartao);
   }
   
+  public List<Cartao> listarCartoes(){
+        return cadastroCartoes.listarCartoes();
+    }
+  
+  public boolean verificaExistenciaCartaoPorAluno(int idAluno){
+        return cadastroCartoes.verificaExistenciaIdAluno(idAluno);
+  
   public Cartao buscaCartaoPorCpf(int cpf){
     return cadastroCartoes.buscaPorCpf(cpf);
     
@@ -161,6 +168,10 @@ public class Fachada {
     }
     public ArrayList<Aluno> findAlunosByCurso(int idCurso){
         return cadastroAlunos.buscarPorCurso(idCurso);
+    }
+    
+    public List<Aluno> listarAlunos(){
+        return cadastroAlunos.listarAlunos();
     }
     
     

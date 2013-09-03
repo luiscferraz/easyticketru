@@ -5,6 +5,11 @@
 package dados;
 
 import interfaces.IRepositorioCartoes;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import negocio.Cartao;
 
 /**
@@ -38,6 +43,18 @@ public class RepositorioCartoes implements IRepositorioCartoes {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     //métodos apenas com assinatura, ainda falta definir a interação com o banco de dados.
-     
+    
+    public Cartao procurarPorIdAluno(int id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    
+    public boolean existeCartaoAluno(int idAluno) {
+      if (this.procurarPorIdAluno(idAluno)!=null){
+          return true;
+      }else{
+          return false;
+      }
+    }
     
 }

@@ -11,9 +11,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import negocio.Aluno;
+import negocio.Curso;
 import negocio.EnumStatusAluno;
 import util.Formatacao;
 
@@ -180,7 +182,34 @@ public class RepositorioAlunos implements IRepositorioAlunos {
          }
     }
 
-    
+    public List<Aluno> listarAlunos(){
+          
+          List<Aluno> listaAlunos = new ArrayList<Aluno>();
+
+          String query = "SELECT * FROM EASYTICKET.ALUNOS ORDER BY NOMEALUNO";
+
+          try {
+
+              PreparedStatement stmt = this.conexao.prepareStatement(query);
+              ResultSet rs = stmt.executeQuery();
+
+              while(rs.next()){
+                  Aluno aluno = new Aluno();
+                  aluno.setIdAluno(rs.getInt(1));
+                  aluno.setNome(rs.getString(2));
+
+                  listaAlunos.add(aluno);
+              }
+              //conexao.close(); 
+
+          }catch (SQLException ex) {
+
+                  System.out.println("listarAlunos(): "+ex.toString());
+
+          }
+          return listaAlunos;
+          
+     }
 
     
     
