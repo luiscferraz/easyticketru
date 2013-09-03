@@ -45,6 +45,7 @@ public class TelaAlunos extends javax.swing.JFrame {
         this.preencherComboBoxCursoCadastrar();
         this.preencherComboBoxCursoEditar();
         btnExcluirAluno.setEnabled(false);
+        btnSalvarAlteracoes.setEnabled(false);
     }
 
     /**
@@ -130,13 +131,13 @@ public class TelaAlunos extends javax.swing.JFrame {
         tituloDataNasc6 = new javax.swing.JLabel();
         jComboBoxStatusEditar = new javax.swing.JComboBox();
         jComboBoxCursoEditar = new javax.swing.JComboBox();
-        jTextFieldTelefoneEditar = new javax.swing.JFormattedTextField();
-        jTextFieldEmailEditar = new javax.swing.JFormattedTextField();
-        jFormattedTextFieldCpfEditar = new javax.swing.JFormattedTextField();
-        jTextFieldNomeEditar = new javax.swing.JTextField();
-        jFormattedTextFieldDataNascEditar = new javax.swing.JFormattedTextField();
-        jFormattedTextFieldInicioCursoEditar = new javax.swing.JFormattedTextField();
-        jFormattedTextFieldTermCursoEditar = new javax.swing.JFormattedTextField();
+        txtTelefoneEditar = new javax.swing.JFormattedTextField();
+        txtEmailEditar = new javax.swing.JFormattedTextField();
+        txtCpfEditar = new javax.swing.JFormattedTextField();
+        txtNomeEditar = new javax.swing.JTextField();
+        txtDataNascEditar = new javax.swing.JFormattedTextField();
+        txtInicioCursoEditar = new javax.swing.JFormattedTextField();
+        txtTerminoCursoEditar = new javax.swing.JFormattedTextField();
         guiaCadastrarAluno = new javax.swing.JPanel();
         tituloCadastrar = new javax.swing.JLabel();
         btnCadastrar = new javax.swing.JButton();
@@ -301,9 +302,8 @@ public class TelaAlunos extends javax.swing.JFrame {
                             .addGroup(guiaVisualizarAlunoLayout.createSequentialGroup()
                                 .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(guiaVisualizarAlunoLayout.createSequentialGroup()
-                                        .addGap(0, 0, Short.MAX_VALUE)
                                         .addComponent(tituloCpf3)
-                                        .addGap(18, 18, 18)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(lblCpf)
                                         .addGap(267, 267, 267))
                                     .addGroup(guiaVisualizarAlunoLayout.createSequentialGroup()
@@ -506,52 +506,52 @@ public class TelaAlunos extends javax.swing.JFrame {
         });
 
         try {
-            jTextFieldTelefoneEditar.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)####-####")));
+            txtTelefoneEditar.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)####-####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        jTextFieldTelefoneEditar.setToolTipText("Date");
-        jTextFieldTelefoneEditar.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtTelefoneEditar.setToolTipText("Date");
+        txtTelefoneEditar.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
-        jTextFieldEmailEditar.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
-        jTextFieldEmailEditar.setToolTipText("Date");
-        jTextFieldEmailEditar.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtEmailEditar.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
+        txtEmailEditar.setToolTipText("Date");
+        txtEmailEditar.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         try {
-            jFormattedTextFieldCpfEditar.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+            txtCpfEditar.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
 
-        jTextFieldNomeEditar.addActionListener(new java.awt.event.ActionListener() {
+        txtNomeEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldNomeEditarActionPerformed(evt);
+                txtNomeEditarActionPerformed(evt);
             }
         });
 
         try {
-            jFormattedTextFieldDataNascEditar.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+            txtDataNascEditar.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        jFormattedTextFieldDataNascEditar.setToolTipText("Date");
-        jFormattedTextFieldDataNascEditar.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtDataNascEditar.setToolTipText("Date");
+        txtDataNascEditar.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         try {
-            jFormattedTextFieldInicioCursoEditar.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+            txtInicioCursoEditar.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        jFormattedTextFieldInicioCursoEditar.setToolTipText("Date");
-        jFormattedTextFieldInicioCursoEditar.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtInicioCursoEditar.setToolTipText("Date");
+        txtInicioCursoEditar.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         try {
-            jFormattedTextFieldTermCursoEditar.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+            txtTerminoCursoEditar.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        jFormattedTextFieldTermCursoEditar.setToolTipText("Date");
-        jFormattedTextFieldTermCursoEditar.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtTerminoCursoEditar.setToolTipText("Date");
+        txtTerminoCursoEditar.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         javax.swing.GroupLayout guiaEditarAlunoLayout = new javax.swing.GroupLayout(guiaEditarAluno);
         guiaEditarAluno.setLayout(guiaEditarAlunoLayout);
@@ -576,10 +576,10 @@ public class TelaAlunos extends javax.swing.JFrame {
                                 .addGap(22, 22, 22)
                                 .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jComboBoxCursoEditar, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jTextFieldTelefoneEditar, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jTextFieldEmailEditar)
-                                    .addComponent(jFormattedTextFieldCpfEditar)
-                                    .addComponent(jTextFieldNomeEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(txtTelefoneEditar, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(txtEmailEditar)
+                                    .addComponent(txtCpfEditar)
+                                    .addComponent(txtNomeEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(tituloCurso11)
@@ -588,10 +588,10 @@ public class TelaAlunos extends javax.swing.JFrame {
                                     .addComponent(tituloCurso10))
                                 .addGap(11, 11, 11)
                                 .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jFormattedTextFieldInicioCursoEditar, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jFormattedTextFieldTermCursoEditar, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(txtInicioCursoEditar, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(txtTerminoCursoEditar, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jComboBoxStatusEditar, javax.swing.GroupLayout.Alignment.TRAILING, 0, 116, Short.MAX_VALUE)
-                                    .addComponent(jFormattedTextFieldDataNascEditar, javax.swing.GroupLayout.Alignment.TRAILING))))
+                                    .addComponent(txtDataNascEditar, javax.swing.GroupLayout.Alignment.TRAILING))))
                         .addGap(16, 16, 16))
                     .addGroup(guiaEditarAlunoLayout.createSequentialGroup()
                         .addGap(12, 12, 12)
@@ -620,15 +620,15 @@ public class TelaAlunos extends javax.swing.JFrame {
                 .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(guiaEditarAlunoLayout.createSequentialGroup()
                         .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jFormattedTextFieldDataNascEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtDataNascEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(tituloDataNasc4))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jFormattedTextFieldInicioCursoEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtInicioCursoEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(tituloCurso12))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jFormattedTextFieldTermCursoEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtTerminoCursoEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(tituloCurso11))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -636,19 +636,19 @@ public class TelaAlunos extends javax.swing.JFrame {
                             .addComponent(tituloCurso10)))
                     .addGroup(guiaEditarAlunoLayout.createSequentialGroup()
                         .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextFieldNomeEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNomeEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(tituloNome4))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jFormattedTextFieldCpfEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtCpfEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(tituloCpf7))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextFieldEmailEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtEmailEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(tituloDataNasc6))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextFieldTelefoneEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtTelefoneEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(tituloDataNasc5))
                         .addGap(14, 14, 14)
                         .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -947,6 +947,41 @@ public class TelaAlunos extends javax.swing.JFrame {
 
     private void btnPesquisarCpfEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarCpfEditarActionPerformed
         // TODO add your handling code here:
+        // TODO add your handling code here:
+        
+        if (txtPesquisarCpfEditar.getText().equals("   .   .   -  ")) {
+            JOptionPane.showMessageDialog(this,"Informe CPF do aluno.","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
+            txtPesquisarCpfEditar.setText("");
+            return;
+        } else{
+             try{
+                    if (fachada.verificarExistenciaAlunoPorCpf(txtPesquisarCpfEditar.getText())){
+                        Aluno alunoRetorno = new Aluno();
+                        alunoRetorno = fachada.findAlunoByCpf(txtPesquisarCpfEditar.getText()) ;
+                        
+                        txtNomeEditar.setText(alunoRetorno.getNome());
+                        txtCpfEditar.setText(alunoRetorno.getCpf());
+                        txtEmailEditar.setText(alunoRetorno.getEmail());
+                        txtTelefoneEditar.setText(alunoRetorno.getTelefone());
+                        
+                        txtDataNascEditar.setText(Formatacao.transformarDateEmString((Date)alunoRetorno.getDataNascimento()));
+                        txtInicioCursoEditar.setText(Formatacao.transformarDateEmString((Date)alunoRetorno.getInicioCursoAluno()));
+                        txtTerminoCursoEditar.setText(Formatacao.transformarDateEmString((Date)alunoRetorno.getTerminoCursoAluno()));
+                        
+                        campoCpfPesquisaVisualizar.setText("");
+                        btnSalvarAlteracoes.setEnabled(true);
+
+                    } else {
+                        JOptionPane.showMessageDialog(this,"Aluno Inexistente!","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
+                        campoCpfPesquisaVisualizar.setText("");
+                        return;
+                    }
+            } catch(Exception ex){
+                campoCpfPesquisaVisualizar.setText("");
+                JOptionPane.showMessageDialog(this,"Não foi possível efetuar a atualização do aluno!","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+        }
     }//GEN-LAST:event_btnPesquisarCpfEditarActionPerformed
 
     private void botaoVoltar9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltar9ActionPerformed
@@ -1049,9 +1084,9 @@ public class TelaAlunos extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBoxStatusEditarActionPerformed
 
-    private void jTextFieldNomeEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomeEditarActionPerformed
+    private void txtNomeEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeEditarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldNomeEditarActionPerformed
+    }//GEN-LAST:event_txtNomeEditarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1106,22 +1141,15 @@ public class TelaAlunos extends javax.swing.JFrame {
     private javax.swing.JComboBox jComboBoxStatusCadastrar;
     private javax.swing.JComboBox jComboBoxStatusEditar;
     private javax.swing.JFormattedTextField jFormattedTextFieldCpfCadastrar;
-    private javax.swing.JFormattedTextField jFormattedTextFieldCpfEditar;
     private javax.swing.JFormattedTextField jFormattedTextFieldDataNascCadastrar;
-    private javax.swing.JFormattedTextField jFormattedTextFieldDataNascEditar;
     private javax.swing.JFormattedTextField jFormattedTextFieldInicioCursoCadastrar;
-    private javax.swing.JFormattedTextField jFormattedTextFieldInicioCursoEditar;
     private javax.swing.JFormattedTextField jFormattedTextFieldTermCursoCadastrar;
-    private javax.swing.JFormattedTextField jFormattedTextFieldTermCursoEditar;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JTextField jTextFieldEmail;
-    private javax.swing.JFormattedTextField jTextFieldEmailEditar;
     private javax.swing.JTextField jTextFieldNomeCadastrar;
-    private javax.swing.JTextField jTextFieldNomeEditar;
     private javax.swing.JFormattedTextField jTextFieldTelefone;
-    private javax.swing.JFormattedTextField jTextFieldTelefoneEditar;
     private javax.swing.JLabel lblCartao;
     private javax.swing.JLabel lblCpf;
     private javax.swing.JLabel lblCurso;
@@ -1172,6 +1200,13 @@ public class TelaAlunos extends javax.swing.JFrame {
     private javax.swing.JLabel tituloNome4;
     private javax.swing.JLabel tituloVisualizarFunc;
     private javax.swing.JLabel tituloVisualizarFunc1;
+    private javax.swing.JFormattedTextField txtCpfEditar;
+    private javax.swing.JFormattedTextField txtDataNascEditar;
+    private javax.swing.JFormattedTextField txtEmailEditar;
+    private javax.swing.JFormattedTextField txtInicioCursoEditar;
+    private javax.swing.JTextField txtNomeEditar;
     private javax.swing.JFormattedTextField txtPesquisarCpfEditar;
+    private javax.swing.JFormattedTextField txtTelefoneEditar;
+    private javax.swing.JFormattedTextField txtTerminoCursoEditar;
     // End of variables declaration//GEN-END:variables
 }

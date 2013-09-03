@@ -90,13 +90,12 @@
                                   <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" attributes="0">
-                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                               <Component id="tituloCpf3" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <EmptySpace max="32767" attributes="0"/>
                                               <Component id="lblCpf" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace min="-2" pref="267" max="-2" attributes="0"/>
                                           </Group>
-                                          <Group type="102" alignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
                                               <Group type="103" groupAlignment="1" attributes="0">
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <Component id="tituloNome2" min="-2" max="-2" attributes="0"/>
@@ -476,10 +475,10 @@
                                       <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                           <Component id="jComboBoxCursoEditar" max="32767" attributes="0"/>
-                                          <Component id="jTextFieldTelefoneEditar" alignment="1" max="32767" attributes="0"/>
-                                          <Component id="jTextFieldEmailEditar" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jFormattedTextFieldCpfEditar" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jTextFieldNomeEditar" alignment="0" min="-2" pref="312" max="-2" attributes="0"/>
+                                          <Component id="txtTelefoneEditar" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="txtEmailEditar" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="txtCpfEditar" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="txtNomeEditar" alignment="0" min="-2" pref="312" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="1" attributes="0">
@@ -490,10 +489,10 @@
                                       </Group>
                                       <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jFormattedTextFieldInicioCursoEditar" alignment="1" max="32767" attributes="0"/>
-                                          <Component id="jFormattedTextFieldTermCursoEditar" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="txtInicioCursoEditar" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="txtTerminoCursoEditar" alignment="1" max="32767" attributes="0"/>
                                           <Component id="jComboBoxStatusEditar" alignment="1" pref="116" max="32767" attributes="0"/>
-                                          <Component id="jFormattedTextFieldDataNascEditar" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="txtDataNascEditar" alignment="1" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -532,17 +531,17 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jFormattedTextFieldDataNascEditar" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtDataNascEditar" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="tituloDataNasc4" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jFormattedTextFieldInicioCursoEditar" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtInicioCursoEditar" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="tituloCurso12" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jFormattedTextFieldTermCursoEditar" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtTerminoCursoEditar" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="tituloCurso11" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -553,22 +552,22 @@
                           </Group>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jTextFieldNomeEditar" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtNomeEditar" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="tituloNome4" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jFormattedTextFieldCpfEditar" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtCpfEditar" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="tituloCpf7" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jTextFieldEmailEditar" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtEmailEditar" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="tituloDataNasc6" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jTextFieldTelefoneEditar" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                                  <Component id="txtTelefoneEditar" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
                                   <Component id="tituloDataNasc5" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
@@ -797,7 +796,7 @@
             </Component>
             <Component class="javax.swing.JComboBox" name="jComboBoxCursoEditar">
             </Component>
-            <Component class="javax.swing.JFormattedTextField" name="jTextFieldTelefoneEditar">
+            <Component class="javax.swing.JFormattedTextField" name="txtTelefoneEditar">
               <Properties>
                 <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
                   <Format format="(##)####-####" subtype="-1" type="5"/>
@@ -810,7 +809,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JFormattedTextField" name="jTextFieldEmailEditar">
+            <Component class="javax.swing.JFormattedTextField" name="txtEmailEditar">
               <Properties>
                 <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
                   <Format subtype="0" type="1"/>
@@ -823,19 +822,19 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JFormattedTextField" name="jFormattedTextFieldCpfEditar">
+            <Component class="javax.swing.JFormattedTextField" name="txtCpfEditar">
               <Properties>
                 <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
                   <Format format="###.###.###-##" subtype="-1" type="5"/>
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextFieldNomeEditar">
+            <Component class="javax.swing.JTextField" name="txtNomeEditar">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldNomeEditarActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNomeEditarActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JFormattedTextField" name="jFormattedTextFieldDataNascEditar">
+            <Component class="javax.swing.JFormattedTextField" name="txtDataNascEditar">
               <Properties>
                 <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
                   <Format format="##/##/####" subtype="-1" type="5"/>
@@ -848,7 +847,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JFormattedTextField" name="jFormattedTextFieldInicioCursoEditar">
+            <Component class="javax.swing.JFormattedTextField" name="txtInicioCursoEditar">
               <Properties>
                 <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
                   <Format format="##/##/####" subtype="-1" type="5"/>
@@ -861,7 +860,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JFormattedTextField" name="jFormattedTextFieldTermCursoEditar">
+            <Component class="javax.swing.JFormattedTextField" name="txtTerminoCursoEditar">
               <Properties>
                 <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
                   <Format format="##/##/####" subtype="-1" type="5"/>
