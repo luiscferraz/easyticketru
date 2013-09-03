@@ -47,6 +47,10 @@ public class CadastroCargos {
         return cargos.existe(idCargo);
     }
     
+    public int findIdByNome(String nome){
+        return cargos.findIdByNome(nome);
+    }
+    
     public void deletar(int idCargo){
         cargos.deletar(idCargo);
     }
