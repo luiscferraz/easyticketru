@@ -959,16 +959,19 @@ public class TelaAlunos extends javax.swing.JFrame {
             aluno.setDataNascimento(sqlDateNasc);
             aluno.setInicioCursoAluno(sqlDateInicioCurso);
             aluno.setTerminoCursoAluno(sqlDateInicioCurso);
-            aluno.setStatusAluno(status);
-            
+            aluno.setStatusAluno(status);           
             
             
             if(Validacao.validaCPF(aluno.getCpf())){
-                fachada.cadastrarAluno(aluno);
+                
                 if(fachada.verificarExistenciaAlunoPorCpf(aluno.getCpf())){
                     JOptionPane.showMessageDialog(this,"Aluno já cadastrado no sitema.","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
+                    return;
                 }else {
                     fachada.cadastrarAluno(aluno);
+                    JOptionPane.showMessageDialog(this, "Aluno cadastrado com sucesso.", "CONFIRMAÇÃO", JOptionPane.OK_OPTION);
+                    return;
+                    
                 }
             } else {
                 JOptionPane.showMessageDialog(this,"CPF inválido.","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
@@ -980,11 +983,6 @@ public class TelaAlunos extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this,"Preencha todos os campos corretamente.","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
             return;
         }
-        
-        
-        
-        
-        
         
         
         
