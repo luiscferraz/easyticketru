@@ -6,6 +6,7 @@ package teste;
 
 import java.util.Date;
 import negocio.Aluno;
+import dados.RepositorioAlunos;
 
 /**
  *
@@ -23,8 +24,11 @@ public class TesteAluno {
         aluno.setEmail("allanamaral@gmail.com");
         aluno.setTelefone("(81)9988-3454");
         
+        RepositorioAlunos repositorio = new RepositorioAlunos();
         
-        String d = "12/08/2013"
+        repositorio.inserir(aluno);
+                
+        String d = "12/08/2013";
         Date.parse(d);       
         Date dataNasc = new Date(d);
         

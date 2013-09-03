@@ -4,6 +4,25 @@
  */
 package gui;
 
+import dados.RepositorioFuncionarios;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Vector;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JComboBox;
+import javax.swing.JFormattedTextField;
+import javax.swing.JOptionPane;
+import negocio.Funcionario;
+import negocio.CadastroCargos;
+import negocio.Cargo;
+import negocio.Fachada;
+import util.Formatacao;
+import util.Validacao;
 /**
  *
  * @author Allan
@@ -13,6 +32,9 @@ public class TelaFuncionarios extends javax.swing.JFrame {
     /**
      * Creates new form TelaFuncionario
      */
+    
+    private Fachada fachada = Fachada.obterInstancia();
+    
     public TelaFuncionarios() {
         initComponents();
     }
@@ -44,6 +66,14 @@ public class TelaFuncionarios extends javax.swing.JFrame {
         tituloCurso2 = new javax.swing.JLabel();
         tituloDataNasc2 = new javax.swing.JLabel();
         excluirFuncBotao = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2StatusVisualizar = new javax.swing.JLabel();
+        jLabel2NomeVisualizar = new javax.swing.JLabel();
+        jLabel2CpfVisualizar = new javax.swing.JLabel();
+        jLabel2DataNascVisualizar = new javax.swing.JLabel();
+        jLabel2EmailVisualizar = new javax.swing.JLabel();
+        jLabel2TelefoneVisualizar = new javax.swing.JLabel();
+        jLabel2CargoVisualizar = new javax.swing.JLabel();
         guiaEditarAluno = new javax.swing.JPanel();
         painelConsulta2 = new javax.swing.JPanel();
         tituloConsultar2 = new javax.swing.JLabel();
@@ -69,7 +99,7 @@ public class TelaFuncionarios extends javax.swing.JFrame {
         tituloDataNasc1 = new javax.swing.JLabel();
         guiaCadastrarAluno = new javax.swing.JPanel();
         tituloCadastrar = new javax.swing.JLabel();
-        botaoCadastrar1 = new javax.swing.JButton();
+        btnCadastrarFuncionario = new javax.swing.JButton();
         botaoVoltar5 = new javax.swing.JButton();
         jSeparator3 = new javax.swing.JSeparator();
         tituloAlunos3 = new javax.swing.JLabel();
@@ -77,14 +107,16 @@ public class TelaFuncionarios extends javax.swing.JFrame {
         tituloNome3 = new javax.swing.JLabel();
         tituloCpf6 = new javax.swing.JLabel();
         campoCpfFunc3 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        campoTelefoneFunc = new javax.swing.JTextField();
+        campoEmailCadastrar = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         tituloCurso3 = new javax.swing.JLabel();
-        campoCargoFunc3 = new javax.swing.JComboBox();
+        comboBoxCargoFunc3 = new javax.swing.JComboBox();
         campoDataNascFunc3 = new javax.swing.JFormattedTextField();
         tituloDataNasc3 = new javax.swing.JLabel();
+        comboBoxStatusFunc = new javax.swing.JComboBox();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -179,6 +211,22 @@ public class TelaFuncionarios extends javax.swing.JFrame {
         excluirFuncBotao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/delete.png"))); // NOI18N
         excluirFuncBotao.setText("Excluir funcionário");
 
+        jLabel1.setText("Status:");
+
+        jLabel2StatusVisualizar.setText("--status--");
+
+        jLabel2NomeVisualizar.setText("--nome--");
+
+        jLabel2CpfVisualizar.setText("--cpf--");
+
+        jLabel2DataNascVisualizar.setText("--data de nascimento--");
+
+        jLabel2EmailVisualizar.setText("--email--");
+
+        jLabel2TelefoneVisualizar.setText("--telefone--");
+
+        jLabel2CargoVisualizar.setText("--cargo--");
+
         javax.swing.GroupLayout guiaVisualizarAlunoLayout = new javax.swing.GroupLayout(guiaVisualizarAluno);
         guiaVisualizarAluno.setLayout(guiaVisualizarAlunoLayout);
         guiaVisualizarAlunoLayout.setHorizontalGroup(
@@ -191,28 +239,45 @@ public class TelaFuncionarios extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnVoltarVisualizar))
                     .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(guiaVisualizarAlunoLayout.createSequentialGroup()
-                                .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(guiaVisualizarAlunoLayout.createSequentialGroup()
+                            .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(guiaVisualizarAlunoLayout.createSequentialGroup()
                                     .addComponent(tituloCpf3)
-                                    .addComponent(tituloNome2))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jLabel2CpfVisualizar))
+                                .addGroup(guiaVisualizarAlunoLayout.createSequentialGroup()
+                                    .addComponent(tituloNome2)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jLabel2NomeVisualizar))
+                                .addGroup(guiaVisualizarAlunoLayout.createSequentialGroup()
+                                    .addComponent(tituloDataNasc2)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jLabel2DataNascVisualizar)))
+                            .addGap(114, 114, 114)
+                            .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(guiaVisualizarAlunoLayout.createSequentialGroup()
+                                    .addComponent(jLabel7)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jLabel2EmailVisualizar))
+                                .addGroup(guiaVisualizarAlunoLayout.createSequentialGroup()
+                                    .addComponent(tituloCurso2)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jLabel2CargoVisualizar))
+                                .addGroup(guiaVisualizarAlunoLayout.createSequentialGroup()
                                     .addComponent(jLabel6)
-                                    .addComponent(jLabel7))
-                                .addGap(154, 154, 154))
-                            .addGroup(guiaVisualizarAlunoLayout.createSequentialGroup()
-                                .addComponent(tituloDataNasc2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 222, Short.MAX_VALUE)
-                                .addComponent(tituloCurso2)
-                                .addGap(167, 167, 167)))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jLabel2TelefoneVisualizar))))
                         .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, guiaVisualizarAlunoLayout.createSequentialGroup()
                                 .addComponent(tituloAlunos1, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(painelConsulta1, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(tituloVisualizarFunc)
-                            .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 603, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 603, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(guiaVisualizarAlunoLayout.createSequentialGroup()
+                            .addComponent(jLabel1)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jLabel2StatusVisualizar))))
                 .addContainerGap(22, Short.MAX_VALUE))
         );
         guiaVisualizarAlunoLayout.setVerticalGroup(
@@ -229,20 +294,34 @@ public class TelaFuncionarios extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tituloNome2)
-                    .addComponent(jLabel7))
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel2NomeVisualizar)
+                    .addComponent(jLabel2EmailVisualizar))
                 .addGap(0, 32, Short.MAX_VALUE)
                 .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tituloCpf3)
-                    .addComponent(jLabel6))
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel2CpfVisualizar)
+                    .addComponent(jLabel2TelefoneVisualizar))
                 .addGap(34, 34, 34)
                 .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tituloDataNasc2)
-                    .addComponent(tituloCurso2))
-                .addGap(58, 58, 58)
-                .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnVoltarVisualizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(excluirFuncBotao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(23, 23, 23))
+                    .addComponent(tituloCurso2)
+                    .addComponent(jLabel2DataNascVisualizar)
+                    .addComponent(jLabel2CargoVisualizar))
+                .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(guiaVisualizarAlunoLayout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2StatusVisualizar))
+                        .addGap(80, 80, 80))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, guiaVisualizarAlunoLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(excluirFuncBotao)
+                            .addComponent(btnVoltarVisualizar))
+                        .addContainerGap())))
         );
 
         guiasAluno.addTab("Visualizar Funcionário", guiaVisualizarAluno);
@@ -447,9 +526,14 @@ public class TelaFuncionarios extends javax.swing.JFrame {
         tituloCadastrar.setToolTipText("");
         tituloCadastrar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        botaoCadastrar1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        botaoCadastrar1.setText("Cadastrar");
-        botaoCadastrar1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnCadastrarFuncionario.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnCadastrarFuncionario.setText("Cadastrar");
+        btnCadastrarFuncionario.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnCadastrarFuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCadastrarFuncionarioActionPerformed(evt);
+            }
+        });
 
         botaoVoltar5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/back.png"))); // NOI18N
         botaoVoltar5.setText("Voltar");
@@ -485,13 +569,17 @@ public class TelaFuncionarios extends javax.swing.JFrame {
 
         tituloCurso3.setText("Cargo:");
 
-        campoCargoFunc3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione", "Sistemas de Informação", "Ciência da Computação", "Licenciatura em Informática" }));
+        comboBoxCargoFunc3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione", "Sistemas de Informação", "Ciência da Computação", "Licenciatura em Informática" }));
 
         campoDataNascFunc3.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
         campoDataNascFunc3.setToolTipText("Date");
         campoDataNascFunc3.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         tituloDataNasc3.setText("Data de Nascimento:");
+
+        comboBoxStatusFunc.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jLabel2.setText("Status:");
 
         javax.swing.GroupLayout guiaCadastrarAlunoLayout = new javax.swing.GroupLayout(guiaCadastrarAluno);
         guiaCadastrarAluno.setLayout(guiaCadastrarAlunoLayout);
@@ -501,7 +589,7 @@ public class TelaFuncionarios extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(botaoVoltar5)
                 .addGap(18, 18, 18)
-                .addComponent(botaoCadastrar1)
+                .addComponent(btnCadastrarFuncionario)
                 .addGap(26, 26, 26))
             .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
                 .addGap(21, 21, 21)
@@ -510,39 +598,43 @@ public class TelaFuncionarios extends javax.swing.JFrame {
                         .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 547, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(77, Short.MAX_VALUE))
                     .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
-                        .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
-                                    .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
-                                            .addComponent(tituloCpf6)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                            .addComponent(campoCpfFunc3)
-                                            .addGap(34, 34, 34))
-                                        .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
-                                            .addComponent(tituloNome3)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(campoNomeFunc3, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(71, 71, 71)))
-                                    .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
-                                            .addComponent(jLabel9)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
-                                            .addComponent(jLabel8)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
-                                    .addComponent(tituloDataNasc3)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(campoDataNascFunc3, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(tituloCurso3)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(campoCargoFunc3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(tituloAlunos3, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tituloCadastrar))
+                            .addComponent(tituloCadastrar)
+                            .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
+                                .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
+                                        .addComponent(tituloNome3)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(campoNomeFunc3, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
+                                        .addComponent(tituloCpf6)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(campoCpfFunc3)))
+                                .addGap(71, 71, 71)
+                                .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
+                                        .addComponent(tituloCurso3)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(comboBoxCargoFunc3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
+                                        .addComponent(jLabel9)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(campoTelefoneFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
+                                .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
+                                        .addComponent(jLabel8)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(campoEmailCadastrar))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, guiaCadastrarAlunoLayout.createSequentialGroup()
+                                        .addComponent(tituloDataNasc3)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(campoDataNascFunc3, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(71, 71, 71)
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(comboBoxStatusFunc, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
         guiaCadastrarAlunoLayout.setVerticalGroup(
@@ -558,24 +650,31 @@ public class TelaFuncionarios extends javax.swing.JFrame {
                 .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tituloNome3)
                     .addComponent(campoNomeFunc3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8))
-                .addGap(0, 23, Short.MAX_VALUE)
+                    .addComponent(jLabel9)
+                    .addComponent(campoTelefoneFunc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 26, Short.MAX_VALUE)
                 .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tituloCpf6)
                     .addComponent(campoCpfFunc3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tituloCurso3)
+                    .addComponent(comboBoxCargoFunc3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
                 .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tituloDataNasc3)
                     .addComponent(campoDataNascFunc3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tituloCurso3)
-                    .addComponent(campoCargoFunc3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(70, 70, 70)
-                .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botaoCadastrar1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botaoVoltar5))
+                    .addComponent(jLabel2)
+                    .addComponent(comboBoxStatusFunc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
+                        .addGap(67, 67, 67)
+                        .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnCadastrarFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(botaoVoltar5)))
+                    .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(campoEmailCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel8))))
                 .addContainerGap())
         );
 
@@ -634,6 +733,72 @@ public class TelaFuncionarios extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_botaoVoltar5ActionPerformed
 
+    private void btnCadastrarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarFuncionarioActionPerformed
+        // TODO add your handling code here:
+        
+           
+        try{
+            String nome = campoNomeFunc3.getText();
+            String cpf = campoCpfFunc3.getText();       
+            String email = campoEmailCadastrar.getText();                 
+            String telefone = campoTelefoneFunc.getText();     
+
+            String cargo = comboBoxCargoFunc3.getSelectedItem().toString();
+            int idCargo = fachada.findIdCargoByNome(cargo);
+            System.out.println(idCargo);
+            String status = comboBoxStatusFunc.getSelectedItem().toString();
+
+            String dataNasc = campoDataNascFunc3.getText();
+            Date dataNascDate = Formatacao.transformarStringEmDate(dataNasc);
+            java.sql.Date sqlDateNasc = Formatacao.transformarDateEmDateSql(dataNascDate);        
+
+            Funcionario funcionario = new Funcionario();
+            funcionario.setNome(nome);
+            funcionario.setCpf(cpf);
+            funcionario.setEmail(email);
+            funcionario.setTelefone(telefone);        
+            funcionario.setIdCargo(idCargo);
+            funcionario.setDataNascimento(sqlDateNasc);
+            funcionario.setStatusFuncionario(status);           
+            
+            
+            if(Validacao.validaCPF(funcionario.getCpf())){
+                
+                if(fachada.verificarExistenciaAlunoPorCpf(funcionario.getCpf())){
+                    JOptionPane.showMessageDialog(this,"Funcionário já cadastrado no sitema.","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
+                    return;
+                }else {
+                    fachada.cadastrarAluno(funcionario);
+                    JOptionPane.showMessageDialog(this, "Funcionario cadastrado com sucesso.", "CONFIRMAÇÃO", JOptionPane.INFORMATION_MESSAGE);
+                    
+                    campoNomeFunc3.setText("");
+                    campoCpfFunc3.setText("");       
+                    jTextFieldEmail.setText("");                 
+                    jTextFieldTelefone.setText("");     
+
+                    jFormattedTextFieldDataNascCadastrar.setText("");
+                    
+                    jFormattedTextFieldInicioCursoCadastrar.setText("");
+                    jFormattedTextFieldTermCursoCadastrar.setText("");
+             
+                    
+                    return;
+                    
+                }
+            } else {
+                JOptionPane.showMessageDialog(this,"CPF inválido.","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            
+            
+        }catch (Exception ex){
+            JOptionPane.showMessageDialog(this,"Preencha todos os campos corretamente.","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        
+    }//GEN-LAST:event_btnCadastrarFuncionarioActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -669,28 +834,40 @@ public class TelaFuncionarios extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botaoCadastrar1;
     private javax.swing.JButton botaoPesquisar1;
     private javax.swing.JButton botaoPesquisar2;
     private javax.swing.JButton botaoVoltar5;
     private javax.swing.JButton botaoVoltar8;
     private javax.swing.JButton botaoVoltar9;
+    private javax.swing.JButton btnCadastrarFuncionario;
     private javax.swing.JButton btnVoltarVisualizar;
     private javax.swing.JComboBox campoCargoFunc2;
-    private javax.swing.JComboBox campoCargoFunc3;
     private javax.swing.JTextField campoCpfFunc2;
     private javax.swing.JTextField campoCpfFunc3;
     private javax.swing.JFormattedTextField campoDataNascFunc2;
     private javax.swing.JFormattedTextField campoDataNascFunc3;
+    private javax.swing.JTextField campoEmailCadastrar;
     private javax.swing.JTextField campoNomeFunc2;
     private javax.swing.JTextField campoNomeFunc3;
     private javax.swing.JTextField campoPesquisarCpfFunc1;
     private javax.swing.JTextField campoPesquisarCpfFunc2;
+    private javax.swing.JTextField campoTelefoneFunc;
+    private javax.swing.JComboBox comboBoxCargoFunc3;
+    private javax.swing.JComboBox comboBoxStatusFunc;
     private javax.swing.JButton excluirFuncBotao;
     private javax.swing.JPanel guiaCadastrarAluno;
     private javax.swing.JPanel guiaEditarAluno;
     private javax.swing.JPanel guiaVisualizarAluno;
     private javax.swing.JTabbedPane guiasAluno;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel2CargoVisualizar;
+    private javax.swing.JLabel jLabel2CpfVisualizar;
+    private javax.swing.JLabel jLabel2DataNascVisualizar;
+    private javax.swing.JLabel jLabel2EmailVisualizar;
+    private javax.swing.JLabel jLabel2NomeVisualizar;
+    private javax.swing.JLabel jLabel2StatusVisualizar;
+    private javax.swing.JLabel jLabel2TelefoneVisualizar;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -702,8 +879,6 @@ public class TelaFuncionarios extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     private javax.swing.JPanel painelConsulta1;
     private javax.swing.JPanel painelConsulta2;
     private javax.swing.JLabel tituloAlunos1;

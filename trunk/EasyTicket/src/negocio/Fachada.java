@@ -9,6 +9,7 @@ import dados.RepositorioCargos;
 import dados.RepositorioCartoes;
 import dados.RepositorioCursos;
 import dados.RepositorioRefeicoes;
+import dados.RepositorioFuncionarios;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,6 +23,7 @@ public class Fachada {
   private CadastroCursos cadastroCursos;
   private CadastroCargos cadastroCargos;
   private CadastroAlunos cadastroAlunos;
+  private CadastroFuncionarios cadastroFuncionarios;
 
   private CadastroCartoes cadastroCartoes;
 
@@ -54,6 +56,9 @@ public class Fachada {
     
     RepositorioAlunos repositorioAlunos = new RepositorioAlunos();
     cadastroAlunos = new CadastroAlunos(repositorioAlunos);
+    
+    RepositorioFuncionarios repositorioFuncionarios = new RepositorioFuncionarios();
+    cadastroFuncionarios = new CadastroFuncionarios(repositorioFuncionarios);
     
     
   
@@ -150,6 +155,27 @@ public class Fachada {
     }
     public ArrayList<Aluno> findAlunosByCurso(int idCurso){
         return cadastroAlunos.buscarPorCurso(idCurso);
+    }
+    
+    
+    //Funcionario
+    public void cadastrarFuncionario(Funcionario funcionario){
+        cadastroFuncionarios.inserir(funcionario);
+    }
+    public boolean verificarExistenciaFuncionarioPorCpf(String cpf){
+        return cadastroFuncionarios.existe(cpf);
+    }
+    public void atualizarFuncionario(Funcionario funcionario){
+        cadastroFuncionarios.atualizar(funcionario);
+    }
+    public Funcionario findFuncionarioByCpf(String cpfFuncionario){
+        return cadastroFuncionarios.procurarPorCpf(cpfFuncionario);
+    }
+    public void deletarFuncionario(String cpfFuncionario){
+        cadastroFuncionarios.deletar(cpfFuncionario);
+    }
+    public ArrayList<Funcionario> findFuncionariosByCargo(int idCargo){
+        return cadastroFuncionarios.buscarPorCargo(idCargo);
     }
   
   

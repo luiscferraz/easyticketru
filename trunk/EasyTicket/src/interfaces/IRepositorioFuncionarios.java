@@ -16,7 +16,7 @@ public interface IRepositorioFuncionarios {
     public void inserir(Funcionario funcionario);
     public boolean existe(String cpf);
     public void atualizar(Funcionario funcionario);
-    public Funcionario PorCpf(String cpfFuncionario);
+    public Funcionario procurarPorCpf(String cpfFuncionario);
     public void deletar(String cpfFuncionario);
     public ArrayList<Funcionario> buscarPorCargo(int idCargo);
     
