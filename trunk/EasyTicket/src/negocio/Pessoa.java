@@ -15,11 +15,11 @@ public class Pessoa {
     private String email;
     private String cpf;
     private String telefone;
-    private Date dataNascimento;
+    private java.sql.Date dataNascimento;
     
     public Pessoa(){}
     
-    public Pessoa(String nome, String email, String cpf, String telefone, Date dataNascimento){
+    public Pessoa(String nome, String email, String cpf, String telefone, java.sql.Date dataNascimento){
         this.nome = nome;
         this.email = email;
         this.cpf = cpf;
@@ -27,7 +27,7 @@ public class Pessoa {
         this.dataNascimento = dataNascimento;
     }
     
-    public Pessoa(int id, String nome, String email, String cpf, String telefone, Date dataNascimento ){
+    public Pessoa(int id, String nome, String email, String cpf, String telefone, java.sql.Date dataNascimento ){
         this.id = id;
         this.nome = nome;
         this.email = email;
@@ -46,11 +46,11 @@ public class Pessoa {
         this.cpf = cpf;
     }
 
-    public Date getDataNascimento() {
+    public java.sql.Date getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(Date dataNascimento) {
+    public void setDataNascimento(java.sql.Date dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 

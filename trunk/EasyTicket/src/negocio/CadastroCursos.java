@@ -52,4 +52,8 @@ public class CadastroCursos {
         cursos.deletar(idCurso);
     }
     
+    public int findIdByNome(String nome){
+        return cursos.findIdByNome(nome);
+    }
+    
 }

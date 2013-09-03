@@ -14,12 +14,12 @@ public class Aluno extends Pessoa {
     
     private int idCurso;
     private String statusAluno;
-    private Date inicioCursoAluno;
-    private Date terminoCursoAluno;
+    private java.sql.Date inicioCursoAluno;
+    private java.sql.Date terminoCursoAluno;
     
     public Aluno(String nome, String email, String cpf, String telefone,
-            Date dataNascimento, int idCurso, String statusAluno,
-                 Date inicioCursoAluno, Date terminoCursoAluno){
+            java.sql.Date dataNascimento, int idCurso, String statusAluno,
+                 java.sql.Date inicioCursoAluno, java.sql.Date terminoCursoAluno){
         
         super(nome, email, cpf, telefone, dataNascimento);
         this.statusAluno = statusAluno;
@@ -29,8 +29,8 @@ public class Aluno extends Pessoa {
     }
     
     public Aluno(int id,String nome, String email, String cpf, String telefone,
-            Date dataNascimento, int idCurso, String statusAluno,
-                 Date inicioCursoAluno, Date terminoCursoAluno){
+            java.sql.Date dataNascimento, int idCurso, String statusAluno,
+                 java.sql.Date inicioCursoAluno, java.sql.Date terminoCursoAluno){
         super(id,nome, email, cpf,telefone,dataNascimento);
         this.idCurso = idCurso;
         this.statusAluno = statusAluno;
@@ -49,11 +49,11 @@ public class Aluno extends Pessoa {
         this.idCurso = idCurso;
     }
 
-    public Date getInicioCursoAluno() {
+    public java.sql.Date getInicioCursoAluno() {
         return inicioCursoAluno;
     }
 
-    public void setInicioCursoAluno(Date inicioCursoAluno) {
+    public void setInicioCursoAluno(java.sql.Date inicioCursoAluno) {
         this.inicioCursoAluno = inicioCursoAluno;
     }
 
@@ -65,11 +65,11 @@ public class Aluno extends Pessoa {
         this.statusAluno = statusAluno;
     }
 
-    public Date getTerminoCursoAluno() {
+    public java.sql.Date getTerminoCursoAluno() {
         return terminoCursoAluno;
     }
 
-    public void setTerminoCursoAluno(Date terminoCursoAluno) {
+    public void setTerminoCursoAluno(java.sql.Date terminoCursoAluno) {
         this.terminoCursoAluno = terminoCursoAluno;
     }
     

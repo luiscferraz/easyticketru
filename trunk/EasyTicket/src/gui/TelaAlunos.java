@@ -17,6 +17,7 @@ import java.util.logging.Logger;
 import javax.swing.JComboBox;
 import javax.swing.JFormattedTextField;
 import javax.swing.JOptionPane;
+import negocio.Aluno;
 import negocio.CadastroCursos;
 import negocio.Curso;
 import negocio.Fachada;
@@ -54,6 +55,7 @@ public class TelaAlunos extends javax.swing.JFrame {
     private void preencherComboBoxCursoCadastrar(){
         List<Curso> allCursos = fachada.listarCursos();
         for (Curso curso : allCursos) {
+            //jComboBoxCursoCadastrar.addItem(curso.toString(curso));
             jComboBoxCursoCadastrar.addItem(curso.getNome());
             
         } 
@@ -64,6 +66,9 @@ public class TelaAlunos extends javax.swing.JFrame {
         for (Curso curso : allCursos) {
             jComboBoxCursoEditar.addItem(curso.getNome());
         }
+    }
+    
+    private void pegarDadosCamposCadastrar(){
     }
     
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -151,9 +156,9 @@ public class TelaAlunos extends javax.swing.JFrame {
         jTextFieldTelefone = new javax.swing.JFormattedTextField();
         tituloDataNasc7 = new javax.swing.JLabel();
         tituloDataNasc8 = new javax.swing.JLabel();
-        jTextFieldEmail = new javax.swing.JFormattedTextField();
         jComboBoxStatusCadastrar = new javax.swing.JComboBox();
         jFormattedTextFieldCpfCadastrar = new javax.swing.JFormattedTextField();
+        jTextFieldEmail = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -743,10 +748,6 @@ public class TelaAlunos extends javax.swing.JFrame {
 
         tituloDataNasc8.setText("Email:");
 
-        jTextFieldEmail.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
-        jTextFieldEmail.setToolTipText("Date");
-        jTextFieldEmail.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-
         jComboBoxStatusCadastrar.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "ATIVO", "INATIVO" }));
         jComboBoxStatusCadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -783,10 +784,10 @@ public class TelaAlunos extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jFormattedTextFieldCpfCadastrar, javax.swing.GroupLayout.DEFAULT_SIZE, 321, Short.MAX_VALUE)
-                            .addComponent(jTextFieldEmail)
                             .addComponent(jTextFieldTelefone)
                             .addComponent(jComboBoxCursoCadastrar, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextFieldNomeCadastrar))
+                            .addComponent(jTextFieldNomeCadastrar)
+                            .addComponent(jTextFieldEmail))
                         .addGap(17, 17, 17)
                         .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(tituloCurso8, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -846,7 +847,8 @@ public class TelaAlunos extends javax.swing.JFrame {
                             .addComponent(btnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(botaoVoltar5)))
                     .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
-                        .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGap(3, 3, 3)
+                        .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(tituloDataNasc8)
                             .addComponent(jTextFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -913,19 +915,29 @@ public class TelaAlunos extends javax.swing.JFrame {
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
         // TODO add your handling code here:
-        System.out.println(jTextFieldNomeCadastrar.getText());
-        System.out.println(jFormattedTextFieldCpfCadastrar.getText());
+        String nome = jTextFieldNomeCadastrar.getText();
+        String cpf = jFormattedTextFieldCpfCadastrar.getText();       
+        String email =jTextFieldEmail.getText();                 
+        String telefone = jTextFieldTelefone.getText();        
+        String curso = jComboBoxCursoCadastrar.getSelectedItem().toString();
+        int idCurso = fachada.findIdCursoByNome(curso);
+        String status = jComboBoxStatusCadastrar.getSelectedItem().toString();
         
-        //System.out.println(jTextFieldEmail.getText()); = tá com problema, o texto some e salva vazio
-                
-        System.out.println(jTextFieldTelefone.getText());
-        System.out.println(jFormattedTextFieldDataNascCadastrar.getText());
         String dataNasc = jFormattedTextFieldDataNascCadastrar.getText();
         Date dataNascDate = Formatacao.transformarStringEmDate(dataNasc);
-        System.out.println(Formatacao.transformarDateEmDateSql(dataNascDate));
+        java.sql.Date sqlDateNasc = Formatacao.transformarDateEmDateSql(dataNascDate);        
         
-        String str = jComboBoxCursoCadastrar.getSelectedItem().toString();
-        System.out.println(str);
+        String inicioCurso= jFormattedTextFieldInicioCursoCadastrar.getText();
+        Date inicioCursO = Formatacao.transformarStringEmDate(inicioCurso);
+        java.sql.Date sqlDateInicioCurso = Formatacao.transformarDateEmDateSql(inicioCursO);        
+        
+        String terminoCurso= jFormattedTextFieldTermCursoCadastrar.getText();
+        Date terminoCursO = Formatacao.transformarStringEmDate(inicioCurso);
+        java.sql.Date sqlDateTermCurso = Formatacao.transformarDateEmDateSql(terminoCursO);   
+        
+        Aluno aluno = new Aluno(nome, email, cpf, telefone, sqlDateNasc, 
+                idCurso, status, sqlDateInicioCurso, sqlDateTermCurso);
+        
         
         
         
@@ -1003,7 +1015,7 @@ public class TelaAlunos extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator5;
-    private javax.swing.JFormattedTextField jTextFieldEmail;
+    private javax.swing.JTextField jTextFieldEmail;
     private javax.swing.JFormattedTextField jTextFieldEmailEditar;
     private javax.swing.JTextField jTextFieldNomeCadastrar;
     private javax.swing.JTextField jTextFieldNomeEditar;
