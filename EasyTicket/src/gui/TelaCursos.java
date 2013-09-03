@@ -200,7 +200,7 @@ public class TelaCursos extends javax.swing.JFrame {
 
         tituloAlunos1.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         tituloAlunos1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/cursos.png"))); // NOI18N
-        tituloAlunos1.setText("  Manter Cursos");
+        tituloAlunos1.setText("  Curso");
 
         jLabelCodigoInexistente.setText("**Código Inexistente");
 
@@ -297,7 +297,7 @@ public class TelaCursos extends javax.swing.JFrame {
 
         tituloAlunos2.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         tituloAlunos2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/cursos.png"))); // NOI18N
-        tituloAlunos2.setText("  Manter Cursos");
+        tituloAlunos2.setText("Curso");
 
         painelConsulta2.setBackground(new java.awt.Color(222, 235, 216));
         painelConsulta2.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(204, 204, 204)));
@@ -498,7 +498,7 @@ public class TelaCursos extends javax.swing.JFrame {
 
         tituloAlunos3.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         tituloAlunos3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/cursos.png"))); // NOI18N
-        tituloAlunos3.setText("  Manter Cursos");
+        tituloAlunos3.setText("Curso");
 
         javax.swing.GroupLayout guiaCadastrarAlunoLayout = new javax.swing.GroupLayout(guiaCadastrarAluno);
         guiaCadastrarAluno.setLayout(guiaCadastrarAlunoLayout);

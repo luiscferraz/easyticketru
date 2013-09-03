@@ -307,7 +307,7 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/gui/resources/cursos.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="  Manter Cursos"/>
+                <Property name="text" type="java.lang.String" value="  Curso"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabelCodigoGuiaVisualizar">
@@ -465,7 +465,7 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/gui/resources/cursos.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="  Manter Cursos"/>
+                <Property name="text" type="java.lang.String" value="Curso"/>
               </Properties>
             </Component>
             <Container class="javax.swing.JPanel" name="painelConsulta2">
@@ -773,7 +773,7 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/gui/resources/cursos.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="  Manter Cursos"/>
+                <Property name="text" type="java.lang.String" value="Curso"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabelSucessoGuiaCadastrar">
