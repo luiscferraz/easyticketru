@@ -969,7 +969,19 @@ public class TelaAlunos extends javax.swing.JFrame {
                     return;
                 }else {
                     fachada.cadastrarAluno(aluno);
-                    JOptionPane.showMessageDialog(this, "Aluno cadastrado com sucesso.", "CONFIRMAÇÃO", JOptionPane.OK_OPTION);
+                    JOptionPane.showMessageDialog(this, "Aluno cadastrado com sucesso.", "CONFIRMAÇÃO", JOptionPane.INFORMATION_MESSAGE);
+                    
+                    jTextFieldNomeCadastrar.setText("");
+                    jFormattedTextFieldCpfCadastrar.setText("");       
+                    jTextFieldEmail.setText("");                 
+                    jTextFieldTelefone.setText("");     
+
+                    jFormattedTextFieldDataNascCadastrar.setText("");
+                    
+                    jFormattedTextFieldInicioCursoCadastrar.setText("");
+                    jFormattedTextFieldTermCursoCadastrar.setText("");
+             
+                    
                     return;
                     
                 }
