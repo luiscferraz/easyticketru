@@ -162,6 +162,7 @@ public class TelaAlunos extends javax.swing.JFrame {
         jTextFieldEmail = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         guiasAluno.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
@@ -894,6 +895,7 @@ public class TelaAlunos extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoPesquisar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoPesquisar1ActionPerformed
