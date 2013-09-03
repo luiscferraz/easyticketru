@@ -928,9 +928,11 @@ public class TelaAlunos extends javax.swing.JFrame {
         String nome = jTextFieldNomeCadastrar.getText();
         String cpf = jFormattedTextFieldCpfCadastrar.getText();       
         String email =jTextFieldEmail.getText();                 
-        String telefone = jTextFieldTelefone.getText();        
+        String telefone = jTextFieldTelefone.getText();     
+        
         String curso = jComboBoxCursoCadastrar.getSelectedItem().toString();
         int idCurso = fachada.findIdCursoByNome(curso);
+        System.out.println(idCurso);
         String status = jComboBoxStatusCadastrar.getSelectedItem().toString();
         
         String dataNasc = jFormattedTextFieldDataNascCadastrar.getText();
@@ -945,10 +947,21 @@ public class TelaAlunos extends javax.swing.JFrame {
         Date terminoCursO = Formatacao.transformarStringEmDate(inicioCurso);
         java.sql.Date sqlDateTermCurso = Formatacao.transformarDateEmDateSql(terminoCursO);   
         
-        Aluno aluno = new Aluno(nome, email, cpf, telefone, sqlDateNasc, 
-                idCurso, status, sqlDateInicioCurso, sqlDateTermCurso);
+        Aluno aluno = new Aluno();
+        aluno.setNome(nome);
+        aluno.setCpf(cpf);
+        aluno.setEmail(email);
+        aluno.setTelefone(telefone);        
+        aluno.setIdCurso(idCurso);
+        aluno.setDataNascimento(sqlDateNasc);
+        aluno.setInicioCursoAluno(sqlDateInicioCurso);
+        aluno.setTerminoCursoAluno(sqlDateInicioCurso);
+        aluno.setStatusAluno(status);
         
+        System.out.println(aluno.getNome());
+        System.out.println(aluno.getIdCurso());
         
+        fachada.cadastrarAluno(aluno);
         
         
         
