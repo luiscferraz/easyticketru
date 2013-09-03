@@ -26,55 +26,45 @@ public class TelaCartoes extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        guiasAluno = new javax.swing.JTabbedPane();
-        guiaVisualizarAluno = new javax.swing.JPanel();
-        tituloVisualizarFunc = new javax.swing.JLabel();
+        guiasRefeicao = new javax.swing.JTabbedPane();
+        guiaVisualizarRefeicao = new javax.swing.JPanel();
+        tituloVisualizarRef = new javax.swing.JLabel();
         botaoVoltar6 = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JSeparator();
         painelConsulta1 = new javax.swing.JPanel();
         tituloConsultar1 = new javax.swing.JLabel();
-        tituloCpf4 = new javax.swing.JLabel();
-        campoPesquisarCpfFunc1 = new javax.swing.JTextField();
+        tituloCod = new javax.swing.JLabel();
+        campoPesquisarRefeicao = new javax.swing.JTextField();
         botaoPesquisar1 = new javax.swing.JButton();
         tituloAlunos1 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
         excluirCartaoBotao = new javax.swing.JButton();
-        guiaEditarAluno = new javax.swing.JPanel();
+        guiaEditarRefeicao = new javax.swing.JPanel();
         painelConsulta2 = new javax.swing.JPanel();
         tituloConsultar2 = new javax.swing.JLabel();
-        tituloCpf5 = new javax.swing.JLabel();
-        campoPesquisarCpfFunc2 = new javax.swing.JTextField();
+        tituloCodigo = new javax.swing.JLabel();
+        campoPesquisarRefeicao2 = new javax.swing.JTextField();
         botaoPesquisar2 = new javax.swing.JButton();
         jSeparator5 = new javax.swing.JSeparator();
-        tituloVisualizarFunc1 = new javax.swing.JLabel();
+        tituloVisualizarRefeicao = new javax.swing.JLabel();
         botaoVoltar8 = new javax.swing.JButton();
         botaoVoltar9 = new javax.swing.JButton();
-        tituloAlunos2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        guiaCadastrarAluno = new javax.swing.JPanel();
+        tituloRefeicoes2 = new javax.swing.JLabel();
+        guiaCadastrarRefeicao = new javax.swing.JPanel();
         tituloCadastrar = new javax.swing.JLabel();
         botaoCadastrar1 = new javax.swing.JButton();
         botaoVoltar5 = new javax.swing.JButton();
         jSeparator3 = new javax.swing.JSeparator();
-        tituloAlunos4 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox();
-        jLabel5 = new javax.swing.JLabel();
+        tituloRefeicoes = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        guiasAluno.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        guiasRefeicao.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
-        tituloVisualizarFunc.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        tituloVisualizarFunc.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        tituloVisualizarFunc.setText("Cartão");
-        tituloVisualizarFunc.setToolTipText("");
-        tituloVisualizarFunc.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        tituloVisualizarRef.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        tituloVisualizarRef.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        tituloVisualizarRef.setText("Refeição");
+        tituloVisualizarRef.setToolTipText("");
+        tituloVisualizarRef.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         botaoVoltar6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/back.png"))); // NOI18N
         botaoVoltar6.setText("Voltar");
@@ -90,9 +80,9 @@ public class TelaCartoes extends javax.swing.JFrame {
         painelConsulta1.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
 
         tituloConsultar1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        tituloConsultar1.setText("Consultar Cartão");
+        tituloConsultar1.setText("Consultar Refeição");
 
-        tituloCpf4.setText("Código: ");
+        tituloCod.setText("Código: ");
 
         botaoPesquisar1.setBackground(new java.awt.Color(255, 255, 255));
         botaoPesquisar1.setForeground(new java.awt.Color(255, 255, 255));
@@ -118,9 +108,9 @@ public class TelaCartoes extends javax.swing.JFrame {
                         .addComponent(tituloConsultar1))
                     .addGroup(painelConsulta1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(tituloCpf4)
+                        .addComponent(tituloCod)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(campoPesquisarCpfFunc1, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(campoPesquisarRefeicao, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(botaoPesquisar1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -133,85 +123,58 @@ public class TelaCartoes extends javax.swing.JFrame {
                     .addGroup(painelConsulta1Layout.createSequentialGroup()
                         .addGap(13, 13, 13)
                         .addGroup(painelConsulta1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(tituloCpf4)
-                            .addComponent(campoPesquisarCpfFunc1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(tituloCod)
+                            .addComponent(campoPesquisarRefeicao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(painelConsulta1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(botaoPesquisar1))))
         );
 
         tituloAlunos1.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        tituloAlunos1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/cartoes.png"))); // NOI18N
-        tituloAlunos1.setText("  Manter Cartões");
-
-        jLabel6.setText("Número:");
-
-        jLabel7.setText("Aluno:");
-
-        jLabel8.setText("Status:");
-
-        jLabel9.setText("Saldo:");
+        tituloAlunos1.setText("  Manter Refeições");
 
         excluirCartaoBotao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/delete.png"))); // NOI18N
-        excluirCartaoBotao.setText("Excluir cartão");
+        excluirCartaoBotao.setText("Excluir Refeição");
 
-        javax.swing.GroupLayout guiaVisualizarAlunoLayout = new javax.swing.GroupLayout(guiaVisualizarAluno);
-        guiaVisualizarAluno.setLayout(guiaVisualizarAlunoLayout);
-        guiaVisualizarAlunoLayout.setHorizontalGroup(
-            guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(guiaVisualizarAlunoLayout.createSequentialGroup()
+        javax.swing.GroupLayout guiaVisualizarRefeicaoLayout = new javax.swing.GroupLayout(guiaVisualizarRefeicao);
+        guiaVisualizarRefeicao.setLayout(guiaVisualizarRefeicaoLayout);
+        guiaVisualizarRefeicaoLayout.setHorizontalGroup(
+            guiaVisualizarRefeicaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(guiaVisualizarRefeicaoLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(guiaVisualizarAlunoLayout.createSequentialGroup()
+                .addGroup(guiaVisualizarRefeicaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(guiaVisualizarRefeicaoLayout.createSequentialGroup()
                         .addComponent(excluirCartaoBotao)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(botaoVoltar6))
-                    .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, guiaVisualizarAlunoLayout.createSequentialGroup()
+                    .addGroup(guiaVisualizarRefeicaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, guiaVisualizarRefeicaoLayout.createSequentialGroup()
                             .addComponent(tituloAlunos1, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(painelConsulta1, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(tituloVisualizarFunc)
-                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 603, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(guiaVisualizarAlunoLayout.createSequentialGroup()
-                            .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel6)
-                                .addComponent(jLabel7))
-                            .addGap(258, 258, 258)
-                            .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel8)
-                                .addComponent(jLabel9)))))
+                        .addComponent(tituloVisualizarRef)
+                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 603, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(22, Short.MAX_VALUE))
         );
-        guiaVisualizarAlunoLayout.setVerticalGroup(
-            guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(guiaVisualizarAlunoLayout.createSequentialGroup()
+        guiaVisualizarRefeicaoLayout.setVerticalGroup(
+            guiaVisualizarRefeicaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(guiaVisualizarRefeicaoLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(guiaVisualizarRefeicaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(painelConsulta1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tituloAlunos1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tituloVisualizarFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tituloVisualizarRef, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(guiaVisualizarAlunoLayout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel7))
-                    .addGroup(guiaVisualizarAlunoLayout.createSequentialGroup()
-                        .addComponent(jLabel8)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel9)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
-                .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 172, Short.MAX_VALUE)
+                .addGroup(guiaVisualizarRefeicaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(botaoVoltar6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(excluirCartaoBotao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(23, 23, 23))
         );
 
-        guiasAluno.addTab("Visualizar Cartão", guiaVisualizarAluno);
+        guiasRefeicao.addTab("Visualizar Refeição", guiaVisualizarRefeicao);
 
         painelConsulta2.setBackground(new java.awt.Color(222, 235, 216));
         painelConsulta2.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(204, 204, 204)));
@@ -219,9 +182,9 @@ public class TelaCartoes extends javax.swing.JFrame {
         painelConsulta2.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
 
         tituloConsultar2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        tituloConsultar2.setText("Consultar Cartão");
+        tituloConsultar2.setText("Consultar Refeição");
 
-        tituloCpf5.setText("Código: ");
+        tituloCodigo.setText("Código: ");
 
         botaoPesquisar2.setBackground(new java.awt.Color(255, 255, 255));
         botaoPesquisar2.setForeground(new java.awt.Color(255, 255, 255));
@@ -247,9 +210,9 @@ public class TelaCartoes extends javax.swing.JFrame {
                         .addComponent(tituloConsultar2))
                     .addGroup(painelConsulta2Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(tituloCpf5)
+                        .addComponent(tituloCodigo)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(campoPesquisarCpfFunc2, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(campoPesquisarRefeicao2, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(botaoPesquisar2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -262,18 +225,18 @@ public class TelaCartoes extends javax.swing.JFrame {
                     .addGroup(painelConsulta2Layout.createSequentialGroup()
                         .addGap(13, 13, 13)
                         .addGroup(painelConsulta2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(tituloCpf5)
-                            .addComponent(campoPesquisarCpfFunc2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(tituloCodigo)
+                            .addComponent(campoPesquisarRefeicao2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(painelConsulta2Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(botaoPesquisar2))))
         );
 
-        tituloVisualizarFunc1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        tituloVisualizarFunc1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        tituloVisualizarFunc1.setText("Cartão");
-        tituloVisualizarFunc1.setToolTipText("");
-        tituloVisualizarFunc1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        tituloVisualizarRefeicao.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        tituloVisualizarRefeicao.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        tituloVisualizarRefeicao.setText("Refeição");
+        tituloVisualizarRefeicao.setToolTipText("");
+        tituloVisualizarRefeicao.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         botaoVoltar8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/edit.png"))); // NOI18N
         botaoVoltar8.setText("Salvar Alterações");
@@ -286,83 +249,52 @@ public class TelaCartoes extends javax.swing.JFrame {
             }
         });
 
-        tituloAlunos2.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        tituloAlunos2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/cartoes.png"))); // NOI18N
-        tituloAlunos2.setText("  Manter Cartões");
+        tituloRefeicoes2.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        tituloRefeicoes2.setText("  Manter Refeições");
 
-        jLabel1.setText("Número:");
-
-        jLabel2.setText("Aluno:");
-
-        jLabel3.setText("Status:");
-
-        jLabel4.setText("Saldo:");
-
-        javax.swing.GroupLayout guiaEditarAlunoLayout = new javax.swing.GroupLayout(guiaEditarAluno);
-        guiaEditarAluno.setLayout(guiaEditarAlunoLayout);
-        guiaEditarAlunoLayout.setHorizontalGroup(
-            guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(guiaEditarAlunoLayout.createSequentialGroup()
+        javax.swing.GroupLayout guiaEditarRefeicaoLayout = new javax.swing.GroupLayout(guiaEditarRefeicao);
+        guiaEditarRefeicao.setLayout(guiaEditarRefeicaoLayout);
+        guiaEditarRefeicaoLayout.setHorizontalGroup(
+            guiaEditarRefeicaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(guiaEditarRefeicaoLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(guiaEditarAlunoLayout.createSequentialGroup()
-                        .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(guiaEditarAlunoLayout.createSequentialGroup()
-                                .addComponent(botaoVoltar9)
-                                .addGap(18, 18, 18)
-                                .addComponent(botaoVoltar8))
-                            .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, guiaEditarAlunoLayout.createSequentialGroup()
-                                    .addComponent(tituloAlunos2, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(painelConsulta2, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(tituloVisualizarFunc1)
-                                .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 603, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(22, Short.MAX_VALUE))
-                    .addGroup(guiaEditarAlunoLayout.createSequentialGroup()
-                        .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4))
-                        .addGap(263, 263, 263))))
+                .addGroup(guiaEditarRefeicaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(guiaEditarRefeicaoLayout.createSequentialGroup()
+                        .addComponent(botaoVoltar9)
+                        .addGap(18, 18, 18)
+                        .addComponent(botaoVoltar8))
+                    .addGroup(guiaEditarRefeicaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, guiaEditarRefeicaoLayout.createSequentialGroup()
+                            .addComponent(tituloRefeicoes2, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(painelConsulta2, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(tituloVisualizarRefeicao)
+                        .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 603, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
-        guiaEditarAlunoLayout.setVerticalGroup(
-            guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(guiaEditarAlunoLayout.createSequentialGroup()
+        guiaEditarRefeicaoLayout.setVerticalGroup(
+            guiaEditarRefeicaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(guiaEditarRefeicaoLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(guiaEditarRefeicaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(painelConsulta2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tituloAlunos2, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tituloRefeicoes2, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tituloVisualizarFunc1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tituloVisualizarRefeicao, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(guiaEditarAlunoLayout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
-                        .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(botaoVoltar9)
-                            .addComponent(botaoVoltar8))
-                        .addGap(24, 24, 24))
-                    .addGroup(guiaEditarAlunoLayout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel4)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 167, Short.MAX_VALUE)
+                .addGroup(guiaEditarRefeicaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botaoVoltar9)
+                    .addComponent(botaoVoltar8))
+                .addGap(24, 24, 24))
         );
 
-        guiasAluno.addTab("Editar Cartão", guiaEditarAluno);
+        guiasRefeicao.addTab("Editar Refeição", guiaEditarRefeicao);
 
         tituloCadastrar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         tituloCadastrar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        tituloCadastrar.setText("Cadastrar Novo Cartão");
+        tituloCadastrar.setText("Cadastrar Nova Refeição");
         tituloCadastrar.setToolTipText("");
         tituloCadastrar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
@@ -378,61 +310,49 @@ public class TelaCartoes extends javax.swing.JFrame {
             }
         });
 
-        tituloAlunos4.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        tituloAlunos4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/cartoes.png"))); // NOI18N
-        tituloAlunos4.setText("  Manter Cartões");
+        tituloRefeicoes.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        tituloRefeicoes.setText("  Manter Refeições");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jLabel5.setText("Aluno:");
-
-        javax.swing.GroupLayout guiaCadastrarAlunoLayout = new javax.swing.GroupLayout(guiaCadastrarAluno);
-        guiaCadastrarAluno.setLayout(guiaCadastrarAlunoLayout);
-        guiaCadastrarAlunoLayout.setHorizontalGroup(
-            guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
+        javax.swing.GroupLayout guiaCadastrarRefeicaoLayout = new javax.swing.GroupLayout(guiaCadastrarRefeicao);
+        guiaCadastrarRefeicao.setLayout(guiaCadastrarRefeicaoLayout);
+        guiaCadastrarRefeicaoLayout.setHorizontalGroup(
+            guiaCadastrarRefeicaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(guiaCadastrarRefeicaoLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(botaoVoltar5)
                 .addGap(18, 18, 18)
                 .addComponent(botaoCadastrar1)
                 .addGap(26, 26, 26))
-            .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
+            .addGroup(guiaCadastrarRefeicaoLayout.createSequentialGroup()
                 .addGap(21, 21, 21)
-                .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
-                        .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 547, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(77, Short.MAX_VALUE))
-                    .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
-                        .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(tituloAlunos4, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tituloCadastrar))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                .addComponent(tituloRefeicoes, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 394, Short.MAX_VALUE))
+            .addGroup(guiaCadastrarRefeicaoLayout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addGroup(guiaCadastrarRefeicaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 547, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(guiaCadastrarRefeicaoLayout.createSequentialGroup()
+                        .addComponent(tituloCadastrar)
+                        .addGap(317, 317, 317)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        guiaCadastrarAlunoLayout.setVerticalGroup(
-            guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
+        guiaCadastrarRefeicaoLayout.setVerticalGroup(
+            guiaCadastrarRefeicaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(guiaCadastrarRefeicaoLayout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addComponent(tituloAlunos4, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tituloRefeicoes, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(tituloCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 149, Short.MAX_VALUE)
-                .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 187, Short.MAX_VALUE)
+                .addGroup(guiaCadastrarRefeicaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botaoCadastrar1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(botaoVoltar5))
                 .addContainerGap())
         );
 
-        guiasAluno.addTab("Cadastrar Novo Cartão", guiaCadastrarAluno);
+        guiasRefeicao.addTab("Cadastrar Nova Refeição", guiaCadastrarRefeicao);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -440,12 +360,12 @@ public class TelaCartoes extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(guiasAluno)
+                .addComponent(guiasRefeicao)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(guiasAluno)
+            .addComponent(guiasRefeicao)
         );
 
         pack();
@@ -513,37 +433,27 @@ public class TelaCartoes extends javax.swing.JFrame {
     private javax.swing.JButton botaoVoltar6;
     private javax.swing.JButton botaoVoltar8;
     private javax.swing.JButton botaoVoltar9;
-    private javax.swing.JTextField campoPesquisarCpfFunc1;
-    private javax.swing.JTextField campoPesquisarCpfFunc2;
+    private javax.swing.JTextField campoPesquisarRefeicao;
+    private javax.swing.JTextField campoPesquisarRefeicao2;
     private javax.swing.JButton excluirCartaoBotao;
-    private javax.swing.JPanel guiaCadastrarAluno;
-    private javax.swing.JPanel guiaEditarAluno;
-    private javax.swing.JPanel guiaVisualizarAluno;
-    private javax.swing.JTabbedPane guiasAluno;
-    private javax.swing.JComboBox jComboBox1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel guiaCadastrarRefeicao;
+    private javax.swing.JPanel guiaEditarRefeicao;
+    private javax.swing.JPanel guiaVisualizarRefeicao;
+    private javax.swing.JTabbedPane guiasRefeicao;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JPanel painelConsulta1;
     private javax.swing.JPanel painelConsulta2;
     private javax.swing.JLabel tituloAlunos1;
-    private javax.swing.JLabel tituloAlunos2;
-    private javax.swing.JLabel tituloAlunos4;
     private javax.swing.JLabel tituloCadastrar;
+    private javax.swing.JLabel tituloCod;
+    private javax.swing.JLabel tituloCodigo;
     private javax.swing.JLabel tituloConsultar1;
     private javax.swing.JLabel tituloConsultar2;
-    private javax.swing.JLabel tituloCpf4;
-    private javax.swing.JLabel tituloCpf5;
-    private javax.swing.JLabel tituloVisualizarFunc;
-    private javax.swing.JLabel tituloVisualizarFunc1;
+    private javax.swing.JLabel tituloRefeicoes;
+    private javax.swing.JLabel tituloRefeicoes2;
+    private javax.swing.JLabel tituloVisualizarRef;
+    private javax.swing.JLabel tituloVisualizarRefeicao;
     // End of variables declaration//GEN-END:variables
 }
