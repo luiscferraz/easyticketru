@@ -69,8 +69,6 @@ public class RepositorioFuncionarios implements IRepositorioFuncionarios{
         
     }
 
-    }
-
     public boolean existe(String cpfFuncionario) {
          if (this.procurarPorCpf(cpfFuncionario)!=null){
           return true;
@@ -171,6 +169,6 @@ public class RepositorioFuncionarios implements IRepositorioFuncionarios{
     }
 
     
-
-    
 }
+    
+
