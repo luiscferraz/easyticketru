@@ -46,6 +46,12 @@ public class TelaAlunos extends javax.swing.JFrame {
         this.preencherComboBoxCursoEditar();
         btnExcluirAluno.setEnabled(false);
         btnSalvarAlteracoes.setEnabled(false);
+        
+        btnMudarCurso.setEnabled(false);
+        btnMudarStatus.setEnabled(false);
+        jComboBoxCursoEditar.setEnabled(false);
+        jComboBoxStatusEditar.setEnabled(false);
+        
     }
 
     /**
@@ -138,6 +144,10 @@ public class TelaAlunos extends javax.swing.JFrame {
         txtDataNascEditar = new javax.swing.JFormattedTextField();
         txtInicioCursoEditar = new javax.swing.JFormattedTextField();
         txtTerminoCursoEditar = new javax.swing.JFormattedTextField();
+        lblCursoAtual = new javax.swing.JLabel();
+        lblStatusAtual = new javax.swing.JLabel();
+        btnMudarCurso = new javax.swing.JButton();
+        btnMudarStatus = new javax.swing.JButton();
         guiaCadastrarAluno = new javax.swing.JPanel();
         tituloCadastrar = new javax.swing.JLabel();
         btnCadastrar = new javax.swing.JButton();
@@ -339,7 +349,7 @@ public class TelaAlunos extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(lblTerminoCurso)))
                                 .addGap(159, 159, 159)))))
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addContainerGap(86, Short.MAX_VALUE))
         );
         guiaVisualizarAlunoLayout.setVerticalGroup(
             guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -382,7 +392,7 @@ public class TelaAlunos extends javax.swing.JFrame {
                         .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(tituloDataNasc10)
                             .addComponent(lblTelefone))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                 .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tituloDataNasc2)
                     .addComponent(lblDataNascimento))
@@ -491,13 +501,13 @@ public class TelaAlunos extends javax.swing.JFrame {
 
         tituloDataNasc4.setText("Data de Nascimento:");
 
-        tituloCurso10.setText("Status:");
+        tituloCurso10.setText("Status atual:");
 
         tituloCurso11.setText("Previsão de Término:");
 
         tituloCurso12.setText("Início Curso:");
 
-        tituloCurso13.setText("Curso:");
+        tituloCurso13.setText("Curso atual:");
 
         tituloDataNasc5.setText("Telefone:");
 
@@ -558,6 +568,20 @@ public class TelaAlunos extends javax.swing.JFrame {
         txtTerminoCursoEditar.setToolTipText("Date");
         txtTerminoCursoEditar.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
+        btnMudarCurso.setText("Alterar");
+        btnMudarCurso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMudarCursoActionPerformed(evt);
+            }
+        });
+
+        btnMudarStatus.setText("Alterar");
+        btnMudarStatus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMudarStatusActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout guiaEditarAlunoLayout = new javax.swing.GroupLayout(guiaEditarAluno);
         guiaEditarAluno.setLayout(guiaEditarAlunoLayout);
         guiaEditarAlunoLayout.setHorizontalGroup(
@@ -576,27 +600,42 @@ public class TelaAlunos extends javax.swing.JFrame {
                                     .addComponent(tituloNome4)
                                     .addComponent(tituloCpf7)
                                     .addComponent(tituloDataNasc6)
-                                    .addComponent(tituloDataNasc5)
-                                    .addComponent(tituloCurso13))
+                                    .addComponent(tituloDataNasc5))
                                 .addGap(22, 22, 22)
-                                .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jComboBoxCursoEditar, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(txtTelefoneEditar, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(txtEmailEditar)
-                                    .addComponent(txtCpfEditar)
-                                    .addComponent(txtNomeEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
+                                .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(txtEmailEditar, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(txtCpfEditar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 291, Short.MAX_VALUE)
+                                        .addComponent(txtNomeEditar, javax.swing.GroupLayout.Alignment.LEADING))
+                                    .addComponent(txtTelefoneEditar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(39, 39, 39)
                                 .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(tituloCurso11)
                                     .addComponent(tituloCurso12)
-                                    .addComponent(tituloDataNasc4)
-                                    .addComponent(tituloCurso10))
+                                    .addComponent(tituloDataNasc4))
                                 .addGap(11, 11, 11)
                                 .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtInicioCursoEditar, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(txtInicioCursoEditar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE)
                                     .addComponent(txtTerminoCursoEditar, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jComboBoxStatusEditar, javax.swing.GroupLayout.Alignment.TRAILING, 0, 116, Short.MAX_VALUE)
-                                    .addComponent(txtDataNascEditar, javax.swing.GroupLayout.Alignment.TRAILING))))
+                                    .addComponent(txtDataNascEditar, javax.swing.GroupLayout.Alignment.TRAILING)))
+                            .addGroup(guiaEditarAlunoLayout.createSequentialGroup()
+                                .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(guiaEditarAlunoLayout.createSequentialGroup()
+                                        .addComponent(tituloCurso13)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(lblCursoAtual, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(btnMudarCurso))
+                                    .addGroup(guiaEditarAlunoLayout.createSequentialGroup()
+                                        .addComponent(tituloCurso10)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(lblStatusAtual, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(btnMudarStatus)))
+                                .addGap(40, 40, 40)
+                                .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jComboBoxCursoEditar, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jComboBoxStatusEditar, 0, 233, Short.MAX_VALUE))))
                         .addGap(16, 16, 16))
                     .addGroup(guiaEditarAlunoLayout.createSequentialGroup()
                         .addGap(12, 12, 12)
@@ -610,6 +649,9 @@ public class TelaAlunos extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
+
+        guiaEditarAlunoLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {lblCursoAtual, lblStatusAtual});
+
         guiaEditarAlunoLayout.setVerticalGroup(
             guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(guiaEditarAlunoLayout.createSequentialGroup()
@@ -619,26 +661,10 @@ public class TelaAlunos extends javax.swing.JFrame {
                     .addComponent(tituloAlunos2, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tituloVisualizarFunc1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(guiaEditarAlunoLayout.createSequentialGroup()
-                        .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtDataNascEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tituloDataNasc4))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtInicioCursoEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tituloCurso12))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtTerminoCursoEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tituloCurso11))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jComboBoxStatusEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tituloCurso10)))
                     .addGroup(guiaEditarAlunoLayout.createSequentialGroup()
                         .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtNomeEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -654,12 +680,32 @@ public class TelaAlunos extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtTelefoneEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tituloDataNasc5))
-                        .addGap(14, 14, 14)
+                            .addComponent(tituloDataNasc5)))
+                    .addGroup(guiaEditarAlunoLayout.createSequentialGroup()
                         .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jComboBoxCursoEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tituloCurso13))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                            .addComponent(txtDataNascEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tituloDataNasc4))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtInicioCursoEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tituloCurso12))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtTerminoCursoEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tituloCurso11))))
+                .addGap(13, 13, 13)
+                .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jComboBoxCursoEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tituloCurso13)
+                    .addComponent(lblCursoAtual)
+                    .addComponent(btnMudarCurso))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tituloCurso10)
+                    .addComponent(jComboBoxStatusEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblStatusAtual)
+                    .addComponent(btnMudarStatus))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botaoVoltar9)
                     .addComponent(btnSalvarAlteracoes))
@@ -787,7 +833,7 @@ public class TelaAlunos extends javax.swing.JFrame {
                                     .addComponent(tituloCpf6))
                                 .addGap(25, 25, 25)
                                 .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jFormattedTextFieldCpfCadastrar, javax.swing.GroupLayout.DEFAULT_SIZE, 334, Short.MAX_VALUE)
+                                    .addComponent(jFormattedTextFieldCpfCadastrar, javax.swing.GroupLayout.DEFAULT_SIZE, 372, Short.MAX_VALUE)
                                     .addComponent(jTextFieldNomeCadastrar)))
                             .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
                                 .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -871,7 +917,7 @@ public class TelaAlunos extends javax.swing.JFrame {
                         .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jComboBoxCursoCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(tituloCurso9))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
                 .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(botaoVoltar5))
@@ -975,7 +1021,21 @@ public class TelaAlunos extends javax.swing.JFrame {
                         
                         txtPesquisarCpfEditar.setText("");
                         btnSalvarAlteracoes.setEnabled(true);
-
+                        
+                        
+                        
+                        Curso cursoAluno=new Curso();
+                        cursoAluno = fachada.procurarPorIdCurso(alunoRetorno.getIdCurso());
+                        System.out.println(cursoAluno.getNome());
+                        lblCursoAtual.setText(cursoAluno.getNome());
+                        
+                        lblStatusAtual.setText(alunoRetorno.getStatusAluno());
+                        
+                        btnMudarCurso.setEnabled(true);
+                        btnMudarStatus.setEnabled(true);                   
+                        
+                        
+                        
                     } else {
                         JOptionPane.showMessageDialog(this,"Aluno Inexistente!","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
                         txtPesquisarCpfEditar.setText("");
@@ -1097,6 +1157,16 @@ public class TelaAlunos extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnSalvarAlteracoesActionPerformed
 
+    private void btnMudarCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMudarCursoActionPerformed
+        // TODO add your handling code here:
+        jComboBoxCursoEditar.setEnabled(true);
+    }//GEN-LAST:event_btnMudarCursoActionPerformed
+
+    private void btnMudarStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMudarStatusActionPerformed
+        // TODO add your handling code here:
+        jComboBoxStatusEditar.setEnabled(true);
+    }//GEN-LAST:event_btnMudarStatusActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1138,6 +1208,8 @@ public class TelaAlunos extends javax.swing.JFrame {
     private javax.swing.JButton botaoVoltar9;
     private javax.swing.JButton btnCadastrar;
     private javax.swing.JButton btnExcluirAluno;
+    private javax.swing.JButton btnMudarCurso;
+    private javax.swing.JButton btnMudarStatus;
     private javax.swing.JButton btnPesquisarCpfEditar;
     private javax.swing.JButton btnSalvarAlteracoes;
     private javax.swing.JFormattedTextField campoCpfPesquisaVisualizar;
@@ -1162,11 +1234,13 @@ public class TelaAlunos extends javax.swing.JFrame {
     private javax.swing.JLabel lblCartao;
     private javax.swing.JLabel lblCpf;
     private javax.swing.JLabel lblCurso;
+    private javax.swing.JLabel lblCursoAtual;
     private javax.swing.JLabel lblDataNascimento;
     private javax.swing.JLabel lblEmail;
     private javax.swing.JLabel lblInicioCurso;
     private javax.swing.JLabel lblNome;
     private javax.swing.JLabel lblStatusAluno;
+    private javax.swing.JLabel lblStatusAtual;
     private javax.swing.JLabel lblTelefone;
     private javax.swing.JLabel lblTerminoCurso;
     private javax.swing.JPanel painelConsulta1;
