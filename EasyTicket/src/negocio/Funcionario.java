@@ -12,26 +12,26 @@ import java.util.Date;
  */
 public class Funcionario extends Pessoa {
     
-    private String cargo;
+    private int idCargo;
     private String statusFuncionario;
     
     public Funcionario(String nome, String email, String cpf, String telefone,
-            java.sql.Date dataNascimento, String cargo, String statusFuncionario){
+            java.sql.Date dataNascimento, int idCargo, String statusFuncionario){
         
         super(nome, email, cpf, telefone, dataNascimento);
-        this.cargo = cargo;
+        this.idCargo = idCargo;
         this.statusFuncionario = statusFuncionario;
        
     }
     
     public Funcionario(){}
 
-    public String getCargo() {
-        return cargo;
+    public int getIdCargo() {
+        return idCargo;
     }
 
-    public void setCargo(String cargo) {
-        this.cargo = cargo;
+    public void setIdCargo(int idCargo) {
+        this.idCargo = idCargo;
     }
 
     public String getStatusFuncionario() {
