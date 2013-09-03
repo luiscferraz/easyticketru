@@ -127,6 +127,9 @@ public class Fachada {
     public List<Cargo> listarCargos(){
         return cadastroCargos.listarCargos();
     }    
+    public Cargo procurarPorIdCargo(int idCargo){
+        return cadastroCargos.buscaPorId(idCargo);
+    }    
     public boolean verificarExistenciaNomeCargo(String nomeCargo){
         return cadastroCargos.verificaExistenciaNome(nomeCargo);
     }    
