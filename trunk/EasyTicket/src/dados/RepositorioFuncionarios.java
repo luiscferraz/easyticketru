@@ -62,7 +62,7 @@ public class RepositorioFuncionarios implements IRepositorioFuncionarios{
                 stmt.execute();
 
                 //conexao.close();
-                System.out.println("Funcionario inserido com sucesso.");
+                System.out.println("Funcionario inserido com sucesso!");
             } catch (SQLException ex) {
                 System.out.println("incluirFuncionario(): "+ex.toString());
             } 
