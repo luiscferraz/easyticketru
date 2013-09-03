@@ -85,11 +85,13 @@ public class RepositorioAlunos implements IRepositorioAlunos {
                                                    "CPFALUNO=?,"+
                                                    "EMAILALUNO=?,"+
                                                    "TELEFONEALUNO=?,"+
-                                                   "DATANASCIMENTO=?,"+
+                                                   "DATANASCIMENTOALUNO=?,"+
                                                    "STATUSALUNO=?,"+
                                                    "INICIOCURSOALUNO=?,"+
                                                    "TERMINOCURSOALUNO=?"+
+                                                   "IDCURSOALUNO=?"+
                                                    " WHERE IDALUNO=?";
+      
        
       try{
          PreparedStatement stmt = this.conexao.prepareStatement(query);
@@ -99,11 +101,12 @@ public class RepositorioAlunos implements IRepositorioAlunos {
          stmt.setString(2, aluno.getCpf());
          stmt.setString(3, aluno.getEmail());
          stmt.setString(4, aluno.getTelefone());
-         stmt.setDate(5, (Date) aluno.getDataNascimento());
+         stmt.setDate(5,  aluno.getDataNascimento());
          stmt.setString(6, aluno.getStatusAluno());
-         stmt.setDate(7, (Date) aluno.getInicioCursoAluno());
-         stmt.setDate(8, (Date) aluno.getTerminoCursoAluno());
-         stmt.setInt(9,aluno.getId());
+         stmt.setDate(7, aluno.getInicioCursoAluno());
+         stmt.setDate(8, aluno.getTerminoCursoAluno());
+         stmt.setInt(9, aluno.getIdCurso());
+         stmt.setInt(10,aluno.getId());
                      
          stmt.execute();
          

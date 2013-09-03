@@ -1155,6 +1155,54 @@ public class TelaAlunos extends javax.swing.JFrame {
 
     private void btnSalvarAlteracoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarAlteracoesActionPerformed
         // TODO add your handling code here:
+                
+        try{
+            String nome = txtNomeEditar.getText();
+            String cpf = txtCpfEditar.getText();       
+            String email =txtCpfEditar.getText();                 
+            String telefone = txtTelefoneEditar.getText();     
+
+            String curso = jComboBoxCursoEditar.getSelectedItem().toString();
+            int idCurso = fachada.findIdCursoByNome(curso);            
+            String status = jComboBoxStatusEditar.getSelectedItem().toString();
+
+            String dataNasc = txtDataNascEditar.getText();
+            Date dataNascDate = Formatacao.transformarStringEmDate(dataNasc);
+            java.sql.Date sqlDateNasc = Formatacao.transformarDateEmDateSql(dataNascDate);        
+
+            String inicioCurso= txtInicioCursoEditar.getText();
+            Date inicioCursO = Formatacao.transformarStringEmDate(inicioCurso);
+            java.sql.Date sqlDateInicioCurso = Formatacao.transformarDateEmDateSql(inicioCursO);        
+
+            String terminoCurso= txtTerminoCursoEditar.getText();
+            Date terminoCursO = Formatacao.transformarStringEmDate(inicioCurso);
+            java.sql.Date sqlDateTermCurso = Formatacao.transformarDateEmDateSql(terminoCursO);
+            
+            Aluno alunoEditado = new Aluno();
+            alunoEditado.setNome(nome);
+            alunoEditado.setEmail(email); 
+            alunoEditado.setCpf(cpf);
+            alunoEditado.setTelefone(telefone);
+            alunoEditado.setDataNascimento(sqlDateTermCurso); 
+            alunoEditado.setIdCurso(WIDTH); 
+            alunoEditado.setStatusAluno(status);
+            alunoEditado.setInicioCursoAluno(sqlDateTermCurso);
+            alunoEditado.setTerminoCursoAluno(sqlDateInicioCurso);
+            
+            if(Validacao.validaCPF(alunoEditado.getCpf())){                
+                fachada.atualizarAluno(alunoEditado);
+                JOptionPane.showMessageDialog(this, "Aluno alterado com sucesso.", "CONFIRMAÇÃO", JOptionPane.INFORMATION_MESSAGE);
+                return;
+            } else {
+                JOptionPane.showMessageDialog(this,"CPF inválido.","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            
+        }catch(Exception ex){
+            JOptionPane.showMessageDialog(this,"Não foi possível atualizar os dados do aluno.","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
     }//GEN-LAST:event_btnSalvarAlteracoesActionPerformed
 
     private void btnMudarCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMudarCursoActionPerformed

@@ -8,6 +8,7 @@ import dados.RepositorioCursos;
 import gui.TelaAlunos;
 import gui.TelaCargos;
 import gui.TelaCursos;
+import gui.TelaFuncionarios;
 import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -85,8 +86,11 @@ public class TesteCurso {
         //Date dataTransformada = Formatacao.transformarEmData(d);
         //System.out.println(dataTransformada);
         
-        TelaAlunos ta = new TelaAlunos();
-        ta.setVisible(true);
+        //TelaAlunos ta = new TelaAlunos();
+        //ta.setVisible(true);
+        
+        TelaFuncionarios tf = new TelaFuncionarios();
+        tf.setVisible(true);
         
         
         

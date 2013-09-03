@@ -158,7 +158,7 @@ public class RepositorioCargos implements IRepositorioCargos {
     public List<Cargo> listarCargos() {
         List<Cargo> listaCargos = new ArrayList<Cargo>();
           
-          String query = "SELECT * FROM EASYTICKET.CARGO ORDER BY NOMECURSO";
+          String query = "SELECT * FROM EASYTICKET.CARGOS ORDER BY NOMECURSO";
           
           try {
                                
