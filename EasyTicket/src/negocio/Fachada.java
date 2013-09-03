@@ -97,6 +97,11 @@ public class Fachada {
     }
     
     
+    public int findIdCursoByNome(String nome){
+        return cadastroCursos.findIdByNome(nome);
+    }
+    
+    
     //Cargos
     public void atualizarCargo(Cargo cargo){
         cadastroCargos.atualizar(cargo);  

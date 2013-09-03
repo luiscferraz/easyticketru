@@ -57,7 +57,7 @@ public class Curso {
         int id = curso.getIdCurso();
         String nome = curso.getNome();
         
-        String str = "Id:"+id+" Nome:"+nome;
+        String str = id+ " - " +nome;
         
         return str;
         
