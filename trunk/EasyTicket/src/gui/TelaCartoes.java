@@ -94,9 +94,9 @@ public class TelaCartoes extends javax.swing.JFrame {
         jSeparator3 = new javax.swing.JSeparator();
         tituloAlunos4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jComboBoxStatusCadastrar = new javax.swing.JComboBox();
+        comboBoxStatusCartaoCadastrar = new javax.swing.JComboBox();
         tituloStatus = new javax.swing.JLabel();
-        jFormattedTextField1 = new javax.swing.JFormattedTextField();
+        txtCpfAlunoCadastrarCartao = new javax.swing.JFormattedTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("EasyTicket - MANTER CARTAO");
@@ -496,17 +496,17 @@ public class TelaCartoes extends javax.swing.JFrame {
 
         jLabel5.setText("CPF Aluno:");
 
-        jComboBoxStatusCadastrar.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "ATIVO", "INATIVO", "BLOQUEADO" }));
-        jComboBoxStatusCadastrar.addActionListener(new java.awt.event.ActionListener() {
+        comboBoxStatusCartaoCadastrar.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "ATIVO", "INATIVO", "BLOQUEADO" }));
+        comboBoxStatusCartaoCadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxStatusCadastrarActionPerformed(evt);
+                comboBoxStatusCartaoCadastrarActionPerformed(evt);
             }
         });
 
         tituloStatus.setText("Status:");
 
         try {
-            jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+            txtCpfAlunoCadastrarCartao.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -526,11 +526,11 @@ public class TelaCartoes extends javax.swing.JFrame {
                             .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
                                 .addComponent(jLabel5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jFormattedTextField1))
+                                .addComponent(txtCpfAlunoCadastrarCartao))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, guiaCadastrarAlunoLayout.createSequentialGroup()
                                 .addComponent(tituloStatus)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jComboBoxStatusCadastrar, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addComponent(comboBoxStatusCartaoCadastrar, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGap(221, 221, 221)))
                 .addContainerGap(99, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, guiaCadastrarAlunoLayout.createSequentialGroup()
@@ -555,11 +555,11 @@ public class TelaCartoes extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCpfAlunoCadastrarCartao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tituloStatus)
-                    .addComponent(jComboBoxStatusCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(comboBoxStatusCartaoCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
                 .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botaoCadastrar1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -607,9 +607,9 @@ public class TelaCartoes extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_botaoVoltar5ActionPerformed
 
-    private void jComboBoxStatusCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxStatusCadastrarActionPerformed
+    private void comboBoxStatusCartaoCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxStatusCartaoCadastrarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBoxStatusCadastrarActionPerformed
+    }//GEN-LAST:event_comboBoxStatusCartaoCadastrarActionPerformed
 
     private void txtSaldoEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSaldoEditarActionPerformed
         // TODO add your handling code here:
@@ -620,7 +620,40 @@ public class TelaCartoes extends javax.swing.JFrame {
     }//GEN-LAST:event_btnExcluirCartaoActionPerformed
 
     private void botaoCadastrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrar1ActionPerformed
-        
+        try{
+            
+            String cpf = txtCpfAlunoCadastrarCartao.getText();    
+            String status = comboBoxStatusCartaoCadastrar.getSelectedItem().toString();
+
+            Cartao cartao = new Cartao();
+            cartao.setCpfAlunoCartao(cpf);
+            cartao.setStatus(status);
+                       
+            
+            if((Validacao.validaCPF(cartao.getCpfAlunoCartao())) && (fachada.verificarExistenciaAlunoPorCpf(cpf)) ){
+                
+                if(fachada.findCartaoByCpf(cpf)!=null){
+                    JOptionPane.showMessageDialog(this,"Aluno já possui cartão cadastrado no sistema.","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
+                    return;
+                }else {
+                    fachada.cadastrarCartao(cartao);
+                    JOptionPane.showMessageDialog(this, "Cartão cadastrado com sucesso.", "CONFIRMAÇÃO", JOptionPane.INFORMATION_MESSAGE);
+                    
+                    txtCpfAlunoCadastrarCartao.setText("");
+                                       
+                    return;
+                    
+                }
+            } else {
+                JOptionPane.showMessageDialog(this,"CPF inválido.","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            
+            
+        }catch (Exception ex){
+            JOptionPane.showMessageDialog(this,"Preencha todos os campos corretamente.","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
     }//GEN-LAST:event_botaoCadastrar1ActionPerformed
 
     private void txtNumeroEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumeroEditarActionPerformed
@@ -685,14 +718,13 @@ public class TelaCartoes extends javax.swing.JFrame {
     private javax.swing.JButton btnSalvarAlteracoes;
     private javax.swing.JTextField campoPesquisarCpfFunc1;
     private javax.swing.JTextField campoPesquisarCpfFunc2;
+    private javax.swing.JComboBox comboBoxStatusCartaoCadastrar;
     private javax.swing.JPanel guiaCadastrarAluno;
     private javax.swing.JPanel guiaEditarAluno;
     private javax.swing.JPanel guiaVisualizarAluno;
     private javax.swing.JTabbedPane guiasAluno;
     private javax.swing.JComboBox jComboBoxAlunoEditar;
-    private javax.swing.JComboBox jComboBoxStatusCadastrar;
     private javax.swing.JComboBox jComboBoxStatusEditar;
-    private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -718,6 +750,7 @@ public class TelaCartoes extends javax.swing.JFrame {
     private javax.swing.JLabel tituloStatus;
     private javax.swing.JLabel tituloVisualizarFunc;
     private javax.swing.JLabel tituloVisualizarFunc1;
+    private javax.swing.JFormattedTextField txtCpfAlunoCadastrarCartao;
     private javax.swing.JTextField txtNumeroEditar;
     private javax.swing.JTextField txtSaldoEditar;
     // End of variables declaration//GEN-END:variables

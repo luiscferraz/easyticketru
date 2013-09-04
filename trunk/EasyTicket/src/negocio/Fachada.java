@@ -181,7 +181,7 @@ public class Fachada {
     public Cartao findCartaoByNumero(int numeroCartao){
         return cadastroCartoes.buscaCartaoPorNumero(numeroCartao);
     }
-    public Cartao procurarPorCpf(String cpf){
+    public Cartao findCartaoByCpf(String cpf){
         return cadastroCartoes.buscaPorCpf(cpf);
     }
   

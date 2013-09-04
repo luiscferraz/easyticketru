@@ -35,19 +35,19 @@ public class RepositorioCartoes implements IRepositorioCartoes {
 
     public void inserir(Cartao cartao){
         String query = "INSERT INTO EASYTICKET.CARTOES"+
-                                          " (NUMCARTAO,STATUSCARTAO,"+
+                                          " (STATUSCARTAO,"+
                                             "SALDOCARTAO,"+
                                             "CPFALUNOCARTAO)"+
-                        "VALUES (?,?,?,?)" ;
+                        "VALUES (?,?,?)" ;
         
        
             try {
                 PreparedStatement stmt = this.conexao.prepareStatement(query);
 
-                stmt.setInt(1, cartao.getNumCartao());
-                stmt.setString(2, cartao.getStatus());
-                stmt.setFloat(3, cartao.getSaldo());                
-                stmt.setString(4, cartao.getCpfAlunoCartao());
+                
+                stmt.setString(1, cartao.getStatus());
+                stmt.setFloat(2, cartao.getSaldo());                
+                stmt.setString(3, cartao.getCpfAlunoCartao());
 
                 stmt.execute();
 
@@ -125,9 +125,34 @@ public class RepositorioCartoes implements IRepositorioCartoes {
          return cartaoResultado;
     }
 
-    @Override
+   
     public Cartao procurarPorCpf(String cpf) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Cartao cartaoResultado = null;
+        
+        String query = "SELECT * FROM EASYTICKET.CARTOES WHERE CPFALUNOCARTAO=?";
+        
+        try {
+                 
+                 PreparedStatement stmt = this.conexao.prepareStatement(query);
+                 stmt.setString(1, cpf);
+                 ResultSet res = stmt.executeQuery();
+                 
+                 if (res.next()) {
+                     cartaoResultado = new Cartao();
+                     cartaoResultado.setNumCartao(res.getInt(1));
+                     cartaoResultado.setStatus(res.getString(2));
+                     cartaoResultado.setSaldo(res.getFloat(3));
+                     cartaoResultado.setCpfAlunoCartao(res.getString(4));
+                                     
+                 }
+                 //conexao.close();                
+                                  
+         } catch (SQLException ex) {
+                 System.out.println("procurarCartaoPorNumero: "+ex.toString());
+         }
+        
+         return cartaoResultado;
+        
     }
     //métodos apenas com assinatura, ainda falta definir a interação com o banco de dados.
     
