@@ -455,15 +455,15 @@ public class TelaCartoes extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoPesquisar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoPesquisar1ActionPerformed
-        this.setVisible(false);
+        //this.setVisible(false);
     }//GEN-LAST:event_botaoPesquisar1ActionPerformed
 
     private void botaoPesquisar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoPesquisar2ActionPerformed
-        this.setVisible(false);
+        //this.setVisible(false);
     }//GEN-LAST:event_botaoPesquisar2ActionPerformed
 
     private void botaoVoltar6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltar6ActionPerformed
-        this.setVisible(false);
+        //this.setVisible(false);
     }//GEN-LAST:event_botaoVoltar6ActionPerformed
 
     private void botaoVoltar9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltar9ActionPerformed
