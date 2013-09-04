@@ -784,4 +784,6 @@ public class TelaCartoes extends javax.swing.JFrame {
     private javax.swing.JTextField txtNumCartaoVisualizar;
     private javax.swing.JTextField txtPesquisarNumCartaoEditar;
     // End of variables declaration//GEN-END:variables
+
+    
 }
