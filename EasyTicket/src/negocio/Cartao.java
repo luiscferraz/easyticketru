@@ -12,13 +12,13 @@ public class Cartao {
     private int numCartao;
     private float saldo;
     private String status;
-    private int idAlunoCartao;
+    private String cpfAlunoCartao;
     
-    public Cartao(int numCartao,int idAlunoCartao, String status){
+    public Cartao(int numCartao,String cpfAlunoCartao, String status){
         this.numCartao = numCartao;
         this.status = status;
         this.saldo=0;   
-        this.idAlunoCartao = idAlunoCartao;
+        this.cpfAlunoCartao = cpfAlunoCartao;
     }
     
     public Cartao(){}
@@ -68,15 +68,15 @@ public class Cartao {
     /**
     * @return the cpfAluno
     */
-    public int getIdAlunoCartao() {
-        return idAlunoCartao;
+    public String getCpfAlunoCartao() {
+        return cpfAlunoCartao;
     }
 
     /**
      * @param cpfAluno the cpfAluno to set
      */
-    public void setIdAlunoCartao(int idAlunoCartao) {
-        this.idAlunoCartao = idAlunoCartao;
+    public void setCPFAlunoCartao(String cpfAlunoCartao) {
+        this.cpfAlunoCartao = cpfAlunoCartao;
     }
     
     /**
