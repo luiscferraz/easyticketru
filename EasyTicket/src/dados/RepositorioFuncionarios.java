@@ -85,7 +85,7 @@ public class RepositorioFuncionarios implements IRepositorioFuncionarios{
                                                    "EMAILFUNCIONARIO=?,"+
                                                    "TELEFONEFUNCIONARIO=?,"+
                                                    "DATANASCIMENTOFUNCIONARIO=?,"+
-                                                   "STATUSFUNCIONARIO=?,"+
+                                                   "STATUSFUNCIONARIO=?"+
                                                    " WHERE IDFUNCIONARIO=?";
        
       try{
@@ -96,7 +96,7 @@ public class RepositorioFuncionarios implements IRepositorioFuncionarios{
          stmt.setString(2, funcionario.getCpf());
          stmt.setString(3, funcionario.getEmail());
          stmt.setString(4, funcionario.getTelefone());
-         stmt.setDate(5, (Date) funcionario.getDataNascimento());
+         stmt.setDate(5, funcionario.getDataNascimento());
          stmt.setString(6, funcionario.getStatusFuncionario());
          stmt.setInt(7,funcionario.getId());
                      
