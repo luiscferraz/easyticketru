@@ -9,30 +9,32 @@ package negocio;
  * @author Nanda
  */
 public class Cartao {
-    private int idCartao;
+    private int numCartao;
     private float saldo;
-    private EnumStatusCartao status;
+    private String status;
     private int cpfAluno;
     
-    public Cartao(int idCartao,int cpfAluno){
-        this.idCartao = idCartao;
-        this.status = EnumStatusCartao.ATIVO;
+    public Cartao(int numCartao,int cpfAluno, String status){
+        this.numCartao = numCartao;
+        this.status = status;
         this.saldo=0;   
         this.cpfAluno = cpfAluno;
     }
+    
+    public Cartao(){}
 
     /**
      * @return the idCartao
      */
-    public int getIdCartao() {
-        return idCartao;
+    public int getNumCartao() {
+        return numCartao;
     }
 
     /**
      * @param idCartao the idCartao to set
      */
-    public void setIdCartao(int idCartao) {
-        this.idCartao = idCartao;
+    public void setNumCartao(int numCartao) {
+        this.numCartao = numCartao;
     }
 
    /**
@@ -52,14 +54,14 @@ public class Cartao {
     /**
      * @return the status
      */
-    public EnumStatusCartao getStatus() {
+    public String getStatus() {
         return status;
     }
 
     /**
      * @param status the status to set
      */
-    public void setStatus(EnumStatusCartao status) {
+    public void setStatus(String status) {
         this.status = status;
     }
     
@@ -92,7 +94,7 @@ public class Cartao {
      * @return boolean
      */
     public boolean isAtivo(Cartao cartao){
-        if(cartao.getStatus()== EnumStatusCartao.ATIVO){
+        if(cartao.getStatus()== "ATIVO"){
             return true;
         } else {
             return false;
@@ -104,7 +106,7 @@ public class Cartao {
      * @param cartao 
      */
     public void inativarCartao(Cartao cartao){
-        cartao.status = EnumStatusCartao.INATIVO;        
+        cartao.status = "INATIVO";        
     }
     
     /**
@@ -112,7 +114,7 @@ public class Cartao {
      * @param cartao 
      */
     public void ativarCartao(Cartao cartao){
-        cartao.status = EnumStatusCartao.INATIVO;
+        cartao.status = "ATIVO";
     }
     
     /**
@@ -120,7 +122,7 @@ public class Cartao {
      * @param cartao 
      */
     public void bloquearCartao(Cartao cartao){
-        cartao.status = EnumStatusCartao.BLOQUEADO;
+        cartao.status = "BLOQUEADO";
     }
 
 
