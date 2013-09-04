@@ -32,7 +32,7 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="guiasRefeicao" alignment="0" max="32767" attributes="0"/>
+          <Component id="guiasRefeicao" alignment="0" pref="401" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -58,7 +58,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
@@ -66,14 +66,23 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="botaoVoltar6" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="tituloAlunos1" min="-2" pref="230" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="painelConsulta1" min="-2" pref="249" max="-2" attributes="0"/>
+                          <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="tituloAlunos1" min="-2" pref="230" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="painelConsulta1" min="-2" pref="249" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="tituloVisualizarRef" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jSeparator2" alignment="0" min="-2" pref="603" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="tituloVisualizarRef" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jSeparator2" alignment="0" min="-2" pref="603" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="tituloValor" min="-2" max="-2" attributes="0"/>
+                                      <Component id="tituloDescricao" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
                           </Group>
                       </Group>
                       <EmptySpace pref="22" max="32767" attributes="0"/>
@@ -92,7 +101,11 @@
                       <Component id="tituloVisualizarRef" min="-2" pref="24" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jSeparator2" min="-2" pref="10" max="-2" attributes="0"/>
-                      <EmptySpace pref="172" max="32767" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="tituloDescricao" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                      <Component id="tituloValor" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="115" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="botaoVoltar6" max="32767" attributes="0"/>
                           <Component id="excluirCartaoBotao" max="32767" attributes="0"/>
@@ -248,6 +261,16 @@
                 <Property name="text" type="java.lang.String" value="Excluir Refei&#xe7;&#xe3;o"/>
               </Properties>
             </Component>
+            <Component class="javax.swing.JLabel" name="tituloDescricao">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Descri&#xe7;&#xe3;o:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="tituloValor">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Valor:"/>
+              </Properties>
+            </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="guiaEditarRefeicao">
@@ -268,16 +291,30 @@
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="botaoVoltar9" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="botaoVoltar8" min="-2" max="-2" attributes="0"/>
+                              <Component id="botaoSalvar" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="tituloRefeicoes2" min="-2" pref="230" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="painelConsulta2" min="-2" pref="249" max="-2" attributes="0"/>
+                          <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="tituloDescricao1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="tituloValor1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jTextFieldEditarDescricao" min="-2" pref="198" max="-2" attributes="0"/>
+                                      <Component id="jTextFieldValorEditar" min="-2" pref="45" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
-                              <Component id="tituloVisualizarRefeicao" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jSeparator5" alignment="0" min="-2" pref="603" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="tituloRefeicoes2" min="-2" pref="230" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="painelConsulta2" min="-2" pref="249" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="tituloVisualizarRefeicao" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jSeparator5" alignment="0" min="-2" pref="603" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
                       <EmptySpace pref="22" max="32767" attributes="0"/>
@@ -296,10 +333,20 @@
                       <Component id="tituloVisualizarRefeicao" min="-2" pref="24" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jSeparator5" min="-2" pref="10" max="-2" attributes="0"/>
-                      <EmptySpace pref="167" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="tituloDescricao1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextFieldEditarDescricao" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="tituloValor1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextFieldValorEditar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="109" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="botaoVoltar9" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="botaoVoltar8" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="botaoSalvar" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                   </Group>
@@ -425,13 +472,16 @@
                 <Property name="horizontalTextPosition" type="int" value="0"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="botaoVoltar8">
+            <Component class="javax.swing.JButton" name="botaoSalvar">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/gui/resources/edit.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Salvar Altera&#xe7;&#xf5;es"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoSalvarActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="botaoVoltar9">
               <Properties>
@@ -451,6 +501,20 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="  Manter Refei&#xe7;&#xf5;es"/>
               </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="tituloValor1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Valor:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="tituloDescricao1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Descri&#xe7;&#xe3;o:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextFieldEditarDescricao">
+            </Component>
+            <Component class="javax.swing.JSpinner" name="jTextFieldValorEditar">
             </Component>
           </SubComponents>
         </Container>
@@ -478,13 +542,26 @@
                       <Component id="tituloRefeicoes" min="-2" pref="230" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="394" max="32767" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jSeparator3" alignment="0" min="-2" pref="547" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="tituloCadastrar" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="317" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jSeparator3" alignment="0" min="-2" pref="547" max="-2" attributes="0"/>
+                                  <Component id="tituloCadastrar" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="tituloDescricao2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="tituloValor2" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jTextFieldDescricaoCadastrar" min="-2" pref="196" max="-2" attributes="0"/>
+                                  <Component id="jTextFieldValorCadastrar" min="-2" pref="45" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
@@ -500,7 +577,17 @@
                       <Component id="tituloCadastrar" min="-2" pref="22" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jSeparator3" min="-2" pref="10" max="-2" attributes="0"/>
-                      <EmptySpace pref="187" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="tituloDescricao2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextFieldDescricaoCadastrar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="tituloValor2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextFieldValorCadastrar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="129" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="botaoCadastrar1" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
                           <Component id="botaoVoltar5" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -530,6 +617,9 @@
                 <Property name="text" type="java.lang.String" value="Cadastrar"/>
                 <Property name="horizontalTextPosition" type="int" value="0"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoCadastrar1ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="botaoVoltar5">
               <Properties>
@@ -551,6 +641,20 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="  Manter Refei&#xe7;&#xf5;es"/>
               </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="tituloValor2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Valor:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="tituloDescricao2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Descri&#xe7;&#xe3;o:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextFieldDescricaoCadastrar">
+            </Component>
+            <Component class="javax.swing.JSpinner" name="jTextFieldValorCadastrar">
             </Component>
           </SubComponents>
         </Container>

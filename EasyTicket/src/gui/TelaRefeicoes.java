@@ -4,6 +4,12 @@
  */
 package gui;
 
+import java.util.Date;
+import javax.swing.JOptionPane;
+import negocio.Aluno;
+import util.Formatacao;
+import util.Validacao;
+
 /**
  *
  * @author Allan
@@ -38,6 +44,8 @@ public class TelaCartoes extends javax.swing.JFrame {
         botaoPesquisar1 = new javax.swing.JButton();
         tituloAlunos1 = new javax.swing.JLabel();
         excluirCartaoBotao = new javax.swing.JButton();
+        tituloDescricao = new javax.swing.JLabel();
+        tituloValor = new javax.swing.JLabel();
         guiaEditarRefeicao = new javax.swing.JPanel();
         painelConsulta2 = new javax.swing.JPanel();
         tituloConsultar2 = new javax.swing.JLabel();
@@ -46,15 +54,23 @@ public class TelaCartoes extends javax.swing.JFrame {
         botaoPesquisar2 = new javax.swing.JButton();
         jSeparator5 = new javax.swing.JSeparator();
         tituloVisualizarRefeicao = new javax.swing.JLabel();
-        botaoVoltar8 = new javax.swing.JButton();
+        botaoSalvar = new javax.swing.JButton();
         botaoVoltar9 = new javax.swing.JButton();
         tituloRefeicoes2 = new javax.swing.JLabel();
+        tituloValor1 = new javax.swing.JLabel();
+        tituloDescricao1 = new javax.swing.JLabel();
+        jTextFieldEditarDescricao = new javax.swing.JTextField();
+        jTextFieldValorEditar = new javax.swing.JSpinner();
         guiaCadastrarRefeicao = new javax.swing.JPanel();
         tituloCadastrar = new javax.swing.JLabel();
         botaoCadastrar1 = new javax.swing.JButton();
         botaoVoltar5 = new javax.swing.JButton();
         jSeparator3 = new javax.swing.JSeparator();
         tituloRefeicoes = new javax.swing.JLabel();
+        tituloValor2 = new javax.swing.JLabel();
+        tituloDescricao2 = new javax.swing.JLabel();
+        jTextFieldDescricaoCadastrar = new javax.swing.JTextField();
+        jTextFieldValorCadastrar = new javax.swing.JSpinner();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -136,6 +152,10 @@ public class TelaCartoes extends javax.swing.JFrame {
         excluirCartaoBotao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/delete.png"))); // NOI18N
         excluirCartaoBotao.setText("Excluir Refeição");
 
+        tituloDescricao.setText("Descrição:");
+
+        tituloValor.setText("Valor:");
+
         javax.swing.GroupLayout guiaVisualizarRefeicaoLayout = new javax.swing.GroupLayout(guiaVisualizarRefeicao);
         guiaVisualizarRefeicao.setLayout(guiaVisualizarRefeicaoLayout);
         guiaVisualizarRefeicaoLayout.setHorizontalGroup(
@@ -147,13 +167,19 @@ public class TelaCartoes extends javax.swing.JFrame {
                         .addComponent(excluirCartaoBotao)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(botaoVoltar6))
-                    .addGroup(guiaVisualizarRefeicaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, guiaVisualizarRefeicaoLayout.createSequentialGroup()
-                            .addComponent(tituloAlunos1, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(painelConsulta1, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(tituloVisualizarRef)
-                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 603, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(guiaVisualizarRefeicaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(guiaVisualizarRefeicaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, guiaVisualizarRefeicaoLayout.createSequentialGroup()
+                                .addComponent(tituloAlunos1, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(painelConsulta1, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(tituloVisualizarRef)
+                            .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 603, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(guiaVisualizarRefeicaoLayout.createSequentialGroup()
+                            .addGap(10, 10, 10)
+                            .addGroup(guiaVisualizarRefeicaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(tituloValor)
+                                .addComponent(tituloDescricao)))))
                 .addContainerGap(22, Short.MAX_VALUE))
         );
         guiaVisualizarRefeicaoLayout.setVerticalGroup(
@@ -167,7 +193,11 @@ public class TelaCartoes extends javax.swing.JFrame {
                 .addComponent(tituloVisualizarRef, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 172, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(tituloDescricao)
+                .addGap(18, 18, 18)
+                .addComponent(tituloValor)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 115, Short.MAX_VALUE)
                 .addGroup(guiaVisualizarRefeicaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(botaoVoltar6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(excluirCartaoBotao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -238,8 +268,13 @@ public class TelaCartoes extends javax.swing.JFrame {
         tituloVisualizarRefeicao.setToolTipText("");
         tituloVisualizarRefeicao.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        botaoVoltar8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/edit.png"))); // NOI18N
-        botaoVoltar8.setText("Salvar Alterações");
+        botaoSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/edit.png"))); // NOI18N
+        botaoSalvar.setText("Salvar Alterações");
+        botaoSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoSalvarActionPerformed(evt);
+            }
+        });
 
         botaoVoltar9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/back.png"))); // NOI18N
         botaoVoltar9.setText("Voltar");
@@ -252,6 +287,10 @@ public class TelaCartoes extends javax.swing.JFrame {
         tituloRefeicoes2.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         tituloRefeicoes2.setText("  Manter Refeições");
 
+        tituloValor1.setText("Valor:");
+
+        tituloDescricao1.setText("Descrição:");
+
         javax.swing.GroupLayout guiaEditarRefeicaoLayout = new javax.swing.GroupLayout(guiaEditarRefeicao);
         guiaEditarRefeicao.setLayout(guiaEditarRefeicaoLayout);
         guiaEditarRefeicaoLayout.setHorizontalGroup(
@@ -262,14 +301,24 @@ public class TelaCartoes extends javax.swing.JFrame {
                     .addGroup(guiaEditarRefeicaoLayout.createSequentialGroup()
                         .addComponent(botaoVoltar9)
                         .addGap(18, 18, 18)
-                        .addComponent(botaoVoltar8))
-                    .addGroup(guiaEditarRefeicaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, guiaEditarRefeicaoLayout.createSequentialGroup()
-                            .addComponent(tituloRefeicoes2, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(painelConsulta2, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(tituloVisualizarRefeicao)
-                        .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 603, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(botaoSalvar))
+                    .addGroup(guiaEditarRefeicaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(guiaEditarRefeicaoLayout.createSequentialGroup()
+                            .addGap(10, 10, 10)
+                            .addGroup(guiaEditarRefeicaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(tituloDescricao1)
+                                .addComponent(tituloValor1))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addGroup(guiaEditarRefeicaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jTextFieldEditarDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTextFieldValorEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(guiaEditarRefeicaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, guiaEditarRefeicaoLayout.createSequentialGroup()
+                                .addComponent(tituloRefeicoes2, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(painelConsulta2, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(tituloVisualizarRefeicao)
+                            .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 603, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(22, Short.MAX_VALUE))
         );
         guiaEditarRefeicaoLayout.setVerticalGroup(
@@ -283,10 +332,18 @@ public class TelaCartoes extends javax.swing.JFrame {
                 .addComponent(tituloVisualizarRefeicao, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 167, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(guiaEditarRefeicaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tituloDescricao1)
+                    .addComponent(jTextFieldEditarDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12)
+                .addGroup(guiaEditarRefeicaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tituloValor1)
+                    .addComponent(jTextFieldValorEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 109, Short.MAX_VALUE)
                 .addGroup(guiaEditarRefeicaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botaoVoltar9)
-                    .addComponent(botaoVoltar8))
+                    .addComponent(botaoSalvar))
                 .addGap(24, 24, 24))
         );
 
@@ -301,6 +358,11 @@ public class TelaCartoes extends javax.swing.JFrame {
         botaoCadastrar1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         botaoCadastrar1.setText("Cadastrar");
         botaoCadastrar1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botaoCadastrar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoCadastrar1ActionPerformed(evt);
+            }
+        });
 
         botaoVoltar5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/back.png"))); // NOI18N
         botaoVoltar5.setText("Voltar");
@@ -312,6 +374,10 @@ public class TelaCartoes extends javax.swing.JFrame {
 
         tituloRefeicoes.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         tituloRefeicoes.setText("  Manter Refeições");
+
+        tituloValor2.setText("Valor:");
+
+        tituloDescricao2.setText("Descrição:");
 
         javax.swing.GroupLayout guiaCadastrarRefeicaoLayout = new javax.swing.GroupLayout(guiaCadastrarRefeicao);
         guiaCadastrarRefeicao.setLayout(guiaCadastrarRefeicaoLayout);
@@ -328,12 +394,21 @@ public class TelaCartoes extends javax.swing.JFrame {
                 .addComponent(tituloRefeicoes, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 394, Short.MAX_VALUE))
             .addGroup(guiaCadastrarRefeicaoLayout.createSequentialGroup()
-                .addGap(32, 32, 32)
                 .addGroup(guiaCadastrarRefeicaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 547, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(guiaCadastrarRefeicaoLayout.createSequentialGroup()
-                        .addComponent(tituloCadastrar)
-                        .addGap(317, 317, 317)))
+                        .addGap(32, 32, 32)
+                        .addGroup(guiaCadastrarRefeicaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 547, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tituloCadastrar)))
+                    .addGroup(guiaCadastrarRefeicaoLayout.createSequentialGroup()
+                        .addGap(51, 51, 51)
+                        .addGroup(guiaCadastrarRefeicaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tituloDescricao2)
+                            .addComponent(tituloValor2))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(guiaCadastrarRefeicaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextFieldDescricaoCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldValorCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         guiaCadastrarRefeicaoLayout.setVerticalGroup(
@@ -345,7 +420,15 @@ public class TelaCartoes extends javax.swing.JFrame {
                 .addComponent(tituloCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 187, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(guiaCadastrarRefeicaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tituloDescricao2)
+                    .addComponent(jTextFieldDescricaoCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12)
+                .addGroup(guiaCadastrarRefeicaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tituloValor2)
+                    .addComponent(jTextFieldValorCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 129, Short.MAX_VALUE)
                 .addGroup(guiaCadastrarRefeicaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botaoCadastrar1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(botaoVoltar5))
@@ -365,7 +448,7 @@ public class TelaCartoes extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(guiasRefeicao)
+            .addComponent(guiasRefeicao, javax.swing.GroupLayout.DEFAULT_SIZE, 401, Short.MAX_VALUE)
         );
 
         pack();
@@ -384,12 +467,39 @@ public class TelaCartoes extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoVoltar6ActionPerformed
 
     private void botaoVoltar9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltar9ActionPerformed
-        // TODO add your handling code here:
+        this.setVisible(false);
     }//GEN-LAST:event_botaoVoltar9ActionPerformed
 
     private void botaoVoltar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltar5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_botaoVoltar5ActionPerformed
+
+    private void botaoSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSalvarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botaoSalvarActionPerformed
+
+    private void botaoCadastrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrar1ActionPerformed
+        try{
+            String descricao = jTextFieldDescricaoCadastrar.getText();
+            String valor = jTextFieldValorCadastrar.getValue(); 
+
+            Refeicao refeicao = new Refeicao();
+            refeicao.setDescricao(descricao);
+            refeicao.setValor(valor);
+                
+            fachada.cadastrarAluno(aluno);
+            JOptionPane.showMessageDialog(this, "Refeicao cadastrada com sucesso.", "CONFIRMAÇÃO", JOptionPane.INFORMATION_MESSAGE);
+
+            jTextFieldDescricaoCadastrar.setText("");
+            jTextFieldValorCadastrar.setText("");
+
+            return;
+            
+        }catch (Exception ex){
+            JOptionPane.showMessageDialog(this,"Preencha todos os campos corretamente.","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+    }//GEN-LAST:event_botaoCadastrar1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -429,9 +539,9 @@ public class TelaCartoes extends javax.swing.JFrame {
     private javax.swing.JButton botaoCadastrar1;
     private javax.swing.JButton botaoPesquisar1;
     private javax.swing.JButton botaoPesquisar2;
+    private javax.swing.JButton botaoSalvar;
     private javax.swing.JButton botaoVoltar5;
     private javax.swing.JButton botaoVoltar6;
-    private javax.swing.JButton botaoVoltar8;
     private javax.swing.JButton botaoVoltar9;
     private javax.swing.JTextField campoPesquisarRefeicao;
     private javax.swing.JTextField campoPesquisarRefeicao2;
@@ -443,6 +553,10 @@ public class TelaCartoes extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JTextField jTextFieldDescricaoCadastrar;
+    private javax.swing.JTextField jTextFieldEditarDescricao;
+    private javax.swing.JSpinner jTextFieldValorCadastrar;
+    private javax.swing.JSpinner jTextFieldValorEditar;
     private javax.swing.JPanel painelConsulta1;
     private javax.swing.JPanel painelConsulta2;
     private javax.swing.JLabel tituloAlunos1;
@@ -451,8 +565,14 @@ public class TelaCartoes extends javax.swing.JFrame {
     private javax.swing.JLabel tituloCodigo;
     private javax.swing.JLabel tituloConsultar1;
     private javax.swing.JLabel tituloConsultar2;
+    private javax.swing.JLabel tituloDescricao;
+    private javax.swing.JLabel tituloDescricao1;
+    private javax.swing.JLabel tituloDescricao2;
     private javax.swing.JLabel tituloRefeicoes;
     private javax.swing.JLabel tituloRefeicoes2;
+    private javax.swing.JLabel tituloValor;
+    private javax.swing.JLabel tituloValor1;
+    private javax.swing.JLabel tituloValor2;
     private javax.swing.JLabel tituloVisualizarRef;
     private javax.swing.JLabel tituloVisualizarRefeicao;
     // End of variables declaration//GEN-END:variables
