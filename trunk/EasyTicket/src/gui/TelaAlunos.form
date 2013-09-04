@@ -485,12 +485,22 @@
                                           <Component id="tituloCurso11" alignment="1" min="-2" max="-2" attributes="0"/>
                                           <Component id="tituloCurso12" alignment="1" min="-2" max="-2" attributes="0"/>
                                           <Component id="tituloDataNasc4" alignment="1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lblId" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="txtInicioCursoEditar" alignment="1" pref="154" max="32767" attributes="0"/>
-                                          <Component id="txtTerminoCursoEditar" alignment="1" max="32767" attributes="0"/>
-                                          <Component id="txtDataNascEditar" alignment="1" max="32767" attributes="0"/>
+                                          <Group type="102" attributes="0">
+                                              <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="txtInicioCursoEditar" alignment="1" pref="154" max="32767" attributes="0"/>
+                                                  <Component id="txtTerminoCursoEditar" alignment="1" max="32767" attributes="0"/>
+                                                  <Component id="txtDataNascEditar" alignment="1" max="32767" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="lblIdAluno" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                          </Group>
                                       </Group>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
@@ -569,6 +579,8 @@
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="txtTelefoneEditar" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
                                   <Component id="tituloDataNasc5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblId" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblIdAluno" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
@@ -920,6 +932,13 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMudarStatusActionPerformed"/>
               </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblId">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Id Aluno:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblIdAluno">
             </Component>
           </SubComponents>
         </Container>
