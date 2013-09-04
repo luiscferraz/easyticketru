@@ -1025,7 +1025,9 @@ public class TelaAlunos extends javax.swing.JFrame {
                         alunoRetorno = fachada.findAlunoByCpf(txtPesquisarCpfEditar.getText()) ;
                         
                         lblIdAluno.setText(Integer.toString(alunoRetorno.getId()));
+                        
                         idAlunoRetornado = alunoRetorno.getId();
+                        //System.out.println(idAlunoRetornado);
                         
                         txtNomeEditar.setText(alunoRetorno.getNome());
                         txtCpfEditar.setText(alunoRetorno.getCpf());
@@ -1175,6 +1177,7 @@ public class TelaAlunos extends javax.swing.JFrame {
         
         
         try{
+            //System.out.println(idAlunoRetornado);
             String nome = txtNomeEditar.getText();
             String cpf = txtCpfEditar.getText();       
             String email =txtCpfEditar.getText();                 
@@ -1202,13 +1205,25 @@ public class TelaAlunos extends javax.swing.JFrame {
             alunoEditado.setCpf(cpf);
             alunoEditado.setTelefone(telefone);
             alunoEditado.setDataNascimento(sqlDateTermCurso); 
-            alunoEditado.setIdCurso(idAlunoRetornado); 
+            alunoEditado.setIdCurso(idCurso); 
             alunoEditado.setStatusAluno(status);
             alunoEditado.setInicioCursoAluno(sqlDateTermCurso);
             alunoEditado.setTerminoCursoAluno(sqlDateInicioCurso);
+            alunoEditado.setId(idAlunoRetornado);
             
             if(Validacao.validaCPF(alunoEditado.getCpf())){                
                 fachada.atualizarAluno(alunoEditado);
+                
+                txtNomeEditar.setText("");
+                txtCpfEditar.setText("");
+                txtEmailEditar.setText("");
+                txtTelefoneEditar.setText("");
+                txtDataNascEditar.setText("");
+                lblIdAluno.setText("");
+                lblCursoAtual.setText("");
+                lblStatusAtual.setText("");
+                txtInicioCursoEditar.setText("");
+                txtTerminoCursoEditar.setText("");
                 JOptionPane.showMessageDialog(this, "Aluno alterado com sucesso.", "CONFIRMAÇÃO", JOptionPane.INFORMATION_MESSAGE);
                 return;
             } else {

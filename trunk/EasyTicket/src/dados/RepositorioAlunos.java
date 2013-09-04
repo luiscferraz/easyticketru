@@ -195,7 +195,7 @@ public class RepositorioAlunos implements IRepositorioAlunos {
 
               while(rs.next()){
                   Aluno aluno = new Aluno();
-                  aluno.setIdAluno(rs.getInt(1));
+                  aluno.setId(rs.getInt(1));
                   aluno.setNome(rs.getString(2));
 
                   listaAlunos.add(aluno);
