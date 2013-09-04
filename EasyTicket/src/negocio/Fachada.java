@@ -65,34 +65,6 @@ public class Fachada {
     
     
   }
-  
-  
-  //definindo todos os métodos que estarão disponíveis para um cartão através da fachada.
-  public void cadastrarCartao(Cartao cartao){
-    cadastroCartoes.cadastrar(cartao);
-  }
-    
-  public void atualizarCartao(Cartao cartao){
-    cadastroCartoes.atualizar(cartao);  
-  }
-  
-  public Cartao buscaCartaoPorNumero(int numeroCartao){
-    return cadastroCartoes.buscaPorNumero(numeroCartao);
-  }
-  
-  public List<Cartao> listarCartoes(){
-        return cadastroCartoes.listarCartoes();
-    }
-  
-  public boolean verificaExistenciaCartaoPorAluno(int idAluno){
-        return cadastroCartoes.verificaExistenciaIdAluno(idAluno);
-  
-  public Cartao buscaCartaoPorCpf(int cpf){
-    return cadastroCartoes.buscaPorCpf(cpf);
-    
-  }
-  
-  
     //curso
     public void inserirCurso(Curso curso){
         cadastroCursos.cadastrar(curso);
@@ -168,8 +140,7 @@ public class Fachada {
     }
     public ArrayList<Aluno> findAlunosByCurso(int idCurso){
         return cadastroAlunos.buscarPorCurso(idCurso);
-    }
-    
+    }    
     public List<Aluno> listarAlunos(){
         return cadastroAlunos.listarAlunos();
     }
