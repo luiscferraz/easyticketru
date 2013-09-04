@@ -130,8 +130,8 @@ DROP TABLE IF EXISTS `easyticket`.`refeicoes` ;
 
 CREATE  TABLE IF NOT EXISTS `easyticket`.`refeicoes` (
   `idRefeicao` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT ,
-  `descricaoRefeicao` VARCHAR(25) NOT NULL ,
-  `precoRefeicao` FLOAT NOT NULL ,
+  `descricao` VARCHAR(25) NOT NULL ,
+  `valor` FLOAT NOT NULL ,
   PRIMARY KEY (`idRefeicao`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
