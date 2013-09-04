@@ -99,6 +99,8 @@ public class TelaCartoes extends javax.swing.JFrame {
         jComboBoxAlunoCadastrar = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("EasyTicket - MANTER CARTAO");
+        setResizable(false);
 
         guiasAluno.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
@@ -572,6 +574,7 @@ public class TelaCartoes extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoPesquisar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoPesquisar1ActionPerformed
