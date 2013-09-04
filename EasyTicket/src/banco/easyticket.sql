@@ -129,10 +129,10 @@ CREATE INDEX `idCargosFuncionarios_idx` ON `easyticket`.`funcionarios` (`idCargo
 DROP TABLE IF EXISTS `easyticket`.`refeicoes` ;
 
 CREATE  TABLE IF NOT EXISTS `easyticket`.`refeicoes` (
-  `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT ,
-  `tipo` VARCHAR(25) NOT NULL ,
-  `preco` FLOAT NOT NULL ,
-  PRIMARY KEY (`id`))
+  `idRefeicao` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT ,
+  `descricaoRefeicao` VARCHAR(25) NOT NULL ,
+  `precoRefeicao` FLOAT NOT NULL ,
+  PRIMARY KEY (`idRefeicao`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
