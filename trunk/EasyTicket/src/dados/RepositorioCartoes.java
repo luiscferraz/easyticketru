@@ -18,9 +18,30 @@ import negocio.Cartao;
  */
 public class RepositorioCartoes implements IRepositorioCartoes {
 
-    @Override
-    public void inserir(Cartao cartao) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void inserir(Cartao cartao){
+        String query = "INSERT INTO EASYTICKET.CARTOES"+
+                                          " (NUMCARTAO,STATUSCARTAO,"+
+                                            "SALDOCARTAO,"+
+                                            "IDALUNOCARTAO)"+
+                        "VALUES (?,?,?,?)" ;
+        
+       
+            try {
+                PreparedStatement stmt = this.conexao.prepareStatement(query);
+
+                stmt.setInt(1, cartao.getIdCartao());
+                stmt.setFloat(2, cartao.getStatus());
+                stmt.setString(3, cartao.getSaldo());                
+                stmt.setInt(4, cartao.getCpfAluno());
+
+                stmt.execute();
+
+                //conexao.close();
+                System.out.println("Cartão inserido com sucesso.");
+            } catch (SQLException ex) {
+                System.out.println("incluirCartao(): "+ex.toString());
+            } 
+        
     }
 
     @Override
