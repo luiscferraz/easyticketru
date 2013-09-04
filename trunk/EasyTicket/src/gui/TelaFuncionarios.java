@@ -33,6 +33,7 @@ public class TelaFuncionarios extends javax.swing.JFrame {
      */
     
     private Fachada fachada = Fachada.obterInstancia();
+    private int idFuncionarioRetornado;
     
     public TelaFuncionarios() {
         initComponents();
@@ -41,7 +42,7 @@ public class TelaFuncionarios extends javax.swing.JFrame {
         this.preencherComboBoxCargoEditar();
         
         btnExcluirFuncionario.setEnabled(false);
-        btnSalvarAlteracoesFunc.setEnabled(false);
+        btnSalvarAlteracoes.setEnabled(false);
         
         btnMudarCargo.setEnabled(false);
         btnMudarStatus.setEnabled(false);
@@ -110,30 +111,32 @@ public class TelaFuncionarios extends javax.swing.JFrame {
         tituloConsultar2 = new javax.swing.JLabel();
         tituloCpf5 = new javax.swing.JLabel();
         botaoPesquisarCpfFunc = new javax.swing.JButton();
-        campoPesquisarCpfFunc = new javax.swing.JFormattedTextField();
+        txtPesquisarCpfEditar = new javax.swing.JFormattedTextField();
         jSeparator5 = new javax.swing.JSeparator();
         tituloVisualizarFunc1 = new javax.swing.JLabel();
-        btnSalvarAlteracoesFunc = new javax.swing.JButton();
+        btnSalvarAlteracoes = new javax.swing.JButton();
         botaoVoltar9 = new javax.swing.JButton();
         tituloAlunos2 = new javax.swing.JLabel();
-        campoNomeFuncEditar = new javax.swing.JTextField();
+        txtNomeEditar = new javax.swing.JTextField();
         tituloNome1 = new javax.swing.JLabel();
         tituloCpf2 = new javax.swing.JLabel();
-        campoEmailFuncEditar = new javax.swing.JTextField();
+        txtEmailEditar = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         tituloCurso1 = new javax.swing.JLabel();
         comboBoxCargoFuncEditar = new javax.swing.JComboBox();
         tituloDataNasc1 = new javax.swing.JLabel();
-        campoDataNascFuncEditar = new javax.swing.JFormattedTextField();
-        campoTeleFuncEditar = new javax.swing.JFormattedTextField();
-        campoCpfFuncEditar = new javax.swing.JFormattedTextField();
+        txtDataNascEditar = new javax.swing.JFormattedTextField();
+        txtTelefoneEditar = new javax.swing.JFormattedTextField();
+        txtCpfEditar = new javax.swing.JFormattedTextField();
         comboBoxStatusFunEditar = new javax.swing.JComboBox();
         jLabel3 = new javax.swing.JLabel();
         lblCargoAtual = new javax.swing.JLabel();
         lblStatusAtual = new javax.swing.JLabel();
         btnMudarCargo = new javax.swing.JButton();
         btnMudarStatus = new javax.swing.JButton();
+        lblId = new javax.swing.JLabel();
+        lblIdFuncionario = new javax.swing.JLabel();
         guiaCadastrarAluno = new javax.swing.JPanel();
         tituloCadastrar = new javax.swing.JLabel();
         btnCadastrarFuncionario = new javax.swing.JButton();
@@ -394,7 +397,7 @@ public class TelaFuncionarios extends javax.swing.JFrame {
         });
 
         try {
-            campoPesquisarCpfFunc.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+            txtPesquisarCpfEditar.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -412,7 +415,7 @@ public class TelaFuncionarios extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(tituloCpf5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(campoPesquisarCpfFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtPesquisarCpfEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(botaoPesquisarCpfFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(29, Short.MAX_VALUE))
@@ -426,7 +429,7 @@ public class TelaFuncionarios extends javax.swing.JFrame {
                         .addGap(13, 13, 13)
                         .addGroup(painelConsulta2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(tituloCpf5)
-                            .addComponent(campoPesquisarCpfFunc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txtPesquisarCpfEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(painelConsulta2Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(botaoPesquisarCpfFunc))))
@@ -438,11 +441,11 @@ public class TelaFuncionarios extends javax.swing.JFrame {
         tituloVisualizarFunc1.setToolTipText("");
         tituloVisualizarFunc1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        btnSalvarAlteracoesFunc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/edit.png"))); // NOI18N
-        btnSalvarAlteracoesFunc.setText("Salvar Alterações");
-        btnSalvarAlteracoesFunc.addActionListener(new java.awt.event.ActionListener() {
+        btnSalvarAlteracoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/edit.png"))); // NOI18N
+        btnSalvarAlteracoes.setText("Salvar Alterações");
+        btnSalvarAlteracoes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSalvarAlteracoesFuncActionPerformed(evt);
+                btnSalvarAlteracoesActionPerformed(evt);
             }
         });
 
@@ -458,9 +461,9 @@ public class TelaFuncionarios extends javax.swing.JFrame {
         tituloAlunos2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/funcionarios.png"))); // NOI18N
         tituloAlunos2.setText("  Manter Funcionários");
 
-        campoNomeFuncEditar.addActionListener(new java.awt.event.ActionListener() {
+        txtNomeEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campoNomeFuncEditarActionPerformed(evt);
+                txtNomeEditarActionPerformed(evt);
             }
         });
 
@@ -479,19 +482,19 @@ public class TelaFuncionarios extends javax.swing.JFrame {
         tituloDataNasc1.setText("Data de Nascimento:");
 
         try {
-            campoDataNascFuncEditar.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+            txtDataNascEditar.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
 
         try {
-            campoTeleFuncEditar.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)####-####")));
+            txtTelefoneEditar.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)####-####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
 
         try {
-            campoCpfFuncEditar.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+            txtCpfEditar.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -513,78 +516,87 @@ public class TelaFuncionarios extends javax.swing.JFrame {
             }
         });
 
+        lblId.setText("Id:");
+
+        lblIdFuncionario.setText("jLabel10");
+
         javax.swing.GroupLayout guiaEditarAlunoLayout = new javax.swing.GroupLayout(guiaEditarAluno);
         guiaEditarAluno.setLayout(guiaEditarAlunoLayout);
         guiaEditarAlunoLayout.setHorizontalGroup(
             guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(guiaEditarAlunoLayout.createSequentialGroup()
+                .addContainerGap(18, Short.MAX_VALUE)
+                .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(guiaEditarAlunoLayout.createSequentialGroup()
+                        .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addComponent(tituloCurso1)
+                            .addComponent(jLabel4)
+                            .addComponent(tituloCpf2)
+                            .addComponent(tituloNome1))
+                        .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, guiaEditarAlunoLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lblCargoAtual)
+                                .addGap(190, 190, 190)
+                                .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnMudarStatus)
+                                    .addComponent(btnMudarCargo))
+                                .addGap(286, 286, 286))
+                            .addGroup(guiaEditarAlunoLayout.createSequentialGroup()
+                                .addGap(4, 4, 4)
+                                .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(guiaEditarAlunoLayout.createSequentialGroup()
+                                        .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(txtNomeEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(txtCpfEditar))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(tituloDataNasc1, javax.swing.GroupLayout.Alignment.TRAILING))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(txtDataNascEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(txtTelefoneEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(txtEmailEditar)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, guiaEditarAlunoLayout.createSequentialGroup()
+                                        .addGap(2, 2, 2)
+                                        .addComponent(lblStatusAtual)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(comboBoxStatusFunEditar, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(comboBoxCargoFuncEditar, 0, 235, Short.MAX_VALUE)))))))
+                    .addGroup(guiaEditarAlunoLayout.createSequentialGroup()
+                        .addComponent(lblId)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblIdFuncionario)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+            .addGroup(guiaEditarAlunoLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(tituloAlunos2, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(painelConsulta2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(54, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, guiaEditarAlunoLayout.createSequentialGroup()
+                .addComponent(jSeparator5)
+                .addGap(10, 10, 10))
+            .addGroup(guiaEditarAlunoLayout.createSequentialGroup()
                 .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(guiaEditarAlunoLayout.createSequentialGroup()
                         .addGap(20, 20, 20)
-                        .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tituloVisualizarFunc1)
-                            .addGroup(guiaEditarAlunoLayout.createSequentialGroup()
-                                .addComponent(tituloAlunos2, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(painelConsulta2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(tituloVisualizarFunc1))
                     .addGroup(guiaEditarAlunoLayout.createSequentialGroup()
                         .addGap(363, 363, 363)
                         .addComponent(botaoVoltar9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnSalvarAlteracoesFunc))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, guiaEditarAlunoLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(guiaEditarAlunoLayout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addGap(237, 237, 237))
-                            .addGroup(guiaEditarAlunoLayout.createSequentialGroup()
-                                .addComponent(tituloCurso1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lblCargoAtual)
-                                .addGap(190, 190, 190)))
-                        .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnMudarStatus)
-                            .addComponent(btnMudarCargo))
-                        .addGap(286, 286, 286))
-                    .addGroup(guiaEditarAlunoLayout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tituloNome1)
-                            .addComponent(tituloCpf2)
-                            .addComponent(jLabel4))
-                        .addGap(8, 8, 8)
-                        .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(guiaEditarAlunoLayout.createSequentialGroup()
-                                .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(campoNomeFuncEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(campoCpfFuncEditar))
-                                .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, guiaEditarAlunoLayout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
-                                        .addComponent(jLabel5))
-                                    .addGroup(guiaEditarAlunoLayout.createSequentialGroup()
-                                        .addGap(18, 18, 18)
-                                        .addComponent(tituloDataNasc1)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(campoDataNascFuncEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(campoTeleFuncEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(campoEmailFuncEditar)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, guiaEditarAlunoLayout.createSequentialGroup()
-                                .addGap(2, 2, 2)
-                                .addComponent(lblStatusAtual)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(comboBoxStatusFunEditar, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(comboBoxCargoFuncEditar, 0, 235, Short.MAX_VALUE)))))
-                    .addComponent(jSeparator5, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addContainerGap())
+                        .addComponent(btnSalvarAlteracoes)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        guiaEditarAlunoLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {campoCpfFuncEditar, campoNomeFuncEditar});
+        guiaEditarAlunoLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {txtCpfEditar, txtNomeEditar});
 
-        guiaEditarAlunoLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {campoDataNascFuncEditar, campoTeleFuncEditar});
+        guiaEditarAlunoLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {txtDataNascEditar, txtTelefoneEditar});
 
         guiaEditarAlunoLayout.setVerticalGroup(
             guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -600,18 +612,18 @@ public class TelaFuncionarios extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tituloNome1)
-                    .addComponent(campoNomeFuncEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNomeEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5)
-                    .addComponent(campoTeleFuncEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtTelefoneEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(campoCpfFuncEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCpfEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tituloCpf2)
                     .addComponent(tituloDataNasc1)
-                    .addComponent(campoDataNascFuncEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtDataNascEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(campoEmailFuncEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtEmailEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -626,9 +638,13 @@ public class TelaFuncionarios extends javax.swing.JFrame {
                         .addComponent(lblStatusAtual)
                         .addComponent(jLabel3))
                     .addComponent(comboBoxStatusFunEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSalvarAlteracoesFunc)
+                    .addComponent(lblId)
+                    .addComponent(lblIdFuncionario))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSalvarAlteracoes)
                     .addComponent(botaoVoltar9))
                 .addContainerGap())
         );
@@ -862,32 +878,33 @@ public class TelaFuncionarios extends javax.swing.JFrame {
 
     private void botaoPesquisarCpfFuncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoPesquisarCpfFuncActionPerformed
         // TODO add your handling code here:
-        
-         if (campoPesquisarCpfFunc.getText().equals("   .   .   -  ")) {
+        if (txtPesquisarCpfEditar.getText().equals("   .   .   -  ")) {
             JOptionPane.showMessageDialog(this,"Informe CPF do funcionário.","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
-            campoPesquisarCpfFunc.setText("");
+            txtPesquisarCpfEditar.setText("");
             return;
         } else{
              try{
-                    if (fachada.verificarExistenciaFuncionarioPorCpf(campoPesquisarCpfFunc.getText())){
+                    if (fachada.verificarExistenciaFuncionarioPorCpf(txtPesquisarCpfEditar.getText())){
                         Funcionario funcionarioRetorno = new Funcionario();
-                        funcionarioRetorno = fachada.findFuncionarioByCpf(campoPesquisarCpfFunc.getText()) ;
+                        funcionarioRetorno = fachada.findFuncionarioByCpf(txtPesquisarCpfEditar.getText());
                         
-                        campoNomeFuncEditar.setText(funcionarioRetorno.getNome());
-                        campoCpfFuncEditar.setText(funcionarioRetorno.getCpf());
-                        campoEmailFuncEditar.setText(funcionarioRetorno.getEmail());
-                        campoTeleFuncEditar.setText(funcionarioRetorno.getTelefone());
+                        lblIdFuncionario.setText(Integer.toString(funcionarioRetorno.getId()));
                         
-                        campoDataNascFuncEditar.setText(Formatacao.transformarDateEmString((Date)funcionarioRetorno.getDataNascimento()));
-                       
-                        campoCpfFuncEditar.setText("");
-                        btnSalvarAlteracoesFunc.setEnabled(true);
+                        idFuncionarioRetornado = funcionarioRetorno.getId();
                         
+                        txtNomeEditar.setText(funcionarioRetorno.getNome());
+                        txtCpfEditar.setText(funcionarioRetorno.getCpf());
+                        txtEmailEditar.setText(funcionarioRetorno.getEmail());
+                        txtTelefoneEditar.setText(funcionarioRetorno.getTelefone());
+                        
+                        txtDataNascEditar.setText(Formatacao.transformarDateEmString((Date)funcionarioRetorno.getDataNascimento()));
+                        
+                        txtPesquisarCpfEditar.setText("");
+                        btnSalvarAlteracoes.setEnabled(true);
                         
                         
                         Cargo cargoFuncionario = new Cargo();
                         cargoFuncionario = fachada.procurarPorIdCargo(funcionarioRetorno.getIdCargo());
-                        System.out.println(cargoFuncionario.getNome());
                         lblCargoAtual.setText(cargoFuncionario.getNome());
                         
                         lblStatusAtual.setText(funcionarioRetorno.getStatusFuncionario());
@@ -899,20 +916,20 @@ public class TelaFuncionarios extends javax.swing.JFrame {
                         
                     } else {
                         JOptionPane.showMessageDialog(this,"Funcionário Inexistente!","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
-                         campoPesquisarCpfFunc.setText("");
+                        txtPesquisarCpfEditar.setText("");
                         return;
                     }
             } catch(Exception ex){
-                 campoPesquisarCpfFunc.setText("");
-                JOptionPane.showMessageDialog(this,"Não foi possível efetuar a atualização dos dados do funcionário!","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
+                txtPesquisarCpfEditar.setText("");
+                JOptionPane.showMessageDialog(this,"Não foi possível efetuar a atualização do funcionário!","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
                 return;
             }
         }
     }//GEN-LAST:event_botaoPesquisarCpfFuncActionPerformed
 
-    private void campoNomeFuncEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoNomeFuncEditarActionPerformed
+    private void txtNomeEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeEditarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_campoNomeFuncEditarActionPerformed
+    }//GEN-LAST:event_txtNomeEditarActionPerformed
 
     private void txtNomeCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeCadastrarActionPerformed
         // TODO add your handling code here:
@@ -992,20 +1009,20 @@ public class TelaFuncionarios extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtEmailCadastrarActionPerformed
 
-    private void btnSalvarAlteracoesFuncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarAlteracoesFuncActionPerformed
+    private void btnSalvarAlteracoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarAlteracoesActionPerformed
         // TODO add your handling code here:
         
         try{
-            String nome = campoNomeFuncEditar.getText();
-            String cpf = campoCpfFuncEditar.getText();       
-            String email =campoEmailFuncEditar.getText();                 
-            String telefone = campoTeleFuncEditar.getText();     
+            String nome = txtNomeEditar.getText();
+            String cpf = txtCpfEditar.getText();       
+            String email =txtEmailEditar.getText();                 
+            String telefone = txtTelefoneEditar.getText();     
 
             String cargo = comboBoxCargoFuncEditar.getSelectedItem().toString();
             int idCargo = fachada.findIdCargoByNome(cargo);            
             String status = comboBoxStatusFunEditar.getSelectedItem().toString();
 
-            String dataNasc = campoDataNascFuncEditar.getText();
+            String dataNasc = txtDataNascEditar.getText();
             Date dataNascDate = Formatacao.transformarStringEmDate(dataNasc);
             java.sql.Date sqlDateNasc = Formatacao.transformarDateEmDateSql(dataNascDate);        
             
@@ -1017,6 +1034,7 @@ public class TelaFuncionarios extends javax.swing.JFrame {
             funcionarioEditado.setDataNascimento(sqlDateNasc); 
             funcionarioEditado.setIdCargo(idCargo); 
             funcionarioEditado.setStatusFuncionario(status);
+            funcionarioEditado.setId(idFuncionarioRetornado);
 
             fachada.atualizarFuncionario(funcionarioEditado);
              JOptionPane.showMessageDialog(this, "Funcionário alterado com sucesso.", "CONFIRMAÇÃO", JOptionPane.INFORMATION_MESSAGE);
@@ -1034,7 +1052,7 @@ public class TelaFuncionarios extends javax.swing.JFrame {
         }
         
                                                       
-    }//GEN-LAST:event_btnSalvarAlteracoesFuncActionPerformed
+    }//GEN-LAST:event_btnSalvarAlteracoesActionPerformed
 
     private void btnMudarStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMudarStatusActionPerformed
         // TODO add your handling code here:
@@ -1087,15 +1105,9 @@ public class TelaFuncionarios extends javax.swing.JFrame {
     private javax.swing.JButton btnExcluirFuncionario;
     private javax.swing.JButton btnMudarCargo;
     private javax.swing.JButton btnMudarStatus;
-    private javax.swing.JButton btnSalvarAlteracoesFunc;
+    private javax.swing.JButton btnSalvarAlteracoes;
     private javax.swing.JButton btnVoltarVisualizar;
-    private javax.swing.JFormattedTextField campoCpfFuncEditar;
     private javax.swing.JFormattedTextField campoCpfPesquisaVisualizar;
-    private javax.swing.JFormattedTextField campoDataNascFuncEditar;
-    private javax.swing.JTextField campoEmailFuncEditar;
-    private javax.swing.JTextField campoNomeFuncEditar;
-    private javax.swing.JFormattedTextField campoPesquisarCpfFunc;
-    private javax.swing.JFormattedTextField campoTeleFuncEditar;
     private javax.swing.JComboBox comboBoxCargoFunCadastrar;
     private javax.swing.JComboBox comboBoxCargoFuncEditar;
     private javax.swing.JComboBox comboBoxStatusFunEditar;
@@ -1121,6 +1133,8 @@ public class TelaFuncionarios extends javax.swing.JFrame {
     private javax.swing.JLabel lblCpf;
     private javax.swing.JLabel lblDataNascimento;
     private javax.swing.JLabel lblEmail;
+    private javax.swing.JLabel lblId;
+    private javax.swing.JLabel lblIdFuncionario;
     private javax.swing.JLabel lblNome;
     private javax.swing.JLabel lblStatusAtual;
     private javax.swing.JLabel lblStatusFuncionario;
@@ -1150,9 +1164,15 @@ public class TelaFuncionarios extends javax.swing.JFrame {
     private javax.swing.JLabel tituloVisualizarFunc;
     private javax.swing.JLabel tituloVisualizarFunc1;
     private javax.swing.JFormattedTextField txtCpfCadastrar;
+    private javax.swing.JFormattedTextField txtCpfEditar;
     private javax.swing.JFormattedTextField txtDataNascCadastrar;
+    private javax.swing.JFormattedTextField txtDataNascEditar;
     private javax.swing.JTextField txtEmailCadastrar;
+    private javax.swing.JTextField txtEmailEditar;
     private javax.swing.JTextField txtNomeCadastrar;
+    private javax.swing.JTextField txtNomeEditar;
+    private javax.swing.JFormattedTextField txtPesquisarCpfEditar;
     private javax.swing.JFormattedTextField txtTelefoneCadastrar;
+    private javax.swing.JFormattedTextField txtTelefoneEditar;
     // End of variables declaration//GEN-END:variables
 }
