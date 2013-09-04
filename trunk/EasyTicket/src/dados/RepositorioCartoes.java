@@ -47,7 +47,7 @@ public class RepositorioCartoes implements IRepositorioCartoes {
                 stmt.setInt(1, cartao.getNumCartao());
                 stmt.setString(2, cartao.getStatus());
                 stmt.setFloat(3, cartao.getSaldo());                
-                stmt.setInt(4, cartao.getCpfAluno());
+                stmt.setInt(4, cartao.getIdAlunoCartao());
 
                 stmt.execute();
 
@@ -84,7 +84,7 @@ public class RepositorioCartoes implements IRepositorioCartoes {
          stmt.setInt(1, cartao.getNumCartao());
          stmt.setString(2, cartao.getStatus());
          stmt.setFloat(3, cartao.getSaldo());
-         stmt.setInt(4, cartao.getCpfAluno());
+         stmt.setInt(4, cartao.getIdAlunoCartao());
                      
          stmt.execute();
          
@@ -113,7 +113,7 @@ public class RepositorioCartoes implements IRepositorioCartoes {
                      cartaoResultado.setNumCartao(res.getInt(1));
                      cartaoResultado.setStatus(res.getString(2));
                      cartaoResultado.setSaldo(res.getFloat(3));
-                     cartaoResultado.setCpfAluno(res.getInt(4));
+                     cartaoResultado.setIdAlunoCartao(res.getInt(4));
                                      
                  }
                  //conexao.close();                
