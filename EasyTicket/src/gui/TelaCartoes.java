@@ -29,32 +29,12 @@ public class TelaCartoes extends javax.swing.JFrame {
      */
     public TelaCartoes() {
         initComponents();
-        this.preencherComboBoxAlunoCadastrar();
-        this.preencherComboBoxAlunoEditar();
-        btnExcluirCartao.setEnabled(false);
-        btnSalvarAlteracoes.setEnabled(false);
-       
-        btnMudarStatus.setEnabled(false);
-        jComboBoxStatusEditar.setEnabled(false);
+        
     }
     
     @SuppressWarnings("unchecked")
     
-    private void preencherComboBoxAlunoCadastrar(){
-        List<Aluno> allAlunos = fachada.listarAlunos();
-        for (Alunos aluno : allAlunos) {
-            //jComboBoxAlunoCadastrar.addItem(aluno.toString(aluno));
-            jComboBoxAlunoCadastrar.addItem(aluno.getNome());
-            
-        } 
-    }
     
-    private void preencherComboBoxCursoEditar(){
-        List<Aluno> allAlunos = fachada.listarAlunos();
-        for (Aluno aluno : allAlunos) {
-            jComboBoxAlunoEditar.addItem(aluno.getNome());
-        }
-    }
     
     private void pegarDadosCamposCadastrar(){
     }
@@ -627,35 +607,7 @@ public class TelaCartoes extends javax.swing.JFrame {
     }//GEN-LAST:event_btnExcluirCartaoActionPerformed
 
     private void botaoCadastrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrar1ActionPerformed
-        try{       
-            int aluno = jComboBoxAlunoCadastrar.getSelectedItem().toString();
-            int idAluno = fachada.findIdAlunoByNome(aluno);
-            System.out.println(idAluno);
-            String status = jComboBoxStatusCadastrar.getSelectedItem().toString();
-
-            
-
-            Cartao cartao = new Cartao();
-          /*  cartao.setIdCartao(); */
-            cartao.setSaldo(0);
-            cartao.setStatus(status);
-            cartao.setCpfAluno(idAluno);  
-            
-            
-            if(fachada.verificarExistenciaCartaoPorIdAluno(cartao.getCpfAluno()){
-                JOptionPane.showMessageDialog(this,"Aluno já possui cartão cadastrado no sitema.","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
-                return;
-            }else {
-                fachada.cadastrarAluno(aluno);
-                JOptionPane.showMessageDialog(this, "Cartão cadastrado com sucesso.", "CONFIRMAÇÃO", JOptionPane.INFORMATION_MESSAGE);
-                return;
-                    
-                }
-            
-        }catch (Exception ex){
-            JOptionPane.showMessageDialog(this,"Preencha todos os campos corretamente.","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
-            return;
-        }
+        
     }//GEN-LAST:event_botaoCadastrar1ActionPerformed
 
     private void txtNumeroEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumeroEditarActionPerformed
@@ -664,29 +616,6 @@ public class TelaCartoes extends javax.swing.JFrame {
 
     private void btnSalvarAlteracoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarAlteracoesActionPerformed
              
-        try{
-            String nome = txtNumeroEditar.getText();              
-            String saldo = txtSaldoEditar.getText();     
-
-            String aluno = jComboBoxAlunoEditar.getSelectedItem().toString();
-            int idAluno= fachada.findIdAlunoByNome(aluno);            
-            String status = jComboBoxStatusEditar.getSelectedItem().toString();
-
-            Cartao cartaoEditado = new Cartao();
-          /*  cartao.setIdCartao(); */
-            cartaoEditado.setSaldo(0);
-            cartaoEditado.setStatus(status);
-            cartaoEditado.setCpfAluno(idAluno); 
-            
-                        
-            fachada.atualizarCartao(cartaoEditado);
-            JOptionPane.showMessageDialog(this, "Cartão alterado com sucesso.", "CONFIRMAÇÃO", JOptionPane.INFORMATION_MESSAGE);
- 
-            
-        }catch(Exception ex){
-            JOptionPane.showMessageDialog(this,"Não foi possível atualizar os dados do cartão.","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
-            return;
-        }
         
     }//GEN-LAST:event_btnSalvarAlteracoesActionPerformed
 
