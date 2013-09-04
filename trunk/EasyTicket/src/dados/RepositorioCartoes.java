@@ -143,5 +143,9 @@ public class RepositorioCartoes implements IRepositorioCartoes {
           return false;
       }
     }
+
+    public List<Cartao> listarCartoes() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

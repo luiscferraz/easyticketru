@@ -15,15 +15,15 @@ import java.util.List;
 public class CadastroRefeicoes {
     private RepositorioRefeicoes refeicoes;
     
-    public CadastroAlunos(RepositorioAlunos repositorioAlunos){
-        this.alunos = repositorioAlunos;
+    public CadastroRefeicoes(RepositorioRefeicoes repositorioRefeicoes){
+        this.refeicoes= repositorioRefeicoes;
     }
     
     public void inserir(Refeicao refeicao){
         refeicoes.inserir(refeicao);
     }
     public boolean existe(String descricaoRefeicao){
-        return alunos.existe(descricaoRefeicao);
+        return refeicoes.existe(descricaoRefeicao);
     }
     public void atualizar(Refeicao refeicao){
         refeicoes.atualizar(refeicao);
@@ -31,7 +31,7 @@ public class CadastroRefeicoes {
     public Refeicao procurarPorDescricao(String descricao){
         return refeicoes.procurarPorDescricao(descricao);
     }
-    public void deletar(Int idRefeicao){
+    public void deletar(int idRefeicao){
         refeicoes.deletar(idRefeicao);
     }
     

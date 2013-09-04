@@ -5,6 +5,7 @@
 package gui;
 
 import dados.RepositorioFuncionarios;
+import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -18,6 +19,7 @@ import javax.swing.JComboBox;
 import javax.swing.JFormattedTextField;
 import javax.swing.JOptionPane;
 import negocio.*;
+import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 import util.Formatacao;
 import util.Validacao;
 /**
@@ -84,10 +86,10 @@ public class TelaFuncionarios extends javax.swing.JFrame {
         botaoVoltar5 = new javax.swing.JButton();
         jSeparator3 = new javax.swing.JSeparator();
         tituloAlunos3 = new javax.swing.JLabel();
-        campoNomeFunc3 = new javax.swing.JTextField();
+        txtNomeCadastrar = new javax.swing.JTextField();
         tituloNome3 = new javax.swing.JLabel();
         tituloCpf6 = new javax.swing.JLabel();
-        campoEmailCadastrar = new javax.swing.JTextField();
+        txtEmailCadastrar = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         tituloCurso3 = new javax.swing.JLabel();
@@ -95,9 +97,9 @@ public class TelaFuncionarios extends javax.swing.JFrame {
         tituloDataNasc3 = new javax.swing.JLabel();
         comboBoxStatusFunc = new javax.swing.JComboBox();
         jLabel2 = new javax.swing.JLabel();
-        campoCpfFunc3 = new javax.swing.JFormattedTextField();
-        campoDataNascFunc3 = new javax.swing.JFormattedTextField();
-        campoTelefoneFuncCadastrar = new javax.swing.JFormattedTextField();
+        txtCpfCadastrar = new javax.swing.JFormattedTextField();
+        txtDataNascCadastrar = new javax.swing.JFormattedTextField();
+        txtTelefoneCadastrar = new javax.swing.JFormattedTextField();
         guiaEditarAluno = new javax.swing.JPanel();
         painelConsulta2 = new javax.swing.JPanel();
         tituloConsultar2 = new javax.swing.JLabel();
@@ -153,7 +155,8 @@ public class TelaFuncionarios extends javax.swing.JFrame {
         jLabel2TelefoneVisualizar = new javax.swing.JLabel();
         jLabel2CargoVisualizar = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("EasyTicket - MANTER FUNCIONARIO");
 
         guiasAluno.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
@@ -184,9 +187,9 @@ public class TelaFuncionarios extends javax.swing.JFrame {
         tituloAlunos3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/funcionarios.png"))); // NOI18N
         tituloAlunos3.setText("  Manter Funcionários");
 
-        campoNomeFunc3.addActionListener(new java.awt.event.ActionListener() {
+        txtNomeCadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campoNomeFunc3ActionPerformed(evt);
+                txtNomeCadastrarActionPerformed(evt);
             }
         });
 
@@ -194,9 +197,9 @@ public class TelaFuncionarios extends javax.swing.JFrame {
 
         tituloCpf6.setText("Cpf:");
 
-        campoEmailCadastrar.addActionListener(new java.awt.event.ActionListener() {
+        txtEmailCadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campoEmailCadastrarActionPerformed(evt);
+                txtEmailCadastrarActionPerformed(evt);
             }
         });
 
@@ -213,19 +216,19 @@ public class TelaFuncionarios extends javax.swing.JFrame {
         jLabel2.setText("Status:");
 
         try {
-            campoCpfFunc3.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+            txtCpfCadastrar.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
 
         try {
-            campoDataNascFunc3.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+            txtDataNascCadastrar.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
 
         try {
-            campoTelefoneFuncCadastrar.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)####-####")));
+            txtTelefoneCadastrar.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)####-####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -249,15 +252,15 @@ public class TelaFuncionarios extends javax.swing.JFrame {
                             .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
                                 .addComponent(jLabel8)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(campoEmailCadastrar))
+                                .addComponent(txtEmailCadastrar))
                             .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
                                 .addComponent(tituloCpf6)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(campoCpfFunc3, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtCpfCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
                                 .addComponent(tituloNome3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(campoNomeFunc3, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtNomeCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
                                 .addComponent(tituloCurso3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -267,11 +270,11 @@ public class TelaFuncionarios extends javax.swing.JFrame {
                             .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
                                 .addComponent(tituloDataNasc3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(campoDataNascFunc3, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE))
+                                .addComponent(txtDataNascCadastrar, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE))
                             .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
                                 .addComponent(jLabel9)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(campoTelefoneFuncCadastrar))
+                                .addComponent(txtTelefoneCadastrar))
                             .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -290,15 +293,15 @@ public class TelaFuncionarios extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tituloNome3)
-                    .addComponent(campoNomeFunc3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNomeCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9)
-                    .addComponent(campoTelefoneFuncCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtTelefoneCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tituloCpf6)
-                    .addComponent(campoCpfFunc3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCpfCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tituloDataNasc3)
-                    .addComponent(campoDataNascFunc3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtDataNascCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tituloCurso3)
@@ -308,7 +311,7 @@ public class TelaFuncionarios extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
-                    .addComponent(campoEmailCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtEmailCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botaoVoltar5)
@@ -859,9 +862,9 @@ public class TelaFuncionarios extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_campoNomeFuncEditarActionPerformed
 
-    private void campoNomeFunc3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoNomeFunc3ActionPerformed
+    private void txtNomeCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeCadastrarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_campoNomeFunc3ActionPerformed
+    }//GEN-LAST:event_txtNomeCadastrarActionPerformed
 
     private void btnVoltarVisualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarVisualizarActionPerformed
         this.setVisible(false);
@@ -877,20 +880,20 @@ public class TelaFuncionarios extends javax.swing.JFrame {
 
     private void btnCadastrarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarFuncionarioActionPerformed
         // TODO add your handling code here:
-        
-           
         try{
-            String nome = campoNomeFunc3.getText();
-            String cpf = campoCpfFunc3.getText();       
-            String email = campoEmailCadastrar.getText();                 
-            String telefone = campoTelefoneFuncCadastrar.getText();     
+            String nome = txtNomeCadastrar.getText();
+            String cpf = txtCpfCadastrar.getText();       
+            String email =txtEmailCadastrar.getText();                 
+            String telefone = txtTelefoneCadastrar.getText();     
 
+            
             String cargo = comboBoxCargoFunCadastrar.getSelectedItem().toString();
             int idCargo = fachada.findIdCargoByNome(cargo);
-            //System.out.println(idCargo);
+            System.out.println(idCargo);
+            
             String status = comboBoxStatusFunc.getSelectedItem().toString();
 
-            String dataNasc = campoDataNascFunc3.getText();
+            String dataNasc = txtDataNascCadastrar.getText();
             Date dataNascDate = Formatacao.transformarStringEmDate(dataNasc);
             java.sql.Date sqlDateNasc = Formatacao.transformarDateEmDateSql(dataNascDate);        
 
@@ -905,23 +908,16 @@ public class TelaFuncionarios extends javax.swing.JFrame {
             
             
             if(Validacao.validaCPF(funcionario.getCpf())){
-                //System.out.println("Olá");
-                if(fachada.verificarExistenciaFuncionarioPorCpf(funcionario.getCpf())){
-                    System.out.println("Entrou no if de validação");
-                    JOptionPane.showMessageDialog(this,"Funcionário já cadastrado no sitema.","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
+                fachada.cadastrarFuncionario(funcionario);                            
+                JOptionPane.showMessageDialog(this, "Funcionário cadastrado com sucesso.", "CONFIRMAÇÃO", JOptionPane.INFORMATION_MESSAGE);
+                               
                     return;
-                }else {
-                    fachada.cadastrarFuncionario(funcionario);
-                    JOptionPane.showMessageDialog(this, "Funcionario cadastrado com sucesso.", "CONFIRMAÇÃO", JOptionPane.INFORMATION_MESSAGE);
+                //if(fachada.verificarExistenciaFuncionarioPorCpf(funcionario.getCpf())){
+                    //JOptionPane.showMessageDialog(this,"Funcionário já cadastrado no sitema.","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
+                  //  return;
+                //}else {
                     
-                    campoNomeFunc3.setText("");
-                    campoCpfFunc3.setText("");       
-                    campoEmailCadastrar.setText("");                 
-                    campoTelefoneFuncCadastrar.setText("");     
-
-                    campoDataNascFunc3.setText("");    
-                    return;
-                }
+               // }
             } else {
                 JOptionPane.showMessageDialog(this,"CPF inválido.","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
                 return;
@@ -929,16 +925,15 @@ public class TelaFuncionarios extends javax.swing.JFrame {
             
             
         }catch (Exception ex){
+            System.out.println(ex.getMessage());
             JOptionPane.showMessageDialog(this,"Preencha todos os campos corretamente.","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
             return;
         }
-        
-        
     }//GEN-LAST:event_btnCadastrarFuncionarioActionPerformed
 
-    private void campoEmailCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoEmailCadastrarActionPerformed
+    private void txtEmailCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailCadastrarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_campoEmailCadastrarActionPerformed
+    }//GEN-LAST:event_txtEmailCadastrarActionPerformed
 
     private void btnSalvarAlteracoesFuncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarAlteracoesFuncActionPerformed
         // TODO add your handling code here:
@@ -966,9 +961,10 @@ public class TelaFuncionarios extends javax.swing.JFrame {
             funcionarioEditado.setIdCargo(idCargo); 
             funcionarioEditado.setStatusFuncionario(status);
 
+            fachada.atualizarFuncionario(funcionarioEditado);
+             JOptionPane.showMessageDialog(this, "Funcionário alterado com sucesso.", "CONFIRMAÇÃO", JOptionPane.INFORMATION_MESSAGE);
             if(Validacao.validaCPF(funcionarioEditado.getCpf())){                
-                fachada.atualizarFuncionario(funcionarioEditado);
-                JOptionPane.showMessageDialog(this, "Funcionário alterado com sucesso.", "CONFIRMAÇÃO", JOptionPane.INFORMATION_MESSAGE);
+                
                 return;
             } else {
                 JOptionPane.showMessageDialog(this,"CPF inválido.","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
@@ -1027,17 +1023,12 @@ public class TelaFuncionarios extends javax.swing.JFrame {
     private javax.swing.JButton btnMudarStatus;
     private javax.swing.JButton btnSalvarAlteracoesFunc;
     private javax.swing.JButton btnVoltarVisualizar;
-    private javax.swing.JFormattedTextField campoCpfFunc3;
     private javax.swing.JFormattedTextField campoCpfFuncEditar;
-    private javax.swing.JFormattedTextField campoDataNascFunc3;
     private javax.swing.JFormattedTextField campoDataNascFuncEditar;
-    private javax.swing.JTextField campoEmailCadastrar;
     private javax.swing.JTextField campoEmailFuncEditar;
-    private javax.swing.JTextField campoNomeFunc3;
     private javax.swing.JTextField campoNomeFuncEditar;
     private javax.swing.JFormattedTextField campoPesquisarCpfFunc;
     private javax.swing.JFormattedTextField campoTeleFuncEditar;
-    private javax.swing.JFormattedTextField campoTelefoneFuncCadastrar;
     private javax.swing.JComboBox comboBoxCargoFunCadastrar;
     private javax.swing.JComboBox comboBoxCargoFuncEditar;
     private javax.swing.JComboBox comboBoxStatusFunEditar;
@@ -1093,5 +1084,10 @@ public class TelaFuncionarios extends javax.swing.JFrame {
     private javax.swing.JLabel tituloNome3;
     private javax.swing.JLabel tituloVisualizarFunc;
     private javax.swing.JLabel tituloVisualizarFunc1;
+    private javax.swing.JFormattedTextField txtCpfCadastrar;
+    private javax.swing.JFormattedTextField txtDataNascCadastrar;
+    private javax.swing.JTextField txtEmailCadastrar;
+    private javax.swing.JTextField txtNomeCadastrar;
+    private javax.swing.JFormattedTextField txtTelefoneCadastrar;
     // End of variables declaration//GEN-END:variables
 }
