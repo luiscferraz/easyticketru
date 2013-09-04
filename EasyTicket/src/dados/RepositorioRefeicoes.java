@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import negocio.Refeicao;
@@ -108,6 +109,14 @@ public class RepositorioRefeicoes implements IRepositorioRefeicoes {
          }
         
          return refeicaoResultado;
+    }
+
+    public List<Refeicao> listarRefeicoes() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void deletar(int idRefeicao) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     

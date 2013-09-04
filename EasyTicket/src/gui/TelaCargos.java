@@ -104,7 +104,7 @@ public class TelaCargos extends javax.swing.JFrame {
         tituloNome3 = new javax.swing.JLabel();
         jLabelSucessoGuiaCadastrar = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("EasyTicket - MANTER CARGOS");
         setResizable(false);
 

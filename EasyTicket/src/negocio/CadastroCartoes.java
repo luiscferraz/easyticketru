@@ -42,10 +42,5 @@ public class CadastroCartoes {
   public Cartao buscaPorCpf(int cpf){
     return cartoes.procurarPorCpf(cpf);
   }
-  
-  public boolean verificaExistenciaIdAluno(int idAluno){
-        return alunos.existeCartaoAluno(idAluno);
-  }
-  
-    
+   
 }

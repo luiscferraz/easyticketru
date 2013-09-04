@@ -35,6 +35,7 @@ public class TelaPrincipalFuncionario extends javax.swing.JFrame {
         btnFuncionarios1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         btnAlunos.setFont(new java.awt.Font("Tw Cen MT", 1, 24)); // NOI18N
         btnAlunos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/alunos.png"))); // NOI18N
@@ -132,6 +133,7 @@ public class TelaPrincipalFuncionario extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAlunosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlunosActionPerformed
