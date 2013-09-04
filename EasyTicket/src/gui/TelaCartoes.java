@@ -30,6 +30,8 @@ public class TelaCartoes extends javax.swing.JFrame {
     public TelaCartoes() {
         initComponents();
         
+        btnExcluirCartao.setEnabled(false);
+        
     }
     
     @SuppressWarnings("unchecked")
@@ -56,7 +58,7 @@ public class TelaCartoes extends javax.swing.JFrame {
         painelConsulta1 = new javax.swing.JPanel();
         tituloConsultar1 = new javax.swing.JLabel();
         tituloCpf4 = new javax.swing.JLabel();
-        campoPesquisarCpfFunc1 = new javax.swing.JTextField();
+        txtNumCartaoVisualizar = new javax.swing.JTextField();
         botaoPesquisar1 = new javax.swing.JButton();
         tituloAlunos1 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -64,10 +66,10 @@ public class TelaCartoes extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         btnExcluirCartao = new javax.swing.JButton();
-        ViewNumeroCartao = new javax.swing.JLabel();
-        ViewNomeAluno = new javax.swing.JLabel();
-        ViewStatusCartao = new javax.swing.JLabel();
-        ViewSaldoCartao = new javax.swing.JLabel();
+        lblNumCartao = new javax.swing.JLabel();
+        lblNomeAlunoCartao = new javax.swing.JLabel();
+        lblStatusCartao = new javax.swing.JLabel();
+        lblSaldoCartao = new javax.swing.JLabel();
         guiaEditarAluno = new javax.swing.JPanel();
         painelConsulta2 = new javax.swing.JPanel();
         tituloConsultar2 = new javax.swing.JLabel();
@@ -154,7 +156,7 @@ public class TelaCartoes extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(tituloCpf4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(campoPesquisarCpfFunc1, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtNumCartaoVisualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(botaoPesquisar1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -168,7 +170,7 @@ public class TelaCartoes extends javax.swing.JFrame {
                         .addGap(13, 13, 13)
                         .addGroup(painelConsulta1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(tituloCpf4)
-                            .addComponent(campoPesquisarCpfFunc1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txtNumCartaoVisualizar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(painelConsulta1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(botaoPesquisar1))))
@@ -194,13 +196,13 @@ public class TelaCartoes extends javax.swing.JFrame {
             }
         });
 
-        ViewNumeroCartao.setText("-Numero cartao-");
+        lblNumCartao.setText("-Numero cartao-");
 
-        ViewNomeAluno.setText("-Numero cartao-");
+        lblNomeAlunoCartao.setText("-Numero cartao-");
 
-        ViewStatusCartao.setText("-Numero cartao-");
+        lblStatusCartao.setText("-Numero cartao-");
 
-        ViewSaldoCartao.setText("-Numero cartao-");
+        lblSaldoCartao.setText("-Numero cartao-");
 
         javax.swing.GroupLayout guiaVisualizarAlunoLayout = new javax.swing.GroupLayout(guiaVisualizarAluno);
         guiaVisualizarAluno.setLayout(guiaVisualizarAlunoLayout);
@@ -222,21 +224,21 @@ public class TelaCartoes extends javax.swing.JFrame {
                                     .addGroup(guiaVisualizarAlunoLayout.createSequentialGroup()
                                         .addComponent(jLabel7)
                                         .addGap(18, 18, 18)
-                                        .addComponent(ViewNomeAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(lblNomeAlunoCartao, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(guiaVisualizarAlunoLayout.createSequentialGroup()
                                         .addComponent(jLabel6)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(ViewNumeroCartao, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(lblNumCartao, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(134, 134, 134)
                                 .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(guiaVisualizarAlunoLayout.createSequentialGroup()
                                         .addComponent(jLabel8)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(ViewStatusCartao, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(lblStatusCartao, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(guiaVisualizarAlunoLayout.createSequentialGroup()
                                         .addComponent(jLabel9)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(ViewSaldoCartao, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                        .addComponent(lblSaldoCartao, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addGap(22, 22, 22))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, guiaVisualizarAlunoLayout.createSequentialGroup()
                         .addComponent(btnExcluirCartao, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -259,18 +261,18 @@ public class TelaCartoes extends javax.swing.JFrame {
                 .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel6)
-                        .addComponent(ViewNumeroCartao))
+                        .addComponent(lblNumCartao))
                     .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel8)
-                        .addComponent(ViewStatusCartao)))
+                        .addComponent(lblStatusCartao)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel7)
-                        .addComponent(ViewNomeAluno))
+                        .addComponent(lblNomeAlunoCartao))
                     .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel9)
-                        .addComponent(ViewSaldoCartao)))
+                        .addComponent(lblSaldoCartao)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
                 .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(botaoVoltar6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -588,7 +590,30 @@ public class TelaCartoes extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoPesquisar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoPesquisar1ActionPerformed
-        this.setVisible(false);
+        try{
+            int numCartao = Integer.parseInt(txtNumCartaoVisualizar.getText());
+            if(fachada.verificarExistenciaCartaoPorNumero(numCartao)){
+                Cartao cartaoRetorno = new Cartao();
+                cartaoRetorno = fachada.findCartaoByNumero(numCartao);
+                lblNumCartao.setText(Integer.toString(cartaoRetorno.getNumCartao()));
+                lblStatusCartao.setText(cartaoRetorno.getStatus());
+                lblSaldoCartao.setText(Float.toString(cartaoRetorno.getSaldo()));
+                
+                btnExcluirCartao.setEnabled(true);
+                txtCpfAlunoCadastrarCartao.setText("");
+            }else{
+                JOptionPane.showMessageDialog(this,"Cartão Inexistente!","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
+                txtNumCartaoVisualizar.setText("");
+                return;
+            }            
+            
+        }catch (Exception ex){
+            JOptionPane.showMessageDialog(this,"Dados inválidos!","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
+            txtNumCartaoVisualizar.setText("");
+            System.out.println(ex.getMessage());
+            return;
+        }
+        
     }//GEN-LAST:event_botaoPesquisar1ActionPerformed
 
     private void botaoPesquisar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoPesquisar2ActionPerformed
@@ -646,12 +671,14 @@ public class TelaCartoes extends javax.swing.JFrame {
                 }
             } else {
                 JOptionPane.showMessageDialog(this,"CPF inválido.","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
+                txtCpfAlunoCadastrarCartao.setText("");
                 return;
             }
             
             
         }catch (Exception ex){
             JOptionPane.showMessageDialog(this,"Preencha todos os campos corretamente.","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
+            txtCpfAlunoCadastrarCartao.setText("");
             return;
         }
     }//GEN-LAST:event_botaoCadastrar1ActionPerformed
@@ -704,10 +731,6 @@ public class TelaCartoes extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel ViewNomeAluno;
-    private javax.swing.JLabel ViewNumeroCartao;
-    private javax.swing.JLabel ViewSaldoCartao;
-    private javax.swing.JLabel ViewStatusCartao;
     private javax.swing.JButton botaoCadastrar1;
     private javax.swing.JButton botaoPesquisar1;
     private javax.swing.JButton botaoPesquisar2;
@@ -716,7 +739,6 @@ public class TelaCartoes extends javax.swing.JFrame {
     private javax.swing.JButton botaoVoltar9;
     private javax.swing.JButton btnExcluirCartao;
     private javax.swing.JButton btnSalvarAlteracoes;
-    private javax.swing.JTextField campoPesquisarCpfFunc1;
     private javax.swing.JTextField campoPesquisarCpfFunc2;
     private javax.swing.JComboBox comboBoxStatusCartaoCadastrar;
     private javax.swing.JPanel guiaCadastrarAluno;
@@ -737,6 +759,10 @@ public class TelaCartoes extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JLabel lblNomeAlunoCartao;
+    private javax.swing.JLabel lblNumCartao;
+    private javax.swing.JLabel lblSaldoCartao;
+    private javax.swing.JLabel lblStatusCartao;
     private javax.swing.JPanel painelConsulta1;
     private javax.swing.JPanel painelConsulta2;
     private javax.swing.JLabel tituloAlunos1;
@@ -751,6 +777,7 @@ public class TelaCartoes extends javax.swing.JFrame {
     private javax.swing.JLabel tituloVisualizarFunc;
     private javax.swing.JLabel tituloVisualizarFunc1;
     private javax.swing.JFormattedTextField txtCpfAlunoCadastrarCartao;
+    private javax.swing.JTextField txtNumCartaoVisualizar;
     private javax.swing.JTextField txtNumeroEditar;
     private javax.swing.JTextField txtSaldoEditar;
     // End of variables declaration//GEN-END:variables

@@ -173,7 +173,7 @@ public class Fachada {
         cadastroCartoes.cadastrar(cartao);
     }
     public boolean verificarExistenciaCartaoPorNumero(int numeroCartao){
-        return true;
+        return cadastroCartoes.verificaExistenciaCartaoByNumero(numeroCartao);
     }
     public void atualizarCartao(Cartao cartao){
         cadastroCartoes.atualizar(cartao);
