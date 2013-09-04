@@ -30,8 +30,8 @@ public class RepositorioCartoes implements IRepositorioCartoes {
                 PreparedStatement stmt = this.conexao.prepareStatement(query);
 
                 stmt.setInt(1, cartao.getIdCartao());
-                stmt.setFloat(2, cartao.getStatus());
-                stmt.setString(3, cartao.getSaldo());                
+                stmt.setString(2, cartao.getStatus());
+                stmt.setFloat(3, cartao.getSaldo());                
                 stmt.setInt(4, cartao.getCpfAluno());
 
                 stmt.execute();
@@ -44,14 +44,39 @@ public class RepositorioCartoes implements IRepositorioCartoes {
         
     }
 
-    @Override
-    public boolean existe(int numeroCartao) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean existe(Int id) {
+        if (this.procurarPorNumero(idCartao)!=null){
+          return true;
+        }else{
+          return false;
+        }
     }
 
-    @Override
     public void atualizar(Cartao cartao) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+      String query = "UPDATE EASYTICKET.CARTOES SET NUMCARTAO=?,"+
+                                                   "STATUSCARTAO=?,"+
+                                                   "SALDOCARTAO=?,"+
+                                                   "IDALUNOCARTAO=?"+
+                                                   " WHERE NUMCARTAO=?";
+      
+       
+      try{
+         PreparedStatement stmt = this.conexao.prepareStatement(query);
+         
+         
+         stmt.setInt(1, cartao.getIdCartao());
+         stmt.setString(2, cartao.getStatus());
+         stmt.setFloat(3, cartao.getSaldo());
+         stmt.setInt(4, cartao.getCpfAluno());
+                     
+         stmt.execute();
+         
+         //conexao.close();
+         System.out.println("Cartão atualizado com sucesso");
+      
+      } catch (SQLException ex) {
+                 System.out.println("atualizarCartao(): "+ex.toString());
+      }
     }
 
     @Override
