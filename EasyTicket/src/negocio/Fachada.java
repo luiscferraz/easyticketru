@@ -8,8 +8,8 @@ import dados.RepositorioAlunos;
 import dados.RepositorioCargos;
 import dados.RepositorioCartoes;
 import dados.RepositorioCursos;
+import dados.RepositorioFuncionarios;
 import dados.RepositorioRefeicoes;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -57,8 +57,8 @@ public class Fachada {
     RepositorioAlunos repositorioAlunos = new RepositorioAlunos();
     cadastroAlunos = new CadastroAlunos(repositorioAlunos);
     
-    //RepositorioFuncionarios repositorioFuncionarios = new RepositorioFuncionarios();
-    //cadastroFuncionarios = new CadastroFuncionarios(repositorioFuncionarios);
+    RepositorioFuncionarios repositorioFuncionarios = new RepositorioFuncionarios();
+    cadastroFuncionarios = new CadastroFuncionarios(repositorioFuncionarios);
     
     
   
