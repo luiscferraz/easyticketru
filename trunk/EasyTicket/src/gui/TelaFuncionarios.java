@@ -503,11 +503,12 @@ public class TelaFuncionarios extends javax.swing.JFrame {
 
         jLabel3.setText("Status:");
 
-        lblCargoAtual.setText("--cargo--");
-
-        lblStatusAtual.setText("--status--");
-
         btnMudarCargo.setText("Alterar");
+        btnMudarCargo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMudarCargoActionPerformed(evt);
+            }
+        });
 
         btnMudarStatus.setText("Alterar");
         btnMudarStatus.addActionListener(new java.awt.event.ActionListener() {
@@ -525,7 +526,7 @@ public class TelaFuncionarios extends javax.swing.JFrame {
         guiaEditarAlunoLayout.setHorizontalGroup(
             guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(guiaEditarAlunoLayout.createSequentialGroup()
-                .addContainerGap(18, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(guiaEditarAlunoLayout.createSequentialGroup()
                         .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -577,7 +578,7 @@ public class TelaFuncionarios extends javax.swing.JFrame {
                 .addComponent(tituloAlunos2, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(painelConsulta2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addContainerGap(65, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, guiaEditarAlunoLayout.createSequentialGroup()
                 .addComponent(jSeparator5)
                 .addGap(10, 10, 10))
@@ -591,7 +592,7 @@ public class TelaFuncionarios extends javax.swing.JFrame {
                         .addComponent(botaoVoltar9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnSalvarAlteracoes)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         guiaEditarAlunoLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {txtCpfEditar, txtNomeEditar});
@@ -1056,11 +1057,17 @@ public class TelaFuncionarios extends javax.swing.JFrame {
 
     private void btnMudarStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMudarStatusActionPerformed
         // TODO add your handling code here:
+        comboBoxStatusFunEditar.setEnabled(true);
     }//GEN-LAST:event_btnMudarStatusActionPerformed
 
     private void btnExcluirFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirFuncionarioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnExcluirFuncionarioActionPerformed
+
+    private void btnMudarCargoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMudarCargoActionPerformed
+        // TODO add your handling code here:
+        comboBoxCargoFuncEditar.setEnabled(true);
+    }//GEN-LAST:event_btnMudarCargoActionPerformed
 
     /**
      * @param args the command line arguments

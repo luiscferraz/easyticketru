@@ -414,7 +414,7 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace pref="18" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -482,7 +482,7 @@
                       <Component id="tituloAlunos2" min="-2" pref="291" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="painelConsulta2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="54" max="32767" attributes="0"/>
+                      <EmptySpace pref="65" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <Component id="jSeparator5" max="32767" attributes="0"/>
@@ -501,7 +501,7 @@
                               <Component id="btnSalvarAlteracoes" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="30" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -808,19 +808,16 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lblCargoAtual">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="--cargo--"/>
-              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lblStatusAtual">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="--status--"/>
-              </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="btnMudarCargo">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Alterar"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMudarCargoActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnMudarStatus">
               <Properties>
