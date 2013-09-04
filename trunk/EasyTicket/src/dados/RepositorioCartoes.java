@@ -5,18 +5,33 @@
 package dados;
 
 import interfaces.IRepositorioCartoes;
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import negocio.Aluno;
 import negocio.Cartao;
+import util.Formatacao;
 
 /**
  *
  * @author Nanda
  */
 public class RepositorioCartoes implements IRepositorioCartoes {
+
+    private Connection conexao;
+    
+    public RepositorioCartoes(){
+        try {
+            this.conexao = GenericDAO.getConnection();
+        } catch (Exception ex) {
+            Logger.getLogger(RepositorioCursos.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 
     public void inserir(Cartao cartao){
         String query = "INSERT INTO EASYTICKET.CARTOES"+
@@ -29,7 +44,7 @@ public class RepositorioCartoes implements IRepositorioCartoes {
             try {
                 PreparedStatement stmt = this.conexao.prepareStatement(query);
 
-                stmt.setInt(1, cartao.getIdCartao());
+                stmt.setInt(1, cartao.getNumCartao());
                 stmt.setString(2, cartao.getStatus());
                 stmt.setFloat(3, cartao.getSaldo());                
                 stmt.setInt(4, cartao.getCpfAluno());
@@ -41,11 +56,13 @@ public class RepositorioCartoes implements IRepositorioCartoes {
             } catch (SQLException ex) {
                 System.out.println("incluirCartao(): "+ex.toString());
             } 
-        
-    }
 
-    public boolean existe(Int id) {
-        if (this.procurarPorNumero(idCartao)!=null){
+    }
+    
+    
+   
+    public boolean existe(int numCartao) {
+        if (this.procurarPorNumero(numCartao)!=null){
           return true;
         }else{
           return false;
@@ -64,7 +81,7 @@ public class RepositorioCartoes implements IRepositorioCartoes {
          PreparedStatement stmt = this.conexao.prepareStatement(query);
          
          
-         stmt.setInt(1, cartao.getIdCartao());
+         stmt.setInt(1, cartao.getNumCartao());
          stmt.setString(2, cartao.getStatus());
          stmt.setFloat(3, cartao.getSaldo());
          stmt.setInt(4, cartao.getCpfAluno());
@@ -80,8 +97,32 @@ public class RepositorioCartoes implements IRepositorioCartoes {
     }
 
     @Override
-    public Cartao procurarPorNumero(int numeroCartao) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Cartao procurarPorNumero(int numCartao) {
+       Cartao cartaoResultado = null;
+        
+        String query = "SELECT * FROM EASYTICKET.CARTOES WHERE NUMCARTAO=?";
+        
+        try {
+                 
+                 PreparedStatement stmt = this.conexao.prepareStatement(query);
+                 stmt.setInt(1, numCartao);
+                 ResultSet res = stmt.executeQuery();
+                 
+                 if (res.next()) {
+                     cartaoResultado = new Cartao();
+                     cartaoResultado.setNumCartao(res.getInt(1));
+                     cartaoResultado.setStatus(res.getString(2));
+                     cartaoResultado.setSaldo(res.getFloat(3));
+                     cartaoResultado.setCpfAluno(res.getInt(4));
+                                     
+                 }
+                 //conexao.close();                
+                                  
+         } catch (SQLException ex) {
+                 System.out.println("procurarCartaoPorNumero: "+ex.toString());
+         }
+        
+         return cartaoResultado;
     }
 
     @Override
