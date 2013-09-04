@@ -206,8 +206,6 @@ public class TelaFuncionarios extends javax.swing.JFrame {
 
         tituloCurso3.setText("Cargo:");
 
-        comboBoxCargoFunCadastrar.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione", " " }));
-
         tituloDataNasc3.setText("Data de Nascimento:");
 
         comboBoxStatusFunc.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "ATIVO", "INATIVO" }));
@@ -800,6 +798,7 @@ public class TelaFuncionarios extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoPesquisar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoPesquisar1ActionPerformed
@@ -888,7 +887,7 @@ public class TelaFuncionarios extends javax.swing.JFrame {
 
             String cargo = comboBoxCargoFunCadastrar.getSelectedItem().toString();
             int idCargo = fachada.findIdCargoByNome(cargo);
-            System.out.println(idCargo);
+            //System.out.println(idCargo);
             String status = comboBoxStatusFunc.getSelectedItem().toString();
 
             String dataNasc = campoDataNascFunc3.getText();
@@ -906,8 +905,9 @@ public class TelaFuncionarios extends javax.swing.JFrame {
             
             
             if(Validacao.validaCPF(funcionario.getCpf())){
-                System.out.println("Olá");
-                if(fachada.verificarExistenciaAlunoPorCpf(funcionario.getCpf())){
+                //System.out.println("Olá");
+                if(fachada.verificarExistenciaFuncionarioPorCpf(funcionario.getCpf())){
+                    System.out.println("Entrou no if de validação");
                     JOptionPane.showMessageDialog(this,"Funcionário já cadastrado no sitema.","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
                     return;
                 }else {
@@ -919,10 +919,8 @@ public class TelaFuncionarios extends javax.swing.JFrame {
                     campoEmailCadastrar.setText("");                 
                     campoTelefoneFuncCadastrar.setText("");     
 
-                    campoDataNascFunc3.setText("");
-                                
+                    campoDataNascFunc3.setText("");    
                     return;
-                    
                 }
             } else {
                 JOptionPane.showMessageDialog(this,"CPF inválido.","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
@@ -965,7 +963,7 @@ public class TelaFuncionarios extends javax.swing.JFrame {
             funcionarioEditado.setCpf(cpf);
             funcionarioEditado.setTelefone(telefone);
             funcionarioEditado.setDataNascimento(sqlDateNasc); 
-            funcionarioEditado.setIdCargo(WIDTH); 
+            funcionarioEditado.setIdCargo(idCargo); 
             funcionarioEditado.setStatusFuncionario(status);
 
             if(Validacao.validaCPF(funcionarioEditado.getCpf())){                
