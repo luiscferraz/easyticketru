@@ -122,6 +122,21 @@ CREATE UNIQUE INDEX `cpfFuncionario_UNIQUE` ON `easyticket`.`funcionarios` (`cpf
 CREATE INDEX `idCargosFuncionarios_idx` ON `easyticket`.`funcionarios` (`idCargoFuncionario` ASC) ;
 
 
+
+-- -----------------------------------------------------
+-- Table `easyticket`.`refeicoes`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `easyticket`.`refeicoes` ;
+
+CREATE  TABLE IF NOT EXISTS `easyticket`.`refeicoes` (
+  `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT ,
+  `tipo` VARCHAR(25) NOT NULL ,
+  `preco` FLOAT NOT NULL ,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+
 -- -----------------------------------------------------
 -- Table `easyticket`.`recargas`
 -- -----------------------------------------------------
