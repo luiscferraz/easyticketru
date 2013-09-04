@@ -38,5 +38,9 @@ public class CadastroCartoes {
   public Cartao buscaPorCpf(String cpf){
     return cartoes.procurarPorCpf(cpf);
   }
+  
+  public boolean verificaExistenciaCartaoByNumero(int numCartao){
+      return cartoes.existe(numCartao);
+  }
    
 }

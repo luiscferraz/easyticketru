@@ -77,12 +77,12 @@
                                           <Group type="102" alignment="0" attributes="0">
                                               <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Component id="ViewNomeAluno" min="-2" pref="114" max="-2" attributes="0"/>
+                                              <Component id="lblNomeAlunoCartao" min="-2" pref="114" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
                                               <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="ViewNumeroCartao" min="-2" pref="114" max="-2" attributes="0"/>
+                                              <Component id="lblNumCartao" min="-2" pref="114" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <EmptySpace min="-2" pref="134" max="-2" attributes="0"/>
@@ -90,12 +90,12 @@
                                           <Group type="102" alignment="0" attributes="0">
                                               <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="ViewStatusCartao" min="-2" pref="114" max="-2" attributes="0"/>
+                                              <Component id="lblStatusCartao" min="-2" pref="114" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
                                               <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="ViewSaldoCartao" min="-2" pref="114" max="-2" attributes="0"/>
+                                              <Component id="lblSaldoCartao" min="-2" pref="114" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -128,22 +128,22 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                               <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="ViewNumeroCartao" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblNumCartao" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                               <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="ViewStatusCartao" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblStatusCartao" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                               <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="ViewNomeAluno" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblNomeAlunoCartao" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                               <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="ViewSaldoCartao" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblSaldoCartao" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace pref="58" max="32767" attributes="0"/>
@@ -212,7 +212,7 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="tituloCpf4" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="campoPesquisarCpfFunc1" min="-2" pref="137" max="-2" attributes="0"/>
+                                  <Component id="txtNumCartaoVisualizar" min="-2" pref="137" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="botaoPesquisar1" min="-2" pref="46" max="-2" attributes="0"/>
                               </Group>
@@ -230,7 +230,7 @@
                                   <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="tituloCpf4" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="campoPesquisarCpfFunc1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtNumCartaoVisualizar" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
@@ -256,7 +256,7 @@
                     <Property name="text" type="java.lang.String" value="N&#xfa;mero:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="campoPesquisarCpfFunc1">
+                <Component class="javax.swing.JTextField" name="txtNumCartaoVisualizar">
                 </Component>
                 <Component class="javax.swing.JButton" name="botaoPesquisar1">
                   <Properties>
@@ -328,22 +328,22 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnExcluirCartaoActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="ViewNumeroCartao">
+            <Component class="javax.swing.JLabel" name="lblNumCartao">
               <Properties>
                 <Property name="text" type="java.lang.String" value="-Numero cartao-"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="ViewNomeAluno">
+            <Component class="javax.swing.JLabel" name="lblNomeAlunoCartao">
               <Properties>
                 <Property name="text" type="java.lang.String" value="-Numero cartao-"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="ViewStatusCartao">
+            <Component class="javax.swing.JLabel" name="lblStatusCartao">
               <Properties>
                 <Property name="text" type="java.lang.String" value="-Numero cartao-"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="ViewSaldoCartao">
+            <Component class="javax.swing.JLabel" name="lblSaldoCartao">
               <Properties>
                 <Property name="text" type="java.lang.String" value="-Numero cartao-"/>
               </Properties>
