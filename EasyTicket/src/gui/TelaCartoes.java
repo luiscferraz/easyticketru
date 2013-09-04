@@ -23,6 +23,7 @@ public class TelaCartoes extends javax.swing.JFrame {
     
     
     private Fachada fachada = Fachada.obterInstancia();
+    private int numCartaoRetornadoEditar;
 
     /**
      * Creates new form TelaCartao
@@ -32,6 +33,7 @@ public class TelaCartoes extends javax.swing.JFrame {
         
         btnExcluirCartao.setEnabled(false);
         comboBoxNumEditarCartao.setEnabled(false);
+        btnAlterarStatus.setEnabled(false);
         
     }
     
@@ -85,7 +87,7 @@ public class TelaCartoes extends javax.swing.JFrame {
         painelConsulta2 = new javax.swing.JPanel();
         tituloConsultar2 = new javax.swing.JLabel();
         tituloCpf5 = new javax.swing.JLabel();
-        campoPesquisarCpfFunc2 = new javax.swing.JTextField();
+        txtPesquisarNumCartaoEditar = new javax.swing.JTextField();
         botaoPesquisar2 = new javax.swing.JButton();
         jSeparator5 = new javax.swing.JSeparator();
         tituloVisualizarFunc1 = new javax.swing.JLabel();
@@ -94,6 +96,9 @@ public class TelaCartoes extends javax.swing.JFrame {
         tituloAlunos2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         comboBoxNumEditarCartao = new javax.swing.JComboBox();
+        jLabel1 = new javax.swing.JLabel();
+        lblStatusAtualCartao = new javax.swing.JLabel();
+        btnAlterarStatus = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("EasyTicket - MANTER CARTAO");
@@ -407,7 +412,7 @@ public class TelaCartoes extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(tituloCpf5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(campoPesquisarCpfFunc2, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtPesquisarNumCartaoEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(botaoPesquisar2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -421,7 +426,7 @@ public class TelaCartoes extends javax.swing.JFrame {
                         .addGap(13, 13, 13)
                         .addGroup(painelConsulta2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(tituloCpf5)
-                            .addComponent(campoPesquisarCpfFunc2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txtPesquisarNumCartaoEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(painelConsulta2Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(botaoPesquisar2))))
@@ -457,6 +462,17 @@ public class TelaCartoes extends javax.swing.JFrame {
 
         comboBoxNumEditarCartao.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "ATIVO", "INATIVO" }));
 
+        jLabel1.setText("Status Atual:");
+
+        lblStatusAtualCartao.setText("status");
+
+        btnAlterarStatus.setText("Alterar");
+        btnAlterarStatus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAlterarStatusActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout guiaEditarAlunoLayout = new javax.swing.GroupLayout(guiaEditarAluno);
         guiaEditarAluno.setLayout(guiaEditarAlunoLayout);
         guiaEditarAlunoLayout.setHorizontalGroup(
@@ -471,17 +487,25 @@ public class TelaCartoes extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(guiaEditarAlunoLayout.createSequentialGroup()
-                        .addComponent(jLabel3)
+                        .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, guiaEditarAlunoLayout.createSequentialGroup()
+                                .addComponent(tituloAlunos2, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(painelConsulta2, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(tituloVisualizarFunc1)
+                            .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 603, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(44, Short.MAX_VALUE))
+                    .addGroup(guiaEditarAlunoLayout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblStatusAtualCartao)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnAlterarStatus)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(comboBoxNumEditarCartao, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, guiaEditarAlunoLayout.createSequentialGroup()
-                            .addComponent(tituloAlunos2, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(painelConsulta2, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(tituloVisualizarFunc1)
-                        .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 603, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(44, Short.MAX_VALUE))
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(comboBoxNumEditarCartao, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(68, 68, 68))))
         );
         guiaEditarAlunoLayout.setVerticalGroup(
             guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -494,11 +518,14 @@ public class TelaCartoes extends javax.swing.JFrame {
                 .addComponent(tituloVisualizarFunc1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(lblStatusAtualCartao)
                     .addComponent(jLabel3)
-                    .addComponent(comboBoxNumEditarCartao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
+                    .addComponent(comboBoxNumEditarCartao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAlterarStatus))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
                 .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botaoVoltar9)
                     .addComponent(btnSalvarAlteracoes))
@@ -542,6 +569,9 @@ public class TelaCartoes extends javax.swing.JFrame {
                 
                 btnExcluirCartao.setEnabled(true);
                 txtCpfAlunoCadastrarCartao.setText("");
+                
+                JOptionPane.showMessageDialog(this, "Cartão atualizado com sucesso.", "CONFIRMAÇÃO", JOptionPane.INFORMATION_MESSAGE);
+                return;
             }else{
                 JOptionPane.showMessageDialog(this,"Cartão Inexistente!","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
                 txtNumCartaoVisualizar.setText("");
@@ -570,7 +600,38 @@ public class TelaCartoes extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoPesquisar1ActionPerformed
 
     private void botaoPesquisar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoPesquisar2ActionPerformed
-        this.setVisible(false);
+        try{
+            int numCartao = Integer.parseInt(txtPesquisarNumCartaoEditar.getText());
+            if(fachada.verificarExistenciaCartaoPorNumero(numCartao)){
+                Cartao cartaoRetorno = new Cartao();
+                cartaoRetorno = fachada.findCartaoByNumero(numCartao);
+                numCartaoRetornadoEditar = cartaoRetorno.getNumCartao();
+                
+                btnAlterarStatus.setEnabled(true);
+                String novoStatus = comboBoxNumEditarCartao.getSelectedItem().toString(); 
+                cartaoRetorno.setStatus(novoStatus);
+                
+                
+                
+                txtPesquisarNumCartaoEditar.setText("");
+                
+                
+            }else{
+                JOptionPane.showMessageDialog(this,"Cartão Inexistente!","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
+                txtPesquisarNumCartaoEditar.setText("");
+                btnAlterarStatus.setEnabled(false);
+                                
+                return;
+            }            
+            
+        }catch (Exception ex){
+            JOptionPane.showMessageDialog(this,"Dados inválidos!","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
+            btnExcluirCartao.setEnabled(false);
+            btnAlterarStatus.setEnabled(false);
+            System.out.println(ex.getMessage());
+            return;
+        }
+        
     }//GEN-LAST:event_botaoPesquisar2ActionPerformed
 
     private void botaoVoltar6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltar6ActionPerformed
@@ -637,6 +698,10 @@ public class TelaCartoes extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnSalvarAlteracoesActionPerformed
 
+    private void btnAlterarStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarStatusActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAlterarStatusActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -678,15 +743,16 @@ public class TelaCartoes extends javax.swing.JFrame {
     private javax.swing.JButton botaoVoltar5;
     private javax.swing.JButton botaoVoltar6;
     private javax.swing.JButton botaoVoltar9;
+    private javax.swing.JButton btnAlterarStatus;
     private javax.swing.JButton btnExcluirCartao;
     private javax.swing.JButton btnSalvarAlteracoes;
-    private javax.swing.JTextField campoPesquisarCpfFunc2;
     private javax.swing.JComboBox comboBoxNumEditarCartao;
     private javax.swing.JComboBox comboBoxStatusCartaoCadastrar;
     private javax.swing.JPanel guiaCadastrarAluno;
     private javax.swing.JPanel guiaEditarAluno;
     private javax.swing.JPanel guiaVisualizarAluno;
     private javax.swing.JTabbedPane guiasAluno;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -699,6 +765,7 @@ public class TelaCartoes extends javax.swing.JFrame {
     private javax.swing.JLabel lblNomeAlunoCartao;
     private javax.swing.JLabel lblNumCartao;
     private javax.swing.JLabel lblSaldoCartao;
+    private javax.swing.JLabel lblStatusAtualCartao;
     private javax.swing.JLabel lblStatusCartao;
     private javax.swing.JPanel painelConsulta1;
     private javax.swing.JPanel painelConsulta2;
@@ -715,5 +782,6 @@ public class TelaCartoes extends javax.swing.JFrame {
     private javax.swing.JLabel tituloVisualizarFunc1;
     private javax.swing.JFormattedTextField txtCpfAlunoCadastrarCartao;
     private javax.swing.JTextField txtNumCartaoVisualizar;
+    private javax.swing.JTextField txtPesquisarNumCartaoEditar;
     // End of variables declaration//GEN-END:variables
 }

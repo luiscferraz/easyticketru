@@ -70,21 +70,16 @@ public class RepositorioCartoes implements IRepositorioCartoes {
     }
 
     public void atualizar(Cartao cartao) {
-      String query = "UPDATE EASYTICKET.CARTOES SET NUMCARTAO=?,"+
-                                                   "STATUSCARTAO=?,"+
-                                                   "SALDOCARTAO=?,"+
-                                                   "CPFALUNOCARTAO=?"+
-                                                   " WHERE NUMCARTAO=?";
+      String query = "UPDATE EASYTICKET.CARTOES SET STATUSCARTAO=? WHERE NUMCARTAO=?";
       
        
       try{
          PreparedStatement stmt = this.conexao.prepareStatement(query);
          
          
-         stmt.setInt(1, cartao.getNumCartao());
-         stmt.setString(2, cartao.getStatus());
-         stmt.setFloat(3, cartao.getSaldo());
-         stmt.setString(4, cartao.getCpfAlunoCartao());
+         
+         stmt.setString(1, cartao.getStatus());
+         stmt.setInt(2, cartao.getNumCartao());
                      
          stmt.execute();
          
