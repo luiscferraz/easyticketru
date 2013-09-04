@@ -75,7 +75,7 @@ public class Cartao {
     /**
      * @param cpfAluno the cpfAluno to set
      */
-    public void setCPFAlunoCartao(String cpfAlunoCartao) {
+    public void setCpfAlunoCartao(String cpfAlunoCartao) {
         this.cpfAlunoCartao = cpfAlunoCartao;
     }
     

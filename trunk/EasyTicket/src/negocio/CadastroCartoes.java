@@ -24,14 +24,10 @@ public class CadastroCartoes {
   }
   
   public void cadastrar(Cartao cartao){
-    //definir as condições para ver se um aluno(verificar por CPF) já tem um cartão cadstrado.
+    cartoes.inserir(cartao);
   }
   
-  //definir os outros métodos para ativa, desetiva e bloquear um cartão. É preciso também a emissão de saldo do mesmo.
-  
-  //fazer esses outros métodos após a definição da classe de repositório.
-  
-  public Cartao buscaPorNumero(int numeroCartao){
+ public Cartao buscaCartaoPorNumero(int numeroCartao){
     return cartoes.procurarPorNumero(numeroCartao);
   }
   
@@ -39,7 +35,7 @@ public class CadastroCartoes {
         return cartoes.listarCartoes();
     }
   
-  public Cartao buscaPorCpf(int cpf){
+  public Cartao buscaPorCpf(String cpf){
     return cartoes.procurarPorCpf(cpf);
   }
    

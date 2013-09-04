@@ -61,6 +61,8 @@ public class Fachada {
     cadastroFuncionarios = new CadastroFuncionarios(repositorioFuncionarios);
     
     
+    
+    
   
     
     
@@ -166,7 +168,22 @@ public class Fachada {
         return cadastroFuncionarios.buscarPorCargo(idCargo);
     }
   
-  
+   //cartão
+    public void cadastrarCartao(Cartao cartao){
+        cadastroCartoes.cadastrar(cartao);
+    }
+    public boolean verificarExistenciaCartaoPorNumero(int numeroCartao){
+        return true;
+    }
+    public void atualizarCartao(Cartao cartao){
+        cadastroCartoes.atualizar(cartao);
+    }
+    public Cartao findCartaoByNumero(int numeroCartao){
+        return cadastroCartoes.buscaCartaoPorNumero(numeroCartao);
+    }
+    public Cartao procurarPorCpf(String cpf){
+        return cadastroCartoes.buscaPorCpf(cpf);
+    }
   
 
     

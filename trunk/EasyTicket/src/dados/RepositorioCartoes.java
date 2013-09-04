@@ -37,7 +37,7 @@ public class RepositorioCartoes implements IRepositorioCartoes {
         String query = "INSERT INTO EASYTICKET.CARTOES"+
                                           " (NUMCARTAO,STATUSCARTAO,"+
                                             "SALDOCARTAO,"+
-                                            "IDALUNOCARTAO)"+
+                                            "CPFALUNOCARTAO)"+
                         "VALUES (?,?,?,?)" ;
         
        
@@ -47,7 +47,7 @@ public class RepositorioCartoes implements IRepositorioCartoes {
                 stmt.setInt(1, cartao.getNumCartao());
                 stmt.setString(2, cartao.getStatus());
                 stmt.setFloat(3, cartao.getSaldo());                
-                stmt.setInt(4, cartao.getIdAlunoCartao());
+                stmt.setString(4, cartao.getCpfAlunoCartao());
 
                 stmt.execute();
 
@@ -73,7 +73,7 @@ public class RepositorioCartoes implements IRepositorioCartoes {
       String query = "UPDATE EASYTICKET.CARTOES SET NUMCARTAO=?,"+
                                                    "STATUSCARTAO=?,"+
                                                    "SALDOCARTAO=?,"+
-                                                   "IDALUNOCARTAO=?"+
+                                                   "CPFALUNOCARTAO=?"+
                                                    " WHERE NUMCARTAO=?";
       
        
@@ -84,7 +84,7 @@ public class RepositorioCartoes implements IRepositorioCartoes {
          stmt.setInt(1, cartao.getNumCartao());
          stmt.setString(2, cartao.getStatus());
          stmt.setFloat(3, cartao.getSaldo());
-         stmt.setInt(4, cartao.getIdAlunoCartao());
+         stmt.setString(4, cartao.getCpfAlunoCartao());
                      
          stmt.execute();
          
@@ -113,7 +113,7 @@ public class RepositorioCartoes implements IRepositorioCartoes {
                      cartaoResultado.setNumCartao(res.getInt(1));
                      cartaoResultado.setStatus(res.getString(2));
                      cartaoResultado.setSaldo(res.getFloat(3));
-                     cartaoResultado.setIdAlunoCartao(res.getInt(4));
+                     cartaoResultado.setCpfAlunoCartao(res.getString(4));
                                      
                  }
                  //conexao.close();                
@@ -126,7 +126,7 @@ public class RepositorioCartoes implements IRepositorioCartoes {
     }
 
     @Override
-    public Cartao procurarPorCpf(int cpf) {
+    public Cartao procurarPorCpf(String cpf) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     //métodos apenas com assinatura, ainda falta definir a interação com o banco de dados.
