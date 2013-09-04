@@ -831,4 +831,6 @@ public class TelaCartoes extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     
+
+    
 }
