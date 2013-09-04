@@ -90,7 +90,7 @@ public class RepositorioAlunos implements IRepositorioAlunos {
                                                    "DATANASCIMENTOALUNO=?,"+
                                                    "STATUSALUNO=?,"+
                                                    "INICIOCURSOALUNO=?,"+
-                                                   "TERMINOCURSOALUNO=?"+
+                                                   "TERMINOCURSOALUNO=?,"+
                                                    "IDCURSOALUNO=?"+
                                                    " WHERE IDALUNO=?";
       

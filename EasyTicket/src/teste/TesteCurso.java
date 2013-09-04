@@ -86,11 +86,11 @@ public class TesteCurso {
         //Date dataTransformada = Formatacao.transformarEmData(d);
         //System.out.println(dataTransformada);
         
-        //TelaAlunos ta = new TelaAlunos();
-        //ta.setVisible(true);
+        TelaAlunos ta = new TelaAlunos();
+        ta.setVisible(true);
         
-        TelaFuncionarios tf = new TelaFuncionarios();
-        tf.setVisible(true);
+        //TelaFuncionarios tf = new TelaFuncionarios();
+        //tf.setVisible(true);
         
         
         

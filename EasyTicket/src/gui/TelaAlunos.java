@@ -37,6 +37,7 @@ public class TelaAlunos extends javax.swing.JFrame {
     //private CadastroCursos cadastroCursos= new CadastroCursos(repositorioCursos);
     
     private Fachada fachada = Fachada.obterInstancia();
+    private int idAlunoRetornado;
     
     public TelaAlunos() {
         initComponents();
@@ -148,6 +149,8 @@ public class TelaAlunos extends javax.swing.JFrame {
         lblStatusAtual = new javax.swing.JLabel();
         btnMudarCurso = new javax.swing.JButton();
         btnMudarStatus = new javax.swing.JButton();
+        lblId = new javax.swing.JLabel();
+        lblIdAluno = new javax.swing.JLabel();
         guiaCadastrarAluno = new javax.swing.JPanel();
         tituloCadastrar = new javax.swing.JLabel();
         btnCadastrar = new javax.swing.JButton();
@@ -582,6 +585,8 @@ public class TelaAlunos extends javax.swing.JFrame {
             }
         });
 
+        lblId.setText("Id Aluno:");
+
         javax.swing.GroupLayout guiaEditarAlunoLayout = new javax.swing.GroupLayout(guiaEditarAluno);
         guiaEditarAluno.setLayout(guiaEditarAlunoLayout);
         guiaEditarAlunoLayout.setHorizontalGroup(
@@ -612,12 +617,19 @@ public class TelaAlunos extends javax.swing.JFrame {
                                 .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(tituloCurso11)
                                     .addComponent(tituloCurso12)
-                                    .addComponent(tituloDataNasc4))
-                                .addGap(11, 11, 11)
+                                    .addComponent(tituloDataNasc4)
+                                    .addComponent(lblId))
                                 .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtInicioCursoEditar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE)
-                                    .addComponent(txtTerminoCursoEditar, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(txtDataNascEditar, javax.swing.GroupLayout.Alignment.TRAILING)))
+                                    .addGroup(guiaEditarAlunoLayout.createSequentialGroup()
+                                        .addGap(11, 11, 11)
+                                        .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(txtInicioCursoEditar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE)
+                                            .addComponent(txtTerminoCursoEditar, javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(txtDataNascEditar, javax.swing.GroupLayout.Alignment.TRAILING)))
+                                    .addGroup(guiaEditarAlunoLayout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(lblIdAluno)
+                                        .addGap(0, 0, Short.MAX_VALUE))))
                             .addGroup(guiaEditarAlunoLayout.createSequentialGroup()
                                 .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(guiaEditarAlunoLayout.createSequentialGroup()
@@ -680,7 +692,9 @@ public class TelaAlunos extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtTelefoneEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tituloDataNasc5)))
+                            .addComponent(tituloDataNasc5)
+                            .addComponent(lblId)
+                            .addComponent(lblIdAluno)))
                     .addGroup(guiaEditarAlunoLayout.createSequentialGroup()
                         .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtDataNascEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1010,6 +1024,9 @@ public class TelaAlunos extends javax.swing.JFrame {
                         Aluno alunoRetorno = new Aluno();
                         alunoRetorno = fachada.findAlunoByCpf(txtPesquisarCpfEditar.getText()) ;
                         
+                        lblIdAluno.setText(Integer.toString(alunoRetorno.getId()));
+                        idAlunoRetornado = alunoRetorno.getId();
+                        
                         txtNomeEditar.setText(alunoRetorno.getNome());
                         txtCpfEditar.setText(alunoRetorno.getCpf());
                         txtEmailEditar.setText(alunoRetorno.getEmail());
@@ -1155,7 +1172,8 @@ public class TelaAlunos extends javax.swing.JFrame {
 
     private void btnSalvarAlteracoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarAlteracoesActionPerformed
         // TODO add your handling code here:
-                
+        
+        
         try{
             String nome = txtNomeEditar.getText();
             String cpf = txtCpfEditar.getText();       
@@ -1184,7 +1202,7 @@ public class TelaAlunos extends javax.swing.JFrame {
             alunoEditado.setCpf(cpf);
             alunoEditado.setTelefone(telefone);
             alunoEditado.setDataNascimento(sqlDateTermCurso); 
-            alunoEditado.setIdCurso(WIDTH); 
+            alunoEditado.setIdCurso(idAlunoRetornado); 
             alunoEditado.setStatusAluno(status);
             alunoEditado.setInicioCursoAluno(sqlDateTermCurso);
             alunoEditado.setTerminoCursoAluno(sqlDateInicioCurso);
@@ -1285,6 +1303,8 @@ public class TelaAlunos extends javax.swing.JFrame {
     private javax.swing.JLabel lblCursoAtual;
     private javax.swing.JLabel lblDataNascimento;
     private javax.swing.JLabel lblEmail;
+    private javax.swing.JLabel lblId;
+    private javax.swing.JLabel lblIdAluno;
     private javax.swing.JLabel lblInicioCurso;
     private javax.swing.JLabel lblNome;
     private javax.swing.JLabel lblStatusAluno;
