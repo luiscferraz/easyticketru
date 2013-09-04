@@ -7,10 +7,12 @@ package dados;
 import interfaces.IRepositorioRefeicoes;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import negocio.Refeicao;
+import util.Formatacao;
 
 /**
  *
@@ -28,10 +30,10 @@ public class RepositorioRefeicoes implements IRepositorioRefeicoes {
         }
     }
 
-    @Override
+    
     public void inserir(Refeicao refeicao) {
         String query = "INSERT INTO EASYTICKET.REFEICOES"+
-                                          " (DESCRICAOREFEICAO,VALORREFEICAO)"+
+                                          " (DESCRICAO,VALOR)"+
                         "VALUES (?,?)" ;
         
        
@@ -50,19 +52,64 @@ public class RepositorioRefeicoes implements IRepositorioRefeicoes {
             } 
     }
 
-    @Override
-    public boolean existe(int idRefeicao) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean existe(String descricaoRefeicao) {
+        if (this.procurarPorDescricao(descricaoRefeicao)!=null){
+          return true;
+        }else{
+          return false;
+        }
     }
 
-    @Override
     public void atualizar(Refeicao refeicao) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String query = "UPDATE EASYTICKET.ALUNOS SET DESCRICAO=?,"+
+                                                   "VALOR=?"+
+                                                   " WHERE IDREFEICAO=?";
+      
+       
+      try{
+         PreparedStatement stmt = this.conexao.prepareStatement(query);
+         
+         
+         stmt.setString(1, refeicao.getDescricao());
+         stmt.setString(2, refeicao.getValor());
+                     
+         stmt.execute();
+         
+         //conexao.close();
+         System.out.println("Refeição atualizada com sucesso");
+      
+      } catch (SQLException ex) {
+                 System.out.println("atualizarRefeição(): "+ex.toString());
+      }
     }
 
-    @Override
-    public Refeicao procurarPorId(int idRefeicao) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
+    public Refeicao procurarPorDescricao(String descricao) {
+        Refeicao refeicaoResultado = null;
+        
+        String query = "SELECT * FROM EASYTICKET.REFEICOES WHERE DESCRICAO=?";
+        
+        try {
+                 
+                 PreparedStatement stmt = this.conexao.prepareStatement(query);
+                 stmt.setString(1, descricao);
+                 ResultSet res = stmt.executeQuery();
+                 
+                 if (res.next()) {
+                     refeicaoResultado = new Refeicao();
+                     refeicaoResultado.setIdRefeicao(res.getInt(1));
+                     refeicaoResultado.setDescricao(res.getString(2));
+                     refeicaoResultado.setValor(res.getFloat(3));
+                 }
+                 //conexao.close();                
+                                  
+         } catch (SQLException ex) {
+                 System.out.println("procurarRefeicaoPorDescricao: "+ex.toString());
+         }
+        
+         return refeicaoResultado;
     }
+    
+    
     
 }
