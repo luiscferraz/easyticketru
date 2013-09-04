@@ -8,6 +8,7 @@ import dados.RepositorioCursos;
 import dados.RepositorioFuncionarios;
 import gui.TelaAlunos;
 import gui.TelaCargos;
+import gui.TelaCartoes;
 import gui.TelaCursos;
 import gui.TelaFuncionarios;
 import gui.TelaPrincipalFuncionario;
@@ -35,8 +36,11 @@ public class Teste {
      */
     
     public static void main(String[] args) {
-        TelaPrincipalFuncionario telaPrincipalFuncionario = new TelaPrincipalFuncionario();
-        telaPrincipalFuncionario.setVisible(true);
+        //TelaPrincipalFuncionario telaPrincipalFuncionario = new TelaPrincipalFuncionario();
+        //telaPrincipalFuncionario.setVisible(true);
+        TelaCartoes tc = new TelaCartoes();
+        tc.setVisible(true);
+        
         
         //String nome = "Fernanda";
         
