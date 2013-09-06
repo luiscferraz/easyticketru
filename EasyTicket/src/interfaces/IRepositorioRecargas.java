@@ -6,6 +6,7 @@ package interfaces;
 
 import java.util.ArrayList;
 import java.util.Date;
+import negocio.Cartao;
 import negocio.Recarga;
 
 /**

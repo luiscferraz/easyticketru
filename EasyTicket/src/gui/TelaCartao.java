@@ -4,31 +4,25 @@
  */
 package gui;
 
-import static java.awt.image.ImageObserver.WIDTH;
-import java.util.Date;
-import java.util.List;
 import javax.swing.JOptionPane;
 import negocio.Aluno;
 import negocio.Cartao;
-import negocio.Curso;
 import negocio.Fachada;
-import util.Formatacao;
 import util.Validacao;
 
 /**
  *
- * @author Allan
+ * @author Marcela Domingues
  */
-public class TelaCartoes extends javax.swing.JFrame {
-    
-    
+public class TelaCartao extends javax.swing.JFrame {
+
     private Fachada fachada = Fachada.obterInstancia();
     private int numCartaoRetornadoEditar;
 
     /**
      * Creates new form TelaCartao
      */
-    public TelaCartoes() {
+    public TelaCartao() {
         initComponents();
         
         btnExcluirCartao.setEnabled(false);
@@ -37,12 +31,6 @@ public class TelaCartoes extends javax.swing.JFrame {
         
     }
     
-    @SuppressWarnings("unchecked")
-    
-    
-    
-    private void pegarDadosCamposCadastrar(){
-    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -103,7 +91,7 @@ public class TelaCartoes extends javax.swing.JFrame {
         lblNumCartaoRetornado = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("EasyTicket - MANTER CARTAO");
+        setTitle("EasyTicket - MANTER CARTÃO");
         setResizable(false);
 
         guiasAluno.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -203,7 +191,7 @@ public class TelaCartoes extends javax.swing.JFrame {
         guiaVisualizarAlunoLayout.setHorizontalGroup(
             guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(guiaVisualizarAlunoLayout.createSequentialGroup()
-                .addContainerGap(42, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, guiaVisualizarAlunoLayout.createSequentialGroup()
                         .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -267,7 +255,7 @@ public class TelaCartoes extends javax.swing.JFrame {
                     .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel9)
                         .addComponent(lblSaldoCartao)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                 .addGroup(guiaVisualizarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(botaoVoltar6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnExcluirCartao))
@@ -343,7 +331,7 @@ public class TelaCartoes extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(comboBoxStatusCartaoCadastrar, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                                 .addGap(221, 221, 221)))
-                        .addGap(0, 89, Short.MAX_VALUE))
+                        .addGap(0, 57, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, guiaCadastrarAlunoLayout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(botaoVoltar5)
@@ -351,9 +339,6 @@ public class TelaCartoes extends javax.swing.JFrame {
                         .addComponent(botaoCadastrar1)))
                 .addContainerGap())
         );
-
-        guiaCadastrarAlunoLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {botaoCadastrar1, botaoVoltar5});
-
         guiaCadastrarAlunoLayout.setVerticalGroup(
             guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(guiaCadastrarAlunoLayout.createSequentialGroup()
@@ -371,7 +356,7 @@ public class TelaCartoes extends javax.swing.JFrame {
                 .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tituloStatus)
                     .addComponent(comboBoxStatusCartaoCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
                 .addGroup(guiaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botaoCadastrar1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(botaoVoltar5))
@@ -505,7 +490,7 @@ public class TelaCartoes extends javax.swing.JFrame {
                                 .addComponent(painelConsulta2, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(tituloVisualizarFunc1)
                             .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 603, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(44, Short.MAX_VALUE))
+                        .addContainerGap(12, Short.MAX_VALUE))
                     .addGroup(guiaEditarAlunoLayout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -540,7 +525,7 @@ public class TelaCartoes extends javax.swing.JFrame {
                 .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(lblNumCartaoRetornado))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addGroup(guiaEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botaoVoltar9)
                     .addComponent(btnSalvarAlteracoes))
@@ -555,7 +540,7 @@ public class TelaCartoes extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(guiasAluno)
+                .addComponent(guiasAluno, javax.swing.GroupLayout.DEFAULT_SIZE, 640, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -566,41 +551,45 @@ public class TelaCartoes extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void botaoVoltar6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltar6ActionPerformed
+        this.setVisible(false);
+    }//GEN-LAST:event_botaoVoltar6ActionPerformed
+
     private void botaoPesquisar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoPesquisar1ActionPerformed
-        try{
+        try {
             int numCartao = Integer.parseInt(txtNumCartaoVisualizar.getText());
-            if(fachada.verificarExistenciaCartaoPorNumero(numCartao)){
+            if (fachada.verificarExistenciaCartaoPorNumero(numCartao)) {
                 Cartao cartaoRetorno = new Cartao();
                 cartaoRetorno = fachada.findCartaoByNumero(numCartao);
                 lblNumCartao.setText(Integer.toString(cartaoRetorno.getNumCartao()));
                 lblStatusCartao.setText(cartaoRetorno.getStatus());
                 lblSaldoCartao.setText(Float.toString(cartaoRetorno.getSaldo()));
-                
+
                 Aluno donoCartao = new Aluno();
                 donoCartao = fachada.findAlunoByCpf(cartaoRetorno.getCpfAlunoCartao());
-                
+
                 lblNomeAlunoCartao.setText(donoCartao.getNome());
-                
+
                 btnExcluirCartao.setEnabled(true);
                 txtCpfAlunoCadastrarCartao.setText("");
-                
+
                 JOptionPane.showMessageDialog(this, "Cartão atualizado com sucesso.", "CONFIRMAÇÃO", JOptionPane.INFORMATION_MESSAGE);
                 return;
-            }else{
-                JOptionPane.showMessageDialog(this,"Cartão Inexistente!","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, "Cartão Inexistente!", "VALIDAÇÃO", JOptionPane.ERROR_MESSAGE);
                 txtNumCartaoVisualizar.setText("");
-                
+
                 lblNumCartao.setText("");
                 lblStatusCartao.setText("");
                 lblSaldoCartao.setText("");
                 lblNomeAlunoCartao.setText("");
                 btnExcluirCartao.setEnabled(false);
-                
+
                 return;
-            }            
-            
-        }catch (Exception ex){
-            JOptionPane.showMessageDialog(this,"Dados inválidos!","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
+            }
+
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "Dados inválidos!", "VALIDAÇÃO", JOptionPane.ERROR_MESSAGE);
             txtNumCartaoVisualizar.setText("");
             lblNumCartao.setText("");
             lblStatusCartao.setText("");
@@ -610,136 +599,132 @@ public class TelaCartoes extends javax.swing.JFrame {
             System.out.println(ex.getMessage());
             return;
         }
-        
+
     }//GEN-LAST:event_botaoPesquisar1ActionPerformed
-
-    private void botaoPesquisar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoPesquisar2ActionPerformed
-        try{
-            int numCartao = Integer.parseInt(txtPesquisarNumCartaoEditar.getText());
-            if(fachada.verificarExistenciaCartaoPorNumero(numCartao)){
-                Cartao cartaoRetorno = new Cartao();
-                cartaoRetorno = fachada.findCartaoByNumero(numCartao);
-                numCartaoRetornadoEditar = cartaoRetorno.getNumCartao();
-                
-                lblStatusAtualCartao.setText(cartaoRetorno.getStatus());
-                lblNumCartaoRetornado.setText(Integer.toString(cartaoRetorno.getNumCartao()));
-                
-                btnAlterarStatus.setEnabled(true);
-                String novoStatus = comboBoxNumEditarCartao.getSelectedItem().toString(); 
-                cartaoRetorno.setStatus(novoStatus);  
-                
-                
-                txtPesquisarNumCartaoEditar.setText("");
-                
-                
-                
-            }else{
-                JOptionPane.showMessageDialog(this,"Cartão Inexistente!","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
-                txtPesquisarNumCartaoEditar.setText("");
-                btnAlterarStatus.setEnabled(false);
-                lblStatusAtualCartao.setText("");
-                lblNumCartaoRetornado.setText("");
-                comboBoxNumEditarCartao.setEnabled(false);
-                                
-                return;
-            }            
-            
-        }catch (Exception ex){
-            JOptionPane.showMessageDialog(this,"Dados inválidos!","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
-            
-            btnAlterarStatus.setEnabled(false);
-            
-            lblStatusAtualCartao.setText("");
-            lblNumCartaoRetornado.setText("");
-            comboBoxNumEditarCartao.setEnabled(false);
-                           
-            System.out.println(ex.getMessage());
-            return;
-        }
-        
-    }//GEN-LAST:event_botaoPesquisar2ActionPerformed
-
-    private void botaoVoltar6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltar6ActionPerformed
-        this.setVisible(false);
-    }//GEN-LAST:event_botaoVoltar6ActionPerformed
-
-    private void botaoVoltar9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltar9ActionPerformed
-        this.setVisible(false);
-    }//GEN-LAST:event_botaoVoltar9ActionPerformed
-
-    private void botaoVoltar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltar5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botaoVoltar5ActionPerformed
-
-    private void comboBoxStatusCartaoCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxStatusCartaoCadastrarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_comboBoxStatusCartaoCadastrarActionPerformed
 
     private void btnExcluirCartaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirCartaoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnExcluirCartaoActionPerformed
 
     private void botaoCadastrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrar1ActionPerformed
-        try{
-            
-            String cpf = txtCpfAlunoCadastrarCartao.getText();    
+        try {
+
+            String cpf = txtCpfAlunoCadastrarCartao.getText();
             String status = comboBoxStatusCartaoCadastrar.getSelectedItem().toString();
 
             Cartao cartao = new Cartao();
             cartao.setCpfAlunoCartao(cpf);
             cartao.setStatus(status);
-                       
-            
-            if((Validacao.validaCPF(cartao.getCpfAlunoCartao())) && (fachada.verificarExistenciaAlunoPorCpf(cpf)) ){
-                
-                if(fachada.findCartaoByCpf(cpf)!=null){
-                    JOptionPane.showMessageDialog(this,"Aluno já possui cartão cadastrado no sistema.","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
+
+
+            if ((Validacao.validaCPF(cartao.getCpfAlunoCartao())) && (fachada.verificarExistenciaAlunoPorCpf(cpf))) {
+
+                if (fachada.findCartaoByCpf(cpf) != null) {
+                    JOptionPane.showMessageDialog(this, "Aluno já possui cartão cadastrado no sistema.", "VALIDAÇÃO", JOptionPane.ERROR_MESSAGE);
                     return;
-                }else {
+                } else {
                     fachada.cadastrarCartao(cartao);
                     JOptionPane.showMessageDialog(this, "Cartão cadastrado com sucesso.", "CONFIRMAÇÃO", JOptionPane.INFORMATION_MESSAGE);
-                    
+
                     txtCpfAlunoCadastrarCartao.setText("");
-                                       
+
                     return;
-                    
+
                 }
             } else {
-                JOptionPane.showMessageDialog(this,"CPF inválido.","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "CPF inválido.", "VALIDAÇÃO", JOptionPane.ERROR_MESSAGE);
                 txtCpfAlunoCadastrarCartao.setText("");
                 return;
             }
-            
-            
-        }catch (Exception ex){
-            JOptionPane.showMessageDialog(this,"Preencha todos os campos corretamente.","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
+
+
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "Preencha todos os campos corretamente.", "VALIDAÇÃO", JOptionPane.ERROR_MESSAGE);
             txtCpfAlunoCadastrarCartao.setText("");
             return;
         }
     }//GEN-LAST:event_botaoCadastrar1ActionPerformed
 
+    private void botaoVoltar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltar5ActionPerformed
+        this.setVisible(false);
+    }//GEN-LAST:event_botaoVoltar5ActionPerformed
+
+    private void comboBoxStatusCartaoCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxStatusCartaoCadastrarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboBoxStatusCartaoCadastrarActionPerformed
+
+    private void botaoPesquisar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoPesquisar2ActionPerformed
+        try {
+            int numCartao = Integer.parseInt(txtPesquisarNumCartaoEditar.getText());
+            if (fachada.verificarExistenciaCartaoPorNumero(numCartao)) {
+                Cartao cartaoRetorno = new Cartao();
+                cartaoRetorno = fachada.findCartaoByNumero(numCartao);
+                numCartaoRetornadoEditar = cartaoRetorno.getNumCartao();
+
+                lblStatusAtualCartao.setText(cartaoRetorno.getStatus());
+                lblNumCartaoRetornado.setText(Integer.toString(cartaoRetorno.getNumCartao()));
+
+                btnAlterarStatus.setEnabled(true);
+                String novoStatus = comboBoxNumEditarCartao.getSelectedItem().toString();
+                cartaoRetorno.setStatus(novoStatus);
+
+
+                txtPesquisarNumCartaoEditar.setText("");
+
+
+
+            } else {
+                JOptionPane.showMessageDialog(this, "Cartão Inexistente!", "VALIDAÇÃO", JOptionPane.ERROR_MESSAGE);
+                txtPesquisarNumCartaoEditar.setText("");
+                btnAlterarStatus.setEnabled(false);
+                lblStatusAtualCartao.setText("");
+                lblNumCartaoRetornado.setText("");
+                comboBoxNumEditarCartao.setEnabled(false);
+
+                return;
+            }
+
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "Dados inválidos!", "VALIDAÇÃO", JOptionPane.ERROR_MESSAGE);
+
+            btnAlterarStatus.setEnabled(false);
+
+            lblStatusAtualCartao.setText("");
+            lblNumCartaoRetornado.setText("");
+            comboBoxNumEditarCartao.setEnabled(false);
+
+            System.out.println(ex.getMessage());
+            return;
+        }
+
+    }//GEN-LAST:event_botaoPesquisar2ActionPerformed
+
     private void btnSalvarAlteracoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarAlteracoesActionPerformed
-        try{
+        try {
             //System.out.println(idAlunoRetornado);
             String status = comboBoxNumEditarCartao.getSelectedItem().toString();
 
-            
+
             Cartao cartaoEditado = new Cartao();
             cartaoEditado = fachada.findCartaoByNumero(numCartaoRetornadoEditar);
             cartaoEditado.setStatus(status);
-            
-            
+
+
             fachada.atualizarCartao(cartaoEditado);
-                
+
             JOptionPane.showMessageDialog(this, "Status do cartão alterado com sucesso.", "CONFIRMAÇÃO", JOptionPane.INFORMATION_MESSAGE);
             return;
-                        
-        }catch(Exception ex){
-            JOptionPane.showMessageDialog(this,"Não foi possível atualizar os dados do cartão.","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
+
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "Não foi possível atualizar os dados do cartão.", "VALIDAÇÃO", JOptionPane.ERROR_MESSAGE);
             return;
         }
-        
+
     }//GEN-LAST:event_btnSalvarAlteracoesActionPerformed
+
+    private void botaoVoltar9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltar9ActionPerformed
+        this.setVisible(false);
+    }//GEN-LAST:event_botaoVoltar9ActionPerformed
 
     private void btnAlterarStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarStatusActionPerformed
         // TODO add your handling code here:
@@ -750,10 +735,14 @@ public class TelaCartoes extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
+        /*
+         * Set the Nimbus look and feel
+         */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+        /*
+         * If Nimbus (introduced in Java SE 6) is not available, stay with the
+         * default look and feel. For details see
+         * http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -763,20 +752,23 @@ public class TelaCartoes extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaCartoes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaCartao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaCartoes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaCartao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaCartoes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaCartao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaCartoes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaCartao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
-        /* Create and display the form */
+        /*
+         * Create and display the form
+         */
         java.awt.EventQueue.invokeLater(new Runnable() {
+
             public void run() {
-                new TelaCartoes().setVisible(true);
+                new TelaCartao().setVisible(true);
             }
         });
     }
@@ -830,8 +822,4 @@ public class TelaCartoes extends javax.swing.JFrame {
     private javax.swing.JTextField txtNumCartaoVisualizar;
     private javax.swing.JTextField txtPesquisarNumCartaoEditar;
     // End of variables declaration//GEN-END:variables
-
-    
-
-    
 }

@@ -36,10 +36,9 @@ public class Teste {
      */
     
     public static void main(String[] args) {
-        //TelaPrincipalFuncionario telaPrincipalFuncionario = new TelaPrincipalFuncionario();
-        //telaPrincipalFuncionario.setVisible(true);
-        TelaCartoes tc = new TelaCartoes();
-        tc.setVisible(true);
+        TelaPrincipalFuncionario telaPrincipalFuncionario = new TelaPrincipalFuncionario();
+        telaPrincipalFuncionario.setVisible(true);
+        
         
         
         //String nome = "Fernanda";

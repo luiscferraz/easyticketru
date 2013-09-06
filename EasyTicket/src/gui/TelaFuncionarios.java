@@ -861,7 +861,7 @@ public class TelaFuncionarios extends javax.swing.JFrame {
                     
             
                 } else {
-                    JOptionPane.showMessageDialog(this,"Aluno inexistente!","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(this,"Funcionário inexistente!","VALIDAÇÃO",JOptionPane.ERROR_MESSAGE);
                     campoCpfPesquisaVisualizar.setText("");
                     
                     return;

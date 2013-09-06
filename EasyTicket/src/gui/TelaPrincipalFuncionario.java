@@ -145,7 +145,7 @@ public class TelaPrincipalFuncionario extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCargosActionPerformed
 
     private void btnCartoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCartoesActionPerformed
-        new TelaCartoes().setVisible(true);
+        new TelaCartao().setVisible(true);
     }//GEN-LAST:event_btnCartoesActionPerformed
 
     private void botaoCursosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCursosActionPerformed

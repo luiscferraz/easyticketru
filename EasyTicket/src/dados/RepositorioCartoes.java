@@ -168,4 +168,26 @@ public class RepositorioCartoes implements IRepositorioCartoes {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
+    public void efetuarRecargaCartao(Cartao cartao) {
+        String query = "UPDATE EASYTICKET.CARTOES SET SALDOCARTAO=? WHERE NUMCARTAO=?";
+      
+       
+      try{
+         PreparedStatement stmt = this.conexao.prepareStatement(query);
+         
+         
+         
+         stmt.setFloat(1, cartao.getSaldo());
+         stmt.setInt(2, cartao.getNumCartao());
+                     
+         stmt.execute();
+         
+         //conexao.close();
+         System.out.println("Cartão atualizado com sucesso");
+      
+      } catch (SQLException ex) {
+                 System.out.println("atualizarCartao(): "+ex.toString());
+      }
+    }
+    
 }

@@ -93,11 +93,11 @@ public class TelaPrincipalAluno extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoRecargaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoRecargaActionPerformed
-        new TelaAlunos().setVisible(true);
+        new TelaRecargas().setVisible(true);
     }//GEN-LAST:event_botaoRecargaActionPerformed
 
     private void botaoSaldoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSaldoActionPerformed
-        // TODO add your handling code here:
+        new TelaSaldos().setVisible(true);
     }//GEN-LAST:event_botaoSaldoActionPerformed
 
     /**

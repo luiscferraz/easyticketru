@@ -42,5 +42,8 @@ public class CadastroCartoes {
   public boolean verificaExistenciaCartaoByNumero(int numCartao){
       return cartoes.existe(numCartao);
   }
-   
+
+  public void efetuarRecargaCartao(Cartao cartao) {
+      cartoes.efetuarRecargaCartao(cartao);
+  }
 }

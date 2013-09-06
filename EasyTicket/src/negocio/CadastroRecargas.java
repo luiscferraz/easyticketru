@@ -4,10 +4,22 @@
  */
 package negocio;
 
+import dados.RepositorioRecargas;
+
 /**
  *
  * @author Nanda
  */
 public class CadastroRecargas {
+    
+    private RepositorioRecargas recargas;
+  
+  public CadastroRecargas(RepositorioRecargas repositorioRecargas){
+    this.recargas = repositorioRecargas;  
+  }
+  
+  public void cadastrar(Recarga recarga){
+    recargas.inserir(recarga);
+  }
     
 }
