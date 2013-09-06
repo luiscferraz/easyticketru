@@ -3,7 +3,7 @@
 <Form version="1.5" maxVersion="1.8" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="2"/>
-    <Property name="title" type="java.lang.String" value="EasyTicket - MANTER CARTAO"/>
+    <Property name="title" type="java.lang.String" value="EasyTicket - MANTER CART&#xc3;O"/>
     <Property name="resizable" type="boolean" value="false"/>
   </Properties>
   <SyntheticProperties>
@@ -26,7 +26,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="guiasAluno" max="32767" attributes="0"/>
+              <Component id="guiasAluno" pref="640" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -59,8 +59,8 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace pref="42" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -145,10 +145,10 @@
                               <Component id="lblSaldoCartao" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="58" max="32767" attributes="0"/>
+                      <EmptySpace pref="26" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="botaoVoltar6" max="32767" attributes="0"/>
-                          <Component id="btnExcluirCartao" min="-2" max="-2" attributes="0"/>
+                          <Component id="botaoVoltar6" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnExcluirCartao" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -349,14 +349,14 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="jSeparator3" alignment="0" min="-2" pref="547" max="-2" attributes="0"/>
-                                  <Component id="tituloAlunos4" min="-2" pref="230" max="-2" attributes="0"/>
-                                  <Component id="tituloCadastrar" min="-2" max="-2" attributes="0"/>
+                                  <Component id="tituloAlunos4" alignment="0" min="-2" pref="230" max="-2" attributes="0"/>
+                                  <Component id="tituloCadastrar" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" alignment="1" attributes="0">
                                       <Group type="103" groupAlignment="1" attributes="0">
                                           <Group type="102" alignment="1" attributes="0">
@@ -373,13 +373,13 @@
                                       <EmptySpace min="-2" pref="221" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace min="0" pref="89" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="57" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace max="32767" attributes="0"/>
-                              <Component id="botaoVoltar5" linkSize="2" min="-2" max="-2" attributes="0"/>
+                              <Component id="botaoVoltar5" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="botaoCadastrar1" linkSize="2" min="-2" max="-2" attributes="0"/>
+                              <Component id="botaoCadastrar1" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -405,7 +405,7 @@
                           <Component id="tituloStatus" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="comboBoxStatusCartaoCadastrar" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="49" max="32767" attributes="0"/>
+                      <EmptySpace pref="17" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="botaoCadastrar1" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
                           <Component id="botaoVoltar5" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -518,7 +518,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="lblNumCartaoRetornado" min="-2" max="-2" attributes="0"/>
@@ -534,7 +534,7 @@
                                   <Component id="tituloVisualizarFunc1" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="jSeparator5" alignment="0" min="-2" pref="603" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="44" max="32767" attributes="0"/>
+                              <EmptySpace pref="12" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
@@ -557,8 +557,8 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="painelConsulta2" min="-2" max="-2" attributes="0"/>
-                          <Component id="tituloAlunos2" min="-2" pref="59" max="-2" attributes="0"/>
+                          <Component id="painelConsulta2" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="tituloAlunos2" alignment="0" min="-2" pref="59" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="tituloVisualizarFunc1" min="-2" pref="24" max="-2" attributes="0"/>
@@ -577,7 +577,7 @@
                           <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="lblNumCartaoRetornado" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="50" max="32767" attributes="0"/>
+                      <EmptySpace pref="18" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="botaoVoltar9" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btnSalvarAlteracoes" alignment="3" min="-2" max="-2" attributes="0"/>

@@ -9,6 +9,7 @@ import dados.RepositorioCargos;
 import dados.RepositorioCartoes;
 import dados.RepositorioCursos;
 import dados.RepositorioFuncionarios;
+import dados.RepositorioRecargas;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,6 +24,7 @@ public class Fachada {
   private CadastroCargos cadastroCargos;
   private CadastroAlunos cadastroAlunos;
   private CadastroFuncionarios cadastroFuncionarios;
+  private CadastroRecargas cadastroRecargas;
 
   private CadastroCartoes cadastroCartoes;
 
@@ -58,6 +60,9 @@ public class Fachada {
     
     RepositorioFuncionarios repositorioFuncionarios = new RepositorioFuncionarios();
     cadastroFuncionarios = new CadastroFuncionarios(repositorioFuncionarios);
+    
+    RepositorioRecargas repositorioRecargas = new RepositorioRecargas();
+    cadastroRecargas = new CadastroRecargas(repositorioRecargas);
     
     
     
@@ -166,8 +171,8 @@ public class Fachada {
     public ArrayList<Funcionario> findFuncionariosByCargo(int idCargo){
         return cadastroFuncionarios.buscarPorCargo(idCargo);
     }
-  
-   //cartão
+    
+    //cartão
     public void cadastrarCartao(Cartao cartao){
         cadastroCartoes.cadastrar(cartao);
     }
@@ -180,8 +185,19 @@ public class Fachada {
     public Cartao findCartaoByNumero(int numeroCartao){
         return cadastroCartoes.buscaCartaoPorNumero(numeroCartao);
     }
+    
+    public void efetuarRecargaCartao(Cartao cartao) {
+        cadastroCartoes.efetuarRecargaCartao(cartao);
+    }
+    
     public Cartao findCartaoByCpf(String cpf){
         return cadastroCartoes.buscaPorCpf(cpf);
+    }
+    
+  
+   //recarga
+    public void cadastrarRecarga(Recarga recarga){
+        cadastroRecargas.cadastrar(recarga);
     }
   
 

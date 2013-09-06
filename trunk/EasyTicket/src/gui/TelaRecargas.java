@@ -4,6 +4,16 @@
  */
 package gui;
 
+import javax.swing.JOptionPane;
+import negocio.Recarga;
+import negocio.Fachada;
+import negocio.Cartao;
+import dados.RepositorioRecargas;
+import dados.RepositorioCartoes;
+import java.util.Calendar;
+import java.util.Date;
+import util.Formatacao;
+
 /**
  *
  * @author Marcela Domingues
@@ -13,8 +23,14 @@ public class TelaRecargas extends javax.swing.JFrame {
     /**
      * Creates new form TelaRecargas
      */
+    private Fachada fachada = Fachada.obterInstancia();
+    
     public TelaRecargas() {
         initComponents();
+        
+   
+        labelMsgSucesso.setVisible(false);
+        
     }
 
     /**
@@ -27,98 +43,79 @@ public class TelaRecargas extends javax.swing.JFrame {
     private void initComponents() {
 
         tituloRecargas1 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         btnRealizarRecarga = new javax.swing.JToggleButton();
         btnVoltar = new javax.swing.JButton();
-        btnRecarga10 = new javax.swing.JButton();
-        btnRecarga20 = new javax.swing.JButton();
-        btnRecarga40 = new javax.swing.JButton();
-        btnRecarga50 = new javax.swing.JButton();
-        btnRecarga100 = new javax.swing.JButton();
-        btnRecargaValor = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         campoValorRecarga = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        campoValorRecarga1 = new javax.swing.JTextField();
+        campoNumCartaoRecarga = new javax.swing.JTextField();
+        labelMsgSucesso = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("EasyTicket - MANTER RECARGA");
+        setResizable(false);
 
         tituloRecargas1.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         tituloRecargas1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/saldo.png"))); // NOI18N
         tituloRecargas1.setText(" Recarregar cartão");
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel1.setText("Selecionar valor de recarga:");
-
-        btnRealizarRecarga.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/saldo.png"))); // NOI18N
         btnRealizarRecarga.setText("Realizar recarga");
+        btnRealizarRecarga.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRealizarRecargaActionPerformed(evt);
+            }
+        });
 
         btnVoltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/back.png"))); // NOI18N
         btnVoltar.setText("Voltar");
-
-        btnRecarga10.setText("R$10,00");
-
-        btnRecarga20.setText("R$20,00");
-
-        btnRecarga40.setText("R$40,00");
-
-        btnRecarga50.setText("R$50,00");
-
-        btnRecarga100.setText("R$100,00");
-
-        btnRecargaValor.setText("Outro valor");
+        btnVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVoltarActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("Informe o valor da recarga:");
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel3.setText("Informe o número do cartão:");
 
+        labelMsgSucesso.setText("A recarga foi efetuada com sucesso!");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jSeparator1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(tituloRecargas1)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 249, Short.MAX_VALUE)
-                        .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnRealizarRecarga, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(35, 35, 35)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(campoValorRecarga, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(29, 29, 29)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(campoValorRecarga1, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jLabel1)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(4, 4, 4)
+                                .addComponent(campoValorRecarga, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(campoNumCartaoRecarga, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(btnRealizarRecarga, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnRecarga10, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnRecarga20, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnRecarga40, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnRecarga50, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnRecarga100, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnRecargaValor))))
-                .addGap(49, 49, 49))
+                        .addGap(29, 29, 29)
+                        .addComponent(labelMsgSucesso))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 476, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(tituloRecargas1))))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -127,40 +124,88 @@ public class TelaRecargas extends javax.swing.JFrame {
                 .addComponent(tituloRecargas1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(2, 2, 2)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(labelMsgSucesso)
+                .addGap(20, 20, 20)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(campoNumCartaoRecarga, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnRecarga10)
-                            .addComponent(btnRecarga50))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnRecarga20)
-                            .addComponent(btnRecarga100))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnRecarga40)
-                            .addComponent(btnRecargaValor)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(48, 48, 48)
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(campoValorRecarga1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(39, 39, 39)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(campoValorRecarga, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
+                    .addComponent(jLabel2)
+                    .addComponent(campoValorRecarga, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnRealizarRecarga, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnVoltar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                    .addComponent(btnRealizarRecarga, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(33, 33, 33))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnRealizarRecargaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRealizarRecargaActionPerformed
+        // TODO add your handling code here:
+
+        if (campoValorRecarga.getText().equals("")) {
+            JOptionPane.showMessageDialog(this, "Informe o valor da recarga.", "VALIDAÇÃO", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        if (campoNumCartaoRecarga.getText().equals("")) {
+            JOptionPane.showMessageDialog(this, "Informe o número do cartão.", "VALIDAÇÃO", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        int result = JOptionPane.showConfirmDialog(this, "Deseja realmente realizar esta recarga ?", "CONFIRMAÇÃO", JOptionPane.OK_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);
+
+
+        if (result != 0) {
+            return;
+        }
+
+        try {
+            Recarga recarga = new Recarga();
+            //RepositorioCartoes repositorioCartoes = new RepositorioCartoes();
+
+            float valorRecarga = Float.parseFloat(campoValorRecarga.getText());
+            
+            int numCartaoRecarga = Integer.parseInt(campoNumCartaoRecarga.getText());
+
+            Date dataRecargaDate = Calendar.getInstance().getTime();
+
+            
+            java.sql.Date sqlDateRecarga = Formatacao.transformarDateEmDateSql(dataRecargaDate);
+
+            recarga.setValor(valorRecarga);
+            recarga.setNumCartao(numCartaoRecarga);
+            recarga.setDataRecarga(sqlDateRecarga);
+            Cartao cartao = fachada.findCartaoByNumero(numCartaoRecarga);
+            //cartao.setSaldo(valorRecarga);
+            
+            recarga.efetuarRecarga(cartao);
+            cartao.setSaldo(valorRecarga+cartao.getSaldo());
+            
+            fachada.efetuarRecargaCartao(cartao);
+            
+            fachada.cadastrarRecarga(recarga);
+            campoNumCartaoRecarga.setText("");
+            campoValorRecarga.setText("");
+            labelMsgSucesso.setVisible(true);
+            //labelMsgSucesso.setText("**Recarga efetuada com sucesso!");
+
+        } catch (Exception ex) {
+            System.out.println("realizarRecarga(): " + ex.toString());
+            ex.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Não foi possível realizar recarga.", "ATENÇÃO", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+    }//GEN-LAST:event_btnRealizarRecargaActionPerformed
+
+    private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
+        this.setVisible(false);
+    }//GEN-LAST:event_btnVoltarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -205,19 +250,13 @@ public class TelaRecargas extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton btnRealizarRecarga;
-    private javax.swing.JButton btnRecarga10;
-    private javax.swing.JButton btnRecarga100;
-    private javax.swing.JButton btnRecarga20;
-    private javax.swing.JButton btnRecarga40;
-    private javax.swing.JButton btnRecarga50;
-    private javax.swing.JButton btnRecargaValor;
     private javax.swing.JButton btnVoltar;
+    private javax.swing.JTextField campoNumCartaoRecarga;
     private javax.swing.JTextField campoValorRecarga;
-    private javax.swing.JTextField campoValorRecarga1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel labelMsgSucesso;
     private javax.swing.JLabel tituloRecargas1;
     // End of variables declaration//GEN-END:variables
 }

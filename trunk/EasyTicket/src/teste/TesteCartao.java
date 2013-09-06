@@ -4,6 +4,7 @@
  */
 package teste;
 
+import dados.RepositorioCargos;
 import dados.RepositorioCartoes;
 import negocio.Cartao;
 
@@ -14,7 +15,14 @@ import negocio.Cartao;
 public class TesteCartao {
  
      public static void main(String[] args) {
-        // TODO code application logic here
+        
+         Cartao cartao = new Cartao();
+         cartao.setCpfAlunoCartao("100.565.984.24");
+         cartao.setStatus("ATIVO");
+        
+        RepositorioCartoes repositorio = new RepositorioCartoes();
+        
+        repositorio.inserir(cartao);
         
         
         

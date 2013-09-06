@@ -4,6 +4,11 @@
  */
 package gui;
 
+import dados.RepositorioCartoes;
+import javax.swing.JOptionPane;
+import negocio.Cartao;
+import negocio.Fachada;
+
 /**
  *
  * @author Marcela Domingues
@@ -13,8 +18,14 @@ public class TelaSaldos extends javax.swing.JFrame {
     /**
      * Creates new form TelaSaldos
      */
+    
+    private Fachada fachada = Fachada.obterInstancia();
+    
     public TelaSaldos() {
         initComponents();
+        
+      
+        
     }
 
     /**
@@ -28,14 +39,15 @@ public class TelaSaldos extends javax.swing.JFrame {
 
         tituloSaldos1 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        campoNumCartaoSaldo = new javax.swing.JTextField();
+        txtNumCartao = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         btnVoltar = new javax.swing.JButton();
         btnVisualizarSaldo = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        ViewSaldo = new javax.swing.JLabel();
+        lblSaldo = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
 
         tituloSaldos1.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         tituloSaldos1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/pagamentos.png"))); // NOI18N
@@ -43,21 +55,29 @@ public class TelaSaldos extends javax.swing.JFrame {
 
         jLabel1.setText("Informe o número do cartão:");
 
-        campoNumCartaoSaldo.addActionListener(new java.awt.event.ActionListener() {
+        txtNumCartao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campoNumCartaoSaldoActionPerformed(evt);
+                txtNumCartaoActionPerformed(evt);
             }
         });
 
         btnVoltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/back.png"))); // NOI18N
         btnVoltar.setText("Voltar");
+        btnVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVoltarActionPerformed(evt);
+            }
+        });
 
         btnVisualizarSaldo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/resources/pagamentos.png"))); // NOI18N
         btnVisualizarSaldo.setText("Visualizar saldo");
+        btnVisualizarSaldo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVisualizarSaldoActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("Saldo:");
-
-        ViewSaldo.setText("--Saldo Atual--");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -66,11 +86,6 @@ public class TelaSaldos extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnVisualizarSaldo))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -80,13 +95,18 @@ public class TelaSaldos extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(campoNumCartaoSaldo, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(txtNumCartao, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(ViewSaldo)
-                                .addGap(20, 20, 20)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lblSaldo))
+                            .addComponent(btnVisualizarSaldo))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -99,11 +119,11 @@ public class TelaSaldos extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(campoNumCartaoSaldo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNumCartao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(105, 105, 105)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(ViewSaldo))
+                    .addComponent(lblSaldo))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnVisualizarSaldo, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -114,9 +134,40 @@ public class TelaSaldos extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void campoNumCartaoSaldoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoNumCartaoSaldoActionPerformed
+    private void txtNumCartaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumCartaoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_campoNumCartaoSaldoActionPerformed
+    }//GEN-LAST:event_txtNumCartaoActionPerformed
+
+    private void btnVisualizarSaldoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVisualizarSaldoActionPerformed
+        // TODO add your handling code here:
+        
+         if (txtNumCartao.getText().equals("")) {
+            JOptionPane.showMessageDialog(this, "Informe o número do cartão.", "VALIDAÇÃO", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        try{
+            
+            int numCartaoRecarga = Integer.parseInt(txtNumCartao.getText());
+            
+            if(fachada.verificarExistenciaCartaoPorNumero(numCartaoRecarga)){
+                Cartao cartao = fachada.findCartaoByNumero(numCartaoRecarga);
+                
+                System.out.println(Float.toString(cartao.getSaldo()));
+                float saldoCartao = cartao.getSaldo();
+                lblSaldo.setText("R$ " + Float.toString(saldoCartao)); 
+            }
+            
+            
+            
+        } catch (Exception ex){
+            System.out.println(ex.getMessage());
+        }
+    }//GEN-LAST:event_btnVisualizarSaldoActionPerformed
+
+    private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
+        this.setVisible(false);
+    }//GEN-LAST:event_btnVoltarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -160,13 +211,13 @@ public class TelaSaldos extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel ViewSaldo;
     private javax.swing.JButton btnVisualizarSaldo;
     private javax.swing.JButton btnVoltar;
-    private javax.swing.JTextField campoNumCartaoSaldo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel lblSaldo;
     private javax.swing.JLabel tituloSaldos1;
+    private javax.swing.JTextField txtNumCartao;
     // End of variables declaration//GEN-END:variables
 }

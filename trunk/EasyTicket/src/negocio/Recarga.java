@@ -13,16 +13,18 @@ import java.util.Date;
 public class Recarga {
     private int idRecarga;
     private float valor;
-    private Date dataRecarga;
-    private int idCartao;
+    private java.sql.Date dataRecarga;
+    private int numCartao;
     
-    public Recarga(int idRecarga,float valor, Date dataRecarga, int idCartao){
+    public Recarga(int idRecarga, java.sql.Date dataRecarga, float valor, int numCartao){
         this.idRecarga = idRecarga;
         this.valor = valor;
         this.dataRecarga = dataRecarga;
-        this.idCartao = idCartao;
+        this.numCartao = numCartao;
     }
-
+    
+    public Recarga(){}
+    
     /**
      * @return the idRecarga
      */
@@ -34,8 +36,17 @@ public class Recarga {
      * @param idRecarga the idRecarga to set
      */
     public void setIdRecarga(int idRecarga) {
-        this.idRecarga = idRecarga;
+        this.idRecarga = idRecarga;    }
+    
+    
+    public java.sql.Date getDataRecarga(){
+        return dataRecarga;
     }
+    
+    public void setDataRecarga(java.sql.Date dataRecarga){
+        this.dataRecarga = dataRecarga;
+    }
+
 
     /**
      * @return the valor
@@ -54,16 +65,16 @@ public class Recarga {
     /**
      * @return the dataRecarga
      */
-    public Date getDataRecarga() {
-        return dataRecarga;
-    }
+    //public Date getDataRecarga() {
+      //  return dataRecarga;
+    //}
 
     /**
      * @param dataRecarga the dataRecarga to set
      */
-    public void setDataRecarga(Date dataRecarga) {
-        this.dataRecarga = dataRecarga;
-    }
+    //public void setDataRecarga(Date dataRecarga) {
+      //  this.dataRecarga = dataRecarga;
+    //}
     
     public void efetuarRecarga(Cartao cartao){
         if (cartao.isAtivo(cartao)){
@@ -74,15 +85,15 @@ public class Recarga {
     /**
      * @return the idCartao
      */
-    public int getIdCartao() {
-        return idCartao;
+    public int getNumCartao() {
+        return numCartao;
     }
 
     /**
      * @param idCartao the idCartao to set
      */
-    public void setIdCartao(int idCartao) {
-        this.idCartao = idCartao;
+    public void setNumCartao(int numCartao) {
+        this.numCartao = numCartao;
     }
     
     
