@@ -1,0 +1,1 @@
+Projeto destinado à disciplina de Análise e Projeto de Sistemas de Informação da UFRPE
